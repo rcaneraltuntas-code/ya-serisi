@@ -722,90 +722,90 @@
   },
   "events": [
    [
-    "b+0",
+    "f:80",
     "power_hum",
-    0.1,
+    0.019,
     "onset",
-    "b+80"
+    "f:160"
    ],
    [
-    "d+0",
+    "f:243",
     "roof_wind",
-    0.18,
+    0.027,
     "onset",
-    "d+200"
+    "f:443"
    ],
    [
-    "e+8",
+    "f:422",
     "drone_hit",
     0.3,
     "onset"
    ],
    [
-    "h+0",
+    "f:722",
     "roof_wind",
-    0.16,
+    0.024,
     "onset",
-    "h+200"
+    "f:922"
    ],
    [
-    "j+0",
+    "f:926",
+    "heartbeat",
+    0.104,
+    "onset",
+    "f:1014"
+   ],
+   [
+    "f:1014",
     "heartbeat",
     0.2,
     "onset",
-    "j+88"
+    "f:1102"
    ],
    [
-    "j+88",
+    "f:1102",
     "heartbeat",
     0.2,
     "onset",
-    "j+176"
+    "f:1126"
    ],
    [
-    "j+176",
+    "f:1311",
     "heartbeat",
-    0.2,
+    0.18,
     "onset",
-    "j+200"
+    "f:1399"
    ],
    [
-    "m+0",
+    "f:1399",
     "heartbeat",
-    0.25,
+    0.18,
     "onset",
-    "m+88"
+    "f:1481"
    ],
    [
-    "m+88",
+    "f:1527",
     "heartbeat",
-    0.25,
+    0.112,
     "onset",
-    "m+170"
+    "f:1615"
    ],
    [
-    "o+0",
-    "heartbeat",
-    0.3,
-    "onset",
-    "o+88"
-   ],
-   [
-    "o+88",
+    "f:1615",
     "heartbeat",
     0.3,
     "onset",
-    "o+176"
+    "f:1703"
    ],
    [
-    "o+176",
+    "f:1703",
     "heartbeat",
     0.3,
     "onset",
-    "o+200"
+    "f:1727"
    ],
    [
-    "o+28",
+    "f:1588",
     "drone_hit",
     0.4,
     "onset"
@@ -816,8 +816,19 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "sfx_lu": -4.5,
+   "music_lu": -21.0
   }
- }
+ },
+ "duck": {
+  "b+0:power_hum": 0.194,
+  "d+0:roof_wind": 0.15,
+  "h+0:roof_wind": 0.15,
+  "j+0:heartbeat": 0.518,
+  "m+0:heartbeat": 0.72,
+  "m+88:heartbeat": 0.72,
+  "o+0:heartbeat": 0.373
+ },
+ "music_lu": -21.0,
+ "sfx_lu": -4.5
 }

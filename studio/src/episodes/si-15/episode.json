@@ -666,90 +666,90 @@
   },
   "events": [
    [
-    "a+0",
+    "f:0",
     "roof_wind",
-    0.14,
+    0.021,
     "onset",
-    "a+200"
+    "f:200"
    ],
    [
-    "b+2",
+    "f:266",
     "paper_land",
     0.2,
     "onset"
    ],
    [
-    "c+0",
+    "f:451",
+    "heartbeat",
+    0.039,
+    "onset",
+    "f:539"
+   ],
+   [
+    "f:539",
     "heartbeat",
     0.2,
     "onset",
-    "c+88"
+    "f:571"
    ],
    [
-    "c+88",
-    "heartbeat",
-    0.2,
-    "onset",
-    "c+120"
-   ],
-   [
-    "e+0",
+    "f:706",
     "sparkle",
     0.08,
     "onset"
    ],
    [
-    "f+0",
+    "f:855",
     "rewind_start",
-    0.2,
+    0.104,
     "onset"
    ],
    [
-    "g+0",
+    "f:989",
     "heartbeat",
-    0.25,
+    0.067,
     "onset",
-    "g+88"
+    "f:1077"
    ],
    [
-    "g+88",
+    "f:1077",
     "heartbeat",
-    0.25,
+    0.037,
     "onset",
-    "g+170"
+    "f:1159"
    ],
    [
-    "i+0",
+    "f:1184",
     "roof_wind",
-    0.14,
+    0.021,
     "onset",
-    "i+200"
+    "f:1384"
    ],
    [
-    "k+0",
+    "f:1443",
+    "heartbeat",
+    0.045,
+    "onset",
+    "f:1531"
+   ],
+   [
+    "f:1531",
+    "heartbeat",
+    0.045,
+    "onset",
+    "f:1619"
+   ],
+   [
+    "f:1619",
     "heartbeat",
     0.3,
     "onset",
-    "k+88"
+    "f:1673"
    ],
    [
-    "k+88",
-    "heartbeat",
-    0.3,
-    "onset",
-    "k+176"
-   ],
-   [
-    "k+176",
-    "heartbeat",
-    0.3,
-    "onset",
-    "k+230"
-   ],
-   [
-    "k+60",
+    "f:1503",
     "drone_hit",
-    0.4,
+    0.06,
     "onset"
    ]
   ],
@@ -758,8 +758,21 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "sfx_lu": -6.5,
+   "music_lu": -21.0
   }
- }
+ },
+ "duck": {
+  "a+0:roof_wind": 0.15,
+  "c+0:heartbeat": 0.194,
+  "g+0:heartbeat": 0.269,
+  "g+88:heartbeat": 0.15,
+  "i+0:roof_wind": 0.15,
+  "k+0:heartbeat": 0.15,
+  "k+88:heartbeat": 0.15,
+  "k+60:drone_hit": 0.15,
+  "f+0:rewind_start": 0.518
+ },
+ "music_lu": -21.0,
+ "sfx_lu": -6.5
 }

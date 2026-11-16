@@ -615,90 +615,90 @@
   },
   "events": [
    [
-    "a+0",
+    "f:0",
     "heartbeat",
     0.25,
     "onset",
-    "a+80"
+    "f:80"
    ],
    [
-    "d+4",
+    "f:584",
     "drone_hit",
     0.25,
     "onset"
    ],
    [
-    "e+22",
+    "f:681",
     "copy_click",
     0.35,
     "onset"
    ],
    [
-    "g+6",
+    "f:725",
     "phone_ring",
     0.5,
     "onset",
-    "g+34"
+    "f:753"
    ],
    [
-    "g+44",
+    "f:763",
     "phone_ring",
     0.5,
     "onset",
-    "g+72"
+    "f:791"
    ],
    [
-    "g+82",
+    "f:801",
     "phone_ring",
     0.5,
     "onset",
-    "g+108"
+    "f:827"
    ],
    [
-    "h+0",
+    "f:930",
     "copy_click",
     0.3,
     "onset"
    ],
    [
-    "i+8",
+    "f:1187",
     "drone_hit",
     0.3,
     "onset"
    ],
    [
-    "j+2",
+    "f:1274",
     "power_down",
-    0.25,
+    0.13,
     "onset"
    ],
    [
-    "k+0",
+    "f:1327",
+    "heartbeat",
+    0.13,
+    "onset",
+    "f:1415"
+   ],
+   [
+    "f:1415",
     "heartbeat",
     0.25,
     "onset",
-    "k+88"
+    "f:1477"
    ],
    [
-    "k+88",
-    "heartbeat",
-    0.25,
-    "onset",
-    "k+150"
-   ],
-   [
-    "m+40",
+    "f:1585",
     "power_hum",
     0.12,
     "onset",
-    "m+130"
+    "f:1675"
    ],
    [
-    "m+126",
+    "f:1671",
     "power_hum",
     0.16,
     "onset",
-    "m+216"
+    "f:1761"
    ]
   ],
   "repeats": [],
@@ -707,7 +707,12 @@
   },
   "levels": {
    "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "music_lu": -19.0
   }
- }
+ },
+ "duck": {
+  "j+2:power_down": 0.518,
+  "k+0:heartbeat": 0.518
+ },
+ "music_lu": -19.0
 }

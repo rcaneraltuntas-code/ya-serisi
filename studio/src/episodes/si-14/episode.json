@@ -747,125 +747,125 @@
   },
   "events": [
    [
-    "b+0",
+    "f:77",
     "roof_wind",
-    0.14,
+    0.021,
     "onset",
-    "b+200"
+    "f:277"
    ],
    [
-    "c+0",
+    "f:161",
     "power_hum",
-    0.16,
+    0.024,
     "onset",
-    "c+88"
+    "f:249"
    ],
    [
-    "c+84",
+    "f:245",
     "power_hum",
     0.22,
     "onset",
-    "c+172"
+    "f:333"
    ],
    [
-    "e+6",
+    "f:496",
     "clink",
     0.12,
     "onset"
    ],
    [
-    "f+4",
+    "f:625",
     "power_hum",
-    0.16,
+    0.024,
     "onset",
-    "f+92"
+    "f:713"
    ],
    [
-    "g+0",
+    "f:716",
     "heartbeat",
-    0.25,
+    0.093,
     "onset",
-    "g+88"
+    "f:804"
    ],
    [
-    "g+88",
+    "f:804",
     "heartbeat",
-    0.25,
+    0.037,
     "onset",
-    "g+170"
+    "f:886"
    ],
    [
-    "h+0",
+    "f:834",
     "roof_wind",
-    0.16,
+    0.024,
     "onset",
-    "h+200"
+    "f:1034"
    ],
    [
-    "h+0",
+    "f:834",
     "power_hum",
-    0.12,
+    0.018,
     "onset",
-    "h+88"
+    "f:922"
    ],
    [
-    "j+0",
+    "f:1078",
+    "heartbeat",
+    0.104,
+    "onset",
+    "f:1166"
+   ],
+   [
+    "f:1166",
     "heartbeat",
     0.2,
     "onset",
-    "j+88"
+    "f:1248"
    ],
    [
-    "j+88",
+    "f:1336",
     "heartbeat",
-    0.2,
+    0.067,
     "onset",
-    "j+170"
+    "f:1424"
    ],
    [
-    "l+0",
+    "f:1424",
     "heartbeat",
-    0.25,
+    0.037,
     "onset",
-    "l+88"
+    "f:1512"
    ],
    [
-    "l+88",
+    "f:1512",
     "heartbeat",
-    0.25,
+    0.093,
     "onset",
-    "l+176"
+    "f:1556"
    ],
    [
-    "l+176",
+    "f:1518",
     "heartbeat",
-    0.25,
+    0.112,
     "onset",
-    "l+220"
+    "f:1606"
    ],
    [
-    "m+0",
-    "heartbeat",
-    0.3,
-    "onset",
-    "m+88"
-   ],
-   [
-    "m+88",
+    "f:1606",
     "heartbeat",
     0.3,
     "onset",
-    "m+176"
+    "f:1694"
    ],
    [
-    "m+176",
+    "f:1694",
     "heartbeat",
     0.3,
     "onset",
-    "m+200"
+    "f:1718"
    ],
    [
-    "m+30",
+    "f:1587",
     "drone_hit",
     0.4,
     "onset"
@@ -877,7 +877,22 @@
   },
   "levels": {
    "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "music_lu": -20.0
   }
- }
+ },
+ "duck": {
+  "b+0:roof_wind": 0.15,
+  "c+0:power_hum": 0.15,
+  "f+4:power_hum": 0.15,
+  "g+0:heartbeat": 0.373,
+  "g+88:heartbeat": 0.15,
+  "h+0:roof_wind": 0.15,
+  "h+0:power_hum": 0.15,
+  "j+0:heartbeat": 0.518,
+  "l+0:heartbeat": 0.269,
+  "l+88:heartbeat": 0.15,
+  "l+176:heartbeat": 0.373,
+  "m+0:heartbeat": 0.373
+ },
+ "music_lu": -20.0
 }

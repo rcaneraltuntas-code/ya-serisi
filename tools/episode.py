@@ -121,6 +121,81 @@ def align(x, lines, words=()):
     return out[::-1]
 
 
+HITS = {'drone_hit', 'switch_off', 'power_down', 'land', 'tumble', 'crack', 'title_boom', 'big_step', 'paper_land', 'clink', 'select_draw', 'copy_click'}
+
+
+def sound(slug, fs=None, fe=None):
+    """Write the episode's sound plan from its shots. A one-off hit that would land on a spoken line is moved to just
+    after the line; ep['duck'] holds the gains turned down by `balance`."""
+    ep = load(slug)
+    if fs is None:
+        words = json.loads((S / 'src/episodes' / slug / 'words.json').read_text(encoding='utf-8'))
+        fs, fe = [round(w['s'] * 30) for w in words], [round(w['e'] * 30) for w in words]
+    at = {e['shot']: int(e['at'][2:]) for e in ep['edit']}
+    duck = ep.get('duck', {})
+    used, events, repeats, spans = {'drone_bed'}, [], [], []
+    for s in ep['shots']:
+        for e in s.get('sfx', []):
+            key = f'{s["id"]}+{e[0]}:{e[1]}'
+            f0 = at[s['id']] + e[0]
+            if e[1] in HITS:
+                for a, b in zip(fs, fe):
+                    if a - 4 <= f0 <= b + 2:
+                        f0 = b + 12
+                        break
+            ev = [f'f:{f0}', e[1], round(e[2] * duck.get(key, 1), 3), 'peak' if e[1] in ('big_step', 'title_boom') else 'onset']
+            f1 = f0 + round(CLIPS[e[1]][1] * 30)
+            if len(e) > 3:
+                until = at[s['id']] + e[3] if isinstance(e[3], int) else None
+                ev.append(f'f:{until}' if until is not None else e[3])
+                f1 = until if until is not None else f1
+            events.append(ev)
+            spans.append((f0, f1, key))
+            used.add(e[1])
+        if s.get('steps'):
+            key = f'{s["id"]}:steps'
+            k = duck.get(key, 1)
+            repeats.append({'at': f'{s["id"]}+4', 'clip': 'step', 'n': s['steps'], 'every': 12, 'gain': [round(0.14 * k, 3), round(0.22 * k, 3)], 'pitch': [0.9, 1.1]})
+            spans.append((at[s['id']] + 4, at[s['id']] + 4 + s['steps'] * 12 + 15, key))
+            used.add('step')
+    ep['sound'] = {'clips': {n: CLIPS[n] for n in sorted(used)}, 'events': events, 'repeats': repeats, 'music': {'clip': 'drone_bed'},
+                   'levels': {'sfx_lu': ep.get('sfx_lu', -3.0), 'music_lu': ep.get('music_lu', -16.0)}}
+    save(slug, ep)
+    return spans
+
+
+def balance(slug, rounds=9):
+    """Mix, check the voice against the effects, turn down whatever sits on a spoken line, and mix again."""
+    for i in range(rounds):
+        spans = sound(slug)
+        subprocess.run([sys.executable, str(SKILL / 'plan.py'), slug], check=True, stdout=subprocess.DEVNULL)
+        r = subprocess.run([sys.executable, str(SKILL / 'sfx.py'), slug], capture_output=True, text=True)
+        if r.returncode:
+            raise SystemExit(r.stdout[-600:] + r.stderr[-600:])
+        out = subprocess.run([sys.executable, str(SKILL / 'mixcheck.py'), slug], capture_output=True, text=True).stdout
+        flags = re.findall(r"\(([\d.]+), '(\w+)', '(\w+)', (?:np\.float64\()?(-?[\d.]+)", out)
+        if not flags:
+            print(f'{slug}: voice clear of the effects after {i} adjustment(s)')
+            return
+        ep = load(slug)
+        duck = ep.setdefault('duck', {})
+        for tsec, _, stem_, over in flags:
+            fr = float(tsec) * 30
+            if stem_ == 'music':
+                ep['music_lu'] = ep.get('music_lu', -16.0) - 1.0
+                continue
+            hit = [k for a, b, k in spans if a - 6 <= fr <= b + 12]
+            for k in hit:
+                duck[k] = round(max(0.15, duck.get(k, 1) * 0.72), 3)
+            if not hit:
+                ep['sfx_lu'] = ep.get('sfx_lu', -3.0) - 0.5
+        # the effects stem is levelled as a whole against the voice, so turning down its only loud parts changes
+        # little by itself: bring the whole stem down a step as well
+        ep['sfx_lu'] = max(-22.0, ep.get('sfx_lu', -3.0) - 1.0)
+        save(slug, ep)
+    print(f'{slug}: still {len(flags)} close moment(s) after {rounds} rounds: {flags[:4]}')
+
+
 def voice(slug, url):
     ep = load(slug)
     pub = S / 'public' / slug
@@ -171,18 +246,9 @@ def voice(slug, url):
         last = f
     end = fe[-1] + round(ep.get('tail', 2.0) * 30)
     ep['edit'], ep['end'] = edit, f'f:{end}'
-    used, events, repeats = {'drone_bed'}, [], []
-    for s in ep['shots']:
-        for e in s.get('sfx', []):
-            ev = [f'{s["id"]}+{e[0]}', e[1], e[2], 'peak' if e[1] in ('big_step', 'title_boom') else 'onset']
-            if len(e) > 3:
-                ev.append(f'{s["id"]}+{e[3]}' if isinstance(e[3], int) else e[3])
-            events.append(ev)
-            used.add(e[1])
-        if s.get('steps'):
-            repeats.append({'at': f'{s["id"]}+4', 'clip': 'step', 'n': s['steps'], 'every': 12, 'gain': [0.14, 0.22], 'pitch': [0.9, 1.1]})
-            used.add('step')
-    ep['sound'] = {'clips': {n: CLIPS[n] for n in sorted(used)}, 'events': events, 'repeats': repeats, 'music': {'clip': 'drone_bed'}, 'levels': {'sfx_lu': -3.0, 'music_lu': -16.0}}
+    save(slug, ep)
+    sound(slug, fs, fe)
+    ep = load(slug)
     ep.setdefault('title', ['SON İNSAN', ep['slug']])
     save(slug, ep)
     (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n\nexport const episode = buildEpisode(ep, timeline);\n")
@@ -212,3 +278,6 @@ if __name__ == '__main__':
         voice(sys.argv[2], sys.argv[3])
     elif cmd == 'registry':
         registry()
+    elif cmd == 'balance':
+        for sl in sys.argv[2:]:
+            balance(sl)

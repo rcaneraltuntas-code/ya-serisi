@@ -839,95 +839,95 @@
   },
   "events": [
    [
-    "e+6",
+    "f:677",
     "drone_hit",
     0.3,
     "onset"
    ],
    [
-    "e+20",
+    "f:642",
+    "heartbeat",
+    0.216,
+    "onset",
+    "f:730"
+   ],
+   [
+    "f:730",
     "heartbeat",
     0.3,
     "onset",
-    "e+108"
+    "f:732"
    ],
    [
-    "e+108",
-    "heartbeat",
-    0.3,
-    "onset",
-    "e+110"
-   ],
-   [
-    "h+4",
+    "f:933",
     "land",
     0.25,
     "onset"
    ],
    [
-    "i+34",
+    "f:1036",
     "crack",
     0.2,
     "onset"
    ],
    [
-    "l+0",
+    "f:1234",
     "heartbeat",
-    0.25,
+    0.093,
     "onset",
-    "l+88"
+    "f:1322"
    ],
    [
-    "l+88",
+    "f:1322",
     "heartbeat",
-    0.25,
+    0.037,
     "onset",
-    "l+170"
+    "f:1404"
    ],
    [
-    "m+0",
+    "f:1339",
     "heartbeat",
-    0.3,
+    0.045,
     "onset",
-    "m+88"
+    "f:1427"
    ],
    [
-    "m+88",
-    "heartbeat",
-    0.3,
-    "onset",
-    "m+176"
-   ],
-   [
-    "m+176",
+    "f:1427",
     "heartbeat",
     0.3,
     "onset",
-    "m+200"
+    "f:1515"
    ],
    [
-    "n+0",
+    "f:1515",
+    "heartbeat",
+    0.216,
+    "onset",
+    "f:1539"
+   ],
+   [
+    "f:1524",
+    "heartbeat",
+    0.252,
+    "onset",
+    "f:1612"
+   ],
+   [
+    "f:1612",
     "heartbeat",
     0.35,
     "onset",
-    "n+88"
+    "f:1700"
    ],
    [
-    "n+88",
+    "f:1700",
     "heartbeat",
     0.35,
     "onset",
-    "n+176"
+    "f:1744"
    ],
    [
-    "n+176",
-    "heartbeat",
-    0.35,
-    "onset",
-    "n+220"
-   ],
-   [
-    "n+26",
+    "f:1589",
     "drone_hit",
     0.45,
     "onset"
@@ -982,8 +982,8 @@
     "n": 8,
     "every": 12,
     "gain": [
-     0.14,
-     0.22
+     0.101,
+     0.158
     ],
     "pitch": [
      0.9,
@@ -995,8 +995,19 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "sfx_lu": -6.0,
+   "music_lu": -18.0
   }
- }
+ },
+ "duck": {
+  "e+20:heartbeat": 0.72,
+  "l+0:heartbeat": 0.373,
+  "l+88:heartbeat": 0.15,
+  "m+0:heartbeat": 0.15,
+  "m+176:heartbeat": 0.72,
+  "n+0:heartbeat": 0.72,
+  "n:steps": 0.72
+ },
+ "music_lu": -18.0,
+ "sfx_lu": -6.0
 }

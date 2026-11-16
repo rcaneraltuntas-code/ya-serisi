@@ -282,8 +282,8 @@
  "fx": [],
  "audio": {
   "voiceVol": 0.8,
-  "sfxVol": 0.415,
-  "musicVol": 0.0374,
+  "sfxVol": 0.1652,
+  "musicVol": 0.0333,
   "voice": "si-12/voice.wav",
   "sfx": "si-12/sfx.wav",
   "music": "si-12/music.wav"

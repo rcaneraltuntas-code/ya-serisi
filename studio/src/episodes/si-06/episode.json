@@ -700,95 +700,95 @@
   },
   "events": [
    [
-    "d+0",
+    "f:277",
+    "heartbeat",
+    0.037,
+    "onset",
+    "f:365"
+   ],
+   [
+    "f:365",
     "heartbeat",
     0.25,
     "onset",
-    "d+88"
+    "f:447"
    ],
    [
-    "d+88",
-    "heartbeat",
-    0.25,
-    "onset",
-    "d+170"
-   ],
-   [
-    "d+10",
+    "f:287",
     "power_hum",
-    0.1,
+    0.019,
     "onset",
-    "d+98"
+    "f:375"
    ],
    [
-    "f+0",
+    "f:607",
     "heartbeat",
-    0.3,
+    0.058,
     "onset",
-    "f+88"
+    "f:695"
    ],
    [
-    "f+88",
+    "f:695",
     "heartbeat",
-    0.3,
+    0.112,
     "onset",
-    "f+170"
+    "f:777"
    ],
    [
-    "g+0",
+    "f:776",
     "heartbeat",
-    0.35,
+    0.181,
     "onset",
-    "g+88"
+    "f:864"
    ],
    [
-    "g+88",
+    "f:864",
     "heartbeat",
-    0.35,
+    0.052,
     "onset",
-    "g+170"
+    "f:946"
    ],
    [
-    "g+118",
+    "f:894",
     "drone_hit",
-    0.4,
+    0.06,
     "onset"
    ],
    [
-    "h+0",
+    "f:1043",
     "copy_click",
     0.3,
     "onset"
    ],
    [
-    "j+2",
+    "f:1298",
     "switch_off",
     0.35,
     "onset"
    ],
    [
-    "l+0",
+    "f:1518",
+    "heartbeat",
+    0.155,
+    "onset",
+    "f:1606"
+   ],
+   [
+    "f:1606",
     "heartbeat",
     0.3,
     "onset",
-    "l+88"
+    "f:1694"
    ],
    [
-    "l+88",
+    "f:1694",
     "heartbeat",
     0.3,
     "onset",
-    "l+176"
+    "f:1718"
    ],
    [
-    "l+176",
-    "heartbeat",
-    0.3,
-    "onset",
-    "l+200"
-   ],
-   [
-    "l+60",
+    "f:1590",
     "drone_hit",
     0.45,
     "onset"
@@ -828,8 +828,20 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "sfx_lu": -5.5,
+   "music_lu": -21.0
   }
- }
+ },
+ "duck": {
+  "d+0:heartbeat": 0.15,
+  "d+10:power_hum": 0.194,
+  "f+0:heartbeat": 0.194,
+  "f+88:heartbeat": 0.373,
+  "g+0:heartbeat": 0.518,
+  "g+88:heartbeat": 0.15,
+  "g+118:drone_hit": 0.15,
+  "l+0:heartbeat": 0.518
+ },
+ "music_lu": -21.0,
+ "sfx_lu": -5.5
 }

@@ -249,7 +249,7 @@
  "audio": {
   "voiceVol": 0.8,
   "sfxVol": 0.1156,
-  "musicVol": 0.025,
+  "musicVol": 0.0177,
   "voice": "si-04/voice.wav",
   "sfx": "si-04/sfx.wav",
   "music": "si-04/music.wav"

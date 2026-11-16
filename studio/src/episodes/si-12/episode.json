@@ -806,131 +806,131 @@
   },
   "events": [
    [
-    "a+0",
+    "f:0",
     "roof_wind",
-    0.14,
+    0.073,
     "onset",
-    "a+200"
+    "f:200"
    ],
    [
-    "b+0",
+    "f:158",
     "glitch",
-    0.1,
+    0.052,
     "onset",
-    "b+30"
+    "f:188"
    ],
    [
-    "c+0",
+    "f:261",
     "power_hum",
-    0.12,
+    0.062,
     "onset",
-    "c+88"
+    "f:349"
    ],
    [
-    "d+0",
+    "f:351",
     "roof_wind",
-    0.18,
+    0.027,
     "onset",
-    "d+200"
+    "f:551"
    ],
    [
-    "e+0",
+    "f:452",
     "roof_wind",
-    0.12,
+    0.018,
     "onset",
-    "e+200"
+    "f:652"
    ],
    [
-    "g+0",
+    "f:709",
     "room_tone",
-    0.1,
+    0.052,
     "onset",
-    "g+150"
+    "f:859"
    ],
    [
-    "h+10",
+    "f:852",
     "clink",
     0.15,
     "onset"
    ],
    [
-    "i+6",
+    "f:924",
     "phone_ring",
-    0.5,
+    0.034,
     "onset",
-    "i+34"
+    "f:952"
    ],
    [
-    "i+44",
+    "f:962",
     "phone_ring",
-    0.5,
+    0.162,
     "onset",
-    "i+72"
+    "f:990"
    ],
    [
-    "j+14",
+    "f:1010",
     "knock",
-    0.8,
+    0.12,
     "onset"
    ],
    [
-    "k+0",
+    "f:1116",
+    "heartbeat",
+    0.155,
+    "onset",
+    "f:1204"
+   ],
+   [
+    "f:1204",
+    "heartbeat",
+    0.155,
+    "onset",
+    "f:1286"
+   ],
+   [
+    "f:1368",
+    "heartbeat",
+    0.18,
+    "onset",
+    "f:1456"
+   ],
+   [
+    "f:1456",
+    "heartbeat",
+    0.049,
+    "onset",
+    "f:1544"
+   ],
+   [
+    "f:1544",
+    "heartbeat",
+    0.049,
+    "onset",
+    "f:1588"
+   ],
+   [
+    "f:1556",
+    "heartbeat",
+    0.155,
+    "onset",
+    "f:1644"
+   ],
+   [
+    "f:1644",
     "heartbeat",
     0.3,
     "onset",
-    "k+88"
+    "f:1732"
    ],
    [
-    "k+88",
+    "f:1732",
     "heartbeat",
     0.3,
     "onset",
-    "k+170"
+    "f:1756"
    ],
    [
-    "n+0",
-    "heartbeat",
-    0.25,
-    "onset",
-    "n+88"
-   ],
-   [
-    "n+88",
-    "heartbeat",
-    0.25,
-    "onset",
-    "n+176"
-   ],
-   [
-    "n+176",
-    "heartbeat",
-    0.25,
-    "onset",
-    "n+220"
-   ],
-   [
-    "o+0",
-    "heartbeat",
-    0.3,
-    "onset",
-    "o+88"
-   ],
-   [
-    "o+88",
-    "heartbeat",
-    0.3,
-    "onset",
-    "o+176"
-   ],
-   [
-    "o+176",
-    "heartbeat",
-    0.3,
-    "onset",
-    "o+200"
-   ],
-   [
-    "o+8",
+    "f:1592",
     "drone_hit",
     0.4,
     "onset"
@@ -941,8 +941,27 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -3.0,
-   "music_lu": -16.0
+   "sfx_lu": -10.0,
+   "music_lu": -17.0
   }
- }
+ },
+ "duck": {
+  "a+0:roof_wind": 0.518,
+  "b+0:glitch": 0.518,
+  "c+0:power_hum": 0.518,
+  "d+0:roof_wind": 0.15,
+  "e+0:roof_wind": 0.15,
+  "i+6:phone_ring": 0.068,
+  "i+44:phone_ring": 0.324,
+  "j+14:knock": 0.15,
+  "k+0:heartbeat": 0.518,
+  "n+88:heartbeat": 0.194,
+  "n+176:heartbeat": 0.194,
+  "g+0:room_tone": 0.518,
+  "k+88:heartbeat": 0.518,
+  "n+0:heartbeat": 0.72,
+  "o+0:heartbeat": 0.518
+ },
+ "music_lu": -17.0,
+ "sfx_lu": -10.0
 }

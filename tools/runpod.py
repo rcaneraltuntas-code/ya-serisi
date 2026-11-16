@@ -263,7 +263,13 @@ def pack():
             tar.add(p, arcname=str(rel))
             # the picture is rendered muted, so sound files don't count: a new mix never forces a new render
             if (rel.parts[0] in ('src', 'public') and p.suffix not in ('.wav', '.mp3')) or rel.name in ('package.json', 'package-lock.json'):
-                h.update(str(rel).encode()); h.update(p.read_bytes())
+                raw = p.read_bytes()
+                if rel.name in ('timeline.json', 'episode.json'):  # the sound plan and the mix volumes don't change a frame
+                    j = json.loads(raw)
+                    for k in ('audio', 'sound', 'duck', 'sfx_lu', 'music_lu'):
+                        j.pop(k, None)
+                    raw = json.dumps(j, sort_keys=True).encode()
+                h.update(str(rel).encode()); h.update(raw)
     return buf.getvalue(), h.hexdigest()[:12]
 
 
@@ -315,8 +321,9 @@ def render_all(slugs, chunk=300):
         cd = STUDIO / 'out' / slug / 'chunks'
         cd.mkdir(parents=True, exist_ok=True)
         if not ((cd / 'sig').exists() and (cd / 'sig').read_text() == sig + f'/{chunk}'):
-            for f in cd.glob('*'):
-                f.unlink()
+            if '--keep' not in sys.argv:  # --keep: trust the chunks already here (the picture has not changed)
+                for f in cd.glob('*'):
+                    f.unlink()
             (cd / 'sig').write_text(sig + f'/{chunk}')
         total = tl['total']
         ranges = [(a, min(total, a + chunk) - 1) for a in range(0, total, chunk)]
@@ -499,6 +506,17 @@ if __name__ == '__main__':
                 if p:
                     api('DELETE', f"/pods/{p['id']}")
                     print('terminated', p['id'], flush=True)
+    elif cmd == 'mix':
+        # join and mix again from the chunks already here (after a change to the sound only)
+        for slug in sys.argv[2:]:
+            tl = json.loads((STUDIO / 'src/episodes' / slug / 'timeline.json').read_text(encoding='utf-8'))
+            cd = STUDIO / 'out' / slug / 'chunks'
+            parts = sorted(p.name for p in cd.glob(f'{slug}-c*.mp4'))
+            ranges = [tuple(int(x) for x in n[len(slug) + 2:-4].split('-')) for n in parts]
+            if not ranges or ranges[-1][1] != tl['total'] - 1:
+                print(slug, 'chunks incomplete or the timeline changed length: render it again')
+                continue
+            finish(slug, tl, ranges)
     elif cmd == 'terminate':
         p = find_pod()
         if p:
