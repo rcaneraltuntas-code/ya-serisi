@@ -5,3 +5,6 @@ __pycache__/
 .env
 .env.*
 .secrets/
+
+# mixes rebuilt from the takes: python ../tools/episode.py voice <slug> -
+studio/public/si-*/*.wav

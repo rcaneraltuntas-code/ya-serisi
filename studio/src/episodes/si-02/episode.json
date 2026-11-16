@@ -1,0 +1,676 @@
+{
+ "id": "SI02",
+ "slug": "si-02",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 2"
+ ],
+ "lead": 3.0,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Açmadım.",
+   "tag": "[whispers] [nervous]",
+   "pause": 0.7
+  },
+  {
+   "t": "Nefesimi tuttum.",
+   "pause": 1.6
+  },
+  {
+   "t": "Vuruş kesildi.",
+   "tag": "[softly]",
+   "pause": 1.6
+  },
+  {
+   "t": "Sonra kapının altından… bir kâğıt kaydı.",
+   "tag": "[cautiously]",
+   "pause": 1.5
+  },
+  {
+   "t": "Sana \"açma\" dedi, değil mi?",
+   "tag": "[slowly]",
+   "pause": 0.6
+  },
+  {
+   "t": "Ona güvenme.",
+   "tag": "[whispers]",
+   "pause": 2.0
+  },
+  {
+   "t": "Telefon yine çaldı.",
+   "tag": "[nervous]",
+   "pause": 2.4
+  },
+  {
+   "t": "Notu okuma.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.2,
+   "fx": "phone"
+  },
+  {
+   "t": "Okumuştum bile.",
+   "tag": "[softly]",
+   "pause": 1.6
+  },
+  {
+   "t": "Kapıyı açtım.",
+   "tag": "[cautiously]",
+   "pause": 1.3
+  },
+  {
+   "t": "Kimse yoktu.",
+   "pause": 0.9
+  },
+  {
+   "t": "Sadece yerde… ıslak ayak izleri.",
+   "tag": "[curious]",
+   "pause": 1.3
+  },
+  {
+   "t": "Küçüktüler.",
+   "tag": "[whispers]",
+   "pause": 0.8
+  },
+  {
+   "t": "Bir çocuğun ayak izleri.",
+   "tag": "[trembling voice]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "door",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "mode": "knock",
+    "knocks": [
+     14,
+     23,
+     32
+    ],
+    "small": true
+   },
+   "sfx": [
+    [
+     8,
+     "knock",
+     0.9
+    ],
+    [
+     50,
+     "heartbeat",
+     0.25,
+     130
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "tape",
+   "at": 1,
+   "key": 30,
+   "props": {
+    "tau": [
+     126,
+     126
+    ],
+    "z": [
+     1.3,
+     1.5
+    ],
+    "soft": true,
+    "dark": 0.35
+   },
+   "sfx": [
+    [
+     2,
+     "heartbeat",
+     0.3,
+     80
+    ],
+    [
+     40,
+     "knock",
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "door",
+   "at": 2,
+   "key": 30,
+   "props": {
+    "mode": "still",
+    "small": true,
+    "feetUntil": 40
+   }
+  },
+  {
+   "id": "d",
+   "use": "door",
+   "at": 3,
+   "key": 50,
+   "props": {
+    "mode": "note",
+    "noteAt": 30,
+    "feet": false
+   },
+   "sfx": [
+    [
+     32,
+     "paper_land",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "paper",
+   "at": 4,
+   "key": 40,
+   "props": {
+    "kind": "note",
+    "lines": [
+     "SANA \"AÇMA\" DEDİ,",
+     "DEĞİL Mİ?",
+     "",
+     "ONA GÜVENME."
+    ],
+    "size": 46,
+    "at": 2,
+    "gap": 70,
+    "y": 420,
+    "bg": "market",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     70,
+     "drone_hit",
+     0.25
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "phone",
+   "at": 6,
+   "key": 30,
+   "props": {
+    "mode": "ring",
+    "bg": "market",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "phone",
+   "at": 7,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "market",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     0,
+     "copy_click",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "paper",
+   "at": 8,
+   "key": 20,
+   "props": {
+    "kind": "note",
+    "lines": [
+     "SANA \"AÇMA\" DEDİ,",
+     "DEĞİL Mİ?",
+     "",
+     "ONA GÜVENME."
+    ],
+    "size": 46,
+    "at": -30,
+    "gap": 70,
+    "y": 420,
+    "bg": "market",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "i",
+   "use": "door",
+   "at": 9,
+   "key": 60,
+   "props": {
+    "mode": "open",
+    "openAt": 30,
+    "behind": "prints",
+    "pushHand": true,
+    "feet": false
+   },
+   "sfx": [
+    [
+     32,
+     "big_step",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 10,
+   "key": 15,
+   "props": {
+    "set": "market",
+    "c": [
+     960,
+     505,
+     1.05
+    ],
+    "c2": [
+     960,
+     505,
+     1.3
+    ],
+    "bob": 0.4,
+    "dark": 0.15
+   }
+  },
+  {
+   "id": "k",
+   "use": "floor",
+   "at": 11,
+   "key": 30,
+   "props": {
+    "floor": "tiles",
+    "prints": true,
+    "walk": 0.2,
+    "night": 0.3
+   },
+   "steps": 5
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 12,
+   "key": 40,
+   "props": {
+    "set": "market",
+    "c": [
+     960,
+     620,
+     1.5
+    ],
+    "c2": [
+     960,
+     560,
+     2.1
+    ],
+    "prints": [
+     960,
+     640,
+     1.1,
+     7
+    ],
+    "dark": 0.2,
+    "bob": 0.3
+   },
+   "sfx": [
+    [
+     50,
+     "drone_hit",
+     0.35
+    ],
+    [
+     4,
+     "heartbeat",
+     0.3,
+     92
+    ],
+    [
+     92,
+     "heartbeat",
+     0.3,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "card",
+   "after": 13,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 3. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Açmadım."
+  },
+  {
+   "beat": "1",
+   "text": "Nefesimi tuttum."
+  },
+  {
+   "beat": "2",
+   "text": "Vuruş kesildi."
+  },
+  {
+   "beat": "3",
+   "text": "Sonra kapının altından… bir kâğıt kaydı."
+  },
+  {
+   "beat": "4",
+   "text": "Sana \"açma\" dedi, değil mi?"
+  },
+  {
+   "beat": "5",
+   "text": "Ona güvenme."
+  },
+  {
+   "beat": "6",
+   "text": "Telefon yine çaldı."
+  },
+  {
+   "beat": "7",
+   "text": "Notu okuma."
+  },
+  {
+   "beat": "8",
+   "text": "Okumuştum bile."
+  },
+  {
+   "beat": "9",
+   "text": "Kapıyı açtım."
+  },
+  {
+   "beat": "10",
+   "text": "Kimse yoktu."
+  },
+  {
+   "beat": "11",
+   "text": "Sadece yerde… ıslak ayak izleri."
+  },
+  {
+   "beat": "12",
+   "text": "Küçüktüler."
+  },
+  {
+   "beat": "13",
+   "text": "Bir çocuğun ayak izleri."
+  }
+ ],
+ "pauses": {
+  "lead": 3.0,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.19,
+   "L1": 2.72,
+   "L2": 2.72,
+   "L3": 2.55,
+   "L4": 1.02,
+   "L5": 3.4,
+   "L6": 4.08,
+   "L7": 2.04,
+   "L8": 2.72,
+   "L9": 2.21,
+   "L10": 1.53,
+   "L11": 2.21,
+   "L12": 1.36
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L7",
+   "to": "L7",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:147"
+  },
+  {
+   "shot": "c",
+   "at": "f:255"
+  },
+  {
+   "shot": "d",
+   "at": "f:361"
+  },
+  {
+   "shot": "e",
+   "at": "f:516"
+  },
+  {
+   "shot": "f",
+   "at": "f:732"
+  },
+  {
+   "shot": "g",
+   "at": "f:888"
+  },
+  {
+   "shot": "h",
+   "at": "f:982"
+  },
+  {
+   "shot": "i",
+   "at": "f:1089"
+  },
+  {
+   "shot": "j",
+   "at": "f:1177"
+  },
+  {
+   "shot": "k",
+   "at": "f:1243"
+  },
+  {
+   "shot": "l",
+   "at": "f:1376"
+  },
+  {
+   "shot": "m",
+   "at": "f:1528"
+  }
+ ],
+ "end": "f:1616",
+ "sound": {
+  "clips": {
+   "big_step": [
+    "a cartoon exaggerated careful tiptoe step, light airy whoosh",
+    0.7
+   ],
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "knock": [
+    "connector sfx: three slow heavy knocks on a wooden door in a silent room, close, ominous",
+    2
+   ],
+   "paper_land": [
+    "a thick stack of paper sheets dropped flat on a wooden desk, a soft slap and rustle",
+    0.7
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "a+8",
+    "knock",
+    0.9,
+    "onset"
+   ],
+   [
+    "a+50",
+    "heartbeat",
+    0.25,
+    "onset",
+    "a+130"
+   ],
+   [
+    "b+2",
+    "heartbeat",
+    0.3,
+    "onset",
+    "b+80"
+   ],
+   [
+    "b+40",
+    "knock",
+    0.7,
+    "onset"
+   ],
+   [
+    "d+32",
+    "paper_land",
+    0.3,
+    "onset"
+   ],
+   [
+    "e+70",
+    "drone_hit",
+    0.25,
+    "onset"
+   ],
+   [
+    "f+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+34"
+   ],
+   [
+    "f+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+72"
+   ],
+   [
+    "f+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+108"
+   ],
+   [
+    "g+0",
+    "copy_click",
+    0.3,
+    "onset"
+   ],
+   [
+    "i+32",
+    "big_step",
+    0.3,
+    "peak"
+   ],
+   [
+    "l+50",
+    "drone_hit",
+    0.35,
+    "onset"
+   ],
+   [
+    "l+4",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+92"
+   ],
+   [
+    "l+92",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+170"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "k+4",
+    "clip": "step",
+    "n": 5,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

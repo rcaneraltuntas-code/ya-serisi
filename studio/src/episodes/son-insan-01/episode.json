@@ -99,81 +99,141 @@
  "shots": [
   {
    "id": "A1",
-   "size": "POV, uyanış",
+   "size": "",
    "key": 60,
-   "note": "göz kapakları açılır, yatak odası"
+   "note": ""
   },
   {
    "id": "A2",
-   "size": "POV, pencere",
+   "size": "",
    "key": 40,
-   "note": "boş sokak"
+   "note": ""
   },
   {
    "id": "A3",
-   "size": "ayna",
+   "size": "",
    "key": 18,
-   "note": "koridor aynasında sen"
+   "note": ""
   },
   {
    "id": "A4",
-   "size": "POV, geniş",
+   "size": "",
    "key": 25,
-   "note": "boş mutfak"
+   "note": ""
   },
   {
    "id": "A5",
-   "size": "POV, yaklaşma",
+   "size": "",
    "key": 30,
-   "note": "kupa"
+   "note": ""
   },
   {
    "id": "A6",
-   "size": "makro",
+   "size": "",
    "key": 24,
-   "note": "elin kupada"
+   "note": ""
   },
   {
    "id": "A7",
-   "size": "POV, kapı",
+   "size": "",
    "key": 22,
-   "note": "kapı sokağa açılır"
+   "note": ""
   },
   {
    "id": "A8",
-   "size": "POV, geniş",
+   "size": "",
    "key": 50,
-   "note": "yolun ortasında arabalar"
+   "note": ""
   },
   {
    "id": "A9",
-   "size": "medium",
+   "size": "",
    "key": 20,
-   "note": "açık kapı, boş koltuk"
+   "note": ""
   },
   {
    "id": "A10",
-   "size": "makro",
+   "size": "",
    "key": 30,
-   "note": "egzoz, stop lambası"
+   "note": ""
   },
   {
-   "id": "A11",
-   "size": "şema",
+   "id": "B4",
+   "size": "",
+   "key": 60,
+   "note": ""
+  },
+  {
+   "id": "R1",
+   "size": "",
+   "key": 60,
+   "note": ""
+  },
+  {
+   "id": "B5",
+   "size": "",
+   "key": 30,
+   "note": ""
+  },
+  {
+   "id": "B6",
+   "size": "",
+   "key": 44,
+   "note": ""
+  },
+  {
+   "id": "B7",
+   "size": "",
+   "key": 90,
+   "note": ""
+  },
+  {
+   "id": "B8",
+   "size": "",
    "key": 50,
-   "note": "8.000.000.000"
+   "note": ""
   },
   {
-   "id": "A12",
-   "size": "şema",
-   "key": 45,
-   "note": "sayaç 1'e iner"
+   "id": "B9",
+   "size": "",
+   "key": 40,
+   "note": ""
   },
   {
-   "id": "A13",
-   "size": "başlık",
-   "key": 80,
-   "note": "çatı, şehir ışıkları söner"
+   "id": "B10",
+   "size": "",
+   "key": 16,
+   "note": ""
+  },
+  {
+   "id": "B11",
+   "size": "",
+   "key": 60,
+   "note": ""
+  },
+  {
+   "id": "B12",
+   "size": "",
+   "key": 50,
+   "note": ""
+  },
+  {
+   "id": "B13",
+   "size": "",
+   "key": 30,
+   "note": ""
+  },
+  {
+   "id": "B14",
+   "size": "",
+   "key": 40,
+   "note": ""
+  },
+  {
+   "id": "B17",
+   "size": "",
+   "key": 30,
+   "note": ""
   }
  ],
  "edit": [
@@ -218,25 +278,72 @@
    "at": "Motorları"
   },
   {
-   "shot": "A11",
+   "shot": "B4",
    "at": "Sekiz"
   },
   {
-   "shot": "A12",
-   "at": "Hiçbiri"
+   "shot": "R1",
+   "at": "Ya"
   },
   {
-   "shot": "A13",
-   "at": "Ya"
+   "shot": "B5",
+   "at": "Markete"
+  },
+  {
+   "shot": "B6",
+   "at": "Güvenlik"
+  },
+  {
+   "shot": "B7",
+   "at": "Saat",
+   "from": -55
+  },
+  {
+   "shot": "B8",
+   "at": "Hepsi"
+  },
+  {
+   "shot": "B9",
+   "at": "Sonra"
+  },
+  {
+   "shot": "B10",
+   "at": "Geri"
+  },
+  {
+   "shot": "B8",
+   "at": "Bir",
+   "from": 8
+  },
+  {
+   "shot": "B11",
+   "at": "Herkes",
+   "from": -40
+  },
+  {
+   "shot": "B12",
+   "at": "O"
+  },
+  {
+   "shot": "B13",
+   "at": "O"
+  },
+  {
+   "shot": "B14",
+   "at": "Sonra"
+  },
+  {
+   "shot": "B17",
+   "at": "f:1958"
   }
  ],
- "end": "f:831",
+ "end": "f:2003",
  "fx": [
   {
-   "at": "A13",
+   "at": "B13+4",
    "kind": "flash",
-   "color": "#FFF3DC",
-   "o": 0.6
+   "color": "#DDF2FF",
+   "o": 0.3
   }
  ],
  "sound": {
@@ -257,21 +364,37 @@
     "a cartoon exaggerated careful tiptoe step, light airy whoosh",
     0.7
    ],
-   "title_boom": [
-    "a cinematic whoosh rising into a deep boom impact",
-    1.6
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
    ],
-   "counter_tick": [
-    "a fast mechanical counter ticking up rapidly, digits rolling over, getting faster",
-    1.6
+   "glitch": [
+    "a short digital glitch, an electric buzz and crackle flickering like an unstable hologram",
+    1.5
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
    ],
    "power_down": [
     "a whole city losing power, a deep electrical power-down whine dropping in pitch into silence",
     2.5
    ],
-   "bulb_pop": [
-    "a small light bulb popping out, a tiny glass tink and fizz",
-    0.5
+   "rewind": [
+    "a VHS tape rewinding fast, high whirring tape squeal with mechanical hum",
+    1.6
+   ],
+   "select_draw": [
+    "a quick digital selection sound, a soft rising electronic shimmer as a box is drawn on screen, short",
+    0.6
    ],
    "drone_bed": [
     "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
@@ -284,6 +407,10 @@
    "heartbeat": [
     "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
     3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
    ]
   },
   "events": [
@@ -297,7 +424,7 @@
    [
     "A6+22",
     "clink",
-    0.28
+    0.25
    ],
    [
     "A7+8",
@@ -310,41 +437,107 @@
     "engine_loop",
     0.14,
     "onset",
-    "A11"
+    "B4"
    ],
    [
-    "A10",
+    "B4",
     "engine_loop",
-    0.07,
+    0.1,
     "onset",
-    "A11"
+    "R1"
    ],
    [
-    "A11+2",
-    "counter_tick",
-    0.06,
-    "onset",
-    "A12"
+    "B5+8",
+    "big_step",
+    0.3,
+    "peak"
    ],
    [
-    "A12+36",
+    "B5+10",
+    "room_tone",
+    0.1,
+    "onset",
+    "B7"
+   ],
+   [
+    "B6+30",
+    "copy_click",
+    0.4
+   ],
+   [
+    "B7",
+    "glitch",
+    0.1,
+    "onset",
+    "B7+40"
+   ],
+   [
+    "B8+56",
+    "drone_hit",
+    0.2,
+    "onset",
+    "B9"
+   ],
+   [
+    "B9+4",
+    "power_hum",
+    0.08,
+    "onset",
+    "B9+62"
+   ],
+   [
+    "B9+62",
     "power_down",
-    0.25,
+    0.35,
     "onset",
-    "A13"
+    "B10"
    ],
    [
-    "A12+40",
+    "B10+26",
+    "rewind",
+    0.3,
+    "onset",
+    "B8#2"
+   ],
+   [
+    "B11+84",
+    "select_draw",
+    0.25
+   ],
+   [
+    "B12+40",
     "heartbeat",
+    0.15,
+    "onset",
+    "B13"
+   ],
+   [
+    "B13+50",
+    "drone_hit",
     0.4,
     "onset",
-    "A13"
+    "B14"
    ],
    [
-    "A13",
-    "title_boom",
-    0.35,
-    "peak"
+    "B14+8",
+    "phone_ring",
+    0.55,
+    "onset",
+    "B14+38"
+   ],
+   [
+    "B14+46",
+    "phone_ring",
+    0.55,
+    "onset",
+    "B14+74"
+   ],
+   [
+    "B14+124",
+    "phone_ring",
+    0.45,
+    "onset",
+    "B17+10"
    ]
   ],
   "repeats": [
@@ -377,26 +570,41 @@
     ]
    },
    {
-    "at": "A13+62",
-    "clip": "bulb_pop",
-    "n": 14,
-    "every": 4,
+    "at": "B4+4",
+    "clip": "step",
+    "n": 8,
+    "every": 13,
     "gain": [
-     0.1,
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "B5+28",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
      0.2
     ],
     "pitch": [
-     0.85,
-     1.18
+     0.9,
+     1.1
     ]
    }
   ],
-  "levels": {
-   "sfx_lu": -4.0,
-   "music_lu": -13.0
-  },
   "music": {
-   "clip": "drone_bed"
+   "clip": "drone_bed",
+   "until": "B17+20"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
   }
  }
 }

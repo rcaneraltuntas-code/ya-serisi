@@ -53,21 +53,31 @@ const Wall: React.FC<{ xn: number; seed: number; lit: number }> = ({ xn, seed, l
  * The street. `lit` is the share of windows still lit (the people are gone, the lights are not), `lamps` switches the
  * street lamps. Draw cars and anything on the road after it, at sp(x, STREET_GROUND, d) with scale 1 / d.
  */
-export const Street: React.FC<{ t: number; id?: string; lit?: number; lamps?: number; veil?: number }> = ({ t, id = 'str', lit = 0.42, lamps = 1, veil = 0.34 }) => {
+export const Street: React.FC<{ t: number; id?: string; lit?: number; lamps?: number; veil?: number; night?: boolean }> = ({ t, id = 'str', lit = 0.42, lamps = 1, veil = 0.34, night = false }) => {
   const lampsAt = [1.9, 3.3, 5.6];
   return (
     <g>
       <DuskSky id={`${id}sky`} horizonY={STREET_VP.y + 50} />
-      <Sun x={STREET_VP.x} y={STREET_VP.y - 6} r={84} t={t} />
-      <Skyline y={STREET_VP.y + 52} seed={17} color="#30224C" h={110} />
-      <Haze y={STREET_VP.y + 10} h={200} o={0.5} />
+      {night ? (
+        <g>
+          <rect x={-3000} y={-3000} width={8000} height={3000 + STREET_VP.y + 60} fill="#0C0B18" />
+          {Array.from({ length: 40 }).map((_, i) => <circle key={i} cx={560 + rnd(71, i) * 800} cy={-900 + rnd(72, i) * 1380} r={1.2 + rnd(73, i) * 1.6} fill="#DDE6FF" opacity={0.25 + rnd(74, i) * 0.4} />)}
+          <Skyline y={STREET_VP.y + 52} seed={17} color="#15111F" h={110} />
+        </g>
+      ) : (
+        <g>
+          <Sun x={STREET_VP.x} y={STREET_VP.y - 6} r={84} t={t} />
+          <Skyline y={STREET_VP.y + 52} seed={17} color="#30224C" h={110} />
+          <Haze y={STREET_VP.y + 10} h={200} o={0.5} />
+        </g>
+      )}
       {/* the road and the pavements */}
       <polygon points={quad([[-2000, STREET_GROUND, 0.45], [4000, STREET_GROUND, 0.45], [4000, STREET_GROUND, 10], [-2000, STREET_GROUND, 10]])} fill="#27222F" />
       <polygon points={quad([[500, STREET_GROUND, 0.45], [640, STREET_GROUND, 0.45], [640, STREET_GROUND, 10], [500, STREET_GROUND, 10]])} fill="#3A3346" />
       <polygon points={quad([[1280, STREET_GROUND, 0.45], [1420, STREET_GROUND, 0.45], [1420, STREET_GROUND, 10], [1280, STREET_GROUND, 10]])} fill="#342E40" />
       <polygon points={quad([[640, STREET_GROUND, 0.45], [652, STREET_GROUND, 0.45], [652, STREET_GROUND, 10], [640, STREET_GROUND, 10]])} fill={S3.warm} opacity={0.25} />
       {/* the sun's long reflection down the middle of the road */}
-      <polygon points={quad([[900, STREET_GROUND, 1], [1020, STREET_GROUND, 1], [990, STREET_GROUND, 10], [930, STREET_GROUND, 10]])} fill="#FFB46A" opacity={0.16} />
+      <polygon points={quad([[900, STREET_GROUND, 1], [1020, STREET_GROUND, 1], [990, STREET_GROUND, 10], [930, STREET_GROUND, 10]])} fill="#FFB46A" opacity={night ? 0 : 0.16} />
       {[[1.15, 1.4], [1.75, 2.1], [2.6, 3.1], [3.9, 4.7], [6, 7.6]].map(([a, b], i) => (
         <polygon key={`d${i}`} points={quad([[952, STREET_GROUND, a], [968, STREET_GROUND, a], [968, STREET_GROUND, b], [952, STREET_GROUND, b]])} fill="#D9D2C2" opacity={0.5} />
       ))}
@@ -87,8 +97,8 @@ export const Street: React.FC<{ t: number; id?: string; lit?: number; lamps?: nu
           </g>
         );
       })}
-      <LightVeil id={`${id}veil`} lights={[[STREET_VP.x, STREET_VP.y, 430], ...lampsAt.map((d): [number, number, number] => [sp(1200, 300, d).x, sp(1200, 300, d).y, 300 / d])]} o={veil} />
-      <Glow x={STREET_VP.x} y={STREET_VP.y} r={420} o={0.42} />
+      <LightVeil id={`${id}veil`} lights={[...(night ? [] : [[STREET_VP.x, STREET_VP.y, 430] as [number, number, number]]), ...lampsAt.map((d): [number, number, number] => [sp(1200, 300, d).x, sp(1200, 300, d).y, 300 / d])]} o={veil} />
+      {night ? null : <Glow x={STREET_VP.x} y={STREET_VP.y} r={420} o={0.42} />}
     </g>
   );
 };

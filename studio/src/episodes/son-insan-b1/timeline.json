@@ -2,204 +2,204 @@
  "slug": "son-insan-b1",
  "title": "SON İNSAN BÖLÜM 1",
  "fps": 30,
- "total": 1790,
+ "total": 1822,
  "segments": [
   {
    "shot": "B1",
    "a": 0,
-   "b": 213,
+   "b": 215,
    "t0": 0,
-   "t1": 213,
+   "t1": 215,
    "line": "O sabah beni uyandıran… bir ses değildi. Sessizlikti."
   },
   {
    "shot": "B2",
-   "a": 213,
-   "b": 250,
+   "a": 215,
+   "b": 252,
    "t0": 0,
    "t1": 37,
    "line": "Anne?"
   },
   {
    "shot": "A2",
-   "a": 250,
-   "b": 298,
+   "a": 252,
+   "b": 300,
    "t0": 0,
    "t1": 48,
    "line": ""
   },
   {
    "shot": "A3",
-   "a": 298,
-   "b": 328,
+   "a": 300,
+   "b": 336,
    "t0": 0,
-   "t1": 30,
+   "t1": 36,
    "line": ""
   },
   {
    "shot": "A4",
-   "a": 328,
-   "b": 383,
+   "a": 336,
+   "b": 392,
    "t0": 0,
-   "t1": 55,
+   "t1": 56,
    "line": "Kahvesi masadaydı."
   },
   {
    "shot": "A6",
-   "a": 383,
-   "b": 451,
+   "a": 392,
+   "b": 462,
    "t0": 0,
-   "t1": 68,
+   "t1": 70,
    "line": "Hâlâ sıcaktı."
   },
   {
    "shot": "B3",
-   "a": 451,
-   "b": 478,
+   "a": 462,
+   "b": 489,
    "t0": 0,
    "t1": 27,
    "line": "Anne!"
   },
   {
    "shot": "A7",
-   "a": 478,
-   "b": 518,
+   "a": 489,
+   "b": 531,
    "t0": 0,
-   "t1": 40,
+   "t1": 42,
    "line": ""
   },
   {
    "shot": "A8",
-   "a": 518,
-   "b": 596,
+   "a": 531,
+   "b": 611,
    "t0": 0,
-   "t1": 78,
+   "t1": 80,
    "line": "Arabalar yolun ortasında durmuştu."
   },
   {
    "shot": "A9",
-   "a": 596,
-   "b": 634,
+   "a": 611,
+   "b": 645,
    "t0": 0,
-   "t1": 38,
+   "t1": 34,
    "line": "Kapıları açık…"
   },
   {
    "shot": "A10",
-   "a": 634,
-   "b": 697,
+   "a": 645,
+   "b": 713,
    "t0": 0,
-   "t1": 63,
+   "t1": 68,
    "line": "motorları çalışıyordu."
   },
   {
    "shot": "B4",
-   "a": 697,
-   "b": 815,
+   "a": 713,
+   "b": 826,
    "t0": 0,
-   "t1": 118,
+   "t1": 113,
    "line": "Sanki herkes… aynı anda inip gitmişti."
   },
   {
    "shot": "B5",
-   "a": 815,
-   "b": 880,
+   "a": 826,
+   "b": 893,
    "t0": 0,
-   "t1": 65,
+   "t1": 67,
    "line": ""
   },
   {
    "shot": "B6",
-   "a": 880,
-   "b": 959,
+   "a": 893,
+   "b": 980,
    "t0": 0,
-   "t1": 79,
+   "t1": 87,
    "line": ""
   },
   {
    "shot": "B7",
-   "a": 959,
-   "b": 1085,
-   "t0": 0,
-   "t1": 126,
+   "a": 980,
+   "b": 1101,
+   "t0": 9,
+   "t1": 130,
    "line": "Saat üç on yedide… herkes durdu."
   },
   {
    "shot": "B8",
-   "a": 1085,
-   "b": 1165,
+   "a": 1101,
+   "b": 1185,
    "t0": 0,
-   "t1": 80,
+   "t1": 84,
    "line": "Hepsi aynı yöne baktı."
   },
   {
    "shot": "B9",
-   "a": 1165,
-   "b": 1262,
+   "a": 1185,
+   "b": 1275,
    "t0": 0,
-   "t1": 97,
+   "t1": 90,
    "line": "Sonra… kayıt bitti."
   },
   {
    "shot": "B10",
-   "a": 1262,
-   "b": 1302,
+   "a": 1275,
+   "b": 1318,
    "t0": 0,
-   "t1": 40,
+   "t1": 43,
    "line": ""
   },
   {
    "shot": "B11",
-   "a": 1302,
-   "b": 1370,
+   "a": 1318,
+   "b": 1390,
    "t0": 0,
-   "t1": 68,
+   "t1": 72,
    "line": "Bir kişi hariç."
   },
   {
    "shot": "B12",
-   "a": 1370,
-   "b": 1473,
+   "a": 1390,
+   "b": 1494,
    "t0": 0,
-   "t1": 103,
+   "t1": 104,
    "line": "O… kameraya bakıyordu."
   },
   {
    "shot": "B13",
-   "a": 1473,
-   "b": 1530,
+   "a": 1494,
+   "b": 1552,
    "t0": 0,
-   "t1": 57,
+   "t1": 58,
    "line": "O bendim."
   },
   {
    "shot": "B14",
-   "a": 1530,
-   "b": 1606,
+   "a": 1552,
+   "b": 1638,
    "t0": 0,
-   "t1": 76,
+   "t1": 86,
    "line": ""
   },
   {
    "shot": "B15",
-   "a": 1606,
-   "b": 1680,
+   "a": 1638,
+   "b": 1712,
    "t0": 0,
    "t1": 74,
    "line": "Sakın kapıyı açma."
   },
   {
    "shot": "B16",
-   "a": 1680,
-   "b": 1745,
+   "a": 1712,
+   "b": 1777,
    "t0": 0,
    "t1": 65,
    "line": ""
   },
   {
    "shot": "B17",
-   "a": 1745,
-   "b": 1790,
+   "a": 1777,
+   "b": 1822,
    "t0": 0,
    "t1": 45,
    "line": ""
@@ -210,7 +210,7 @@
    "id": "B1",
    "size": "POV, uyanış",
    "key": 190,
-   "len": 213,
+   "len": 215,
    "first": 0,
    "line": "O sabah beni uyandıran… bir ses değildi. Sessizlikti.",
    "note": "gözler aralanır, açılır"
@@ -220,7 +220,7 @@
    "size": "POV, pan",
    "key": 24,
    "len": 37,
-   "first": 213,
+   "first": 215,
    "line": "Anne?",
    "note": "kapıya bakış"
   },
@@ -229,7 +229,7 @@
    "size": "POV, pencere",
    "key": 30,
    "len": 48,
-   "first": 250,
+   "first": 252,
    "line": "",
    "note": "boş sokak"
   },
@@ -237,8 +237,8 @@
    "id": "A3",
    "size": "ayna",
    "key": 18,
-   "len": 30,
-   "first": 298,
+   "len": 36,
+   "first": 300,
    "line": "",
    "note": "aynada sen"
   },
@@ -246,8 +246,8 @@
    "id": "A4",
    "size": "POV, geniş",
    "key": 25,
-   "len": 55,
-   "first": 328,
+   "len": 56,
+   "first": 336,
    "line": "Kahvesi masadaydı.",
    "note": "boş mutfak"
   },
@@ -255,8 +255,8 @@
    "id": "A6",
    "size": "makro",
    "key": 24,
-   "len": 68,
-   "first": 383,
+   "len": 70,
+   "first": 392,
    "line": "Hâlâ sıcaktı.",
    "note": "elin kupada"
   },
@@ -265,7 +265,7 @@
    "size": "POV, savrulma",
    "key": 22,
    "len": 27,
-   "first": 451,
+   "first": 462,
    "line": "Anne!",
    "note": "mutfaktan hole dönüş"
   },
@@ -273,8 +273,8 @@
    "id": "A7",
    "size": "POV, kapı",
    "key": 24,
-   "len": 40,
-   "first": 478,
+   "len": 42,
+   "first": 489,
    "line": "",
    "note": "kapı sokağa açılır"
   },
@@ -282,8 +282,8 @@
    "id": "A8",
    "size": "POV, geniş",
    "key": 50,
-   "len": 78,
-   "first": 518,
+   "len": 80,
+   "first": 531,
    "line": "Arabalar yolun ortasında durmuştu.",
    "note": "arabalar"
   },
@@ -291,8 +291,8 @@
    "id": "A9",
    "size": "medium",
    "key": 20,
-   "len": 38,
-   "first": 596,
+   "len": 34,
+   "first": 611,
    "line": "Kapıları açık…",
    "note": "açık kapı"
   },
@@ -300,8 +300,8 @@
    "id": "A10",
    "size": "makro",
    "key": 30,
-   "len": 63,
-   "first": 634,
+   "len": 68,
+   "first": 645,
    "line": "motorları çalışıyordu.",
    "note": "egzoz"
   },
@@ -309,8 +309,8 @@
    "id": "B4",
    "size": "POV, ilerleme",
    "key": 60,
-   "len": 118,
-   "first": 697,
+   "len": 113,
+   "first": 713,
    "line": "Sanki herkes… aynı anda inip gitmişti.",
    "note": "arabaların arasından"
   },
@@ -318,8 +318,8 @@
    "id": "B5",
    "size": "POV, kapı",
    "key": 30,
-   "len": 65,
-   "first": 815,
+   "len": 67,
+   "first": 826,
    "line": "",
    "note": "market kapıları açılır"
   },
@@ -327,8 +327,8 @@
    "id": "B6",
    "size": "POV, masa",
    "key": 44,
-   "len": 79,
-   "first": 880,
+   "len": 87,
+   "first": 893,
    "line": "",
    "note": "güvenlik odası, tuşa basış"
   },
@@ -336,8 +336,8 @@
    "id": "B7",
    "size": "kayıt, geniş",
    "key": 90,
-   "len": 126,
-   "first": 959,
+   "len": 130,
+   "first": 980,
    "line": "Saat üç on yedide… herkes durdu.",
    "note": "herkes aynı anda durur"
   },
@@ -345,8 +345,8 @@
    "id": "B8",
    "size": "kayıt, yakın",
    "key": 50,
-   "len": 80,
-   "first": 1085,
+   "len": 84,
+   "first": 1101,
    "line": "Hepsi aynı yöne baktı.",
    "note": "başlar kalkar"
   },
@@ -354,8 +354,8 @@
    "id": "B9",
    "size": "kayıt",
    "key": 40,
-   "len": 97,
-   "first": 1165,
+   "len": 90,
+   "first": 1185,
    "line": "Sonra… kayıt bitti.",
    "note": "ışık, sonra sinyal yok"
   },
@@ -363,8 +363,8 @@
    "id": "B10",
    "size": "kayıt, geri sarma",
    "key": 16,
-   "len": 40,
-   "first": 1262,
+   "len": 43,
+   "first": 1275,
    "line": "",
    "note": "geri sarar"
   },
@@ -372,8 +372,8 @@
    "id": "B11",
    "size": "kayıt, kaydırma",
    "key": 60,
-   "len": 68,
-   "first": 1302,
+   "len": 72,
+   "first": 1318,
    "line": "Bir kişi hariç.",
    "note": "bir kişi hariç"
   },
@@ -381,8 +381,8 @@
    "id": "B12",
    "size": "kayıt, yakın",
    "key": 50,
-   "len": 103,
-   "first": 1370,
+   "len": 104,
+   "first": 1390,
    "line": "O… kameraya bakıyordu.",
    "note": "karanlık yüz kameraya bakıyor"
   },
@@ -390,8 +390,8 @@
    "id": "B13",
    "size": "kayıt, çok yakın",
    "key": 30,
-   "len": 57,
-   "first": 1473,
+   "len": 58,
+   "first": 1494,
    "line": "O bendim.",
    "note": "yüz netleşir: sen"
   },
@@ -399,8 +399,8 @@
    "id": "B14",
    "size": "POV, telefon",
    "key": 40,
-   "len": 76,
-   "first": 1530,
+   "len": 86,
+   "first": 1552,
    "line": "",
    "note": "arayan: BEN"
   },
@@ -409,7 +409,7 @@
    "size": "POV, telefon",
    "key": 30,
    "len": 74,
-   "first": 1606,
+   "first": 1638,
    "line": "Sakın kapıyı açma.",
    "note": "hat açık, ses dalgası"
   },
@@ -418,7 +418,7 @@
    "size": "POV, kapı",
    "key": 30,
    "len": 65,
-   "first": 1680,
+   "first": 1712,
    "line": "",
    "note": "üç vuruş, kapının altında gölge"
   },
@@ -427,7 +427,7 @@
    "size": "son kart",
    "key": 30,
    "len": 45,
-   "first": 1745,
+   "first": 1777,
    "line": "",
    "note": "devamı 2. bölümde"
   }
@@ -437,33 +437,33 @@
    "kind": "flash",
    "color": "#DDF2FF",
    "o": 0.3,
-   "f": 1477
+   "f": 1498
   },
   {
    "kind": "shake",
    "len": 5,
    "amp": 8,
-   "f": 1692
+   "f": 1724
   },
   {
    "kind": "shake",
    "len": 5,
    "amp": 8,
-   "f": 1701
+   "f": 1733
   },
   {
    "kind": "shake",
    "len": 6,
    "amp": 10,
-   "f": 1710
+   "f": 1742
   }
  ],
  "audio": {
+  "voiceVol": 0.8,
+  "sfxVol": 0.3112,
+  "musicVol": 0.0297,
   "voice": "son-insan-b1/voice.wav",
   "sfx": "son-insan-b1/sfx.wav",
-  "voiceVol": 0.8,
-  "sfxVol": 0.2972,
-  "music": "son-insan-b1/music.wav",
-  "musicVol": 0.0287
+  "music": "son-insan-b1/music.wav"
  }
 }

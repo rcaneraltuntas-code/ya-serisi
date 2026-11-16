@@ -1,0 +1,850 @@
+{
+ "id": "SI11",
+ "slug": "si-11",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 11"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Elif elimi tuttu.",
+   "tag": "[softly]",
+   "pause": 1.2
+  },
+  {
+   "t": "Buz gibiydi.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Işık gökten gelmiyor, dedi.",
+   "tag": "[softly]",
+   "pause": 2.2
+  },
+  {
+   "t": "Nereden geliyor?",
+   "tag": "[curious]",
+   "pause": 2.0
+  },
+  {
+   "t": "Bizim çatıdan.",
+   "tag": "[whispers]",
+   "pause": 3.2
+  },
+  {
+   "t": "Merdivenleri çıktık.",
+   "tag": "[cautiously]",
+   "pause": 2.6
+  },
+  {
+   "t": "Kapı aralıktı.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Çatıda, korkuluğun yanında biri duruyordu.",
+   "tag": "[nervous]",
+   "pause": 1.4
+  },
+  {
+   "t": "Sırtı bize dönük.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Kapüşonunu tanıdım.",
+   "tag": "[trembling voice]",
+   "pause": 1.2
+  },
+  {
+   "t": "İplerini tanıdım.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Döndü.",
+   "pause": 2.6
+  },
+  {
+   "t": "Benim yüzümdü.",
+   "tag": "[trembling voice]",
+   "pause": 1.4
+  },
+  {
+   "t": "Ama çok yorgundu.",
+   "tag": "[softly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Nihayet, dedi.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Yirminci.",
+   "tag": "[deep voice] [whispers]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "phone",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "mode": "crack",
+    "rise": false,
+    "caller": "03:17",
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     4,
+     "phone_ring",
+     0.4,
+     30
+    ],
+    [
+     40,
+     "phone_ring",
+     0.3,
+     64
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "scene",
+   "at": 0,
+   "off": -2,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     190,
+     2.4
+    ],
+    "c2": [
+     "landing",
+     195,
+     2.6
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing"
+     }
+    ],
+    "hand": [
+     1010,
+     820,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "use": "scene",
+   "at": 2,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.4
+    ],
+    "c2": [
+     "landing",
+     218,
+     3.7
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing"
+     }
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 3,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     180,
+     2.2
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "use": "scene",
+   "at": 4,
+   "key": 40,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.0
+    ],
+    "c2": [
+     "landing",
+     330,
+     2.2
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "hold": true,
+      "up": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     30,
+     "drone_hit",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "floor",
+   "at": 5,
+   "key": 20,
+   "props": {
+    "floor": "boards",
+    "walk": 0.5,
+    "night": 0.45
+   },
+   "steps": 7
+  },
+  {
+   "id": "g",
+   "use": "door",
+   "at": 6,
+   "key": 90,
+   "props": {
+    "style": "roof",
+    "mode": "open",
+    "openAt": 44,
+    "behind": "dark",
+    "feet": false,
+    "pushHand": true
+   },
+   "sfx": [
+    [
+     40,
+     "roof_wind",
+     0.18,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 7,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     960,
+     600,
+     1.1
+    ],
+    "c2": [
+     960,
+     620,
+     1.25
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "back": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.16,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 9,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "edge",
+     240,
+     2.6
+    ],
+    "c2": [
+     "edge",
+     260,
+     3.2
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "back": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.14,
+     200
+    ],
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 11,
+   "key": 50,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "edge",
+     250,
+     3.0
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "back": true,
+      "turnAt": 16,
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     16,
+     "drone_hit",
+     0.4
+    ],
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     110
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 12,
+   "key": 60,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "edge",
+     325,
+     4.6
+    ],
+    "c2": [
+     "edge",
+     328,
+     5.4
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     220
+    ],
+    [
+     0,
+     "roof_wind",
+     0.12,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 14,
+   "key": 50,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "edge",
+     300,
+     3.6
+    ],
+    "c2": [
+     "edge",
+     320,
+     4.4
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     200
+    ],
+    [
+     70,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "card",
+   "after": 15,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 12. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Elif elimi tuttu."
+  },
+  {
+   "beat": "1",
+   "text": "Buz gibiydi."
+  },
+  {
+   "beat": "2",
+   "text": "Işık gökten gelmiyor, dedi."
+  },
+  {
+   "beat": "3",
+   "text": "Nereden geliyor?"
+  },
+  {
+   "beat": "4",
+   "text": "Bizim çatıdan."
+  },
+  {
+   "beat": "5",
+   "text": "Merdivenleri çıktık."
+  },
+  {
+   "beat": "6",
+   "text": "Kapı aralıktı."
+  },
+  {
+   "beat": "7",
+   "text": "Çatıda, korkuluğun yanında biri duruyordu."
+  },
+  {
+   "beat": "8",
+   "text": "Sırtı bize dönük."
+  },
+  {
+   "beat": "9",
+   "text": "Kapüşonunu tanıdım."
+  },
+  {
+   "beat": "10",
+   "text": "İplerini tanıdım."
+  },
+  {
+   "beat": "11",
+   "text": "Döndü."
+  },
+  {
+   "beat": "12",
+   "text": "Benim yüzümdü."
+  },
+  {
+   "beat": "13",
+   "text": "Ama çok yorgundu."
+  },
+  {
+   "beat": "14",
+   "text": "Nihayet, dedi."
+  },
+  {
+   "beat": "15",
+   "text": "Yirminci."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.21,
+   "L1": 2.63,
+   "L2": 2.23,
+   "L3": 2.02,
+   "L4": 3.24,
+   "L5": 2.63,
+   "L6": 2.83,
+   "L7": 1.42,
+   "L8": 2.43,
+   "L9": 1.21,
+   "L10": 2.83,
+   "L11": 2.63,
+   "L12": 1.42,
+   "L13": 2.83,
+   "L14": 1.42
+  }
+ },
+ "voice_fx": [],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:77"
+  },
+  {
+   "shot": "c",
+   "at": "f:248"
+  },
+  {
+   "shot": "d",
+   "at": "f:365"
+  },
+  {
+   "shot": "e",
+   "at": "f:448"
+  },
+  {
+   "shot": "f",
+   "at": "f:567"
+  },
+  {
+   "shot": "g",
+   "at": "f:679"
+  },
+  {
+   "shot": "h",
+   "at": "f:790"
+  },
+  {
+   "shot": "i",
+   "at": "f:1008"
+  },
+  {
+   "shot": "j",
+   "at": "f:1193"
+  },
+  {
+   "shot": "k",
+   "at": "f:1285"
+  },
+  {
+   "shot": "l",
+   "at": "f:1465"
+  },
+  {
+   "shot": "m",
+   "at": "f:1624"
+  }
+ ],
+ "end": "f:1712",
+ "sound": {
+  "clips": {
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "roof_wind": [
+    "a gentle evening breeze on a city rooftop, distant traffic",
+    7.0
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "a+4",
+    "phone_ring",
+    0.4,
+    "onset",
+    "a+30"
+   ],
+   [
+    "a+40",
+    "phone_ring",
+    0.3,
+    "onset",
+    "a+64"
+   ],
+   [
+    "e+30",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
+    "g+40",
+    "roof_wind",
+    0.18,
+    "onset",
+    "g+200"
+   ],
+   [
+    "h+0",
+    "roof_wind",
+    0.16,
+    "onset",
+    "h+200"
+   ],
+   [
+    "i+0",
+    "roof_wind",
+    0.14,
+    "onset",
+    "i+200"
+   ],
+   [
+    "i+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "i+88"
+   ],
+   [
+    "i+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "i+170"
+   ],
+   [
+    "j+16",
+    "drone_hit",
+    0.4,
+    "onset"
+   ],
+   [
+    "j+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+88"
+   ],
+   [
+    "j+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+110"
+   ],
+   [
+    "k+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+88"
+   ],
+   [
+    "k+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+176"
+   ],
+   [
+    "k+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+220"
+   ],
+   [
+    "k+0",
+    "roof_wind",
+    0.12,
+    "onset",
+    "k+200"
+   ],
+   [
+    "l+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+88"
+   ],
+   [
+    "l+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+176"
+   ],
+   [
+    "l+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+200"
+   ],
+   [
+    "l+70",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "f+4",
+    "clip": "step",
+    "n": 7,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

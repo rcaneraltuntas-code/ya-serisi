@@ -60,7 +60,7 @@ const KidDesk: React.FC<{ u: number; w: number }> = ({ u, w }) => {
 };
 
 /** `board` replaces the default sum (7 x 8 = ?) with your own chalk; the writing area is x 426-1054, y 196-524. */
-export const Classroom: React.FC<{ t: number; solved?: boolean; wrong?: boolean; laugh?: number; id?: string; board?: React.ReactNode }> = ({ t, solved = false, wrong = false, laugh = 0, id = 'cls', board }) => {
+export const Classroom: React.FC<{ t: number; solved?: boolean; wrong?: boolean; laugh?: number; id?: string; board?: React.ReactNode; empty?: boolean }> = ({ t, solved = false, wrong = false, laugh = 0, id = 'cls', board, empty = false }) => {
   const r = CLS;
   const { P, Q } = r;
   const tiles: React.ReactNode[] = [];
@@ -229,7 +229,7 @@ export const Classroom: React.FC<{ t: number; solved?: boolean; wrong?: boolean;
                 const c = ['#B0463A', '#3E6A8A', '#6A8A4A', '#8A5A9A'][(ri * 2 + ui) % 4];
                 return <path d={`M ${bp.x - 22 * k} ${bp.y} L ${bp.x - 24 * k} ${bp.y - 50 * k} Q ${bp.x} ${bp.y - 66 * k} ${bp.x + 24 * k} ${bp.y - 50 * k} L ${bp.x + 22 * k} ${bp.y} Z`} fill={c} />;
               })()}
-              <Kid x={seat.x} y={seat.y - 70 * k} s={0.55 * k} look={KIDS[(ri * 2 + ui) % KIDS.length]} turn={laugh > 0 && (ri + ui) % 2 === 0 ? 1 : 0} laugh={laugh} t={t} />
+              {empty ? null : <Kid x={seat.x} y={seat.y - 70 * k} s={0.55 * k} look={KIDS[(ri * 2 + ui) % KIDS.length]} turn={laugh > 0 && (ri + ui) % 2 === 0 ? 1 : 0} laugh={laugh} t={t} />}
             </g>
           );
         }),

@@ -1,0 +1,883 @@
+{
+ "id": "SI14",
+ "slug": "si-14",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 14"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Kural basit, dedi.",
+   "tag": "[deep voice]",
+   "pause": 1.4
+  },
+  {
+   "t": "Üç on yedide ışığa bakan… sabaha çıkar.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 2.8
+  },
+  {
+   "t": "O zaman sen neden çıkmadın?",
+   "tag": "[nervous]",
+   "pause": 2.6
+  },
+  {
+   "t": "Elindekini gösterdi.",
+   "tag": "[softly]",
+   "pause": 1.2
+  },
+  {
+   "t": "Bir ayna parçası.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Işığı, biri tutmak zorunda.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Tutan… bakamaz.",
+   "tag": "[deep voice] [whispers]",
+   "pause": 3.0
+  },
+  {
+   "t": "Dört yüz on iki gecedir, herkesi ben gönderiyorum.",
+   "tag": "[deep voice] [softly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Pencerelerdekiler?",
+   "tag": "[nervous]",
+   "pause": 2.2
+  },
+  {
+   "t": "Onlar yankı.",
+   "tag": "[deep voice]",
+   "pause": 1.0
+  },
+  {
+   "t": "Gidenlerin bıraktığı.",
+   "tag": "[deep voice] [whispers]",
+   "pause": 3.0
+  },
+  {
+   "t": "Elif elimi sıktı.",
+   "tag": "[softly]",
+   "pause": 2.2
+  },
+  {
+   "t": "Yalan söylüyor abi.",
+   "tag": "[whispers] [nervous]",
+   "pause": 1.4
+  },
+  {
+   "t": "Işığı tutan, gidemez.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Seni yerine bırakacak.",
+   "tag": "[trembling voice] [slowly]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     540,
+     1.2
+    ],
+    "c2": [
+     960,
+     540,
+     1.3
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "use": "scene",
+   "at": 0,
+   "off": -2,
+   "key": 20,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     310,
+     1.7
+    ],
+    "c2": [
+     "near",
+     315,
+     1.8
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.14,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "tape",
+   "at": 1,
+   "key": 70,
+   "props": {
+    "tau": [
+     70,
+     124
+    ],
+    "light": [
+     [
+      0,
+      0.15
+     ],
+     [
+      80,
+      0.95
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "power_hum",
+     0.16,
+     88
+    ],
+    [
+     84,
+     "power_hum",
+     0.22,
+     172
+    ]
+   ]
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 2,
+   "key": 30,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     325,
+     2.3
+    ],
+    "c2": [
+     "near",
+     328,
+     2.6
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "use": "shard",
+   "at": 3,
+   "key": 40,
+   "props": {},
+   "sfx": [
+    [
+     6,
+     "clink",
+     0.12
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "shard",
+   "at": 5,
+   "key": 70,
+   "props": {
+    "light": [
+     [
+      0,
+      0
+     ],
+     [
+      70,
+      0.85
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     4,
+     "power_hum",
+     0.16,
+     92
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 6,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     325,
+     2.6
+    ],
+    "c2": [
+     "near",
+     328,
+     3.0
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired",
+      "eyesShut": true
+     }
+    ],
+    "light": [
+     [
+      0,
+      0.3
+     ],
+     [
+      40,
+      0.12
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 7,
+   "key": 70,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     960,
+     620,
+     1.1
+    ],
+    "c2": [
+     960,
+     600,
+     1.25
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "edge",
+      "back": true,
+      "hold": true
+     }
+    ],
+    "light": [
+     [
+      0,
+      0
+     ],
+     [
+      70,
+      0.4
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.16,
+     200
+    ],
+    [
+     0,
+     "power_hum",
+     0.12,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 8,
+   "key": 30,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     400,
+     1.1
+    ],
+    "c2": [
+     960,
+     390,
+     1.2
+    ],
+    "echoes": true
+   }
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 9,
+   "key": 40,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     1100,
+     330,
+     2.0
+    ],
+    "c2": [
+     1095,
+     325,
+     2.4
+    ],
+    "echoes": true
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.2,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.2,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 11,
+   "key": 30,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "nearL",
+     220,
+     2.3
+    ],
+    "c2": [
+     "nearL",
+     225,
+     2.5
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "nearL"
+     }
+    ],
+    "hand": [
+     1010,
+     830,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 12,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "nearL",
+     238,
+     3.2
+    ],
+    "c2": [
+     "nearL",
+     240,
+     3.6
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "nearL",
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.25,
+     220
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "scene",
+   "at": 14,
+   "key": 60,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     320,
+     2.0
+    ],
+    "c2": [
+     "near",
+     328,
+     2.9
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     200
+    ],
+    [
+     30,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "card",
+   "after": 14,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 15. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Kural basit, dedi."
+  },
+  {
+   "beat": "1",
+   "text": "Üç on yedide ışığa bakan… sabaha çıkar."
+  },
+  {
+   "beat": "2",
+   "text": "O zaman sen neden çıkmadın?"
+  },
+  {
+   "beat": "3",
+   "text": "Elindekini gösterdi."
+  },
+  {
+   "beat": "4",
+   "text": "Bir ayna parçası."
+  },
+  {
+   "beat": "5",
+   "text": "Işığı, biri tutmak zorunda."
+  },
+  {
+   "beat": "6",
+   "text": "Tutan… bakamaz."
+  },
+  {
+   "beat": "7",
+   "text": "Dört yüz on iki gecedir, herkesi ben gönderiyorum."
+  },
+  {
+   "beat": "8",
+   "text": "Pencerelerdekiler?"
+  },
+  {
+   "beat": "9",
+   "text": "Onlar yankı."
+  },
+  {
+   "beat": "10",
+   "text": "Gidenlerin bıraktığı."
+  },
+  {
+   "beat": "11",
+   "text": "Elif elimi sıktı."
+  },
+  {
+   "beat": "12",
+   "text": "Yalan söylüyor abi."
+  },
+  {
+   "beat": "13",
+   "text": "Işığı tutan, gidemez."
+  },
+  {
+   "beat": "14",
+   "text": "Seni yerine bırakacak."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.27,
+   "L1": 2.53,
+   "L2": 2.35,
+   "L3": 1.09,
+   "L4": 2.53,
+   "L5": 1.27,
+   "L6": 2.71,
+   "L7": 2.53,
+   "L8": 1.99,
+   "L9": 0.9,
+   "L10": 2.71,
+   "L11": 1.99,
+   "L12": 1.27,
+   "L13": 2.17
+  }
+ },
+ "voice_fx": [],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:77"
+  },
+  {
+   "shot": "c",
+   "at": "f:161"
+  },
+  {
+   "shot": "d",
+   "at": "f:330"
+  },
+  {
+   "shot": "e",
+   "at": "f:448"
+  },
+  {
+   "shot": "f",
+   "at": "f:621"
+  },
+  {
+   "shot": "g",
+   "at": "f:716"
+  },
+  {
+   "shot": "h",
+   "at": "f:834"
+  },
+  {
+   "shot": "i",
+   "at": "f:988"
+  },
+  {
+   "shot": "j",
+   "at": "f:1078"
+  },
+  {
+   "shot": "k",
+   "at": "f:1246"
+  },
+  {
+   "shot": "l",
+   "at": "f:1336"
+  },
+  {
+   "shot": "m",
+   "at": "f:1518"
+  },
+  {
+   "shot": "n",
+   "at": "f:1625"
+  }
+ ],
+ "end": "f:1713",
+ "sound": {
+  "clips": {
+   "clink": [
+    "a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape",
+    0.7
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "roof_wind": [
+    "a gentle evening breeze on a city rooftop, distant traffic",
+    7.0
+   ]
+  },
+  "events": [
+   [
+    "b+0",
+    "roof_wind",
+    0.14,
+    "onset",
+    "b+200"
+   ],
+   [
+    "c+0",
+    "power_hum",
+    0.16,
+    "onset",
+    "c+88"
+   ],
+   [
+    "c+84",
+    "power_hum",
+    0.22,
+    "onset",
+    "c+172"
+   ],
+   [
+    "e+6",
+    "clink",
+    0.12,
+    "onset"
+   ],
+   [
+    "f+4",
+    "power_hum",
+    0.16,
+    "onset",
+    "f+92"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+170"
+   ],
+   [
+    "h+0",
+    "roof_wind",
+    0.16,
+    "onset",
+    "h+200"
+   ],
+   [
+    "h+0",
+    "power_hum",
+    0.12,
+    "onset",
+    "h+88"
+   ],
+   [
+    "j+0",
+    "heartbeat",
+    0.2,
+    "onset",
+    "j+88"
+   ],
+   [
+    "j+88",
+    "heartbeat",
+    0.2,
+    "onset",
+    "j+170"
+   ],
+   [
+    "l+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "l+88"
+   ],
+   [
+    "l+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "l+176"
+   ],
+   [
+    "l+176",
+    "heartbeat",
+    0.25,
+    "onset",
+    "l+220"
+   ],
+   [
+    "m+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "m+88"
+   ],
+   [
+    "m+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "m+176"
+   ],
+   [
+    "m+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "m+200"
+   ],
+   [
+    "m+30",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

@@ -1,0 +1,835 @@
+{
+ "id": "SI06",
+ "slug": "si-06",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 6"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Koştum.",
+   "tag": "[breathless]",
+   "pause": 0.9
+  },
+  {
+   "t": "Önüne geçtim.",
+   "pause": 1.6
+  },
+  {
+   "t": "Kıpırdamıyordu.",
+   "tag": "[whispers]",
+   "pause": 2.0
+  },
+  {
+   "t": "Gözleri açıktı.",
+   "tag": "[nervous]",
+   "pause": 1.2
+  },
+  {
+   "t": "İçlerinde, o ışık hâlâ yanıyordu.",
+   "tag": "[trembling voice]",
+   "pause": 2.6
+  },
+  {
+   "t": "Anne… benim.",
+   "tag": "[softly]",
+   "pause": 3.0
+  },
+  {
+   "t": "Başını yavaşça indirdi.",
+   "tag": "[slowly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Bana baktı.",
+   "tag": "[whispers]",
+   "pause": 2.2
+  },
+  {
+   "t": "Ve annemin sesiyle, tek bir kelime söyledi.",
+   "tag": "[nervous]",
+   "pause": 2.0
+  },
+  {
+   "t": "Bak.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "O artık annen değil.",
+   "tag": "[deep voice]",
+   "pause": 0.8,
+   "fx": "phone"
+  },
+  {
+   "t": "Koş.",
+   "tag": "[deep voice]",
+   "pause": 1.4,
+   "fx": "phone"
+  },
+  {
+   "t": "Koştum.",
+   "tag": "[breathless]",
+   "pause": 2.4
+  },
+  {
+   "t": "Arkamda, sokaktaki bütün pencereler aynı anda yandı.",
+   "tag": "[nervous]",
+   "pause": 1.6
+  },
+  {
+   "t": "Her pencerede biri vardı.",
+   "tag": "[whispers]",
+   "pause": 1.2
+  },
+  {
+   "t": "Hepsi gökyüzüne bakıyordu.",
+   "pause": 2.6
+  },
+  {
+   "t": "Sonra hepsi… bana döndü.",
+   "tag": "[trembling voice] [slowly]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "end",
+     240,
+     3.2
+    ],
+    "c2": [
+     "end",
+     240,
+     3.6
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "end",
+      "back": true,
+      "up": true,
+      "behind": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "use": "floor",
+   "at": 0,
+   "off": 2,
+   "key": 20,
+   "props": {
+    "floor": "asphalt",
+    "shoes": true,
+    "walk": 1.1,
+    "night": 0.5
+   },
+   "steps": 6
+  },
+  {
+   "id": "c",
+   "use": "scene",
+   "at": 1,
+   "key": 30,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "close",
+     240,
+     1.25
+    ],
+    "c2": [
+     "close",
+     260,
+     1.4
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "close",
+      "up": true,
+      "glow": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 3,
+   "key": 60,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "close",
+     320,
+     2.3
+    ],
+    "c2": [
+     "close",
+     325,
+     2.8
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "close",
+      "up": true,
+      "glow": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     170
+    ],
+    [
+     10,
+     "power_hum",
+     0.1,
+     98
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "scene",
+   "at": 5,
+   "key": 40,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "close",
+     260,
+     1.5
+    ],
+    "c2": [
+     "close",
+     270,
+     1.6
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "close",
+      "up": true,
+      "glow": true
+     }
+    ],
+    "hand": [
+     1010,
+     700,
+     0.8
+    ]
+   }
+  },
+  {
+   "id": "f",
+   "use": "scene",
+   "at": 6,
+   "key": 70,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "close",
+     310,
+     1.9
+    ],
+    "c2": [
+     "close",
+     320,
+     2.3
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "close",
+      "up": true,
+      "glow": true,
+      "upUntil": 34
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 8,
+   "key": 60,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     "close",
+     325,
+     2.8
+    ],
+    "c2": [
+     "close",
+     328,
+     3.3
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "close",
+      "glow": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.35,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.35,
+     170
+    ],
+    [
+     118,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "phone",
+   "at": 10,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "street",
+    "bgp": {
+     "lit": 0.16,
+     "dead": true,
+     "night": true
+    }
+   },
+   "sfx": [
+    [
+     0,
+     "copy_click",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "i",
+   "use": "floor",
+   "at": 12,
+   "key": 20,
+   "props": {
+    "floor": "asphalt",
+    "shoes": true,
+    "walk": 1.3,
+    "night": 0.5
+   },
+   "steps": 7
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 13,
+   "key": 40,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     400,
+     1.08
+    ],
+    "c2": [
+     960,
+     380,
+     1.16
+    ],
+    "echoes": true,
+    "bob": 0.2
+   },
+   "sfx": [
+    [
+     2,
+     "switch_off",
+     0.35
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 14,
+   "key": 30,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     820,
+     330,
+     1.9
+    ],
+    "c2": [
+     830,
+     320,
+     2.2
+    ],
+    "echoes": true
+   }
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 16,
+   "key": 110,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     400,
+     1.1
+    ],
+    "c2": [
+     960,
+     390,
+     1.3
+    ],
+    "echoes": "turn",
+    "turnAt": 58
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     200
+    ],
+    [
+     60,
+     "drone_hit",
+     0.45
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "card",
+   "after": 16,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 7. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Koştum."
+  },
+  {
+   "beat": "1",
+   "text": "Önüne geçtim."
+  },
+  {
+   "beat": "2",
+   "text": "Kıpırdamıyordu."
+  },
+  {
+   "beat": "3",
+   "text": "Gözleri açıktı."
+  },
+  {
+   "beat": "4",
+   "text": "İçlerinde, o ışık hâlâ yanıyordu."
+  },
+  {
+   "beat": "5",
+   "text": "Anne… benim."
+  },
+  {
+   "beat": "6",
+   "text": "Başını yavaşça indirdi."
+  },
+  {
+   "beat": "7",
+   "text": "Bana baktı."
+  },
+  {
+   "beat": "8",
+   "text": "Ve annemin sesiyle, tek bir kelime söyledi."
+  },
+  {
+   "beat": "9",
+   "text": "Bak."
+  },
+  {
+   "beat": "10",
+   "text": "O artık annen değil."
+  },
+  {
+   "beat": "11",
+   "text": "Koş."
+  },
+  {
+   "beat": "12",
+   "text": "Koştum."
+  },
+  {
+   "beat": "13",
+   "text": "Arkamda, sokaktaki bütün pencereler aynı anda yandı."
+  },
+  {
+   "beat": "14",
+   "text": "Her pencerede biri vardı."
+  },
+  {
+   "beat": "15",
+   "text": "Hepsi gökyüzüne bakıyordu."
+  },
+  {
+   "beat": "16",
+   "text": "Sonra hepsi… bana döndü."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 0.85,
+   "L1": 1.52,
+   "L2": 1.9,
+   "L3": 1.14,
+   "L4": 2.47,
+   "L5": 2.85,
+   "L6": 1.33,
+   "L7": 2.09,
+   "L8": 1.9,
+   "L9": 2.66,
+   "L10": 0.76,
+   "L11": 1.33,
+   "L12": 2.28,
+   "L13": 1.52,
+   "L14": 1.14,
+   "L15": 2.47
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L10",
+   "to": "L10",
+   "fx": "phone"
+  },
+  {
+   "from": "L11",
+   "to": "L11",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:82"
+  },
+  {
+   "shot": "c",
+   "at": "f:122"
+  },
+  {
+   "shot": "d",
+   "at": "f:277"
+  },
+  {
+   "shot": "e",
+   "at": "f:486"
+  },
+  {
+   "shot": "f",
+   "at": "f:607"
+  },
+  {
+   "shot": "g",
+   "at": "f:776"
+  },
+  {
+   "shot": "h",
+   "at": "f:995"
+  },
+  {
+   "shot": "i",
+   "at": "f:1106"
+  },
+  {
+   "shot": "j",
+   "at": "f:1190"
+  },
+  {
+   "shot": "k",
+   "at": "f:1330"
+  },
+  {
+   "shot": "l",
+   "at": "f:1518"
+  },
+  {
+   "shot": "m",
+   "at": "f:1628"
+  }
+ ],
+ "end": "f:1716",
+ "sound": {
+  "clips": {
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "d+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "d+88"
+   ],
+   [
+    "d+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "d+170"
+   ],
+   [
+    "d+10",
+    "power_hum",
+    0.1,
+    "onset",
+    "d+98"
+   ],
+   [
+    "f+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "f+88"
+   ],
+   [
+    "f+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "f+170"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.35,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.35,
+    "onset",
+    "g+170"
+   ],
+   [
+    "g+118",
+    "drone_hit",
+    0.4,
+    "onset"
+   ],
+   [
+    "h+0",
+    "copy_click",
+    0.3,
+    "onset"
+   ],
+   [
+    "j+2",
+    "switch_off",
+    0.35,
+    "onset"
+   ],
+   [
+    "l+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+88"
+   ],
+   [
+    "l+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+176"
+   ],
+   [
+    "l+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+200"
+   ],
+   [
+    "l+60",
+    "drone_hit",
+    0.45,
+    "onset"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "b+4",
+    "clip": "step",
+    "n": 6,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "i+4",
+    "clip": "step",
+    "n": 7,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

@@ -1,0 +1,713 @@
+{
+ "id": "SI04",
+ "slug": "si-04",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 4"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Telefonu cebimden çıkardım.",
+   "tag": "[nervous]",
+   "pause": 1.2
+  },
+  {
+   "t": "Ekran açıktı.",
+   "pause": 1.6
+  },
+  {
+   "t": "Arama devam ediyordu.",
+   "tag": "[whispers]",
+   "pause": 1.0
+  },
+  {
+   "t": "Kırk yedi dakikadır.",
+   "tag": "[slowly]",
+   "pause": 2.4
+  },
+  {
+   "t": "Hiç kapatmamıştım.",
+   "tag": "[trembling voice]",
+   "pause": 1.0
+  },
+  {
+   "t": "Her şeyi duymuştu.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Kapattım.",
+   "pause": 3.2
+  },
+  {
+   "t": "Hemen yeniden çaldı.",
+   "tag": "[nervous]",
+   "pause": 2.0
+  },
+  {
+   "t": "Kapatma.",
+   "tag": "[deep voice]",
+   "pause": 0.9,
+   "fx": "phone"
+  },
+  {
+   "t": "Seni bir tek ben koruyabilirim.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 2.0,
+   "fx": "phone"
+  },
+  {
+   "t": "Saate bak.",
+   "tag": "[deep voice]",
+   "pause": 1.6,
+   "fx": "phone"
+  },
+  {
+   "t": "Baktım.",
+   "tag": "[softly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Sabah değildi artık.",
+   "tag": "[nervous]",
+   "pause": 1.8
+  },
+  {
+   "t": "Üç on altıydı.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Bir dakikan var.",
+   "tag": "[deep voice]",
+   "pause": 1.2,
+   "fx": "phone"
+  },
+  {
+   "t": "Ne olursa olsun… yukarı bakma.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.2,
+   "fx": "phone"
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "mirror",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "mode": "write",
+    "lines": [
+     "O SENİ",
+     "DİNLİYOR."
+    ],
+    "at": -40,
+    "size": 54
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     80
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "phone",
+   "at": 0,
+   "off": 6,
+   "key": 40,
+   "props": {
+    "mode": "call",
+    "timer": "47",
+    "bg": "kitchen",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "c",
+   "use": "paper",
+   "at": 4,
+   "key": 10,
+   "props": {
+    "kind": "note",
+    "lines": [
+     "SANA \"AÇMA\" DEDİ,",
+     "DEĞİL Mİ?",
+     "",
+     "ONA GÜVENME."
+    ],
+    "size": 46,
+    "at": -30,
+    "gap": 70,
+    "y": 420,
+    "bg": "market",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "d",
+   "use": "mirror",
+   "at": 5,
+   "key": 20,
+   "props": {
+    "mode": "write",
+    "lines": [
+     "O SENİ",
+     "DİNLİYOR."
+    ],
+    "at": -40,
+    "size": 54
+   },
+   "sfx": [
+    [
+     4,
+     "drone_hit",
+     0.25
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "phone",
+   "at": 6,
+   "key": 20,
+   "props": {
+    "mode": "call",
+    "timer": "47",
+    "rise": false,
+    "hand": [
+     1010,
+     800,
+     0.8,
+     "point"
+    ],
+    "bg": "kitchen",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     22,
+     "copy_click",
+     0.35
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "blank",
+   "after": 6,
+   "off": 10,
+   "key": 10,
+   "props": {}
+  },
+  {
+   "id": "g",
+   "use": "phone",
+   "after": 6,
+   "off": 44,
+   "key": 20,
+   "props": {
+    "mode": "ring",
+    "bg": "kitchen",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "phone",
+   "at": 8,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "kitchen",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     0,
+     "copy_click",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "i",
+   "use": "watch",
+   "at": 11,
+   "key": 30,
+   "props": {
+    "text": "03:16",
+    "bg": "kitchen",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     8,
+     "drone_hit",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 12,
+   "key": 50,
+   "props": {
+    "set": "kitchen",
+    "dark": [
+     [
+      0,
+      0.0
+     ],
+     [
+      50,
+      0.62
+     ]
+    ],
+    "c": [
+     960,
+     500,
+     1.1
+    ],
+    "c2": [
+     960,
+     470,
+     1.25
+    ]
+   },
+   "sfx": [
+    [
+     2,
+     "power_down",
+     0.25
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "watch",
+   "at": 13,
+   "key": 30,
+   "props": {
+    "text": "03:16",
+    "blink": true,
+    "bg": "kitchen",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     150
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "phone",
+   "at": 14,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "kitchen",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "m",
+   "use": "scene",
+   "at": 15,
+   "off": 30,
+   "key": 120,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     560,
+     1.02
+    ],
+    "c2": [
+     960,
+     520,
+     1.12
+    ],
+    "light": [
+     [
+      40,
+      0
+     ],
+     [
+      150,
+      0.3
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     40,
+     "power_hum",
+     0.12,
+     130
+    ],
+    [
+     126,
+     "power_hum",
+     0.16,
+     216
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "card",
+   "after": 15,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 5. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Telefonu cebimden çıkardım."
+  },
+  {
+   "beat": "1",
+   "text": "Ekran açıktı."
+  },
+  {
+   "beat": "2",
+   "text": "Arama devam ediyordu."
+  },
+  {
+   "beat": "3",
+   "text": "Kırk yedi dakikadır."
+  },
+  {
+   "beat": "4",
+   "text": "Hiç kapatmamıştım."
+  },
+  {
+   "beat": "5",
+   "text": "Her şeyi duymuştu."
+  },
+  {
+   "beat": "6",
+   "text": "Kapattım."
+  },
+  {
+   "beat": "7",
+   "text": "Hemen yeniden çaldı."
+  },
+  {
+   "beat": "8",
+   "text": "Kapatma."
+  },
+  {
+   "beat": "9",
+   "text": "Seni bir tek ben koruyabilirim."
+  },
+  {
+   "beat": "10",
+   "text": "Saate bak."
+  },
+  {
+   "beat": "11",
+   "text": "Baktım."
+  },
+  {
+   "beat": "12",
+   "text": "Sabah değildi artık."
+  },
+  {
+   "beat": "13",
+   "text": "Üç on altıydı."
+  },
+  {
+   "beat": "14",
+   "text": "Bir dakikan var."
+  },
+  {
+   "beat": "15",
+   "text": "Ne olursa olsun… yukarı bakma."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.49,
+   "L1": 1.98,
+   "L2": 1.24,
+   "L3": 2.98,
+   "L4": 1.24,
+   "L5": 2.98,
+   "L6": 3.97,
+   "L7": 2.48,
+   "L8": 1.12,
+   "L9": 2.48,
+   "L10": 1.98,
+   "L11": 1.74,
+   "L12": 2.23,
+   "L13": 2.98,
+   "L14": 1.49
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L8",
+   "to": "L8",
+   "fx": "phone"
+  },
+  {
+   "from": "L9",
+   "to": "L9",
+   "fx": "phone"
+  },
+  {
+   "from": "L10",
+   "to": "L10",
+   "fx": "phone"
+  },
+  {
+   "from": "L14",
+   "to": "L14",
+   "fx": "phone"
+  },
+  {
+   "from": "L15",
+   "to": "L15",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:90"
+  },
+  {
+   "shot": "c",
+   "at": "f:467"
+  },
+  {
+   "shot": "d",
+   "at": "f:537"
+  },
+  {
+   "shot": "e",
+   "at": "f:659"
+  },
+  {
+   "shot": "f",
+   "at": "f:685"
+  },
+  {
+   "shot": "g",
+   "at": "f:719"
+  },
+  {
+   "shot": "h",
+   "at": "f:900"
+  },
+  {
+   "shot": "i",
+   "at": "f:1162"
+  },
+  {
+   "shot": "j",
+   "at": "f:1225"
+  },
+  {
+   "shot": "k",
+   "at": "f:1327"
+  },
+  {
+   "shot": "l",
+   "at": "f:1440"
+  },
+  {
+   "shot": "m",
+   "at": "f:1545"
+  },
+  {
+   "shot": "n",
+   "at": "f:1631"
+  }
+ ],
+ "end": "f:1719",
+ "sound": {
+  "clips": {
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "power_down": [
+    "a whole city losing power, a deep electrical power-down whine dropping in pitch into silence",
+    2.5
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ]
+  },
+  "events": [
+   [
+    "a+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "a+80"
+   ],
+   [
+    "d+4",
+    "drone_hit",
+    0.25,
+    "onset"
+   ],
+   [
+    "e+22",
+    "copy_click",
+    0.35,
+    "onset"
+   ],
+   [
+    "g+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "g+34"
+   ],
+   [
+    "g+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "g+72"
+   ],
+   [
+    "g+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "g+108"
+   ],
+   [
+    "h+0",
+    "copy_click",
+    0.3,
+    "onset"
+   ],
+   [
+    "i+8",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
+    "j+2",
+    "power_down",
+    0.25,
+    "onset"
+   ],
+   [
+    "k+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "k+88"
+   ],
+   [
+    "k+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "k+150"
+   ],
+   [
+    "m+40",
+    "power_hum",
+    0.12,
+    "onset",
+    "m+130"
+   ],
+   [
+    "m+126",
+    "power_hum",
+    0.16,
+    "onset",
+    "m+216"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

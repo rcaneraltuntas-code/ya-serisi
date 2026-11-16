@@ -1,0 +1,959 @@
+{
+ "id": "SI09",
+ "slug": "si-09",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 9"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Elif?",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Mırıldanma kesildi.",
+   "tag": "[softly]",
+   "pause": 1.6
+  },
+  {
+   "t": "Döndü.",
+   "pause": 1.4
+  },
+  {
+   "t": "Gözleri normaldi.",
+   "tag": "[softly]",
+   "pause": 2.4
+  },
+  {
+   "t": "Beni görünce sevinmedi.",
+   "tag": "[nervous]",
+   "pause": 1.2
+  },
+  {
+   "t": "Bir adım geri çekildi.",
+   "pause": 2.4
+  },
+  {
+   "t": "Abi… sen hangisisin?",
+   "tag": "[whispers] [cautiously]",
+   "pause": 3.0
+  },
+  {
+   "t": "Ne demek hangisi?",
+   "tag": "[curious]",
+   "pause": 2.0
+  },
+  {
+   "t": "Telefonun var mı?",
+   "tag": "[nervous]",
+   "pause": 0.8
+  },
+  {
+   "t": "Varsa at.",
+   "pause": 1.2
+  },
+  {
+   "t": "O telefondaki… sen değilsin.",
+   "tag": "[whispers] [slowly]",
+   "pause": 3.0
+  },
+  {
+   "t": "Cebimdeki telefon titredi.",
+   "tag": "[nervous]",
+   "pause": 1.4
+  },
+  {
+   "t": "Açmadım.",
+   "tag": "[softly]",
+   "pause": 2.4
+  },
+  {
+   "t": "Kendi kendine açıldı.",
+   "tag": "[trembling voice]",
+   "pause": 2.4
+  },
+  {
+   "t": "Elif'e inanma.",
+   "tag": "[deep voice]",
+   "pause": 1.2,
+   "fx": "phone"
+  },
+  {
+   "t": "Elif o gece yukarı baktı.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.6,
+   "fx": "phone"
+  },
+  {
+   "t": "Ben gördüm.",
+   "tag": "[deep voice] [whispers]",
+   "pause": 1.2,
+   "fx": "phone"
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     190,
+     2.4
+    ],
+    "c2": [
+     "step",
+     190,
+     2.5
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "back": true,
+      "sway": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "hum",
+     0.4,
+     62
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "scene",
+   "at": 1,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     150,
+     1.9
+    ],
+    "c2": [
+     "step",
+     160,
+     2.0
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "back": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "use": "scene",
+   "at": 2,
+   "key": 40,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     170,
+     2.0
+    ],
+    "c2": [
+     "step",
+     190,
+     2.4
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "back": true,
+      "turnAt": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 3,
+   "key": 40,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     215,
+     3.6
+    ],
+    "c2": [
+     "step",
+     218,
+     4.0
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "use": "scene",
+   "at": 4,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     180,
+     2.3
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "expr": "worried"
+     }
+    ]
+   }
+  },
+  {
+   "id": "f",
+   "use": "scene",
+   "at": 5,
+   "key": 50,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     180,
+     2.3
+    ],
+    "c2": [
+     "step",
+     180,
+     2.1
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "to": "landing",
+      "move": [
+       4,
+       26
+      ],
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     8,
+     "step",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 6,
+   "key": 50,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.3
+    ],
+    "c2": [
+     "landing",
+     218,
+     3.8
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.25,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "mirror",
+   "at": 7,
+   "key": 32,
+   "props": {
+    "mode": "late",
+    "dark": 0.2
+   },
+   "sfx": [
+    [
+     0,
+     "rewind_start",
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 8,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     200,
+     2.8
+    ],
+    "c2": [
+     "landing",
+     210,
+     3.1
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried",
+      "hold": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 10,
+   "key": 40,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.6
+    ],
+    "c2": [
+     "landing",
+     218,
+     4.1
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "phone",
+   "after": 10,
+   "off": 8,
+   "key": 30,
+   "props": {
+    "mode": "call",
+    "timer": "58",
+    "bg": "stairs",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "l",
+   "use": "phone",
+   "at": 11,
+   "key": 30,
+   "props": {
+    "mode": "ring",
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "phone",
+   "at": 13,
+   "key": 30,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "talk": [
+     400,
+     500
+    ],
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     2,
+     "copy_click",
+     0.35
+    ],
+    [
+     4,
+     "drone_hit",
+     0.25
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "phone",
+   "at": 14,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "stairs",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "o",
+   "use": "tape",
+   "at": 15,
+   "key": 50,
+   "props": {
+    "tau": [
+     70,
+     118
+    ],
+    "light": [
+     [
+      0,
+      0.15
+     ],
+     [
+      60,
+      0.7
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "glitch",
+     0.08,
+     20
+    ],
+    [
+     4,
+     "power_hum",
+     0.14,
+     92
+    ]
+   ]
+  },
+  {
+   "id": "p",
+   "use": "scene",
+   "at": 16,
+   "key": 60,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.4
+    ],
+    "c2": [
+     "landing",
+     218,
+     4.0
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried",
+      "exprAt": [
+       24,
+       "shock"
+      ]
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     220
+    ],
+    [
+     26,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "q",
+   "use": "card",
+   "after": 16,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 10. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Elif?"
+  },
+  {
+   "beat": "1",
+   "text": "Mırıldanma kesildi."
+  },
+  {
+   "beat": "2",
+   "text": "Döndü."
+  },
+  {
+   "beat": "3",
+   "text": "Gözleri normaldi."
+  },
+  {
+   "beat": "4",
+   "text": "Beni görünce sevinmedi."
+  },
+  {
+   "beat": "5",
+   "text": "Bir adım geri çekildi."
+  },
+  {
+   "beat": "6",
+   "text": "Abi… sen hangisisin?"
+  },
+  {
+   "beat": "7",
+   "text": "Ne demek hangisi?"
+  },
+  {
+   "beat": "8",
+   "text": "Telefonun var mı?"
+  },
+  {
+   "beat": "9",
+   "text": "Varsa at."
+  },
+  {
+   "beat": "10",
+   "text": "O telefondaki… sen değilsin."
+  },
+  {
+   "beat": "11",
+   "text": "Cebimdeki telefon titredi."
+  },
+  {
+   "beat": "12",
+   "text": "Açmadım."
+  },
+  {
+   "beat": "13",
+   "text": "Kendi kendine açıldı."
+  },
+  {
+   "beat": "14",
+   "text": "Elif'e inanma."
+  },
+  {
+   "beat": "15",
+   "text": "Elif o gece yukarı baktı."
+  },
+  {
+   "beat": "16",
+   "text": "Ben gördüm."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 2.92,
+   "L1": 1.67,
+   "L2": 1.46,
+   "L3": 2.5,
+   "L4": 1.25,
+   "L5": 2.5,
+   "L6": 3.13,
+   "L7": 2.08,
+   "L8": 0.83,
+   "L9": 1.25,
+   "L10": 3.13,
+   "L11": 1.46,
+   "L12": 2.5,
+   "L13": 2.5,
+   "L14": 1.25,
+   "L15": 1.67
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L14",
+   "to": "L14",
+   "fx": "phone"
+  },
+  {
+   "from": "L15",
+   "to": "L15",
+   "fx": "phone"
+  },
+  {
+   "from": "L16",
+   "to": "L16",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:181"
+  },
+  {
+   "shot": "c",
+   "at": "f:262"
+  },
+  {
+   "shot": "d",
+   "at": "f:318"
+  },
+  {
+   "shot": "e",
+   "at": "f:422"
+  },
+  {
+   "shot": "f",
+   "at": "f:498"
+  },
+  {
+   "shot": "g",
+   "at": "f:605"
+  },
+  {
+   "shot": "h",
+   "at": "f:751"
+  },
+  {
+   "shot": "i",
+   "at": "f:843"
+  },
+  {
+   "shot": "j",
+   "at": "f:950"
+  },
+  {
+   "shot": "k",
+   "at": "f:1024"
+  },
+  {
+   "shot": "l",
+   "at": "f:1108"
+  },
+  {
+   "shot": "m",
+   "at": "f:1281"
+  },
+  {
+   "shot": "n",
+   "at": "f:1393"
+  },
+  {
+   "shot": "o",
+   "at": "f:1458"
+  },
+  {
+   "shot": "p",
+   "at": "f:1557"
+  },
+  {
+   "shot": "q",
+   "at": "f:1627"
+  }
+ ],
+ "end": "f:1715",
+ "sound": {
+  "clips": {
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "glitch": [
+    "a short digital glitch, an electric buzz and crackle flickering like an unstable hologram",
+    1.5
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "hum": [
+    "connector sfx: a young girl softly humming a slow lullaby alone in an empty stairwell, reverberant, no words",
+    3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "rewind_start": [
+    "a quick reverse swoosh, like a sound being sucked backwards",
+    0.7
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "a+0",
+    "hum",
+    0.4,
+    "onset",
+    "a+62"
+   ],
+   [
+    "f+8",
+    "step",
+    0.3,
+    "onset"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+176"
+   ],
+   [
+    "g+176",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+200"
+   ],
+   [
+    "h+0",
+    "rewind_start",
+    0.2,
+    "onset"
+   ],
+   [
+    "j+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+88"
+   ],
+   [
+    "j+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+170"
+   ],
+   [
+    "l+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "l+34"
+   ],
+   [
+    "l+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "l+72"
+   ],
+   [
+    "l+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "l+108"
+   ],
+   [
+    "m+2",
+    "copy_click",
+    0.35,
+    "onset"
+   ],
+   [
+    "m+4",
+    "drone_hit",
+    0.25,
+    "onset"
+   ],
+   [
+    "o+0",
+    "glitch",
+    0.08,
+    "onset",
+    "o+20"
+   ],
+   [
+    "o+4",
+    "power_hum",
+    0.14,
+    "onset",
+    "o+92"
+   ],
+   [
+    "p+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "p+88"
+   ],
+   [
+    "p+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "p+176"
+   ],
+   [
+    "p+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "p+220"
+   ],
+   [
+    "p+26",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

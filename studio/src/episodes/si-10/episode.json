@@ -1,0 +1,891 @@
+{
+ "id": "SI10",
+ "slug": "si-10",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 10"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "İkisi de bana bakıyordu.",
+   "tag": "[nervous]",
+   "pause": 1.4
+  },
+  {
+   "t": "Biri karşımda.",
+   "pause": 1.2
+  },
+  {
+   "t": "Biri avucumda.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Elif kolunu sıvadı.",
+   "tag": "[curious]",
+   "pause": 1.8
+  },
+  {
+   "t": "Kalemle çizilmiş… yirmi çizgi.",
+   "tag": "[slowly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Her gece üç on yedide baştan başlıyor, dedi.",
+   "tag": "[softly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Sen unutuyorsun.",
+   "pause": 1.0
+  },
+  {
+   "t": "Ben unutmuyorum.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "İspat et.",
+   "tag": "[nervous]",
+   "pause": 2.2
+  },
+  {
+   "t": "Şimdi \"sakın\" diyecek.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Sakın…",
+   "tag": "[deep voice]",
+   "pause": 1.8,
+   "fx": "phone"
+  },
+  {
+   "t": "Telefonu merdivenden aşağı fırlattım.",
+   "tag": "[breathless]",
+   "pause": 3.0
+  },
+  {
+   "t": "Çalmaya devam etti.",
+   "tag": "[nervous]",
+   "pause": 1.8
+  },
+  {
+   "t": "Ekranı kırılmıştı… ama yazı okunuyordu.",
+   "tag": "[cautiously]",
+   "pause": 2.4
+  },
+  {
+   "t": "Arayan artık \"Ben\" değildi.",
+   "tag": "[trembling voice]",
+   "pause": 2.4
+  },
+  {
+   "t": "Arayan… üç on yedi.",
+   "tag": "[whispers] [slowly]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     215,
+     3.4
+    ],
+    "c2": [
+     "landing",
+     215,
+     3.6
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "shock"
+     }
+    ]
+   }
+  },
+  {
+   "id": "b",
+   "use": "scene",
+   "at": 1,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     180,
+     2.2
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried"
+     }
+    ]
+   }
+  },
+  {
+   "id": "c",
+   "use": "phone",
+   "at": 2,
+   "key": 30,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "talk": [
+     900,
+     901
+    ],
+    "bg": "stairs",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "d",
+   "use": "paper",
+   "at": 3,
+   "key": 70,
+   "props": {
+    "kind": "arm",
+    "tally": 20,
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     4,
+     "paper_land",
+     0.15
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "clock",
+   "at": 5,
+   "key": 60,
+   "props": {
+    "text": "03:16",
+    "textAt": [
+     44,
+     "03:17"
+    ],
+    "lamp": 0.2
+   },
+   "sfx": [
+    [
+     44,
+     "drone_hit",
+     0.25
+    ],
+    [
+     0,
+     "rewind_start",
+     0.15
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "scene",
+   "at": 6,
+   "key": 40,
+   "props": {
+    "set": "bedroom",
+    "eyes": [
+     [
+      0,
+      0
+     ],
+     [
+      12,
+      0.5
+     ],
+     [
+      18,
+      0.3
+     ],
+     [
+      30,
+      1
+     ]
+    ],
+    "c": [
+     1000,
+     540,
+     1.15
+    ],
+    "c2": [
+     1000,
+     540,
+     1.25
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "room_tone",
+     0.1,
+     100
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 7,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     218,
+     4.2
+    ],
+    "c2": [
+     "landing",
+     218,
+     4.6
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 8,
+   "key": 20,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     180,
+     2.2
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried"
+     }
+    ],
+    "hand": [
+     1040,
+     780,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 9,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "landing",
+     210,
+     3.2
+    ],
+    "c2": [
+     "landing",
+     215,
+     3.5
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "landing",
+      "expr": "worried",
+      "hold": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "j",
+   "use": "phone",
+   "at": 10,
+   "key": 16,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     10,
+     "drone_hit",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 11,
+   "key": 50,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     420,
+     320,
+     1.42
+    ],
+    "c2": [
+     860,
+     640,
+     1.7
+    ],
+    "shakeAt": 4
+   },
+   "sfx": [
+    [
+     14,
+     "tumble",
+     0.5
+    ],
+    [
+     52,
+     "crack",
+     0.35
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 12,
+   "key": 30,
+   "props": {
+    "set": "stairs",
+    "dark": 0.4,
+    "c": [
+     860,
+     640,
+     1.7
+    ],
+    "c2": [
+     860,
+     660,
+     2.0
+    ]
+   },
+   "sfx": [
+    [
+     4,
+     "phone_ring",
+     0.4,
+     32
+    ],
+    [
+     42,
+     "phone_ring",
+     0.4,
+     70
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "phone",
+   "at": 13,
+   "key": 40,
+   "props": {
+    "mode": "crack",
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "phone",
+   "at": 14,
+   "key": 100,
+   "props": {
+    "mode": "crack",
+    "rise": false,
+    "callerAt": [
+     78,
+     "03:17"
+    ],
+    "bg": "stairs",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ],
+    [
+     120,
+     "phone_ring",
+     0.5,
+     146
+    ],
+    [
+     78,
+     "drone_hit",
+     0.45
+    ],
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     250
+    ]
+   ]
+  },
+  {
+   "id": "o",
+   "use": "card",
+   "after": 15,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 11. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "İkisi de bana bakıyordu."
+  },
+  {
+   "beat": "1",
+   "text": "Biri karşımda."
+  },
+  {
+   "beat": "2",
+   "text": "Biri avucumda."
+  },
+  {
+   "beat": "3",
+   "text": "Elif kolunu sıvadı."
+  },
+  {
+   "beat": "4",
+   "text": "Kalemle çizilmiş… yirmi çizgi."
+  },
+  {
+   "beat": "5",
+   "text": "Her gece üç on yedide baştan başlıyor, dedi."
+  },
+  {
+   "beat": "6",
+   "text": "Sen unutuyorsun."
+  },
+  {
+   "beat": "7",
+   "text": "Ben unutmuyorum."
+  },
+  {
+   "beat": "8",
+   "text": "İspat et."
+  },
+  {
+   "beat": "9",
+   "text": "Şimdi \"sakın\" diyecek."
+  },
+  {
+   "beat": "10",
+   "text": "Sakın…"
+  },
+  {
+   "beat": "11",
+   "text": "Telefonu merdivenden aşağı fırlattım."
+  },
+  {
+   "beat": "12",
+   "text": "Çalmaya devam etti."
+  },
+  {
+   "beat": "13",
+   "text": "Ekranı kırılmıştı… ama yazı okunuyordu."
+  },
+  {
+   "beat": "14",
+   "text": "Arayan artık \"Ben\" değildi."
+  },
+  {
+   "beat": "15",
+   "text": "Arayan… üç on yedi."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.21,
+   "L1": 1.04,
+   "L2": 2.25,
+   "L3": 1.56,
+   "L4": 2.42,
+   "L5": 1.21,
+   "L6": 0.86,
+   "L7": 2.42,
+   "L8": 1.9,
+   "L9": 2.25,
+   "L10": 1.56,
+   "L11": 2.59,
+   "L12": 1.56,
+   "L13": 2.07,
+   "L14": 2.07
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L10",
+   "to": "L10",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:172"
+  },
+  {
+   "shot": "c",
+   "at": "f:230"
+  },
+  {
+   "shot": "d",
+   "at": "f:327"
+  },
+  {
+   "shot": "e",
+   "at": "f:549"
+  },
+  {
+   "shot": "f",
+   "at": "f:670"
+  },
+  {
+   "shot": "g",
+   "at": "f:723"
+  },
+  {
+   "shot": "h",
+   "at": "f:820"
+  },
+  {
+   "shot": "i",
+   "at": "f:895"
+  },
+  {
+   "shot": "j",
+   "at": "f:1001"
+  },
+  {
+   "shot": "k",
+   "at": "f:1072"
+  },
+  {
+   "shot": "l",
+   "at": "f:1201"
+  },
+  {
+   "shot": "m",
+   "at": "f:1281"
+  },
+  {
+   "shot": "n",
+   "at": "f:1420"
+  },
+  {
+   "shot": "o",
+   "at": "f:1628"
+  }
+ ],
+ "end": "f:1716",
+ "sound": {
+  "clips": {
+   "crack": [
+    "glass cracking sharply, the crack spreading across a pane",
+    1.1
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "paper_land": [
+    "a thick stack of paper sheets dropped flat on a wooden desk, a soft slap and rustle",
+    0.7
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "rewind_start": [
+    "a quick reverse swoosh, like a sound being sucked backwards",
+    0.7
+   ],
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "tumble": [
+    "a cartoon character tumbling down wooden stairs, a quick series of bumps and thuds",
+    1.3
+   ]
+  },
+  "events": [
+   [
+    "d+4",
+    "paper_land",
+    0.15,
+    "onset"
+   ],
+   [
+    "e+44",
+    "drone_hit",
+    0.25,
+    "onset"
+   ],
+   [
+    "e+0",
+    "rewind_start",
+    0.15,
+    "onset"
+   ],
+   [
+    "f+0",
+    "room_tone",
+    0.1,
+    "onset",
+    "f+100"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+120"
+   ],
+   [
+    "j+10",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
+    "k+14",
+    "tumble",
+    0.5,
+    "onset"
+   ],
+   [
+    "k+52",
+    "crack",
+    0.35,
+    "onset"
+   ],
+   [
+    "l+4",
+    "phone_ring",
+    0.4,
+    "onset",
+    "l+32"
+   ],
+   [
+    "l+42",
+    "phone_ring",
+    0.4,
+    "onset",
+    "l+70"
+   ],
+   [
+    "m+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "m+34"
+   ],
+   [
+    "m+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "m+72"
+   ],
+   [
+    "m+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "m+108"
+   ],
+   [
+    "n+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "n+34"
+   ],
+   [
+    "n+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "n+72"
+   ],
+   [
+    "n+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "n+108"
+   ],
+   [
+    "n+120",
+    "phone_ring",
+    0.5,
+    "onset",
+    "n+146"
+   ],
+   [
+    "n+78",
+    "drone_hit",
+    0.45,
+    "onset"
+   ],
+   [
+    "n+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "n+88"
+   ],
+   [
+    "n+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "n+176"
+   ],
+   [
+    "n+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "n+250"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

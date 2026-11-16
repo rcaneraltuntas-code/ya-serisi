@@ -289,3 +289,10 @@ export const A13: React.FC<ShotProps> = ({ t, len }) => (
     <TitleCard3 t={t} />
   </g>
 );
+
+// ---------- R1: the roof, no title: the city's lights going out with nobody left to need them ----------
+export const R1: React.FC<ShotProps> = ({ t, len }) => (
+  <g transform={camT(960, kf(t, [[0, 520], [len, 560]]), kf(t, [[0, 1.0], [len, 1.14]]))}>
+    <Rooftop t={t} sunX={960} sunY={660} cityLit={2.6} blackout={kf(t, [[20, 0], [len - 6, 1]])} lightsOut={kf(t, [[50, 0], [len, 1]])} />
+  </g>
+);

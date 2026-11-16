@@ -1,0 +1,966 @@
+{
+ "id": "SI08",
+ "slug": "si-08",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 8"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Neredesin?",
+   "tag": "[deep voice]",
+   "pause": 1.4,
+   "fx": "phone"
+  },
+  {
+   "t": "Okuldayım.",
+   "tag": "[nervous]",
+   "pause": 1.6
+  },
+  {
+   "t": "Tahtada ne yazıyor?",
+   "tag": "[deep voice] [slowly]",
+   "pause": 2.4,
+   "fx": "phone"
+  },
+  {
+   "t": "Hiçbir şey.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Yalan söylüyorsun.",
+   "tag": "[deep voice]",
+   "pause": 1.0,
+   "fx": "phone"
+  },
+  {
+   "t": "Bunu on dokuz kere yaptın.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 2.8,
+   "fx": "phone"
+  },
+  {
+   "t": "Sustum.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Ona gidersen… bu sefer seni kurtaramam.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 3.0,
+   "fx": "phone"
+  },
+  {
+   "t": "Koridorda, ıslak ayak izleri vardı.",
+   "tag": "[cautiously]",
+   "pause": 1.2
+  },
+  {
+   "t": "Küçük.",
+   "pause": 0.8
+  },
+  {
+   "t": "Aynı izler.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Çatı merdivenine çıkıyorlardı.",
+   "tag": "[nervous]",
+   "pause": 2.8
+  },
+  {
+   "t": "Basamakta biri duruyordu.",
+   "tag": "[whispers]",
+   "pause": 1.2
+  },
+  {
+   "t": "Sırtı bana dönük.",
+   "pause": 1.8
+  },
+  {
+   "t": "Bir şarkı mırıldanıyordu.",
+   "tag": "[softly]",
+   "pause": 2.6
+  },
+  {
+   "t": "Annemin bize söylediği şarkıyı.",
+   "tag": "[trembling voice] [slowly]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "phone",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "mode": "ring",
+    "bg": "class",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     4,
+     "phone_ring",
+     0.5,
+     32
+    ],
+    [
+     40,
+     "phone_ring",
+     0.5,
+     66
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "phone",
+   "at": 0,
+   "off": -4,
+   "key": 10,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "class",
+    "bgp": {}
+   },
+   "sfx": [
+    [
+     0,
+     "copy_click",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "scene",
+   "at": 1,
+   "key": 20,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ],
+     [
+      "YİRMİNCİDE ONA SORMA.",
+      462,
+      28
+     ],
+     [
+      "KARDEŞİNE SOR.",
+      506,
+      36
+     ]
+    ],
+    "c": [
+     740,
+     420,
+     1.5
+    ],
+    "c2": [
+     740,
+     420,
+     1.6
+    ]
+   }
+  },
+  {
+   "id": "d",
+   "use": "phone",
+   "at": 2,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "class",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "e",
+   "use": "scene",
+   "at": 3,
+   "key": 30,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ],
+     [
+      "YİRMİNCİDE ONA SORMA.",
+      462,
+      28
+     ],
+     [
+      "KARDEŞİNE SOR.",
+      506,
+      36
+     ]
+    ],
+    "c": [
+     740,
+     490,
+     1.85
+    ],
+    "c2": [
+     740,
+     498,
+     2.1
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "phone",
+   "at": 4,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "class",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 6,
+   "key": 30,
+   "props": {
+    "set": "class",
+    "dark": 0.4,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ],
+     [
+      "YİRMİNCİDE ONA SORMA.",
+      462,
+      28
+     ],
+     [
+      "KARDEŞİNE SOR.",
+      506,
+      36
+     ]
+    ],
+    "c": [
+     900,
+     560,
+     1.05
+    ],
+    "c2": [
+     860,
+     540,
+     1.2
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "phone",
+   "at": 7,
+   "key": 30,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "class",
+    "bgp": {}
+   }
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 8,
+   "key": 30,
+   "props": {
+    "set": "corridor",
+    "lit": 0.4,
+    "c": [
+     960,
+     620,
+     1.1
+    ],
+    "c2": [
+     960,
+     600,
+     1.25
+    ],
+    "prints": [
+     960,
+     1000,
+     1.5,
+     9
+    ],
+    "bob": 0.4
+   },
+   "steps": 5
+  },
+  {
+   "id": "j",
+   "use": "floor",
+   "at": 9,
+   "key": 20,
+   "props": {
+    "floor": "tiles",
+    "prints": true,
+    "walk": 0.15,
+    "drift": 5,
+    "night": 0.45
+   }
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 10,
+   "key": 30,
+   "props": {
+    "set": "corridor",
+    "lit": 0.3,
+    "c": [
+     960,
+     560,
+     1.6
+    ],
+    "c2": [
+     960,
+     540,
+     2.2
+    ],
+    "prints": [
+     960,
+     1000,
+     1.5,
+     9
+    ],
+    "dark": 0.15
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.2,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.2,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 11,
+   "key": 60,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     700,
+     560,
+     1.25
+    ],
+    "c2": [
+     420,
+     330,
+     1.42
+    ],
+    "prints": [
+     760,
+     660,
+     0.9,
+     6,
+     -50
+    ],
+    "bob": 0.3
+   },
+   "steps": 3
+  },
+  {
+   "id": "m",
+   "use": "scene",
+   "at": 12,
+   "key": 40,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     400,
+     300,
+     1.42
+    ],
+    "c2": [
+     440,
+     290,
+     1.7
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "back": true,
+      "sway": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "hum",
+     0.3,
+     84
+    ],
+    [
+     80,
+     "hum",
+     0.3,
+     164
+    ],
+    [
+     160,
+     "hum",
+     0.3,
+     244
+    ],
+    [
+     240,
+     "hum",
+     0.3,
+     250
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "scene",
+   "at": 14,
+   "key": 60,
+   "props": {
+    "set": "stairs",
+    "dark": 0.2,
+    "c": [
+     "step",
+     190,
+     2.6
+    ],
+    "c2": [
+     "step",
+     200,
+     3.2
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "step",
+      "back": true,
+      "sway": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "hum",
+     0.4,
+     84
+    ],
+    [
+     80,
+     "hum",
+     0.4,
+     164
+    ],
+    [
+     160,
+     "hum",
+     0.4,
+     244
+    ],
+    [
+     240,
+     "hum",
+     0.4,
+     300
+    ],
+    [
+     40,
+     "heartbeat",
+     0.2,
+     128
+    ],
+    [
+     128,
+     "heartbeat",
+     0.2,
+     216
+    ],
+    [
+     216,
+     "heartbeat",
+     0.2,
+     300
+    ]
+   ]
+  },
+  {
+   "id": "o",
+   "use": "card",
+   "after": 15,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 9. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Neredesin?"
+  },
+  {
+   "beat": "1",
+   "text": "Okuldayım."
+  },
+  {
+   "beat": "2",
+   "text": "Tahtada ne yazıyor?"
+  },
+  {
+   "beat": "3",
+   "text": "Hiçbir şey."
+  },
+  {
+   "beat": "4",
+   "text": "Yalan söylüyorsun."
+  },
+  {
+   "beat": "5",
+   "text": "Bunu on dokuz kere yaptın."
+  },
+  {
+   "beat": "6",
+   "text": "Sustum."
+  },
+  {
+   "beat": "7",
+   "text": "Ona gidersen… bu sefer seni kurtaramam."
+  },
+  {
+   "beat": "8",
+   "text": "Koridorda, ıslak ayak izleri vardı."
+  },
+  {
+   "beat": "9",
+   "text": "Küçük."
+  },
+  {
+   "beat": "10",
+   "text": "Aynı izler."
+  },
+  {
+   "beat": "11",
+   "text": "Çatı merdivenine çıkıyorlardı."
+  },
+  {
+   "beat": "12",
+   "text": "Basamakta biri duruyordu."
+  },
+  {
+   "beat": "13",
+   "text": "Sırtı bana dönük."
+  },
+  {
+   "beat": "14",
+   "text": "Bir şarkı mırıldanıyordu."
+  },
+  {
+   "beat": "15",
+   "text": "Annemin bize söylediği şarkıyı."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.43,
+   "L1": 1.63,
+   "L2": 2.45,
+   "L3": 2.65,
+   "L4": 1.02,
+   "L5": 2.86,
+   "L6": 2.65,
+   "L7": 3.06,
+   "L8": 1.23,
+   "L9": 0.82,
+   "L10": 2.45,
+   "L11": 2.86,
+   "L12": 1.23,
+   "L13": 1.84,
+   "L14": 2.65
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L0",
+   "to": "L0",
+   "fx": "phone"
+  },
+  {
+   "from": "L2",
+   "to": "L2",
+   "fx": "phone"
+  },
+  {
+   "from": "L4",
+   "to": "L4",
+   "fx": "phone"
+  },
+  {
+   "from": "L5",
+   "to": "L5",
+   "fx": "phone"
+  },
+  {
+   "from": "L7",
+   "to": "L7",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:78"
+  },
+  {
+   "shot": "c",
+   "at": "f:145"
+  },
+  {
+   "shot": "d",
+   "at": "f:215"
+  },
+  {
+   "shot": "e",
+   "at": "f:333"
+  },
+  {
+   "shot": "f",
+   "at": "f:427"
+  },
+  {
+   "shot": "g",
+   "at": "f:621"
+  },
+  {
+   "shot": "h",
+   "at": "f:714"
+  },
+  {
+   "shot": "i",
+   "at": "f:883"
+  },
+  {
+   "shot": "j",
+   "at": "f:983"
+  },
+  {
+   "shot": "k",
+   "at": "f:1020"
+  },
+  {
+   "shot": "l",
+   "at": "f:1118"
+  },
+  {
+   "shot": "m",
+   "at": "f:1248"
+  },
+  {
+   "shot": "n",
+   "at": "f:1406"
+  },
+  {
+   "shot": "o",
+   "at": "f:1628"
+  }
+ ],
+ "end": "f:1716",
+ "sound": {
+  "clips": {
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "hum": [
+    "connector sfx: a young girl softly humming a slow lullaby alone in an empty stairwell, reverberant, no words",
+    3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "a+4",
+    "phone_ring",
+    0.5,
+    "onset",
+    "a+32"
+   ],
+   [
+    "a+40",
+    "phone_ring",
+    0.5,
+    "onset",
+    "a+66"
+   ],
+   [
+    "b+0",
+    "copy_click",
+    0.3,
+    "onset"
+   ],
+   [
+    "e+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "e+88"
+   ],
+   [
+    "e+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "e+120"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "g+120"
+   ],
+   [
+    "k+0",
+    "heartbeat",
+    0.2,
+    "onset",
+    "k+88"
+   ],
+   [
+    "k+88",
+    "heartbeat",
+    0.2,
+    "onset",
+    "k+120"
+   ],
+   [
+    "m+0",
+    "hum",
+    0.3,
+    "onset",
+    "m+84"
+   ],
+   [
+    "m+80",
+    "hum",
+    0.3,
+    "onset",
+    "m+164"
+   ],
+   [
+    "m+160",
+    "hum",
+    0.3,
+    "onset",
+    "m+244"
+   ],
+   [
+    "m+240",
+    "hum",
+    0.3,
+    "onset",
+    "m+250"
+   ],
+   [
+    "n+0",
+    "hum",
+    0.4,
+    "onset",
+    "n+84"
+   ],
+   [
+    "n+80",
+    "hum",
+    0.4,
+    "onset",
+    "n+164"
+   ],
+   [
+    "n+160",
+    "hum",
+    0.4,
+    "onset",
+    "n+244"
+   ],
+   [
+    "n+240",
+    "hum",
+    0.4,
+    "onset",
+    "n+300"
+   ],
+   [
+    "n+40",
+    "heartbeat",
+    0.2,
+    "onset",
+    "n+128"
+   ],
+   [
+    "n+128",
+    "heartbeat",
+    0.2,
+    "onset",
+    "n+216"
+   ],
+   [
+    "n+216",
+    "heartbeat",
+    0.2,
+    "onset",
+    "n+300"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "i+4",
+    "clip": "step",
+    "n": 5,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "l+4",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

@@ -1,0 +1,838 @@
+{
+ "id": "SI07",
+ "slug": "si-07",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 7"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Peşimden gelmediler.",
+   "tag": "[breathless]",
+   "pause": 1.2
+  },
+  {
+   "t": "Sadece izlediler.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Okula girdim.",
+   "pause": 1.0
+  },
+  {
+   "t": "Kendi sınıfıma.",
+   "tag": "[softly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Kapıyı kapattım.",
+   "pause": 2.8
+  },
+  {
+   "t": "Tahta, çentiklerle doluydu.",
+   "tag": "[curious]",
+   "pause": 1.4
+  },
+  {
+   "t": "On dokuz çentik.",
+   "tag": "[slowly]",
+   "pause": 2.4
+  },
+  {
+   "t": "Altında bir cümle.",
+   "pause": 0.9
+  },
+  {
+   "t": "Benim el yazımla.",
+   "tag": "[nervous]",
+   "pause": 2.2
+  },
+  {
+   "t": "On dokuz kere denedin.",
+   "tag": "[whispers] [slowly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Ben bunu yazmamıştım.",
+   "tag": "[trembling voice]",
+   "pause": 2.8
+  },
+  {
+   "t": "Daha altta, tozu hâlâ dökülen… taze bir satır vardı.",
+   "tag": "[cautiously]",
+   "pause": 2.2
+  },
+  {
+   "t": "Yirmincide ona sorma.",
+   "tag": "[slowly]",
+   "pause": 1.2
+  },
+  {
+   "t": "Kardeşine sor.",
+   "tag": "[whispers]",
+   "pause": 3.2
+  },
+  {
+   "t": "Benim kardeşim… o gece evdeydi.",
+   "tag": "[trembling voice]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     960,
+     400,
+     1.2
+    ],
+    "c2": [
+     960,
+     420,
+     1.1
+    ],
+    "echoes": "turn",
+    "turnAt": -100,
+    "bob": 0.8
+   },
+   "steps": 6
+  },
+  {
+   "id": "b",
+   "use": "scene",
+   "at": 1,
+   "key": 30,
+   "props": {
+    "set": "street",
+    "lit": 0.16,
+    "dead": true,
+    "dark": 0.15,
+    "night": true,
+    "c": [
+     1100,
+     330,
+     2.0
+    ],
+    "c2": [
+     1090,
+     325,
+     2.3
+    ],
+    "echoes": "turn",
+    "turnAt": -100
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "scene",
+   "at": 2,
+   "key": 20,
+   "props": {
+    "set": "corridor",
+    "lit": 0.5,
+    "c": [
+     960,
+     560,
+     1.02
+    ],
+    "c2": [
+     960,
+     540,
+     1.3
+    ],
+    "bob": 0.9
+   },
+   "steps": 6
+  },
+  {
+   "id": "d",
+   "use": "door",
+   "at": 3,
+   "key": 30,
+   "props": {
+    "style": "school",
+    "mode": "open",
+    "openAt": 6,
+    "behind": "dark",
+    "pushHand": true,
+    "feet": false
+   },
+   "sfx": [
+    [
+     8,
+     "big_step",
+     0.25
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "door",
+   "at": 4,
+   "key": 30,
+   "props": {
+    "style": "school",
+    "mode": "still",
+    "feet": false
+   },
+   "sfx": [
+    [
+     2,
+     "land",
+     0.35
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "scene",
+   "after": 4,
+   "off": 14,
+   "key": 20,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "c": [
+     760,
+     460,
+     1.0
+    ],
+    "c2": [
+     760,
+     420,
+     1.15
+    ],
+    "bob": 0.3
+   },
+   "steps": 3
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 5,
+   "key": 14,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "c": [
+     735,
+     330,
+     1.1
+    ],
+    "c2": [
+     600,
+     270,
+     1.9
+    ]
+   }
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 6,
+   "key": 40,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "c": [
+     600,
+     270,
+     1.9
+    ],
+    "c2": [
+     900,
+     270,
+     1.9
+    ]
+   }
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 7,
+   "key": 40,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ]
+    ],
+    "c": [
+     740,
+     330,
+     1.5
+    ],
+    "c2": [
+     740,
+     370,
+     1.75
+    ]
+   },
+   "sfx": [
+    [
+     60,
+     "heartbeat",
+     0.25,
+     148
+    ],
+    [
+     148,
+     "heartbeat",
+     0.25,
+     230
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 9,
+   "key": 40,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ]
+    ],
+    "c": [
+     740,
+     380,
+     1.75
+    ],
+    "c2": [
+     740,
+     384,
+     1.88
+    ]
+   },
+   "sfx": [
+    [
+     4,
+     "drone_hit",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 10,
+   "key": 30,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "blur": true,
+    "c": [
+     740,
+     400,
+     1.6
+    ],
+    "hand": [
+     960,
+     640,
+     1.2
+    ]
+   }
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 11,
+   "key": 200,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ],
+     [
+      "YİRMİNCİDE ONA SORMA.",
+      462,
+      28
+     ],
+     [
+      "KARDEŞİNE SOR.",
+      506,
+      36
+     ]
+    ],
+    "boardAt": [
+     0,
+     0,
+     100,
+     150
+    ],
+    "c": [
+     740,
+     380,
+     1.75
+    ],
+    "c2": [
+     740,
+     470,
+     1.8
+    ]
+   },
+   "sfx": [
+    [
+     100,
+     "heartbeat",
+     0.3,
+     188
+    ],
+    [
+     188,
+     "heartbeat",
+     0.3,
+     276
+    ],
+    [
+     276,
+     "heartbeat",
+     0.3,
+     330
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "scene",
+   "at": 14,
+   "key": 40,
+   "props": {
+    "set": "class",
+    "dark": 0.22,
+    "tally": 19,
+    "board": [
+     [
+      "ON DOKUZ KERE",
+      356,
+      44
+     ],
+     [
+      "DENEDİN.",
+      408,
+      44
+     ],
+     [
+      "YİRMİNCİDE ONA SORMA.",
+      462,
+      28
+     ],
+     [
+      "KARDEŞİNE SOR.",
+      506,
+      36
+     ]
+    ],
+    "c": [
+     740,
+     490,
+     1.85
+    ],
+    "c2": [
+     740,
+     498,
+     2.1
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     170
+    ],
+    [
+     40,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "n",
+   "use": "card",
+   "after": 14,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 8. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Peşimden gelmediler."
+  },
+  {
+   "beat": "1",
+   "text": "Sadece izlediler."
+  },
+  {
+   "beat": "2",
+   "text": "Okula girdim."
+  },
+  {
+   "beat": "3",
+   "text": "Kendi sınıfıma."
+  },
+  {
+   "beat": "4",
+   "text": "Kapıyı kapattım."
+  },
+  {
+   "beat": "5",
+   "text": "Tahta, çentiklerle doluydu."
+  },
+  {
+   "beat": "6",
+   "text": "On dokuz çentik."
+  },
+  {
+   "beat": "7",
+   "text": "Altında bir cümle."
+  },
+  {
+   "beat": "8",
+   "text": "Benim el yazımla."
+  },
+  {
+   "beat": "9",
+   "text": "On dokuz kere denedin."
+  },
+  {
+   "beat": "10",
+   "text": "Ben bunu yazmamıştım."
+  },
+  {
+   "beat": "11",
+   "text": "Daha altta, tozu hâlâ dökülen… taze bir satır vardı."
+  },
+  {
+   "beat": "12",
+   "text": "Yirmincide ona sorma."
+  },
+  {
+   "beat": "13",
+   "text": "Kardeşine sor."
+  },
+  {
+   "beat": "14",
+   "text": "Benim kardeşim… o gece evdeydi."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.29,
+   "L1": 2.79,
+   "L2": 1.07,
+   "L3": 1.5,
+   "L4": 3.01,
+   "L5": 1.5,
+   "L6": 2.58,
+   "L7": 0.97,
+   "L8": 2.36,
+   "L9": 3.01,
+   "L10": 3.01,
+   "L11": 2.36,
+   "L12": 1.29,
+   "L13": 3.44
+  }
+ },
+ "voice_fx": [],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:158"
+  },
+  {
+   "shot": "c",
+   "at": "f:283"
+  },
+  {
+   "shot": "d",
+   "at": "f:334"
+  },
+  {
+   "shot": "e",
+   "at": "f:395"
+  },
+  {
+   "shot": "f",
+   "at": "f:435"
+  },
+  {
+   "shot": "g",
+   "at": "f:510"
+  },
+  {
+   "shot": "h",
+   "at": "f:605"
+  },
+  {
+   "shot": "i",
+   "at": "f:719"
+  },
+  {
+   "shot": "j",
+   "at": "f:875"
+  },
+  {
+   "shot": "k",
+   "at": "f:1000"
+  },
+  {
+   "shot": "l",
+   "at": "f:1125"
+  },
+  {
+   "shot": "m",
+   "at": "f:1516"
+  },
+  {
+   "shot": "n",
+   "at": "f:1632"
+  }
+ ],
+ "end": "f:1720",
+ "sound": {
+  "clips": {
+   "big_step": [
+    "a cartoon exaggerated careful tiptoe step, light airy whoosh",
+    0.7
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "land": [
+    "a heavy body landing flat on a wooden floor, cartoon thud",
+    0.6
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "b+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "b+88"
+   ],
+   [
+    "b+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "b+120"
+   ],
+   [
+    "d+8",
+    "big_step",
+    0.25,
+    "peak"
+   ],
+   [
+    "e+2",
+    "land",
+    0.35,
+    "onset"
+   ],
+   [
+    "i+60",
+    "heartbeat",
+    0.25,
+    "onset",
+    "i+148"
+   ],
+   [
+    "i+148",
+    "heartbeat",
+    0.25,
+    "onset",
+    "i+230"
+   ],
+   [
+    "j+4",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
+    "l+100",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+188"
+   ],
+   [
+    "l+188",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+276"
+   ],
+   [
+    "l+276",
+    "heartbeat",
+    0.3,
+    "onset",
+    "l+330"
+   ],
+   [
+    "m+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "m+88"
+   ],
+   [
+    "m+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "m+170"
+   ],
+   [
+    "m+40",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "a+4",
+    "clip": "step",
+    "n": 6,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "c+4",
+    "clip": "step",
+    "n": 6,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "f+4",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

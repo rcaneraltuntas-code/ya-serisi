@@ -1,0 +1,1156 @@
+{
+ "id": "SI19",
+ "slug": "si-19",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 19"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 60,
+ "lines": [
+  {
+   "t": "Elif aynaya baktı.",
+   "tag": "[softly]",
+   "pause": 2.2
+  },
+  {
+   "t": "Bir şey yok abi.",
+   "tag": "[whispers]",
+   "pause": 2.4
+  },
+  {
+   "t": "Bekle.",
+   "tag": "[nervous]",
+   "pause": 0.9
+  },
+  {
+   "t": "Ayna geç kalıyor.",
+   "tag": "[whispers]",
+   "pause": 3.0
+  },
+  {
+   "t": "Sonra… yüzü aydınlandı.",
+   "tag": "[softly] [slowly]",
+   "pause": 2.6
+  },
+  {
+   "t": "Görüyorum, dedi.",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Ben de başımı kaldırdım.",
+   "tag": "[softly]",
+   "pause": 1.0
+  },
+  {
+   "t": "İlk kez.",
+   "tag": "[whispers]",
+   "pause": 3.6
+  },
+  {
+   "t": "Günaydın.",
+   "tag": "[softly]",
+   "pause": 2.6
+  },
+  {
+   "t": "Annemin sesi.",
+   "tag": "[softly]",
+   "pause": 1.0
+  },
+  {
+   "t": "Kahve kokusu.",
+   "pause": 1.0
+  },
+  {
+   "t": "Elif masada.",
+   "pause": 1.4
+  },
+  {
+   "t": "Sokak, insan dolu.",
+   "tag": "[curious]",
+   "pause": 2.6
+  },
+  {
+   "t": "Markete gittim.",
+   "pause": 1.0
+  },
+  {
+   "t": "Kaydı açtırdım.",
+   "tag": "[cautiously]",
+   "pause": 2.4
+  },
+  {
+   "t": "Üç on yedi.",
+   "tag": "[slowly]",
+   "pause": 1.0
+  },
+  {
+   "t": "Herkes yukarı bakıyor.",
+   "pause": 2.2
+  },
+  {
+   "t": "Bir kişi hariç.",
+   "tag": "[whispers] [slowly]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "glass",
+   "at": 0,
+   "key": 30,
+   "props": {
+    "who": "sis",
+    "light": 0,
+    "expr": "neutral"
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "glass",
+   "at": 1,
+   "key": 20,
+   "props": {
+    "who": "sis",
+    "light": 0,
+    "expr": "worried"
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     100
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "watch",
+   "at": 2,
+   "key": 20,
+   "props": {
+    "text": "03:17:00",
+    "blink": true,
+    "bg": "roof",
+    "bgp": {
+     "night": true,
+     "lightsOut": 1,
+     "cityLit": 1.8
+    }
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.35,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.35,
+     100
+    ]
+   ]
+  },
+  {
+   "id": "d",
+   "use": "glass",
+   "at": 3,
+   "key": 80,
+   "props": {
+    "who": "sis",
+    "light": [
+     [
+      0,
+      0
+     ],
+     [
+      90,
+      0.3
+     ]
+    ],
+    "expr": "worried"
+   },
+   "sfx": [
+    [
+     10,
+     "power_hum",
+     0.14,
+     98
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "glass",
+   "at": 4,
+   "key": 70,
+   "props": {
+    "who": "sis",
+    "light": [
+     [
+      0,
+      0.3
+     ],
+     [
+      60,
+      0.68
+     ]
+    ],
+    "expr": "worried",
+    "exprAt": [
+     50,
+     "happy"
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "power_hum",
+     0.2,
+     88
+    ],
+    [
+     84,
+     "power_hum",
+     0.22,
+     172
+    ],
+    [
+     50,
+     "sparkle",
+     0.1
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "glass",
+   "at": 5,
+   "key": 40,
+   "props": {
+    "who": "sis",
+    "light": [
+     [
+      0,
+      0.68
+     ],
+     [
+      80,
+      0.8
+     ]
+    ],
+    "expr": "happy"
+   },
+   "sfx": [
+    [
+     0,
+     "power_hum",
+     0.24,
+     88
+    ],
+    [
+     84,
+     "power_hum",
+     0.24,
+     172
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 6,
+   "key": 50,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.1,
+    "c": [
+     960,
+     520,
+     1.2
+    ],
+    "c2": [
+     960,
+     120,
+     1.6
+    ],
+    "light": [
+     [
+      0,
+      0.35
+     ],
+     [
+      90,
+      1
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "power_hum",
+     0.28,
+     88
+    ],
+    [
+     84,
+     "power_hum",
+     0.3,
+     172
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "blank",
+   "after": 7,
+   "off": 6,
+   "key": 20,
+   "props": {
+    "white": true
+   }
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 8,
+   "key": 50,
+   "props": {
+    "set": "bedroom",
+    "clock": "07:30",
+    "lamp": 1,
+    "eyes": [
+     [
+      0,
+      0
+     ],
+     [
+      14,
+      0.5
+     ],
+     [
+      20,
+      0.35
+     ],
+     [
+      36,
+      1
+     ]
+    ],
+    "light": [
+     [
+      0,
+      0.5
+     ],
+     [
+      40,
+      0.15
+     ]
+    ],
+    "c": [
+     1000,
+     540,
+     1.15
+    ],
+    "c2": [
+     1000,
+     540,
+     1.22
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "room_tone",
+     0.12,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 9,
+   "key": 30,
+   "props": {
+    "set": "kitchen",
+    "veil": 0.05,
+    "c": [
+     960,
+     520,
+     1.15
+    ],
+    "c2": [
+     960,
+     510,
+     1.3
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "island",
+      "expr": "happy"
+     }
+    ],
+    "mugs": 2,
+    "light": 0.15
+   },
+   "sfx": [
+    [
+     8,
+     "clink",
+     0.2
+    ],
+    [
+     0,
+     "room_tone",
+     0.12,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 11,
+   "key": 30,
+   "props": {
+    "set": "kitchen",
+    "veil": 0.05,
+    "c": [
+     1060,
+     540,
+     1.5
+    ],
+    "c2": [
+     1070,
+     535,
+     1.7
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "left",
+      "expr": "happy",
+      "inFront": false
+     },
+     {
+      "who": "sis",
+      "at": "right",
+      "expr": "happy",
+      "wave": true
+     }
+    ],
+    "mugs": 2,
+    "light": 0.15
+   }
+  },
+  {
+   "id": "l",
+   "use": "scene",
+   "at": 12,
+   "key": 40,
+   "props": {
+    "set": "street",
+    "lit": 1.0,
+    "lamps": 0,
+    "dead": true,
+    "cars": false,
+    "c": [
+     960,
+     580,
+     1.08
+    ],
+    "c2": [
+     960,
+     570,
+     1.18
+    ],
+    "who": [
+     {
+      "who": "mo",
+      "at": [
+       700,
+       990,
+       1.0
+      ],
+      "walk": 2.2
+     },
+     {
+      "who": "suit",
+      "at": [
+       1240,
+       930,
+       0.8
+      ],
+      "walk": -1.8
+     },
+     {
+      "who": "dark",
+      "at": [
+       820,
+       760,
+       0.5
+      ],
+      "walk": 1.0
+     },
+     {
+      "who": "mom",
+      "at": [
+       1080,
+       700,
+       0.42
+      ],
+      "walk": -0.8
+     },
+     {
+      "who": "suit",
+      "at": [
+       900,
+       640,
+       0.3
+      ],
+      "walk": 0.5
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "class_murmur",
+     0.25,
+     60
+    ],
+    [
+     56,
+     "class_murmur",
+     0.25,
+     116
+    ],
+    [
+     112,
+     "class_murmur",
+     0.25,
+     172
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "scene",
+   "at": 13,
+   "key": 20,
+   "props": {
+    "set": "market",
+    "c": [
+     960,
+     505,
+     1.2
+    ],
+    "c2": [
+     960,
+     505,
+     1.35
+    ],
+    "bob": 0.4,
+    "who": [
+     {
+      "who": "mo",
+      "at": "mid"
+     },
+     {
+      "who": "suit",
+      "at": "far",
+      "back": true
+     }
+    ]
+   },
+   "steps": 3
+  },
+  {
+   "id": "n",
+   "use": "tape",
+   "at": 14,
+   "key": 30,
+   "props": {
+    "tau": [
+     126,
+     20
+    ],
+    "rewind": true
+   },
+   "sfx": [
+    [
+     0,
+     "rewind",
+     0.3,
+     60
+    ]
+   ]
+  },
+  {
+   "id": "o",
+   "use": "tape",
+   "at": 15,
+   "key": 30,
+   "props": {
+    "tau": [
+     -30,
+     30
+    ],
+    "rec": true
+   },
+   "sfx": [
+    [
+     0,
+     "room_tone",
+     0.1,
+     100
+    ]
+   ]
+  },
+  {
+   "id": "p",
+   "use": "tape",
+   "at": 16,
+   "key": 50,
+   "props": {
+    "tau": [
+     70,
+     118
+    ],
+    "light": [
+     [
+      0,
+      0.1
+     ],
+     [
+      60,
+      0.6
+     ]
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "power_hum",
+     0.16,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "q",
+   "use": "tape",
+   "at": 17,
+   "key": 90,
+   "props": {
+    "tau": [
+     100,
+     124
+    ],
+    "on": "pan",
+    "face": 1,
+    "z": [
+     1.0,
+     4.6
+    ],
+    "light": 0.5,
+    "box": true,
+    "boxAt": 60
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     220
+    ],
+    [
+     60,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "r",
+   "use": "card",
+   "after": 17,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 20. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Elif aynaya baktı."
+  },
+  {
+   "beat": "1",
+   "text": "Bir şey yok abi."
+  },
+  {
+   "beat": "2",
+   "text": "Bekle."
+  },
+  {
+   "beat": "3",
+   "text": "Ayna geç kalıyor."
+  },
+  {
+   "beat": "4",
+   "text": "Sonra… yüzü aydınlandı."
+  },
+  {
+   "beat": "5",
+   "text": "Görüyorum, dedi."
+  },
+  {
+   "beat": "6",
+   "text": "Ben de başımı kaldırdım."
+  },
+  {
+   "beat": "7",
+   "text": "İlk kez."
+  },
+  {
+   "beat": "8",
+   "text": "Günaydın."
+  },
+  {
+   "beat": "9",
+   "text": "Annemin sesi."
+  },
+  {
+   "beat": "10",
+   "text": "Kahve kokusu."
+  },
+  {
+   "beat": "11",
+   "text": "Elif masada."
+  },
+  {
+   "beat": "12",
+   "text": "Sokak, insan dolu."
+  },
+  {
+   "beat": "13",
+   "text": "Markete gittim."
+  },
+  {
+   "beat": "14",
+   "text": "Kaydı açtırdım."
+  },
+  {
+   "beat": "15",
+   "text": "Üç on yedi."
+  },
+  {
+   "beat": "16",
+   "text": "Herkes yukarı bakıyor."
+  },
+  {
+   "beat": "17",
+   "text": "Bir kişi hariç."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 2.31,
+   "L1": 2.52,
+   "L2": 0.94,
+   "L3": 3.15,
+   "L4": 2.73,
+   "L5": 2.94,
+   "L6": 1.05,
+   "L7": 3.77,
+   "L8": 2.73,
+   "L9": 1.05,
+   "L10": 1.05,
+   "L11": 1.47,
+   "L12": 2.73,
+   "L13": 1.05,
+   "L14": 2.52,
+   "L15": 1.05,
+   "L16": 2.31
+  }
+ },
+ "voice_fx": [],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:185"
+  },
+  {
+   "shot": "c",
+   "at": "f:285"
+  },
+  {
+   "shot": "d",
+   "at": "f:330"
+  },
+  {
+   "shot": "e",
+   "at": "f:453"
+  },
+  {
+   "shot": "f",
+   "at": "f:598"
+  },
+  {
+   "shot": "g",
+   "at": "f:720"
+  },
+  {
+   "shot": "h",
+   "at": "f:813"
+  },
+  {
+   "shot": "i",
+   "at": "f:918"
+  },
+  {
+   "shot": "j",
+   "at": "f:1014"
+  },
+  {
+   "shot": "k",
+   "at": "f:1123"
+  },
+  {
+   "shot": "l",
+   "at": "f:1189"
+  },
+  {
+   "shot": "m",
+   "at": "f:1311"
+  },
+  {
+   "shot": "n",
+   "at": "f:1365"
+  },
+  {
+   "shot": "o",
+   "at": "f:1466"
+  },
+  {
+   "shot": "p",
+   "at": "f:1527"
+  },
+  {
+   "shot": "q",
+   "at": "f:1628"
+  },
+  {
+   "shot": "r",
+   "at": "f:1716"
+  }
+ ],
+ "end": "f:1804",
+ "sound": {
+  "clips": {
+   "class_murmur": [
+    "a quiet classroom murmur, kids whispering, chairs shuffling",
+    2.0
+   ],
+   "clink": [
+    "a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape",
+    0.7
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "rewind": [
+    "a VHS tape rewinding fast, high whirring tape squeal with mechanical hum",
+    1.6
+   ],
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "sparkle": [
+    "a short bright magical sparkle twinkle, cartoon",
+    0.8
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "a+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "a+88"
+   ],
+   [
+    "a+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "a+170"
+   ],
+   [
+    "b+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "b+88"
+   ],
+   [
+    "b+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "b+100"
+   ],
+   [
+    "c+0",
+    "heartbeat",
+    0.35,
+    "onset",
+    "c+88"
+   ],
+   [
+    "c+88",
+    "heartbeat",
+    0.35,
+    "onset",
+    "c+100"
+   ],
+   [
+    "d+10",
+    "power_hum",
+    0.14,
+    "onset",
+    "d+98"
+   ],
+   [
+    "e+0",
+    "power_hum",
+    0.2,
+    "onset",
+    "e+88"
+   ],
+   [
+    "e+84",
+    "power_hum",
+    0.22,
+    "onset",
+    "e+172"
+   ],
+   [
+    "e+50",
+    "sparkle",
+    0.1,
+    "onset"
+   ],
+   [
+    "f+0",
+    "power_hum",
+    0.24,
+    "onset",
+    "f+88"
+   ],
+   [
+    "f+84",
+    "power_hum",
+    0.24,
+    "onset",
+    "f+172"
+   ],
+   [
+    "g+0",
+    "power_hum",
+    0.28,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+84",
+    "power_hum",
+    0.3,
+    "onset",
+    "g+172"
+   ],
+   [
+    "i+0",
+    "room_tone",
+    0.12,
+    "onset",
+    "i+200"
+   ],
+   [
+    "j+8",
+    "clink",
+    0.2,
+    "onset"
+   ],
+   [
+    "j+0",
+    "room_tone",
+    0.12,
+    "onset",
+    "j+200"
+   ],
+   [
+    "l+0",
+    "class_murmur",
+    0.25,
+    "onset",
+    "l+60"
+   ],
+   [
+    "l+56",
+    "class_murmur",
+    0.25,
+    "onset",
+    "l+116"
+   ],
+   [
+    "l+112",
+    "class_murmur",
+    0.25,
+    "onset",
+    "l+172"
+   ],
+   [
+    "n+0",
+    "rewind",
+    0.3,
+    "onset",
+    "n+60"
+   ],
+   [
+    "o+0",
+    "room_tone",
+    0.1,
+    "onset",
+    "o+100"
+   ],
+   [
+    "p+0",
+    "power_hum",
+    0.16,
+    "onset",
+    "p+88"
+   ],
+   [
+    "q+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "q+88"
+   ],
+   [
+    "q+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "q+176"
+   ],
+   [
+    "q+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "q+220"
+   ],
+   [
+    "q+60",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "m+4",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

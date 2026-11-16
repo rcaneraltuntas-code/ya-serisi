@@ -2,7 +2,7 @@
  "slug": "son-insan-01",
  "title": "YA DÜNYADA KALAN SON İNSAN SEN OLSAYDIN?",
  "fps": 30,
- "total": 831,
+ "total": 2003,
  "segments": [
   {
    "shot": "A1",
@@ -85,163 +85,341 @@
    "line": "Motorları çalışıyor."
   },
   {
-   "shot": "A11",
+   "shot": "B4",
    "a": 571,
-   "b": 645,
-   "t0": 0,
-   "t1": 74,
-   "line": "Sekiz milyar insan."
-  },
-  {
-   "shot": "A12",
-   "a": 645,
    "b": 702,
    "t0": 0,
-   "t1": 57,
-   "line": "Hiçbiri yok."
+   "t1": 131,
+   "line": "Sekiz milyar insan. Hiçbiri yok."
   },
   {
-   "shot": "A13",
+   "shot": "R1",
    "a": 702,
    "b": 831,
    "t0": 0,
    "t1": 129,
    "line": "Ya dünyada kalan SON insan… sen olsaydın?"
+  },
+  {
+   "shot": "B5",
+   "a": 831,
+   "b": 942,
+   "t0": 0,
+   "t1": 111,
+   "line": "Markete giriyorsun. Kasada kimse yok."
+  },
+  {
+   "shot": "B6",
+   "a": 942,
+   "b": 1026,
+   "t0": 0,
+   "t1": 84,
+   "line": "Güvenlik kamerasının kaydını açıyorsun."
+  },
+  {
+   "shot": "B7",
+   "a": 1026,
+   "b": 1196,
+   "t0": -55,
+   "t1": 115,
+   "line": "Saat üç on yedi. Kayıttaki herkes… aynı anda duruyor."
+  },
+  {
+   "shot": "B8",
+   "a": 1196,
+   "b": 1305,
+   "t0": 0,
+   "t1": 109,
+   "line": "Hepsi başını kaldırıp… aynı yöne bakıyor."
+  },
+  {
+   "shot": "B9",
+   "a": 1305,
+   "b": 1388,
+   "t0": 0,
+   "t1": 83,
+   "line": "Sonra görüntü kararıyor."
+  },
+  {
+   "shot": "B10",
+   "a": 1388,
+   "b": 1442,
+   "t0": 0,
+   "t1": 54,
+   "line": "Geri sarıyorsun."
+  },
+  {
+   "shot": "B8",
+   "a": 1442,
+   "b": 1492,
+   "t0": 8,
+   "t1": 58,
+   "line": "Bir daha izliyorsun."
+  },
+  {
+   "shot": "B11",
+   "a": 1492,
+   "b": 1620,
+   "t0": -40,
+   "t1": 88,
+   "line": "Herkes yukarı bakıyor. Bir kişi hariç."
+  },
+  {
+   "shot": "B12",
+   "a": 1620,
+   "b": 1704,
+   "t0": 0,
+   "t1": 84,
+   "line": "O… kameraya bakıyor."
+  },
+  {
+   "shot": "B13",
+   "a": 1704,
+   "b": 1787,
+   "t0": 0,
+   "t1": 83,
+   "line": "O… sensin."
+  },
+  {
+   "shot": "B14",
+   "a": 1787,
+   "b": 1958,
+   "t0": 0,
+   "t1": 171,
+   "line": "Sonra cebindeki telefon çalıyor. Arayan… Sen."
+  },
+  {
+   "shot": "B17",
+   "a": 1958,
+   "b": 2003,
+   "t0": 0,
+   "t1": 45,
+   "line": ""
   }
  ],
  "shots": [
   {
    "id": "A1",
-   "size": "POV, uyanış",
+   "size": "",
    "key": 60,
    "len": 79,
    "first": 0,
    "line": "Uyanıyorsun…",
-   "note": "göz kapakları açılır, yatak odası"
+   "note": ""
   },
   {
    "id": "A2",
-   "size": "POV, pencere",
+   "size": "",
    "key": 40,
    "len": 79,
    "first": 79,
    "line": "Sokakta… tek bir ses yok.",
-   "note": "boş sokak"
+   "note": ""
   },
   {
    "id": "A3",
-   "size": "ayna",
+   "size": "",
    "key": 18,
    "len": 27,
    "first": 158,
    "line": "",
-   "note": "koridor aynasında sen"
+   "note": ""
   },
   {
    "id": "A4",
-   "size": "POV, geniş",
+   "size": "",
    "key": 25,
    "len": 42,
    "first": 185,
    "line": "Annen yok.",
-   "note": "boş mutfak"
+   "note": ""
   },
   {
    "id": "A5",
-   "size": "POV, yaklaşma",
+   "size": "",
    "key": 30,
    "len": 45,
    "first": 227,
    "line": "Kahvesi masada.",
-   "note": "kupa"
+   "note": ""
   },
   {
    "id": "A6",
-   "size": "makro",
+   "size": "",
    "key": 24,
    "len": 66,
    "first": 272,
    "line": "Hâlâ sıcak.",
-   "note": "elin kupada"
+   "note": ""
   },
   {
    "id": "A7",
-   "size": "POV, kapı",
+   "size": "",
    "key": 22,
    "len": 45,
    "first": 338,
    "line": "Dışarı çıkıyorsun.",
-   "note": "kapı sokağa açılır"
+   "note": ""
   },
   {
    "id": "A8",
-   "size": "POV, geniş",
+   "size": "",
    "key": 50,
    "len": 83,
    "first": 383,
    "line": "Arabalar… yolun ortasında.",
-   "note": "yolun ortasında arabalar"
+   "note": ""
   },
   {
    "id": "A9",
-   "size": "medium",
+   "size": "",
    "key": 20,
    "len": 44,
    "first": 466,
    "line": "Kapıları açık.",
-   "note": "açık kapı, boş koltuk"
+   "note": ""
   },
   {
    "id": "A10",
-   "size": "makro",
+   "size": "",
    "key": 30,
    "len": 61,
    "first": 510,
    "line": "Motorları çalışıyor.",
-   "note": "egzoz, stop lambası"
+   "note": ""
   },
   {
-   "id": "A11",
-   "size": "şema",
-   "key": 50,
-   "len": 74,
+   "id": "B4",
+   "size": "",
+   "key": 60,
+   "len": 131,
    "first": 571,
-   "line": "Sekiz milyar insan.",
-   "note": "8.000.000.000"
+   "line": "Sekiz milyar insan. Hiçbiri yok.",
+   "note": ""
   },
   {
-   "id": "A12",
-   "size": "şema",
-   "key": 45,
-   "len": 57,
-   "first": 645,
-   "line": "Hiçbiri yok.",
-   "note": "sayaç 1'e iner"
-  },
-  {
-   "id": "A13",
-   "size": "başlık",
-   "key": 80,
+   "id": "R1",
+   "size": "",
+   "key": 60,
    "len": 129,
    "first": 702,
    "line": "Ya dünyada kalan SON insan… sen olsaydın?",
-   "note": "çatı, şehir ışıkları söner"
+   "note": ""
+  },
+  {
+   "id": "B5",
+   "size": "",
+   "key": 30,
+   "len": 111,
+   "first": 831,
+   "line": "Markete giriyorsun. Kasada kimse yok.",
+   "note": ""
+  },
+  {
+   "id": "B6",
+   "size": "",
+   "key": 44,
+   "len": 84,
+   "first": 942,
+   "line": "Güvenlik kamerasının kaydını açıyorsun.",
+   "note": ""
+  },
+  {
+   "id": "B7",
+   "size": "",
+   "key": 90,
+   "len": 115,
+   "first": 1026,
+   "line": "Saat üç on yedi. Kayıttaki herkes… aynı anda duruyor.",
+   "note": ""
+  },
+  {
+   "id": "B8",
+   "size": "",
+   "key": 50,
+   "len": 109,
+   "first": 1196,
+   "line": "Hepsi başını kaldırıp… aynı yöne bakıyor.",
+   "note": ""
+  },
+  {
+   "id": "B9",
+   "size": "",
+   "key": 40,
+   "len": 83,
+   "first": 1305,
+   "line": "Sonra görüntü kararıyor.",
+   "note": ""
+  },
+  {
+   "id": "B10",
+   "size": "",
+   "key": 16,
+   "len": 54,
+   "first": 1388,
+   "line": "Geri sarıyorsun.",
+   "note": ""
+  },
+  {
+   "id": "B11",
+   "size": "",
+   "key": 60,
+   "len": 88,
+   "first": 1492,
+   "line": "Herkes yukarı bakıyor. Bir kişi hariç.",
+   "note": ""
+  },
+  {
+   "id": "B12",
+   "size": "",
+   "key": 50,
+   "len": 84,
+   "first": 1620,
+   "line": "O… kameraya bakıyor.",
+   "note": ""
+  },
+  {
+   "id": "B13",
+   "size": "",
+   "key": 30,
+   "len": 83,
+   "first": 1704,
+   "line": "O… sensin.",
+   "note": ""
+  },
+  {
+   "id": "B14",
+   "size": "",
+   "key": 40,
+   "len": 171,
+   "first": 1787,
+   "line": "Sonra cebindeki telefon çalıyor. Arayan… Sen.",
+   "note": ""
+  },
+  {
+   "id": "B17",
+   "size": "",
+   "key": 30,
+   "len": 45,
+   "first": 1958,
+   "line": "",
+   "note": ""
   }
  ],
  "fx": [
   {
    "kind": "flash",
-   "color": "#FFF3DC",
-   "o": 0.6,
-   "f": 702
+   "color": "#DDF2FF",
+   "o": 0.3,
+   "f": 1708
   }
  ],
  "audio": {
+  "voiceVol": 0.8,
+  "sfxVol": 0.1833,
+  "musicVol": 0.0318,
   "voice": "son-insan-01/voice.wav",
   "sfx": "son-insan-01/sfx.wav",
-  "voiceVol": 0.8,
-  "sfxVol": 0.2559,
-  "music": "son-insan-01/music.wav",
-  "musicVol": 0.0392
+  "music": "son-insan-01/music.wav"
  }
 }

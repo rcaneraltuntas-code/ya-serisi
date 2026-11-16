@@ -66,14 +66,26 @@ const CityLayer: React.FC<{ base: number; h: number; seed: number; color: string
   return <g>{out}</g>;
 };
 
-export const Rooftop: React.FC<{ t: number; sunX?: number; sunY?: number; clock?: boolean; spin?: number; red?: number; crack?: number; lightsOut?: number; blackout?: number; low?: number; cityLit?: number }> = ({
-  t, sunX = 960, sunY = 640, clock = false, spin = 0, red = 0, crack = 0, lightsOut = 0, blackout = 0, low = 0, cityLit = 1,
+export const Rooftop: React.FC<{ t: number; sunX?: number; sunY?: number; clock?: boolean; spin?: number; red?: number; crack?: number; lightsOut?: number; blackout?: number; low?: number; cityLit?: number; night?: boolean }> = ({
+  t, sunX = 960, sunY = 640, clock = false, spin = 0, red = 0, crack = 0, lightsOut = 0, blackout = 0, low = 0, cityLit = 1, night = false,
 }) => {
   const sag = (x: number) => 440 + 80 * (1 - Math.pow((x - 960) / 860, 2)) + Math.sin(t / 22 + x / 400) * 5 * (1 - Math.pow((x - 960) / 860, 2));
   const bulbs = Array.from({ length: 15 }).map((_, i) => 140 + i * 117);
   return (
     <g>
       <DuskSky id="roof3" horizonY={760} red={red} />
+      {night ? (
+        <g>
+          <rect x={-400} y={-600} width={2720} height={1500} fill="#0B0D1E" />
+          <rect x={-400} y={420} width={2720} height={440} fill="#1B2140" opacity={0.55} />
+          {Array.from({ length: 90 }).map((_, i) => <circle key={`st${i}`} cx={-200 + rnd(81, i) * 2300} cy={-500 + rnd(82, i) * 1200} r={1.2 + rnd(83, i) * 2} fill="#DDE6FF" opacity={(0.25 + rnd(84, i) * 0.5) * (0.8 + 0.2 * Math.sin(t / 9 + i))} />)}
+          <g filter="url(#blur6)" opacity={0.5}>
+            <ellipse cx={520} cy={300} rx={420} ry={26} fill="#1E2340" />
+            <ellipse cx={1380} cy={420} rx={360} ry={22} fill="#1E2340" />
+          </g>
+        </g>
+      ) : (
+        <g>
       {/* long clouds lit from below by the low sun */}
       <g filter="url(#blur6)" opacity={1 - red * 0.6}>
         {[
@@ -96,11 +108,13 @@ export const Rooftop: React.FC<{ t: number; sunX?: number; sunY?: number; clock?
         const fl = Math.sin(t / 2.6 + i * 1.3) * 7;
         return <path key={`bird${i}`} d={`M ${bx - 13} ${by + fl * 0.4} Q ${bx - 6} ${by - 6 + fl} ${bx} ${by} Q ${bx + 6} ${by - 6 + fl} ${bx + 13} ${by + fl * 0.4}`} stroke="#2A1A30" strokeWidth={3.5} fill="none" strokeLinecap="round" opacity={0.85} />;
       })}
+        </g>
+      )}
       {/* a low camera (low > 0): the city and the roof drop in frame, the lights climb */}
       <g transform={`translate(0 ${low})`}>
       {/* the city in three depths: hazy, middle, and the near blocks at the edges */}
       <CityLayer base={790} h={250} seed={21} color={red > 0.5 ? '#4A1A2A' : '#6A4A70'} lit={Math.min(0.9, 0.12 * cityLit)} win="#FFD0A0" t={t} blackout={blackout} />
-      <rect x={-400} y={600} width={2720} height={240} fill="url(#kitShaft)" opacity={0.5} />
+      {night ? null : <rect x={-400} y={600} width={2720} height={240} fill="url(#kitShaft)" opacity={0.5} />}
       <CityLayer base={806} h={200} seed={33} color={red > 0.5 ? '#2E0E1C' : '#3E2E52'} lit={Math.min(0.9, 0.22 * cityLit)} win="#FFC27A" t={t} antennas blackout={blackout} />
       {/* a water tower on a nearer roof */}
       <g fill={red > 0.5 ? '#1E0812' : '#2A2040'}>
@@ -133,7 +147,7 @@ export const Rooftop: React.FC<{ t: number; sunX?: number; sunY?: number; clock?
         <circle key={`gr${i}`} cx={-200 + rnd(61, i) * 2300} cy={840 + rnd(62, i) * 300} r={1.5 + rnd(63, i) * 3} fill="#2A2232" />
       ))}
       {/* a puddle on the deck holding the sky, plant pots on the parapet, a folding chair */}
-      <ellipse cx={1180} cy={900} rx={190} ry={22} fill="#E0906A" opacity={0.25 * (1 - red)} />
+      <ellipse cx={1180} cy={900} rx={190} ry={22} fill={night ? '#2A3560' : '#E0906A'} opacity={0.25 * (1 - red)} />
       <ellipse cx={1180} cy={900} rx={150} ry={14} fill="#6A3E6E" opacity={0.3 * (1 - red)} />
       {[1100, 1180, 1250].map((x, i) => (
         <g key={`pot${i}`}>

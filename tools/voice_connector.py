@@ -51,63 +51,91 @@ for w in words[:-1]:
         t = P['question'] if ('?' in p or '!' in p) else P['sentence'] if ('.' in p or ':' in p) else P['comma'] if ',' in p else None
     target.append(t)
 x = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', str(raw), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True, check=True).stdout, dtype=np.float32).astype(np.float64)
-fade = int(0.004 * SR)
-out, pos, cur = [np.zeros(int(P['lead'] * SR))], 0.0, P['lead']
-res = []
+# Pauses are only ever changed inside real silence. The word times say roughly where a gap is; the audio says whether
+# there is one. Inside each gap the longest run of true silence is found: silence is added at its centre, or taken
+# out of its middle. A gap with no silence in it (words that run together) is left exactly as spoken, whatever the
+# episode asks for: cutting or padding there is heard as a stutter.
+hop = int(0.005 * SR)
+env = np.sqrt(np.convolve(x ** 2, np.ones(4 * hop) / (4 * hop), 'same'))
+thr = 0.05 * np.percentile(env, 95)
+xf = int(0.012 * SR)  # 12 ms fades either side of every join
+
+
+def quiet_run(t0, t1):
+    """The longest stretch below the silence threshold between t0 and t1 (seconds), as (start, end) samples."""
+    a, b = max(0, int(t0 * SR)), min(len(x), int(t1 * SR))
+    best, cur = (0, 0), None
+    for k in range(a, b, hop):
+        if env[k] < thr:
+            cur = k if cur is None else cur
+            if k + hop - cur > best[1] - best[0]:
+                best = (cur, k + hop)
+        else:
+            cur = None
+    return best
+
+
+out, res = [np.zeros(int(P['lead'] * SR))], []
+pos, cur, skipped = 0, P['lead'], 0  # pos: next unread sample of the take; cur: seconds written so far
+
+
+def emit(a, b):
+    global cur
+    seg = x[a:b].copy()
+    if len(seg) > 2 * xf:
+        seg[:xf] *= np.linspace(0, 1, xf)
+        seg[-xf:] *= np.linspace(1, 0, xf)
+    out.append(seg)
+    cur += len(seg) / SR
+
+
 for i, w in enumerate(words):
     nxt = words[i + 1] if i + 1 < len(words) else None
-    gap = (nxt['s'] - w['e']) if nxt else 0
-    tgt = target[i] if nxt else 0
-    if nxt and tgt is None:
-        tgt = min(gap, P['word'])
-    mid = w['e'] + gap / 2 if nxt else len(x) / SR
-    seg = x[int(pos * SR):int(mid * SR)].copy() if nxt else x[int(pos * SR):].copy()
-    if len(seg) > 2 * fade:
-        seg[:fade] *= np.linspace(0, 1, fade)
-        seg[-fade:] *= np.linspace(1, 0, fade)
-    res.append({'w': w['w'], 's': round(cur + (w['s'] - pos), 3), 'e': round(cur + (w['e'] - pos), 3), 'p': w['p']})
-    if nxt:
-        if tgt < gap:  # cut the pause from its middle
-            keep = tgt / 2
-            a = seg[: int((w['e'] - pos + keep) * SR)]
-            out.append(a)
-            cur += len(a) / SR
-            pos = nxt['s'] - keep
-        else:  # keep the take's pause and add silence at its quietest moment (never through a breath or a gasp)
-            g0, g1 = int(w['e'] * SR), int(nxt['s'] * SR)
-            hop = int(0.02 * SR)
-            best, at = None, (g0 + g1) // 2
-            for k in range(g0 + hop, max(g0 + hop + 1, g1 - 2 * hop), hop):
-                r = float(np.sqrt(np.mean(x[k:k + 2 * hop] ** 2)))
-                if best is None or r < best:
-                    best, at = r, k + hop
-            seg = x[int(pos * SR):at].copy()
-            if len(seg) > 2 * fade:
-                seg[:fade] *= np.linspace(0, 1, fade)
-                seg[-fade:] *= np.linspace(1, 0, fade)
-            out.append(seg)
-            out.append(np.zeros(int((tgt - gap) * SR)))
-            cur += len(seg) / SR + (tgt - gap)
-            pos = at / SR
+    res.append({'w': w['w'], 's': round(cur + (w['s'] - pos / SR), 3), 'e': round(cur + (w['e'] - pos / SR), 3), 'p': w['p']})
+    if not nxt:
+        emit(pos, len(x))
+        break
+    gap, tgt = nxt['s'] - w['e'], target[i]
+    q0, q1 = quiet_run(w['e'] - 0.06, nxt['s'] + 0.06)
+    have = (q1 - q0) / SR
+    if tgt is None or have < 0.05:
+        skipped += tgt is not None and abs(tgt - gap) > 0.05
+        continue  # nothing to do, or no silence to do it in: keep reading the take straight through
+    delta = tgt - have  # the pause is the silence itself, so that is what gets set
+    mid = (q0 + q1) // 2
+    if delta >= 0:
+        emit(pos, mid)
+        out.append(np.zeros(int(delta * SR)))
+        cur += int(delta * SR) / SR
+        pos = mid
     else:
-        out.append(seg)
+        cut = min(-delta, max(0.0, have - 0.08))
+        h = int(cut * SR / 2)
+        emit(pos, mid - h)
+        pos = mid + h
 y = np.concatenate(out)
 # "voice_fx": [{"from": "Sakın", "fx": "phone"}] puts the words from that one on through a phone: band-limited, a
 # little crushed (the caller on the other end of the line)
 for fx in ep.get('voice_fx', []):
     i0 = next(i for i, w in enumerate(res) if norm(w['w']) == norm(fx['from']))
-    a0, a1 = int((res[i0]['s'] - 0.06) * SR), len(y)
+    i1 = next((i for i, w in enumerate(res) if norm(w['w']) == norm(fx['to'])), None) if fx.get('to') else None
+    a0 = max(0, int((res[i0]['s'] - 0.06) * SR))
+    a1 = len(y) if i1 is None else min(len(y), int((res[i1]['e'] + 0.12) * SR))
     seg = y[a0:a1]
     F = np.fft.rfft(seg)
     fr = np.fft.rfftfreq(len(seg), 1 / SR)
     F[(fr < 420) | (fr > 3100)] *= 0.03
     seg = np.tanh(np.fft.irfft(F, len(seg)) * 3.2) * 0.42
+    k = min(len(seg) // 2, int(0.01 * SR))
+    if k:
+        seg[:k] *= np.linspace(0, 1, k)
+        seg[-k:] *= np.linspace(1, 0, k)
     y[a0:a1] = seg
 with wave.open(str(S / 'public' / slug / 'voice.wav'), 'wb') as f:
     f.setnchannels(1); f.setsampwidth(2); f.setframerate(SR)
     f.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
 (S / 'src/episodes' / slug / 'words.json').write_text(json.dumps(res, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
-print(f'{len(x) / SR:.2f} s -> {len(y) / SR:.2f} s; last word ends {res[-1]["e"]:.2f}')
+print(f'{len(x) / SR:.2f} s -> {len(y) / SR:.2f} s; last word ends {res[-1]["e"]:.2f}; {skipped} requested pauses left as spoken (no silence there)')
 try:
     print(' '.join(f"{w['w']}@{w['s']}" for w in res))
 except BrokenPipeError:

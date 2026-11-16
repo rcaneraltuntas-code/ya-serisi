@@ -1,0 +1,733 @@
+{
+ "id": "SI20",
+ "slug": "si-20",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 20"
+ ],
+ "lead": 2.6,
+ "tail": 7.0,
+ "target": 59,
+ "lines": [
+  {
+   "t": "O, kameraya bakıyordu.",
+   "tag": "[whispers]",
+   "pause": 1.4
+  },
+  {
+   "t": "El salladı.",
+   "tag": "[trembling voice]",
+   "pause": 3.0
+  },
+  {
+   "t": "Kalmıştı.",
+   "tag": "[softly]",
+   "pause": 1.0
+  },
+  {
+   "t": "Bizim yerimize.",
+   "tag": "[whispers]",
+   "pause": 3.4
+  },
+  {
+   "t": "O gece uyuyamadım.",
+   "tag": "[softly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Saat üç on yedide… telefonum çaldı.",
+   "tag": "[nervous]",
+   "pause": 2.8
+  },
+  {
+   "t": "Arayan: Ben.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Açtım.",
+   "tag": "[softly]",
+   "pause": 2.4
+  },
+  {
+   "t": "İyi misiniz?",
+   "tag": "[deep voice] [softly]",
+   "pause": 1.8,
+   "fx": "phone"
+  },
+  {
+   "t": "İyiyiz.",
+   "tag": "[softly]",
+   "pause": 1.8
+  },
+  {
+   "t": "Elif?",
+   "tag": "[deep voice]",
+   "pause": 1.6,
+   "fx": "phone"
+  },
+  {
+   "t": "Uyuyor.",
+   "tag": "[whispers]",
+   "pause": 2.0
+  },
+  {
+   "t": "Güzel.",
+   "tag": "[deep voice] [softly]",
+   "pause": 3.2,
+   "fx": "phone"
+  },
+  {
+   "t": "Sustu.",
+   "tag": "[softly]",
+   "pause": 1.4
+  },
+  {
+   "t": "Hatta bir nefes vardı.",
+   "tag": "[whispers]",
+   "pause": 1.8
+  },
+  {
+   "t": "Sonra…",
+   "tag": "[nervous]",
+   "pause": 2.2
+  },
+  {
+   "t": "O zaman kapıyı aç.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.2,
+   "fx": "phone"
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "tape",
+   "at": 0,
+   "key": 20,
+   "props": {
+    "tau": [
+     118,
+     126
+    ],
+    "on": "watcher",
+    "face": 1,
+    "z": [
+     4.6,
+     5.0
+    ],
+    "light": 0.5,
+    "box": true
+   }
+  },
+  {
+   "id": "b",
+   "use": "tape",
+   "at": 1,
+   "key": 30,
+   "props": {
+    "tau": [
+     120,
+     126
+    ],
+    "on": "watcher",
+    "face": 1,
+    "wave": true,
+    "z": [
+     5.0,
+     5.8
+    ],
+    "light": 0.5
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "tape",
+   "at": 2,
+   "key": 60,
+   "props": {
+    "tau": [
+     122,
+     126
+    ],
+    "on": "watcher",
+    "face": 1,
+    "wave": true,
+    "z": [
+     2.4,
+     1.6
+    ],
+    "light": 0.4
+   },
+   "sfx": [
+    [
+     70,
+     "switch_off",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 4,
+   "key": 40,
+   "props": {
+    "set": "bedroom",
+    "clock": "03:16",
+    "lamp": 0.15,
+    "dark": 0.45,
+    "c": [
+     1000,
+     540,
+     1.15
+    ],
+    "c2": [
+     1000,
+     540,
+     1.3
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "room_tone",
+     0.12,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "e",
+   "use": "clock",
+   "at": 5,
+   "key": 70,
+   "props": {
+    "text": "03:16",
+    "textAt": [
+     50,
+     "03:17"
+    ],
+    "lamp": 0.15
+   },
+   "sfx": [
+    [
+     50,
+     "drone_hit",
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "phone",
+   "after": 5,
+   "off": 8,
+   "key": 30,
+   "props": {
+    "mode": "ring",
+    "bg": "bedroom",
+    "bgp": {
+     "lamp": 0.3
+    }
+   },
+   "sfx": [
+    [
+     6,
+     "phone_ring",
+     0.5,
+     34
+    ],
+    [
+     44,
+     "phone_ring",
+     0.5,
+     72
+    ],
+    [
+     82,
+     "phone_ring",
+     0.5,
+     108
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "phone",
+   "at": 7,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "talk": [
+     60,
+     400
+    ],
+    "bg": "bedroom",
+    "bgp": {
+     "lamp": 0.3
+    }
+   },
+   "sfx": [
+    [
+     2,
+     "copy_click",
+     0.35
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 10,
+   "key": 30,
+   "props": {
+    "set": "bedroom",
+    "clock": "03:17",
+    "lamp": 0.15,
+    "dark": 0.5,
+    "c": [
+     620,
+     620,
+     1.6
+    ],
+    "c2": [
+     600,
+     620,
+     1.8
+    ]
+   }
+  },
+  {
+   "id": "i",
+   "use": "phone",
+   "at": 12,
+   "key": 20,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "talk": [
+     0,
+     30
+    ],
+    "bg": "bedroom",
+    "bgp": {
+     "lamp": 0.3
+    }
+   }
+  },
+  {
+   "id": "j",
+   "use": "phone",
+   "at": 13,
+   "key": 40,
+   "props": {
+    "mode": "call",
+    "rise": false,
+    "timer": "00",
+    "bg": "bedroom",
+    "bgp": {
+     "lamp": 0.3
+    }
+   },
+   "sfx": [
+    [
+     30,
+     "heartbeat",
+     0.3,
+     118
+    ],
+    [
+     118,
+     "heartbeat",
+     0.3,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "k",
+   "use": "phone",
+   "at": 16,
+   "key": 30,
+   "props": {
+    "mode": "live",
+    "rise": false,
+    "bg": "bedroom",
+    "bgp": {
+     "lamp": 0.3
+    }
+   },
+   "sfx": [
+    [
+     70,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "door",
+   "after": 16,
+   "off": 26,
+   "key": 30,
+   "props": {
+    "style": "room",
+    "mode": "knock",
+    "knocks": [
+     16,
+     25,
+     34
+    ]
+   },
+   "sfx": [
+    [
+     10,
+     "knock",
+     1.0
+    ],
+    [
+     50,
+     "heartbeat",
+     0.35,
+     130
+    ]
+   ]
+  },
+  {
+   "id": "m",
+   "use": "card",
+   "after": 16,
+   "off": 116,
+   "key": 40,
+   "props": {
+    "title": "SON İNSAN",
+    "sub": "SON"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "O, kameraya bakıyordu."
+  },
+  {
+   "beat": "1",
+   "text": "El salladı."
+  },
+  {
+   "beat": "2",
+   "text": "Kalmıştı."
+  },
+  {
+   "beat": "3",
+   "text": "Bizim yerimize."
+  },
+  {
+   "beat": "4",
+   "text": "O gece uyuyamadım."
+  },
+  {
+   "beat": "5",
+   "text": "Saat üç on yedide… telefonum çaldı."
+  },
+  {
+   "beat": "6",
+   "text": "Arayan: Ben."
+  },
+  {
+   "beat": "7",
+   "text": "Açtım."
+  },
+  {
+   "beat": "8",
+   "text": "İyi misiniz?"
+  },
+  {
+   "beat": "9",
+   "text": "İyiyiz."
+  },
+  {
+   "beat": "10",
+   "text": "Elif?"
+  },
+  {
+   "beat": "11",
+   "text": "Uyuyor."
+  },
+  {
+   "beat": "12",
+   "text": "Güzel."
+  },
+  {
+   "beat": "13",
+   "text": "Sustu."
+  },
+  {
+   "beat": "14",
+   "text": "Hatta bir nefes vardı."
+  },
+  {
+   "beat": "15",
+   "text": "Sonra…"
+  },
+  {
+   "beat": "16",
+   "text": "O zaman kapıyı aç."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 1.36,
+   "L1": 2.92,
+   "L2": 0.97,
+   "L3": 3.31,
+   "L4": 2.73,
+   "L5": 2.73,
+   "L6": 2.53,
+   "L7": 2.34,
+   "L8": 1.75,
+   "L9": 1.75,
+   "L10": 1.56,
+   "L11": 1.95,
+   "L12": 3.12,
+   "L13": 1.36,
+   "L14": 1.75,
+   "L15": 2.14
+  }
+ },
+ "voice_fx": [
+  {
+   "from": "L8",
+   "to": "L8",
+   "fx": "phone"
+  },
+  {
+   "from": "L10",
+   "to": "L10",
+   "fx": "phone"
+  },
+  {
+   "from": "L12",
+   "to": "L12",
+   "fx": "phone"
+  },
+  {
+   "from": "L16",
+   "to": "L16",
+   "fx": "phone"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:163"
+  },
+  {
+   "shot": "c",
+   "at": "f:277"
+  },
+  {
+   "shot": "d",
+   "at": "f:449"
+  },
+  {
+   "shot": "e",
+   "at": "f:560"
+  },
+  {
+   "shot": "f",
+   "at": "f:643"
+  },
+  {
+   "shot": "g",
+   "at": "f:818"
+  },
+  {
+   "shot": "h",
+   "at": "f:1039"
+  },
+  {
+   "shot": "i",
+   "at": "f:1170"
+  },
+  {
+   "shot": "j",
+   "at": "f:1273"
+  },
+  {
+   "shot": "k",
+   "at": "f:1509"
+  },
+  {
+   "shot": "l",
+   "at": "f:1591"
+  },
+  {
+   "shot": "m",
+   "at": "f:1681"
+  }
+ ],
+ "end": "f:1775",
+ "sound": {
+  "clips": {
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "knock": [
+    "connector sfx: three slow heavy knocks on a wooden door in a silent room, close, ominous",
+    2
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ]
+  },
+  "events": [
+   [
+    "b+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "b+88"
+   ],
+   [
+    "b+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "b+170"
+   ],
+   [
+    "c+70",
+    "switch_off",
+    0.3,
+    "onset"
+   ],
+   [
+    "d+0",
+    "room_tone",
+    0.12,
+    "onset",
+    "d+200"
+   ],
+   [
+    "e+50",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
+    "f+6",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+34"
+   ],
+   [
+    "f+44",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+72"
+   ],
+   [
+    "f+82",
+    "phone_ring",
+    0.5,
+    "onset",
+    "f+108"
+   ],
+   [
+    "g+2",
+    "copy_click",
+    0.35,
+    "onset"
+   ],
+   [
+    "j+30",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+118"
+   ],
+   [
+    "j+118",
+    "heartbeat",
+    0.3,
+    "onset",
+    "j+200"
+   ],
+   [
+    "k+70",
+    "drone_hit",
+    0.4,
+    "onset"
+   ],
+   [
+    "l+10",
+    "knock",
+    1.0,
+    "onset"
+   ],
+   [
+    "l+50",
+    "heartbeat",
+    0.35,
+    "onset",
+    "l+130"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

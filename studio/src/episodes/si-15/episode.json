@@ -1,0 +1,765 @@
+{
+ "id": "SI15",
+ "slug": "si-15",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 15"
+ ],
+ "lead": 2.6,
+ "tail": 4.6,
+ "target": 57,
+ "lines": [
+  {
+   "t": "Öteki ben, cebinden bir defter çıkardı.",
+   "tag": "[softly]",
+   "pause": 2.4
+  },
+  {
+   "t": "On dokuz satır.",
+   "tag": "[slowly]",
+   "pause": 1.2
+  },
+  {
+   "t": "Hepsinde aynı isim.",
+   "pause": 1.0
+  },
+  {
+   "t": "Benim ismim.",
+   "tag": "[whispers]",
+   "pause": 2.6
+  },
+  {
+   "t": "Hepsinin yanında, bir işaret.",
+   "tag": "[curious]",
+   "pause": 2.8
+  },
+  {
+   "t": "Seni on dokuz kere gönderdim, dedi.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 1.2
+  },
+  {
+   "t": "Sabaha.",
+   "tag": "[deep voice]",
+   "pause": 0.9
+  },
+  {
+   "t": "Annene.",
+   "tag": "[deep voice] [softly]",
+   "pause": 2.8
+  },
+  {
+   "t": "On dokuzunda da geri geldin.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 2.8
+  },
+  {
+   "t": "Neden?",
+   "tag": "[whispers]",
+   "pause": 2.8
+  },
+  {
+   "t": "Elif'e baktı.",
+   "tag": "[softly]",
+   "pause": 2.4
+  },
+  {
+   "t": "Çünkü o hiç gelmedi.",
+   "tag": "[deep voice] [slowly]",
+   "pause": 3.0
+  },
+  {
+   "t": "Elif başını eğdi.",
+   "tag": "[softly]",
+   "pause": 2.6
+  },
+  {
+   "t": "Ben ışığı görmüyorum abi.",
+   "tag": "[whispers] [trembling voice]",
+   "pause": 1.8
+  },
+  {
+   "t": "Hiç görmedim.",
+   "tag": "[whispers]",
+   "pause": 1.0
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "use": "scene",
+   "at": 0,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     320,
+     2.2
+    ],
+    "c2": [
+     "near",
+     300,
+     1.7
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired",
+      "hold": true
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.14,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "b",
+   "use": "paper",
+   "at": 1,
+   "key": 60,
+   "props": {
+    "kind": "notebook",
+    "rows": 19,
+    "row": "Kaan",
+    "bg": "roof",
+    "bgp": {
+     "night": true,
+     "lightsOut": 1,
+     "cityLit": 1.8
+    }
+   },
+   "sfx": [
+    [
+     2,
+     "paper_land",
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": "c",
+   "use": "paper",
+   "at": 4,
+   "key": 30,
+   "props": {
+    "kind": "notebook",
+    "rows": 19,
+    "row": "Kaan",
+    "at": -40,
+    "bg": "roof",
+    "bgp": {
+     "night": true,
+     "lightsOut": 1,
+     "cityLit": 1.8
+    }
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.2,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.2,
+     120
+    ]
+   ]
+  },
+  {
+   "id": "d",
+   "use": "scene",
+   "at": 5,
+   "key": 30,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     325,
+     2.3
+    ],
+    "c2": [
+     "near",
+     328,
+     2.6
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e",
+   "use": "scene",
+   "at": 6,
+   "key": 40,
+   "props": {
+    "set": "kitchen",
+    "veil": 0.08,
+    "c": [
+     960,
+     520,
+     1.15
+    ],
+    "c2": [
+     960,
+     510,
+     1.3
+    ],
+    "who": [
+     {
+      "who": "mom",
+      "at": "island",
+      "expr": "happy"
+     }
+    ],
+    "mugs": 2,
+    "light": 0.25
+   },
+   "sfx": [
+    [
+     0,
+     "sparkle",
+     0.08
+    ]
+   ]
+  },
+  {
+   "id": "f",
+   "use": "scene",
+   "at": 8,
+   "key": 50,
+   "props": {
+    "set": "bedroom",
+    "eyes": [
+     [
+      0,
+      0
+     ],
+     [
+      16,
+      0.5
+     ],
+     [
+      22,
+      0.3
+     ],
+     [
+      40,
+      1
+     ]
+    ],
+    "c": [
+     1000,
+     540,
+     1.15
+    ],
+    "c2": [
+     1000,
+     540,
+     1.25
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "rewind_start",
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": "g",
+   "use": "scene",
+   "at": 9,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "near",
+     325,
+     2.6
+    ],
+    "c2": [
+     "near",
+     328,
+     3.0
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "near",
+      "expr": "tired"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.25,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.25,
+     170
+    ]
+   ]
+  },
+  {
+   "id": "h",
+   "use": "scene",
+   "at": 10,
+   "key": 30,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     960,
+     720,
+     1.25
+    ],
+    "who": [
+     {
+      "who": "other",
+      "at": "nearR",
+      "expr": "tired",
+      "yaw": -0.5,
+      "look": -1
+     },
+     {
+      "who": "sis",
+      "at": "nearL"
+     }
+    ]
+   }
+  },
+  {
+   "id": "i",
+   "use": "scene",
+   "at": 11,
+   "key": 40,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "nearL",
+     200,
+     2.0
+    ],
+    "c2": [
+     "nearL",
+     215,
+     2.4
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "nearL"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "roof_wind",
+     0.14,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "j",
+   "use": "scene",
+   "at": 12,
+   "key": 30,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "nearL",
+     225,
+     2.8
+    ],
+    "c2": [
+     "nearL",
+     230,
+     3.0
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "nearL",
+      "down": true,
+      "expr": "worried"
+     }
+    ]
+   }
+  },
+  {
+   "id": "k",
+   "use": "scene",
+   "at": 13,
+   "key": 50,
+   "props": {
+    "set": "roof",
+    "night": true,
+    "lightsOut": 1,
+    "cityLit": 1.8,
+    "dark": 0.08,
+    "c": [
+     "nearL",
+     236,
+     3.4
+    ],
+    "c2": [
+     "nearL",
+     240,
+     4.0
+    ],
+    "who": [
+     {
+      "who": "sis",
+      "at": "nearL",
+      "expr": "worried"
+     }
+    ]
+   },
+   "sfx": [
+    [
+     0,
+     "heartbeat",
+     0.3,
+     88
+    ],
+    [
+     88,
+     "heartbeat",
+     0.3,
+     176
+    ],
+    [
+     176,
+     "heartbeat",
+     0.3,
+     230
+    ],
+    [
+     60,
+     "drone_hit",
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "use": "card",
+   "after": 14,
+   "off": 50,
+   "key": 40,
+   "props": {
+    "sub": "DEVAMI 16. BÖLÜMDE"
+   }
+  }
+ ],
+ "script": [
+  {
+   "beat": "0",
+   "text": "Öteki ben, cebinden bir defter çıkardı."
+  },
+  {
+   "beat": "1",
+   "text": "On dokuz satır."
+  },
+  {
+   "beat": "2",
+   "text": "Hepsinde aynı isim."
+  },
+  {
+   "beat": "3",
+   "text": "Benim ismim."
+  },
+  {
+   "beat": "4",
+   "text": "Hepsinin yanında, bir işaret."
+  },
+  {
+   "beat": "5",
+   "text": "Seni on dokuz kere gönderdim, dedi."
+  },
+  {
+   "beat": "6",
+   "text": "Sabaha."
+  },
+  {
+   "beat": "7",
+   "text": "Annene."
+  },
+  {
+   "beat": "8",
+   "text": "On dokuzunda da geri geldin."
+  },
+  {
+   "beat": "9",
+   "text": "Neden?"
+  },
+  {
+   "beat": "10",
+   "text": "Elif'e baktı."
+  },
+  {
+   "beat": "11",
+   "text": "Çünkü o hiç gelmedi."
+  },
+  {
+   "beat": "12",
+   "text": "Elif başını eğdi."
+  },
+  {
+   "beat": "13",
+   "text": "Ben ışığı görmüyorum abi."
+  },
+  {
+   "beat": "14",
+   "text": "Hiç görmedim."
+  }
+ ],
+ "pauses": {
+  "lead": 2.6,
+  "sentence": 0.6,
+  "after": {
+   "L0": 2.51,
+   "L1": 1.25,
+   "L2": 1.04,
+   "L3": 2.72,
+   "L4": 2.93,
+   "L5": 1.25,
+   "L6": 0.94,
+   "L7": 2.93,
+   "L8": 2.93,
+   "L9": 2.93,
+   "L10": 2.51,
+   "L11": 3.13,
+   "L12": 2.72,
+   "L13": 1.88
+  }
+ },
+ "voice_fx": [],
+ "edit": [
+  {
+   "shot": "a",
+   "at": "f:0"
+  },
+  {
+   "shot": "b",
+   "at": "f:220"
+  },
+  {
+   "shot": "c",
+   "at": "f:451"
+  },
+  {
+   "shot": "d",
+   "at": "f:594"
+  },
+  {
+   "shot": "e",
+   "at": "f:706"
+  },
+  {
+   "shot": "f",
+   "at": "f:855"
+  },
+  {
+   "shot": "g",
+   "at": "f:989"
+  },
+  {
+   "shot": "h",
+   "at": "f:1087"
+  },
+  {
+   "shot": "i",
+   "at": "f:1184"
+  },
+  {
+   "shot": "j",
+   "at": "f:1332"
+  },
+  {
+   "shot": "k",
+   "at": "f:1443"
+  },
+  {
+   "shot": "l",
+   "at": "f:1626"
+  }
+ ],
+ "end": "f:1714",
+ "sound": {
+  "clips": {
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "paper_land": [
+    "a thick stack of paper sheets dropped flat on a wooden desk, a soft slap and rustle",
+    0.7
+   ],
+   "rewind_start": [
+    "a quick reverse swoosh, like a sound being sucked backwards",
+    0.7
+   ],
+   "roof_wind": [
+    "a gentle evening breeze on a city rooftop, distant traffic",
+    7.0
+   ],
+   "sparkle": [
+    "a short bright magical sparkle twinkle, cartoon",
+    0.8
+   ]
+  },
+  "events": [
+   [
+    "a+0",
+    "roof_wind",
+    0.14,
+    "onset",
+    "a+200"
+   ],
+   [
+    "b+2",
+    "paper_land",
+    0.2,
+    "onset"
+   ],
+   [
+    "c+0",
+    "heartbeat",
+    0.2,
+    "onset",
+    "c+88"
+   ],
+   [
+    "c+88",
+    "heartbeat",
+    0.2,
+    "onset",
+    "c+120"
+   ],
+   [
+    "e+0",
+    "sparkle",
+    0.08,
+    "onset"
+   ],
+   [
+    "f+0",
+    "rewind_start",
+    0.2,
+    "onset"
+   ],
+   [
+    "g+0",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+88"
+   ],
+   [
+    "g+88",
+    "heartbeat",
+    0.25,
+    "onset",
+    "g+170"
+   ],
+   [
+    "i+0",
+    "roof_wind",
+    0.14,
+    "onset",
+    "i+200"
+   ],
+   [
+    "k+0",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+88"
+   ],
+   [
+    "k+88",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+176"
+   ],
+   [
+    "k+176",
+    "heartbeat",
+    0.3,
+    "onset",
+    "k+230"
+   ],
+   [
+    "k+60",
+    "drone_hit",
+    0.4,
+    "onset"
+   ]
+  ],
+  "repeats": [],
+  "music": {
+   "clip": "drone_bed"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

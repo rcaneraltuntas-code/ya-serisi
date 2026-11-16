@@ -97,7 +97,7 @@ export const watcherHead = () => {
  * The watcher never moves and looks straight into the lens. `face` 0 shows him as the camera caught him (a dark
  * face, two light eyes), 1 the face itself. Draw it inside a camera group; CctvOverlay goes on top, outside it.
  */
-export const Cctv: React.FC<{ tau: number; id?: string; up?: number; light?: number; face?: number; soft?: boolean }> = ({ tau, id = 'cc', up = 30, light = 0, face = 0, soft = false }) => {
+export const Cctv: React.FC<{ tau: number; id?: string; up?: number; light?: number; face?: number; soft?: boolean; wave?: number; cover?: boolean; crowd?: string }> = ({ tau, id = 'cc', up = 30, light = 0, face = 0, soft = false, wave, cover = false }) => {
   const tiles: React.ReactNode[] = [];
   for (let i = -5; i <= 5; i++) {
     const a = cctvG(i / 5, 0);
@@ -146,7 +146,12 @@ export const Cctv: React.FC<{ tau: number; id?: string; up?: number; light?: num
   });
   const wg = cctvG(WATCHER.gx, WATCHER.gz);
   const ws = 0.62 * cctvS(WATCHER.gz);
-  const wpose: Pose = { ...basePose, x: wg.x, y: wg.y - LEG_LEN * ws, scale: ws, yaw: 0, look: 0, armL: { a: 8, b: -4 }, armR: { a: 8, b: -4 }, expr: 'neutral' };
+  const wpose: Pose = { ...basePose, x: wg.x, y: wg.y - LEG_LEN * ws, scale: ws, yaw: 0, look: 0, armL: { a: 8, b: -4 }, armR: wave !== undefined ? { a: wave, b: 42 } : { a: 8, b: -4 }, expr: 'neutral' };
+  // the child beside him the first night: his hand across her eyes
+  const sx = wg.x - 78 * ws;
+  const sscale = ws * 0.74;
+  const spose: Pose = { ...basePose, x: sx, y: wg.y - LEG_LEN * sscale, scale: sscale, yaw: 0.1, look: 0, expr: 'neutral' };
+  const shead = { x: sx, y: wg.y - LEG_LEN * sscale - 176 * sscale };
   return (
     <g>
       <defs>
@@ -169,6 +174,14 @@ export const Cctv: React.FC<{ tau: number; id?: string; up?: number; light?: num
           {face > 0 ? (
             <g opacity={face}>
               <Hero look={LOOKS.pipHood} pose={wpose} rimId="rimL" shadow={0.7} />
+            </g>
+          ) : null}
+          {cover ? (
+            <g>
+              <Hero look={LOOKS.sis} pose={spose} rimId="rimL" shadow={0.7} />
+              <path d={`M ${wg.x - 40 * ws} ${wg.y - LEG_LEN * ws - 106 * ws} L ${shead.x + 26 * sscale} ${shead.y}`} stroke={LOOKS.pipHood.line} strokeWidth={26 * ws} strokeLinecap="round" />
+              <path d={`M ${wg.x - 40 * ws} ${wg.y - LEG_LEN * ws - 106 * ws} L ${shead.x + 26 * sscale} ${shead.y}`} stroke={LOOKS.pipHood.limb} strokeWidth={20 * ws} strokeLinecap="round" />
+              <ellipse cx={shead.x} cy={shead.y - 2 * sscale} rx={52 * sscale} ry={20 * sscale} fill={LOOKS.pipHood.hand} stroke={LOOKS.pipHood.line} strokeWidth={3 * ws} />
             </g>
           ) : null}
           {figures}
