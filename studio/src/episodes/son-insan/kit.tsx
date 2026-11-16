@@ -841,11 +841,13 @@ const Captions: React.FC<{ caps: P[]; f: number }> = ({ caps, f }) => {
 };
 
 /** Build an episode from its episode.json: each shot is { id, use, props }. */
-export const buildEpisode = (ep: any, timeline: any) => {
+export const buildEpisode = (ep: any, timeline: any, custom?: { make: (m: any) => Record<string, Shot> }) => {
   const shots: Record<string, Shot> = {};
+  // hand-animated shots (use: "custom") come from the episode's own shots.tsx; they are told where the lines fall
+  const own = custom ? custom.make({ ...(ep.marks ?? { L: [], N: [] }), cut: Object.fromEntries((ep.edit ?? []).map((e: any) => [e.shot, parseInt(String(e.at).slice(2), 10)])) }) : {};
   for (const s of ep.shots) {
-    const make = USES[s.use];
-    if (!make) throw new Error(`${ep.slug}: shot ${s.id} uses unknown scene "${s.use}"`);
+    const make = s.use === 'custom' ? () => own[s.id] : USES[s.use];
+    if (!make || (s.use === 'custom' && !own[s.id])) throw new Error(`${ep.slug}: shot ${s.id} uses unknown scene "${s.use}"`);
     const inner = make(s.props ?? {}, `${ep.id}${s.id}`.replace(/[^A-Za-z0-9]/g, ''));
     const Inner = inner;
     shots[s.id] = ep.captions && s.use !== 'card'

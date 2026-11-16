@@ -75,37 +75,10 @@
  "shots": [
   {
    "id": "a",
-   "use": "scene",
+   "use": "custom",
    "at": 0,
-   "key": 40,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     950,
-     565,
-     1.02
-    ],
-    "c2": [
-     930,
-     555,
-     1.14
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "back": true,
-      "sway": true
-     },
-     {
-      "who": "self",
-      "at": "right",
-      "yaw": -0.7,
-      "look": -1
-     }
-    ]
-   },
+   "key": 100,
+   "props": {},
    "sfx": [
     [
      0,
@@ -114,219 +87,121 @@
      200
     ],
     [
-     26,
+     20,
      "clink",
+     0.14
+    ],
+    [
+     44,
+     "step",
+     0.16
+    ],
+    [
+     56,
+     "step",
      0.18
     ],
     [
-     70,
-     "clink",
-     0.12
+     68,
+     "step",
+     0.2
+    ],
+    [
+     96,
+     "gasp",
+     0.06
     ]
    ]
   },
   {
    "id": "b",
-   "use": "scene",
-   "ins": 0,
-   "off": -12,
-   "key": 30,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     "counter",
-     250,
-     2.0
-    ],
-    "c2": [
-     "counter",
-     262,
-     2.4
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "back": true,
-      "turnAt": 3,
-      "expr": "happy"
-     },
-     {
-      "who": "self",
-      "at": "right",
-      "yaw": -0.7,
-      "look": -1
-     }
-    ]
-   },
-   "sfx": [
-    [
-     0,
-     "room_tone",
-     0.1,
-     120
-    ]
-   ]
+   "use": "custom",
+   "at": 1,
+   "key": 16,
+   "props": {}
   },
   {
    "id": "c",
-   "use": "scene",
-   "at": 2,
+   "use": "custom",
+   "ins": 0,
+   "off": -10,
    "key": 30,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     "right",
-     305,
-     2.3
-    ],
-    "c2": [
-     "right",
-     310,
-     2.7
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "expr": "happy"
-     },
-     {
-      "who": "self",
-      "at": "right",
-      "yaw": -0.5,
-      "look": -1,
-      "expr": "worried"
-     }
-    ]
-   },
+   "props": {},
    "sfx": [
     [
-     10,
-     "heartbeat",
-     0.2,
-     90
+     0,
+     "whoosh",
+     0.3
     ]
    ]
   },
   {
    "id": "d",
-   "use": "scene",
-   "at": 3,
-   "key": 14,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     930,
-     540,
-     1.3
+   "use": "custom",
+   "at": 2,
+   "key": 40,
+   "props": {},
+   "sfx": [
+    [
+     3,
+     "drone_hit",
+     0.22
     ],
-    "c2": [
-     925,
-     535,
-     1.38
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "expr": "happy",
-      "yaw": 0.4,
-      "look": 1
-     },
-     {
-      "who": "self",
-      "at": "right",
-      "yaw": -0.7,
-      "look": -1,
-      "expr": "worried"
-     }
+    [
+     14,
+     "heartbeat",
+     0.22,
+     80
     ]
-   }
+   ]
   },
   {
    "id": "e",
-   "use": "scene",
-   "ins": 1,
-   "off": -6,
-   "key": 40,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     "counter",
-     258,
-     2.5
+   "use": "custom",
+   "at": 3,
+   "off": 0,
+   "key": 70,
+   "props": {},
+   "sfx": [
+    [
+     4,
+     "step",
+     0.14
     ],
-    "c2": [
-     "counter",
-     266,
-     2.9
+    [
+     14,
+     "step",
+     0.16
     ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "expr": "happy",
-      "yaw": 0.3,
-      "look": 1
-     }
+    [
+     27,
+     "clink",
+     0.12
+    ],
+    [
+     31,
+     "plate_slide",
+     0.32
     ]
-   }
+   ]
   },
   {
    "id": "f",
-   "use": "scene",
+   "use": "custom",
    "at": 4,
-   "key": 40,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     "counter",
-     318,
-     3.9
-    ],
-    "c2": [
-     "counter",
-     322,
-     4.8
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "expr": "happy",
-      "yaw": 0.3,
-      "look": 1
-     }
-    ],
-    "dark": [
-     [
-      0,
-      0.0
-     ],
-     [
-      60,
-      0.22
-     ]
-    ]
-   },
+   "key": 44,
+   "props": {},
    "sfx": [
     [
      0,
      "heartbeat",
      0.3,
-     88
+     60
     ],
     [
-     88,
-     "heartbeat",
-     0.3,
-     130
+     32,
+     "switch_off",
+     0.12
     ]
    ]
   },
@@ -377,45 +252,10 @@
   },
   {
    "id": "h",
-   "use": "scene",
+   "use": "custom",
    "at": 5,
-   "key": 80,
-   "props": {
-    "set": "kitchen",
-    "veil": 0.3,
-    "c": [
-     965,
-     505,
-     1.42
-    ],
-    "c2": [
-     972,
-     498,
-     1.56
-    ],
-    "who": [
-     {
-      "who": "mom",
-      "at": "counter",
-      "expr": "happy",
-      "yaw": 0.45,
-      "look": 1
-     },
-     {
-      "who": "self",
-      "at": "right",
-      "yaw": -0.2,
-      "look": 0,
-      "down": true,
-      "expr": "worried",
-      "exprAt": [
-       70,
-       "shock"
-      ]
-     }
-    ],
-    "dark": 0.2
-   },
+   "key": 96,
+   "props": {},
    "sfx": [
     [
      0,
@@ -434,6 +274,11 @@
      "heartbeat",
      0.35,
      200
+    ],
+    [
+     84,
+     "drone_hit",
+     0.3
     ]
    ]
   },
@@ -559,6 +404,48 @@
    "say": false
   }
  ],
+ "marks": {
+  "L": [
+   [
+    64,
+    130
+   ],
+   [
+    141,
+    168
+   ],
+   [
+    244,
+    297
+   ],
+   [
+    327,
+    338
+   ],
+   [
+    441,
+    484
+   ],
+   [
+    574,
+    624
+   ],
+   [
+    639,
+    655
+   ]
+  ],
+  "N": [
+   [
+    181,
+    220
+   ],
+   [
+    353,
+    411
+   ]
+  ]
+ },
  "edit": [
   {
    "shot": "a",
@@ -566,19 +453,19 @@
   },
   {
    "shot": "b",
-   "at": "f:169"
+   "at": "f:139"
   },
   {
    "shot": "c",
-   "at": "f:242"
+   "at": "f:171"
   },
   {
    "shot": "d",
-   "at": "f:325"
+   "at": "f:242"
   },
   {
    "shot": "e",
-   "at": "f:347"
+   "at": "f:325"
   },
   {
    "shot": "f",
@@ -616,6 +503,10 @@
     "a dark ominous low drone hit, deep cinematic horror sting",
     2.6
    ],
+   "gasp": [
+    "two young people gasping in surprise at the same moment, cartoon, short",
+    0.8
+   ],
    "heartbeat": [
     "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
     3
@@ -624,58 +515,120 @@
     "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
     2
    ],
+   "plate_slide": [
+    "synth: a ceramic plate slid across a worktop, a small stop tick",
+    0.5
+   ],
    "room_tone": [
     "quiet indoor room tone in the evening, faint distant city hum, no voices",
     12.5
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ],
+   "whoosh": [
+    "synth: a quick soft air whoosh for a fast camera pan",
+    0.42
    ]
   },
   "events": [
    [
     "f:0",
     "room_tone",
-    0.032,
+    0.018,
     "onset",
     "f:200"
    ],
    [
-    "f:26",
+    "f:20",
     "clink",
-    0.18,
+    0.14,
     "onset"
    ],
    [
-    "f:142",
+    "f:44",
+    "step",
+    0.16,
+    "onset"
+   ],
+   [
+    "f:56",
+    "step",
+    0.13,
+    "onset"
+   ],
+   [
+    "f:68",
+    "step",
+    0.075,
+    "onset"
+   ],
+   [
+    "f:96",
+    "gasp",
+    0.031,
+    "onset"
+   ],
+   [
+    "f:171",
+    "whoosh",
+    0.216,
+    "onset"
+   ],
+   [
+    "f:309",
+    "drone_hit",
+    0.082,
+    "onset"
+   ],
+   [
+    "f:256",
+    "heartbeat",
+    0.059,
+    "onset",
+    "f:322"
+   ],
+   [
+    "f:329",
+    "step",
+    0.101,
+    "onset"
+   ],
+   [
+    "f:339",
+    "step",
+    0.16,
+    "onset"
+   ],
+   [
+    "f:352",
     "clink",
     0.12,
     "onset"
    ],
    [
-    "f:169",
-    "room_tone",
-    0.072,
-    "onset",
-    "f:289"
-   ],
-   [
-    "f:252",
-    "heartbeat",
-    0.144,
-    "onset",
-    "f:332"
+    "f:356",
+    "plate_slide",
+    0.32,
+    "onset"
    ],
    [
     "f:439",
     "heartbeat",
     0.3,
     "onset",
-    "f:527"
+    "f:499"
    ],
    [
-    "f:527",
-    "heartbeat",
-    0.3,
-    "onset",
-    "f:569"
+    "f:496",
+    "switch_off",
+    0.12,
+    "onset"
    ],
    [
     "f:502",
@@ -693,27 +646,27 @@
    [
     "f:518",
     "drone_hit",
-    0.155,
+    0.216,
     "onset"
    ],
    [
     "f:516",
     "heartbeat",
-    0.155,
+    0.216,
     "onset",
     "f:604"
    ],
    [
     "f:604",
     "heartbeat",
-    0.216,
+    0.3,
     "onset",
     "f:606"
    ],
    [
     "f:572",
     "heartbeat",
-    0.181,
+    0.252,
     "onset",
     "f:660"
    ],
@@ -732,6 +685,12 @@
     "f:772"
    ],
    [
+    "f:667",
+    "drone_hit",
+    0.3,
+    "onset"
+   ],
+   [
     "f:683",
     "drone_hit",
     0.4,
@@ -743,18 +702,22 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -4.0,
+   "sfx_lu": -5.0,
    "music_lu": -19.0
   }
  },
  "duck": {
-  "a+0:room_tone": 0.269,
-  "b+0:room_tone": 0.72,
-  "c+10:heartbeat": 0.72,
-  "g+22:drone_hit": 0.518,
-  "g+20:heartbeat": 0.518,
-  "h+0:heartbeat": 0.518,
-  "g+108:heartbeat": 0.72
+  "a+0:room_tone": 0.15,
+  "a+56:step": 0.72,
+  "a+68:step": 0.373,
+  "a+96:gasp": 0.518,
+  "c+0:whoosh": 0.72,
+  "d+14:heartbeat": 0.269,
+  "d+3:drone_hit": 0.373,
+  "e+4:step": 0.72,
+  "g+22:drone_hit": 0.72,
+  "g+20:heartbeat": 0.72,
+  "h+0:heartbeat": 0.72
  },
- "sfx_lu": -4.0
+ "sfx_lu": -5.0
 }

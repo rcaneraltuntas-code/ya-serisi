@@ -20,6 +20,8 @@ S = pathlib.Path.cwd()
 TOOLS = pathlib.Path(__file__).resolve().parent
 SKILL = TOOLS.parent / 'skill' / 'scripts'
 CLIPS = {}
+CLIPS['whoosh'] = ['synth: a quick soft air whoosh for a fast camera pan', 0.42]
+CLIPS['plate_slide'] = ['synth: a ceramic plate slid across a worktop, a small stop tick', 0.5]
 CLIPS['hum'] = ['connector sfx: a young girl softly humming a slow lullaby alone in an empty stairwell, reverberant, no words', 3]
 for src in ['rewind', 'copy-paste', 'son-insan-b1']:
     f = S / 'src/episodes' / src / 'episode.json'
@@ -266,6 +268,7 @@ def voice(slug, url):
         for n in ins:
             caps.append({'a': round(n['s'] * 30) - 2, 'b': round(n['e'] * 30) + n.get('hold', 14), 'en': n['en'], 'tr': n.get('tr', ''), 'trAt': round(n['s'] * 30) + n.get('trDelay', 14)})
         ep['captions'] = sorted(caps, key=lambda c: c['a'])
+    ep['marks'] = {'L': [[a, b] for a, b in zip(fs, fe)], 'N': [[round(n['s'] * 30), round(n['e'] * 30)] for n in ins]}
     edit, last = [], -1
     for k, s in enumerate(ep['shots']):
         f = 0 if k == 0 else (round(ins[s['ins']]['s'] * 30) + s.get('off', -4) if 'ins' in s else fe[s['after']] + s.get('off', 8) if 'after' in s else max(0, fs[s['at']] - 2 + s.get('off', 0)))
@@ -280,7 +283,8 @@ def voice(slug, url):
     ep = load(slug)
     ep.setdefault('title', [ep.get('series', 'SON İNSAN'), ep['slug']])
     save(slug, ep)
-    (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n\nexport const episode = buildEpisode(ep, timeline);\n")
+    own = (S / 'src/episodes' / slug / 'shots.tsx').exists()
+    (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n" + ("import * as custom from './shots';\n" if own else '') + f"\nexport const episode = buildEpisode(ep, timeline{', custom' if own else ''});\n")
     subprocess.run([sys.executable, str(SKILL / 'plan.py'), slug], check=True, stdout=subprocess.DEVNULL)
     if not draft:
         r = subprocess.run([sys.executable, str(SKILL / 'sfx.py'), slug], capture_output=True, text=True)
