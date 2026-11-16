@@ -29,7 +29,7 @@ export type Look = {
   shoe: string;
   face: string;
   hair: string;
-  extra?: 'hood' | 'curls' | 'bunches' | 'bob' | 'suit';
+  extra?: 'hood' | 'curls' | 'bunches' | 'bob' | 'suit' | 'mop' | 'bun';
 };
 export type CastName = 'pip' | 'pipHood' | 'pipInk' | 'mo' | 'sis' | 'mom' | 'suit';
 export const LOOKS: Record<CastName, Look> = {
@@ -368,7 +368,7 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
     <g transform={`rotate(${pose.tilt}) rotate(${pose.headTilt} 0 ${HEAD.y + 40})`}>
       <circle cx={HEAD.x} cy={HEAD.y} r={HEAD.r} fill={L.skin} stroke={L.line} strokeWidth={4} />
       <path d={`M ${HEAD.x + 14} ${HEAD.y + 58} A ${HEAD.r} ${HEAD.r} 0 0 0 ${HEAD.x + 60} ${HEAD.y + 14} A 70 70 0 0 1 ${HEAD.x + 14} ${HEAD.y + 58} Z`} fill={L.skinShade} />
-      {L.extra === 'bunches' || L.extra === 'bob' || L.extra === 'suit' ? null : (
+      {L.extra === 'bunches' || L.extra === 'bob' || L.extra === 'suit' || L.extra === 'mop' || L.extra === 'bun' ? null : (
         <path transform={`translate(${-pose.yaw * 16} 0)`} d={`M -6 ${HEAD.y - 60} q 10 -26 30 -18 q -16 2 -14 16 q -8 -10 -16 2 Z`} fill={L.hair} />
       )}
       {L.extra === 'bunches' ? (
@@ -393,6 +393,35 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
           strokeWidth={4}
           strokeLinejoin="round"
         />
+      ) : null}
+      {L.extra === 'mop' ? (
+        // a messy mop: a cap of hair with a ragged fringe and a few tufts standing up (they swing with sway)
+        <g transform={`translate(${-pose.yaw * 14} 0)`}>
+          <g transform={`rotate(${pose.sway * 0.6} 0 ${HEAD.y - 60})`}>
+            <path d={`M -26 ${HEAD.y - 64} l 4 -26 l 14 20 Z M -4 ${HEAD.y - 68} l 12 -28 l 8 26 Z M 20 ${HEAD.y - 64} l 18 -18 l -2 22 Z`} fill={L.hair} stroke={L.line} strokeWidth={4} strokeLinejoin="round" />
+          </g>
+          <path
+            d={`M -64 ${HEAD.y - 6} Q -74 ${HEAD.y - 74} 0 ${HEAD.y - 74} Q 74 ${HEAD.y - 74} 64 ${HEAD.y - 6} Q 56 ${HEAD.y - 34} 38 ${HEAD.y - 30} Q 30 ${HEAD.y - 48} 12 ${HEAD.y - 32} Q -2 ${HEAD.y - 50} -18 ${HEAD.y - 32} Q -38 ${HEAD.y - 46} -64 ${HEAD.y - 6} Z`}
+            fill={L.hair}
+            stroke={L.line}
+            strokeWidth={4}
+            strokeLinejoin="round"
+          />
+        </g>
+      ) : null}
+      {L.extra === 'bun' ? (
+        // hair swept up into a bun on top, a neat centre parting
+        <g transform={`translate(${-pose.yaw * 12} 0)`}>
+          <circle cx={0} cy={HEAD.y - 84} r={24} fill={L.hair} stroke={L.line} strokeWidth={4} />
+          <path
+            d={`M -64 ${HEAD.y - 2} Q -70 ${HEAD.y - 72} 0 ${HEAD.y - 70} Q 70 ${HEAD.y - 72} 64 ${HEAD.y - 2} Q 50 ${HEAD.y - 44} 0 ${HEAD.y - 50} Q -50 ${HEAD.y - 44} -64 ${HEAD.y - 2} Z`}
+            fill={L.hair}
+            stroke={L.line}
+            strokeWidth={4}
+            strokeLinejoin="round"
+          />
+          <circle cx={0} cy={HEAD.y - 62} r={5} fill={L.accent} />
+        </g>
       ) : null}
       {L.extra === 'suit' ? (
         // short combed-back hair with a hard side parting

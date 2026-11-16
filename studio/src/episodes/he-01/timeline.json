@@ -81,7 +81,7 @@
   {
    "id": "a",
    "size": "",
-   "key": 100,
+   "key": 96,
    "len": 139,
    "first": 0,
    "line": "L0.",
@@ -99,7 +99,7 @@
   {
    "id": "c",
    "size": "",
-   "key": 30,
+   "key": 40,
    "len": 71,
    "first": 171,
    "line": "",
@@ -135,7 +135,7 @@
   {
    "id": "g",
    "size": "",
-   "key": 50,
+   "key": 56,
    "len": 76,
    "first": 496,
    "line": "",
@@ -163,7 +163,7 @@
  "fx": [],
  "audio": {
   "voiceVol": 0.8,
-  "sfxVol": 0.171,
+  "sfxVol": 0.1359,
   "musicVol": 0.0239,
   "voice": "he-01/voice.wav",
   "sfx": "he-01/sfx.wav",

@@ -77,39 +77,35 @@
    "id": "a",
    "use": "custom",
    "at": 0,
-   "key": 100,
+   "key": 96,
    "props": {},
    "sfx": [
     [
      0,
+     "alarm",
+     0.5,
+     34
+    ],
+    [
+     34,
+     "land",
+     0.4
+    ],
+    [
+     38,
+     "whoosh",
+     0.22
+    ],
+    [
+     0,
      "room_tone",
-     0.12,
-     200
+     0.1,
+     136
     ],
     [
-     20,
-     "clink",
-     0.14
-    ],
-    [
-     44,
-     "step",
-     0.16
-    ],
-    [
-     56,
-     "step",
-     0.18
-    ],
-    [
-     68,
-     "step",
-     0.2
-    ],
-    [
-     96,
+     80,
      "gasp",
-     0.06
+     0.05
     ]
    ]
   },
@@ -118,20 +114,42 @@
    "use": "custom",
    "at": 1,
    "key": 16,
-   "props": {}
+   "props": {},
+   "sfx": [
+    [
+     2,
+     "step",
+     0.16
+    ],
+    [
+     12,
+     "step",
+     0.18
+    ],
+    [
+     22,
+     "step",
+     0.18
+    ]
+   ]
   },
   {
    "id": "c",
    "use": "custom",
    "ins": 0,
    "off": -10,
-   "key": 30,
+   "key": 40,
    "props": {},
    "sfx": [
     [
-     0,
-     "whoosh",
-     0.3
+     2,
+     "step",
+     0.18
+    ],
+    [
+     14,
+     "drone_hit",
+     0.2
     ]
    ]
   },
@@ -143,15 +161,20 @@
    "props": {},
    "sfx": [
     [
-     3,
-     "drone_hit",
-     0.22
+     14,
+     "flap",
+     0.45
     ],
     [
-     14,
+     8,
+     "whoosh",
+     0.18
+    ],
+    [
+     34,
      "heartbeat",
      0.22,
-     80
+     82
     ]
    ]
   },
@@ -174,14 +197,20 @@
      0.16
     ],
     [
-     27,
+     18,
      "clink",
-     0.12
+     0.1
     ],
     [
      31,
      "plate_slide",
      0.32
+    ],
+    [
+     52,
+     "flap",
+     0.22,
+     64
     ]
    ]
   },
@@ -207,46 +236,38 @@
   },
   {
    "id": "g",
-   "use": "msg",
+   "use": "custom",
    "after": 4,
    "off": 12,
-   "key": 50,
-   "props": {
-    "bg": "kitchen",
-    "bgp": {
-     "veil": 0.3
-    },
-    "at": 18,
-    "text": "Don't answer her."
-   },
+   "key": 56,
+   "props": {},
    "sfx": [
     [
-     6,
+     2,
      "phone_ring",
-     0.35,
-     20
+     0.3,
+     12
     ],
     [
-     18,
+     10,
+     "flap",
+     0.3
+    ],
+    [
+     36,
      "copy_click",
      0.3
     ],
     [
-     22,
+     38,
      "drone_hit",
      0.3
     ],
     [
-     20,
+     36,
      "heartbeat",
      0.3,
-     108
-    ],
-    [
-     108,
-     "heartbeat",
-     0.3,
-     110
+     76
     ]
    ]
   },
@@ -276,7 +297,7 @@
      200
     ],
     [
-     84,
+     86,
      "drone_hit",
      0.3
     ]
@@ -487,6 +508,10 @@
  "end": "f:769",
  "sound": {
   "clips": {
+   "alarm": [
+    "synth: a bedside alarm clock, five double beeps",
+    1.12
+   ],
    "clink": [
     "a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape",
     0.7
@@ -503,6 +528,10 @@
     "a dark ominous low drone hit, deep cinematic horror sting",
     2.6
    ],
+   "flap": [
+    "synth: a row of split-flap cards turning over",
+    0.95
+   ],
    "gasp": [
     "two young people gasping in surprise at the same moment, cartoon, short",
     0.8
@@ -510,6 +539,10 @@
    "heartbeat": [
     "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
     3
+   ],
+   "land": [
+    "a heavy body landing flat on a wooden floor, cartoon thud",
+    0.6
    ],
    "phone_ring": [
     "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
@@ -539,64 +572,89 @@
   "events": [
    [
     "f:0",
-    "room_tone",
-    0.018,
+    "alarm",
+    0.5,
     "onset",
-    "f:200"
+    "f:34"
    ],
    [
-    "f:20",
-    "clink",
-    0.14,
+    "f:34",
+    "land",
+    0.4,
     "onset"
    ],
    [
-    "f:44",
+    "f:38",
+    "whoosh",
+    0.22,
+    "onset"
+   ],
+   [
+    "f:0",
+    "room_tone",
+    0.072,
+    "onset",
+    "f:136"
+   ],
+   [
+    "f:80",
+    "gasp",
+    0.036,
+    "onset"
+   ],
+   [
+    "f:141",
     "step",
     0.16,
     "onset"
    ],
    [
-    "f:56",
+    "f:151",
     "step",
-    0.13,
+    0.18,
     "onset"
    ],
    [
-    "f:68",
+    "f:161",
     "step",
-    0.075,
+    0.18,
     "onset"
    ],
    [
-    "f:96",
-    "gasp",
-    0.031,
+    "f:173",
+    "step",
+    0.18,
     "onset"
    ],
    [
-    "f:171",
-    "whoosh",
-    0.216,
-    "onset"
-   ],
-   [
-    "f:309",
+    "f:185",
     "drone_hit",
-    0.082,
+    0.2,
     "onset"
    ],
    [
     "f:256",
+    "flap",
+    0.45,
+    "onset"
+   ],
+   [
+    "f:250",
+    "whoosh",
+    0.18,
+    "onset"
+   ],
+   [
+    "f:276",
     "heartbeat",
-    0.059,
+    0.22,
     "onset",
-    "f:322"
+    "f:324"
    ],
    [
     "f:329",
     "step",
-    0.101,
+    0.14,
     "onset"
    ],
    [
@@ -606,9 +664,9 @@
     "onset"
    ],
    [
-    "f:352",
+    "f:343",
     "clink",
-    0.12,
+    0.1,
     "onset"
    ],
    [
@@ -616,6 +674,13 @@
     "plate_slide",
     0.32,
     "onset"
+   ],
+   [
+    "f:377",
+    "flap",
+    0.22,
+    "onset",
+    "f:389"
    ],
    [
     "f:439",
@@ -631,42 +696,41 @@
     "onset"
    ],
    [
-    "f:502",
+    "f:498",
     "phone_ring",
-    0.35,
+    0.3,
     "onset",
-    "f:516"
+    "f:508"
    ],
    [
-    "f:514",
+    "f:506",
+    "flap",
+    0.3,
+    "onset"
+   ],
+   [
+    "f:532",
     "copy_click",
     0.3,
     "onset"
    ],
    [
-    "f:518",
+    "f:534",
     "drone_hit",
-    0.216,
+    0.3,
     "onset"
    ],
    [
-    "f:516",
-    "heartbeat",
-    0.216,
-    "onset",
-    "f:604"
-   ],
-   [
-    "f:604",
+    "f:532",
     "heartbeat",
     0.3,
     "onset",
-    "f:606"
+    "f:572"
    ],
    [
     "f:572",
     "heartbeat",
-    0.252,
+    0.35,
     "onset",
     "f:660"
    ],
@@ -685,7 +749,7 @@
     "f:772"
    ],
    [
-    "f:667",
+    "f:658",
     "drone_hit",
     0.3,
     "onset"
@@ -702,22 +766,13 @@
    "clip": "drone_bed"
   },
   "levels": {
-   "sfx_lu": -5.0,
+   "sfx_lu": -4.0,
    "music_lu": -19.0
   }
  },
  "duck": {
-  "a+0:room_tone": 0.15,
-  "a+56:step": 0.72,
-  "a+68:step": 0.373,
-  "a+96:gasp": 0.518,
-  "c+0:whoosh": 0.72,
-  "d+14:heartbeat": 0.269,
-  "d+3:drone_hit": 0.373,
-  "e+4:step": 0.72,
-  "g+22:drone_hit": 0.72,
-  "g+20:heartbeat": 0.72,
-  "h+0:heartbeat": 0.72
+  "a+0:room_tone": 0.72,
+  "a+80:gasp": 0.72
  },
- "sfx_lu": -5.0
+ "sfx_lu": -4.0
 }
