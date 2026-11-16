@@ -1,0 +1,247 @@
+{
+ "slug": "son-insan-01",
+ "title": "YA DÜNYADA KALAN SON İNSAN SEN OLSAYDIN?",
+ "fps": 30,
+ "total": 831,
+ "segments": [
+  {
+   "shot": "A1",
+   "a": 0,
+   "b": 79,
+   "t0": 0,
+   "t1": 79,
+   "line": "Uyanıyorsun…"
+  },
+  {
+   "shot": "A2",
+   "a": 79,
+   "b": 158,
+   "t0": 0,
+   "t1": 79,
+   "line": "Sokakta… tek bir ses yok."
+  },
+  {
+   "shot": "A3",
+   "a": 158,
+   "b": 185,
+   "t0": 0,
+   "t1": 27,
+   "line": ""
+  },
+  {
+   "shot": "A4",
+   "a": 185,
+   "b": 227,
+   "t0": 0,
+   "t1": 42,
+   "line": "Annen yok."
+  },
+  {
+   "shot": "A5",
+   "a": 227,
+   "b": 272,
+   "t0": 0,
+   "t1": 45,
+   "line": "Kahvesi masada."
+  },
+  {
+   "shot": "A6",
+   "a": 272,
+   "b": 338,
+   "t0": 0,
+   "t1": 66,
+   "line": "Hâlâ sıcak."
+  },
+  {
+   "shot": "A7",
+   "a": 338,
+   "b": 383,
+   "t0": 0,
+   "t1": 45,
+   "line": "Dışarı çıkıyorsun."
+  },
+  {
+   "shot": "A8",
+   "a": 383,
+   "b": 466,
+   "t0": 0,
+   "t1": 83,
+   "line": "Arabalar… yolun ortasında."
+  },
+  {
+   "shot": "A9",
+   "a": 466,
+   "b": 510,
+   "t0": 0,
+   "t1": 44,
+   "line": "Kapıları açık."
+  },
+  {
+   "shot": "A10",
+   "a": 510,
+   "b": 571,
+   "t0": 0,
+   "t1": 61,
+   "line": "Motorları çalışıyor."
+  },
+  {
+   "shot": "A11",
+   "a": 571,
+   "b": 645,
+   "t0": 0,
+   "t1": 74,
+   "line": "Sekiz milyar insan."
+  },
+  {
+   "shot": "A12",
+   "a": 645,
+   "b": 702,
+   "t0": 0,
+   "t1": 57,
+   "line": "Hiçbiri yok."
+  },
+  {
+   "shot": "A13",
+   "a": 702,
+   "b": 831,
+   "t0": 0,
+   "t1": 129,
+   "line": "Ya dünyada kalan SON insan… sen olsaydın?"
+  }
+ ],
+ "shots": [
+  {
+   "id": "A1",
+   "size": "POV, uyanış",
+   "key": 60,
+   "len": 79,
+   "first": 0,
+   "line": "Uyanıyorsun…",
+   "note": "göz kapakları açılır, yatak odası"
+  },
+  {
+   "id": "A2",
+   "size": "POV, pencere",
+   "key": 40,
+   "len": 79,
+   "first": 79,
+   "line": "Sokakta… tek bir ses yok.",
+   "note": "boş sokak"
+  },
+  {
+   "id": "A3",
+   "size": "ayna",
+   "key": 18,
+   "len": 27,
+   "first": 158,
+   "line": "",
+   "note": "koridor aynasında sen"
+  },
+  {
+   "id": "A4",
+   "size": "POV, geniş",
+   "key": 25,
+   "len": 42,
+   "first": 185,
+   "line": "Annen yok.",
+   "note": "boş mutfak"
+  },
+  {
+   "id": "A5",
+   "size": "POV, yaklaşma",
+   "key": 30,
+   "len": 45,
+   "first": 227,
+   "line": "Kahvesi masada.",
+   "note": "kupa"
+  },
+  {
+   "id": "A6",
+   "size": "makro",
+   "key": 24,
+   "len": 66,
+   "first": 272,
+   "line": "Hâlâ sıcak.",
+   "note": "elin kupada"
+  },
+  {
+   "id": "A7",
+   "size": "POV, kapı",
+   "key": 22,
+   "len": 45,
+   "first": 338,
+   "line": "Dışarı çıkıyorsun.",
+   "note": "kapı sokağa açılır"
+  },
+  {
+   "id": "A8",
+   "size": "POV, geniş",
+   "key": 50,
+   "len": 83,
+   "first": 383,
+   "line": "Arabalar… yolun ortasında.",
+   "note": "yolun ortasında arabalar"
+  },
+  {
+   "id": "A9",
+   "size": "medium",
+   "key": 20,
+   "len": 44,
+   "first": 466,
+   "line": "Kapıları açık.",
+   "note": "açık kapı, boş koltuk"
+  },
+  {
+   "id": "A10",
+   "size": "makro",
+   "key": 30,
+   "len": 61,
+   "first": 510,
+   "line": "Motorları çalışıyor.",
+   "note": "egzoz, stop lambası"
+  },
+  {
+   "id": "A11",
+   "size": "şema",
+   "key": 50,
+   "len": 74,
+   "first": 571,
+   "line": "Sekiz milyar insan.",
+   "note": "8.000.000.000"
+  },
+  {
+   "id": "A12",
+   "size": "şema",
+   "key": 45,
+   "len": 57,
+   "first": 645,
+   "line": "Hiçbiri yok.",
+   "note": "sayaç 1'e iner"
+  },
+  {
+   "id": "A13",
+   "size": "başlık",
+   "key": 80,
+   "len": 129,
+   "first": 702,
+   "line": "Ya dünyada kalan SON insan… sen olsaydın?",
+   "note": "çatı, şehir ışıkları söner"
+  }
+ ],
+ "fx": [
+  {
+   "kind": "flash",
+   "color": "#FFF3DC",
+   "o": 0.6,
+   "f": 702
+  }
+ ],
+ "audio": {
+  "voice": "son-insan-01/voice.wav",
+  "sfx": "son-insan-01/sfx.wav",
+  "voiceVol": 0.8,
+  "sfxVol": 0.2559,
+  "music": "son-insan-01/music.wav",
+  "musicVol": 0.0392
+ }
+}

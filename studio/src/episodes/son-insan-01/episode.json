@@ -1,0 +1,402 @@
+{
+ "id": "SonInsan01",
+ "slug": "son-insan-01",
+ "topic": "Ya dünyada kalan son insan sen olsaydın?",
+ "title": [
+  "YA DÜNYADA KALAN",
+  "SON İNSAN SEN OLSAYDIN?"
+ ],
+ "voice": {
+  "id": "vwmWyMlmlJtiiXeCVRKn",
+  "model": "eleven_v4",
+  "via": "ElevenLabs connector",
+  "direction": "eleven_v4 ses etiketleriyle oyunculuk: fısıltı, gerginlik, titreyen ses, nefes"
+ },
+ "script": [
+  {
+   "beat": "yatak odası",
+   "text": "Uyanıyorsun. Sokakta tek bir ses yok."
+  },
+  {
+   "beat": "mutfak",
+   "text": "Annen yok. Kahvesi masada. Hâlâ sıcak."
+  },
+  {
+   "beat": "sokak",
+   "text": "Dışarı çıkıyorsun. Arabalar yolun ortasında. Kapıları açık. Motorları çalışıyor. Sekiz milyar insan. Hiçbiri yok."
+  },
+  {
+   "beat": "başlık",
+   "text": "Ya dünyada kalan son insan sen olsaydın?"
+  },
+  {
+   "beat": "market",
+   "text": "Markete giriyorsun. Kasada kimse yok. Güvenlik kamerasının kaydını açıyorsun."
+  },
+  {
+   "beat": "kayıt",
+   "text": "Saat üç on yedi. Kayıttaki herkes aynı anda duruyor. Hepsi başını kaldırıp aynı yöne bakıyor. Sonra görüntü kararıyor."
+  },
+  {
+   "beat": "ters köşe",
+   "text": "Geri sarıyorsun. Bir daha izliyorsun. Herkes yukarı bakıyor. Bir kişi hariç. O, kameraya bakıyor. O sensin."
+  },
+  {
+   "beat": "kanca",
+   "text": "Sonra cebindeki telefon çalıyor. Arayan: Sen."
+  }
+ ],
+ "science": [
+  {
+   "claim": "Sekiz milyar insan.",
+   "working": "Dünya nüfusu 15 Kasım 2022'de 8 milyarı geçti; 2026'da 8 milyarın üzerinde.",
+   "source": "Birleşmiş Milletler, World Population Prospects 2022 / Day of Eight Billion"
+  }
+ ],
+ "pauses": {
+  "lead": 0.8,
+  "word": 0.2,
+  "comma": 0.35,
+  "sentence": 0.5,
+  "question": 0.6,
+  "after": {
+   "Uyanıyorsun": 0.7,
+   "Sokakta": 0.3,
+   "yok#1": 1.2,
+   "yok#2": 0.5,
+   "masada": 0.45,
+   "sıcak": 1.1,
+   "çıkıyorsun": 0.5,
+   "Arabalar": 0.3,
+   "ortasında": 0.5,
+   "açık": 0.4,
+   "çalışıyor": 1.0,
+   "insan#1": 0.6,
+   "yok#3": 1.1,
+   "insan#2": 0.35,
+   "olsaydın": 1.2,
+   "giriyorsun": 0.5,
+   "yok#4": 0.8,
+   "açıyorsun": 0.7,
+   "yedi": 0.7,
+   "herkes#1": 0.3,
+   "duruyor": 0.7,
+   "kaldırıp": 0.3,
+   "bakıyor#1": 0.8,
+   "kararıyor": 1.0,
+   "sarıyorsun": 0.8,
+   "izliyorsun": 0.5,
+   "bakıyor#2": 0.6,
+   "hariç": 0.9,
+   "O#1": 0.35,
+   "bakıyor#3": 1.0,
+   "O#2": 0.4,
+   "sensin": 1.3,
+   "çalıyor": 1.2,
+   "Arayan": 0.5
+  }
+ },
+ "shots": [
+  {
+   "id": "A1",
+   "size": "POV, uyanış",
+   "key": 60,
+   "note": "göz kapakları açılır, yatak odası"
+  },
+  {
+   "id": "A2",
+   "size": "POV, pencere",
+   "key": 40,
+   "note": "boş sokak"
+  },
+  {
+   "id": "A3",
+   "size": "ayna",
+   "key": 18,
+   "note": "koridor aynasında sen"
+  },
+  {
+   "id": "A4",
+   "size": "POV, geniş",
+   "key": 25,
+   "note": "boş mutfak"
+  },
+  {
+   "id": "A5",
+   "size": "POV, yaklaşma",
+   "key": 30,
+   "note": "kupa"
+  },
+  {
+   "id": "A6",
+   "size": "makro",
+   "key": 24,
+   "note": "elin kupada"
+  },
+  {
+   "id": "A7",
+   "size": "POV, kapı",
+   "key": 22,
+   "note": "kapı sokağa açılır"
+  },
+  {
+   "id": "A8",
+   "size": "POV, geniş",
+   "key": 50,
+   "note": "yolun ortasında arabalar"
+  },
+  {
+   "id": "A9",
+   "size": "medium",
+   "key": 20,
+   "note": "açık kapı, boş koltuk"
+  },
+  {
+   "id": "A10",
+   "size": "makro",
+   "key": 30,
+   "note": "egzoz, stop lambası"
+  },
+  {
+   "id": "A11",
+   "size": "şema",
+   "key": 50,
+   "note": "8.000.000.000"
+  },
+  {
+   "id": "A12",
+   "size": "şema",
+   "key": 45,
+   "note": "sayaç 1'e iner"
+  },
+  {
+   "id": "A13",
+   "size": "başlık",
+   "key": 80,
+   "note": "çatı, şehir ışıkları söner"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "A1",
+   "at": "f:0"
+  },
+  {
+   "shot": "A2",
+   "at": "Sokakta"
+  },
+  {
+   "shot": "A3",
+   "at": "f:158"
+  },
+  {
+   "shot": "A4",
+   "at": "Annen"
+  },
+  {
+   "shot": "A5",
+   "at": "Kahvesi"
+  },
+  {
+   "shot": "A6",
+   "at": "Hâlâ"
+  },
+  {
+   "shot": "A7",
+   "at": "Dışarı"
+  },
+  {
+   "shot": "A8",
+   "at": "Arabalar"
+  },
+  {
+   "shot": "A9",
+   "at": "Kapıları"
+  },
+  {
+   "shot": "A10",
+   "at": "Motorları"
+  },
+  {
+   "shot": "A11",
+   "at": "Sekiz"
+  },
+  {
+   "shot": "A12",
+   "at": "Hiçbiri"
+  },
+  {
+   "shot": "A13",
+   "at": "Ya"
+  }
+ ],
+ "end": "f:831",
+ "fx": [
+  {
+   "at": "A13",
+   "kind": "flash",
+   "color": "#FFF3DC",
+   "o": 0.6
+  }
+ ],
+ "sound": {
+  "clips": {
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "clink": [
+    "a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape",
+    0.7
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ],
+   "big_step": [
+    "a cartoon exaggerated careful tiptoe step, light airy whoosh",
+    0.7
+   ],
+   "title_boom": [
+    "a cinematic whoosh rising into a deep boom impact",
+    1.6
+   ],
+   "counter_tick": [
+    "a fast mechanical counter ticking up rapidly, digits rolling over, getting faster",
+    1.6
+   ],
+   "power_down": [
+    "a whole city losing power, a deep electrical power-down whine dropping in pitch into silence",
+    2.5
+   ],
+   "bulb_pop": [
+    "a small light bulb popping out, a tiny glass tink and fizz",
+    0.5
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "engine_loop": [
+    "connector sfx, looped: several car engines idling on an empty city street, low steady rumble",
+    9
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ]
+  },
+  "events": [
+   [
+    "A1",
+    "room_tone",
+    0.08,
+    "onset",
+    "A7"
+   ],
+   [
+    "A6+22",
+    "clink",
+    0.28
+   ],
+   [
+    "A7+8",
+    "big_step",
+    0.3,
+    "peak"
+   ],
+   [
+    "A7+14",
+    "engine_loop",
+    0.14,
+    "onset",
+    "A11"
+   ],
+   [
+    "A10",
+    "engine_loop",
+    0.07,
+    "onset",
+    "A11"
+   ],
+   [
+    "A11+2",
+    "counter_tick",
+    0.06,
+    "onset",
+    "A12"
+   ],
+   [
+    "A12+36",
+    "power_down",
+    0.25,
+    "onset",
+    "A13"
+   ],
+   [
+    "A12+40",
+    "heartbeat",
+    0.4,
+    "onset",
+    "A13"
+   ],
+   [
+    "A13",
+    "title_boom",
+    0.35,
+    "peak"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "A4+3",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.2
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "A8+4",
+    "clip": "step",
+    "n": 6,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "A13+62",
+    "clip": "bulb_pop",
+    "n": 14,
+    "every": 4,
+    "gain": [
+     0.1,
+     0.2
+    ],
+    "pitch": [
+     0.85,
+     1.18
+    ]
+   }
+  ],
+  "levels": {
+   "sfx_lu": -4.0,
+   "music_lu": -13.0
+  },
+  "music": {
+   "clip": "drone_bed"
+  }
+ }
+}

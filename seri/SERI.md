@@ -1,39 +1,22 @@
-# DUY · seri dosyası
+# SON İNSAN · seri dosyası
 
-"Ya herkesin düşüncelerini duyabilseydin?" Tek hikâye, 20 bölüm, her bölüm yaklaşık 60 saniye, dikey 1080×1920, Türkçe.
+"Ya dünyada kalan son insan sen olsaydın?" Tek hikâye, 20 bölüm, her bölüm yaklaşık 60 saniye, dikey 1080×1920, Türkçe.
 
 ## Sabitler
 
-- Anlatım: ikinci tekil şahıs, şimdiki zaman, kısa cümleler. Gücün kelimesi: **Duy**.
-- Gücün görseli: kafadan açılan camgöbeği halkalar, sonra düşünce balonu; köşede DUY rozeti.
-- Kadro (hepsi özgün, tek iskelet): Pip (sen, koyu kapüşonlu), Mo (en yakın arkadaş), kız kardeş, anne, takım elbiseli adam.
-- Mekânlar: yatak odası, mutfak, çalışma odası, merdiven, sınıf, çatı, şema.
-- Ses: Batuhan Altınova (ElevenLabs), eleven_v4. Efektler `studio/library/sfx/`.
-- Her bölümde kaynağı doğrulanmış bir gerçek bilgi; her bölüm bir soruyla biter.
+- **POV:** kamera kahramanın gözü. Kahraman dışarıdan yalnızca aynada, camda ve kayıtlarda görünür; kadraja elleri girer (`PovHand`), uyanış göz kapaklarıyla (`Eyelids`), yürüyüş kamera sallantısıyla verilir.
+- Anlatım: ikinci tekil şahıs, şimdiki zaman, kısa cümleler. Her bölüm bir soruyla biter; sonraki bölümün ilk cümlesi o soruya cevap verir.
+- Ses: Batuhan Altınova (ElevenLabs, `vwmWyMlmlJtiiXeCVRKn`), eleven_v4, ses etiketleriyle oyunculuk ([whispers], [nervous], [trembling voice], [pause]). Ses ve kelime zamanlaması ElevenLabs bağlantısından gelir; `tools/voice_connector.py` duraklamaları yerleştirir.
+- Ses tasarımı: müzik yok; alçak bir uğultu yatağı, mekân sesleri, sessizlik.
+- Kahraman: Pip (koyu kapüşonlu, hardal ipli). Mekânlar: yatak odası, mutfak, sokak (`sets/street.tsx`), çatı, şema; market ve güvenlik odası sırada.
 - Her bölüm yayın öncesi onaya gider.
 
 ## Bölümler
 
-| # | Perde | Özet | Durum |
-|---|---|---|---|
-| 0 | Fragman | 15 sn'lik soğuk açılış (`studio/src/episodes/dusunce`) | hazır |
-| 1 | Hediye | Uyanış: annenin, Mo'nun, sonra bütün sınıfın düşünceleri. Arka sıradan bir ses: "Demek sen de duyuyorsun." | senaryo onayda |
-| 2 | Hediye | Kurallar: yalnızca baktığın kişiyi net duyarsın; kalabalık uğultudur. | |
-| 3 | Hediye | Keyif: sınavlar, arkadaşlıklar, herkesin ne istediğini bilmek. | |
-| 4 | Hediye | Mo'nun senden sakladığı şey. | |
-| 5 | Hediye | Gece de susmuyor: apartman, komşular, uykusuzluk. | |
-| 6 | Bedel | Baş ağrısı, yorgunluk; gürültünün bedeli. | |
-| 7 | Bedel | İnsanların küçük yalanları. | |
-| 8 | Bedel | Kız kardeşinin kimseye söylemediği korkusu. | |
-| 9 | Bedel | Gücü onu korumak için kullanırsın; fazla şey bildiğin fark edilir. | |
-| 10 | Bedel | Düşüncesini duyamadığın ilk kişi: takım elbiseli adam. | |
-| 11 | Av | Adam eve gelir. | |
-| 12 | Av | Sırrı Mo'ya açarsın. | |
-| 13 | Av | Adam da duyuyor; seni baştan beri dinliyordu. | |
-| 14 | Av | Gücü kapatmanın yolu ve bedeli. | |
-| 15 | Av | Kız kardeşin de duymaya başlar. | |
-| 16 | Seçim | Kaçış. | |
-| 17 | Seçim | Beyin gürültüyü nasıl eler. | |
-| 18 | Seçim | Yüzleşme. | |
-| 19 | Seçim | Karar: gücü kapatırsan kardeşini bir daha duyamazsın. | |
-| 20 | Seçim | Final, açık uçlu. | |
+| # | Özet | Durum |
+|---|---|---|
+| 1 | 03:17. Boş ev, boş sokak, market kaydı: herkes aynı yöne bakıyor, biri hariç. O sensin. Telefon çalıyor: arayan sen. | ilk 28 sn örnek hazır |
+| 2–5 | Telefondaki ses talimat veriyor. O gece nerede olduğunu hatırlamıyorsun. Elektrikler mahalle mahalle sönüyor. | |
+| 6–10 | Yalnız değilsin: uzakta yanan tek bir ışık. Telefondaki ses yalan söylüyor. | |
+| 11–15 | 03:17'de herkesin baktığı yöne yolculuk. Orada ne olduğu ve senin neden kaldığın. | |
+| 16–20 | Herkesi geri getirmenin yolu var, ama bedeli sensin. Final. | |

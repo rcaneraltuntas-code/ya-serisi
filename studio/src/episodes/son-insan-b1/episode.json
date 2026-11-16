@@ -1,0 +1,643 @@
+{
+ "id": "SonInsanB1",
+ "slug": "son-insan-b1",
+ "topic": "Son İnsan, bölüm 1 (kısa film)",
+ "title": [
+  "SON İNSAN",
+  "BÖLÜM 1"
+ ],
+ "voice": {
+  "id": "vwmWyMlmlJtiiXeCVRKn",
+  "model": "eleven_v4",
+  "via": "ElevenLabs connector"
+ },
+ "script": [
+  {
+   "beat": "uyanış",
+   "text": "O sabah beni uyandıran bir ses değildi. Sessizlikti. Anne?"
+  },
+  {
+   "beat": "mutfak",
+   "text": "Kahvesi masadaydı. Hâlâ sıcaktı. Anne!"
+  },
+  {
+   "beat": "sokak",
+   "text": "Arabalar yolun ortasında durmuştu. Kapıları açık, motorları çalışıyordu. Sanki herkes aynı anda inip gitmişti."
+  },
+  {
+   "beat": "kayıt",
+   "text": "Saat üç on yedide herkes durdu. Hepsi aynı yöne baktı. Sonra kayıt bitti."
+  },
+  {
+   "beat": "ters köşe",
+   "text": "Bir kişi hariç. O, kameraya bakıyordu. O bendim."
+  },
+  {
+   "beat": "kanca",
+   "text": "Sakın kapıyı açma."
+  }
+ ],
+ "pauses": {
+  "lead": 0.5,
+  "word": 0.2,
+  "comma": 0.35,
+  "sentence": 0.5,
+  "question": 0.6,
+  "after": {
+   "uyandıran": 0.35,
+   "değildi": 0.6,
+   "Sessizlikti": 1.6,
+   "Anne#1": 3.4,
+   "masadaydı": 0.5,
+   "sıcaktı": 1.2,
+   "Anne#2": 1.7,
+   "durmuştu": 0.5,
+   "açık": 0.3,
+   "çalışıyordu": 0.7,
+   "herkes#1": 0.3,
+   "gitmişti": 5.2,
+   "yedide": 0.35,
+   "durdu": 0.9,
+   "baktı": 1.0,
+   "Sonra": 0.35,
+   "bitti": 2.4,
+   "hariç": 1.0,
+   "O#1": 0.4,
+   "bakıyordu": 1.5,
+   "bendim": 3.2
+  }
+ },
+ "shots": [
+  {
+   "id": "B1",
+   "size": "POV, uyanış",
+   "key": 190,
+   "note": "gözler aralanır, açılır"
+  },
+  {
+   "id": "B2",
+   "size": "POV, pan",
+   "key": 24,
+   "note": "kapıya bakış"
+  },
+  {
+   "id": "A2",
+   "size": "POV, pencere",
+   "key": 30,
+   "note": "boş sokak"
+  },
+  {
+   "id": "A3",
+   "size": "ayna",
+   "key": 18,
+   "note": "aynada sen"
+  },
+  {
+   "id": "A4",
+   "size": "POV, geniş",
+   "key": 25,
+   "note": "boş mutfak"
+  },
+  {
+   "id": "A6",
+   "size": "makro",
+   "key": 24,
+   "note": "elin kupada"
+  },
+  {
+   "id": "B3",
+   "size": "POV, savrulma",
+   "key": 22,
+   "note": "mutfaktan hole dönüş"
+  },
+  {
+   "id": "A7",
+   "size": "POV, kapı",
+   "key": 24,
+   "note": "kapı sokağa açılır"
+  },
+  {
+   "id": "A8",
+   "size": "POV, geniş",
+   "key": 50,
+   "note": "arabalar"
+  },
+  {
+   "id": "A9",
+   "size": "medium",
+   "key": 20,
+   "note": "açık kapı"
+  },
+  {
+   "id": "A10",
+   "size": "makro",
+   "key": 30,
+   "note": "egzoz"
+  },
+  {
+   "id": "B4",
+   "size": "POV, ilerleme",
+   "key": 60,
+   "note": "arabaların arasından"
+  },
+  {
+   "id": "B5",
+   "size": "POV, kapı",
+   "key": 30,
+   "note": "market kapıları açılır"
+  },
+  {
+   "id": "B6",
+   "size": "POV, masa",
+   "key": 44,
+   "note": "güvenlik odası, tuşa basış"
+  },
+  {
+   "id": "B7",
+   "size": "kayıt, geniş",
+   "key": 90,
+   "note": "herkes aynı anda durur"
+  },
+  {
+   "id": "B8",
+   "size": "kayıt, yakın",
+   "key": 50,
+   "note": "başlar kalkar"
+  },
+  {
+   "id": "B9",
+   "size": "kayıt",
+   "key": 40,
+   "note": "ışık, sonra sinyal yok"
+  },
+  {
+   "id": "B10",
+   "size": "kayıt, geri sarma",
+   "key": 16,
+   "note": "geri sarar"
+  },
+  {
+   "id": "B11",
+   "size": "kayıt, kaydırma",
+   "key": 60,
+   "note": "bir kişi hariç"
+  },
+  {
+   "id": "B12",
+   "size": "kayıt, yakın",
+   "key": 50,
+   "note": "karanlık yüz kameraya bakıyor"
+  },
+  {
+   "id": "B13",
+   "size": "kayıt, çok yakın",
+   "key": 30,
+   "note": "yüz netleşir: sen"
+  },
+  {
+   "id": "B14",
+   "size": "POV, telefon",
+   "key": 40,
+   "note": "arayan: BEN"
+  },
+  {
+   "id": "B15",
+   "size": "POV, telefon",
+   "key": 30,
+   "note": "hat açık, ses dalgası"
+  },
+  {
+   "id": "B16",
+   "size": "POV, kapı",
+   "key": 30,
+   "note": "üç vuruş, kapının altında gölge"
+  },
+  {
+   "id": "B17",
+   "size": "son kart",
+   "key": 30,
+   "note": "devamı 2. bölümde"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "B1",
+   "at": "f:0"
+  },
+  {
+   "shot": "B2",
+   "at": "Anne"
+  },
+  {
+   "shot": "A2",
+   "at": "f:250"
+  },
+  {
+   "shot": "A3",
+   "at": "f:298"
+  },
+  {
+   "shot": "A4",
+   "at": "Kahvesi"
+  },
+  {
+   "shot": "A6",
+   "at": "Hâlâ"
+  },
+  {
+   "shot": "B3",
+   "at": "Anne"
+  },
+  {
+   "shot": "A7",
+   "at": "f:478"
+  },
+  {
+   "shot": "A8",
+   "at": "Arabalar"
+  },
+  {
+   "shot": "A9",
+   "at": "Kapıları"
+  },
+  {
+   "shot": "A10",
+   "at": "motorları"
+  },
+  {
+   "shot": "B4",
+   "at": "Sanki"
+  },
+  {
+   "shot": "B5",
+   "at": "f:815"
+  },
+  {
+   "shot": "B6",
+   "at": "f:880"
+  },
+  {
+   "shot": "B7",
+   "at": "Saat"
+  },
+  {
+   "shot": "B8",
+   "at": "Hepsi"
+  },
+  {
+   "shot": "B9",
+   "at": "Sonra"
+  },
+  {
+   "shot": "B10",
+   "at": "f:1262"
+  },
+  {
+   "shot": "B11",
+   "at": "Bir"
+  },
+  {
+   "shot": "B12",
+   "at": "O"
+  },
+  {
+   "shot": "B13",
+   "at": "O"
+  },
+  {
+   "shot": "B14",
+   "at": "f:1530"
+  },
+  {
+   "shot": "B15",
+   "at": "Sakın"
+  },
+  {
+   "shot": "B16",
+   "at": "f:1680"
+  },
+  {
+   "shot": "B17",
+   "at": "f:1745"
+  }
+ ],
+ "end": "f:1790",
+ "fx": [
+  {
+   "at": "B13+4",
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.3
+  },
+  {
+   "at": "B16+12",
+   "kind": "shake",
+   "len": 5,
+   "amp": 8
+  },
+  {
+   "at": "B16+21",
+   "kind": "shake",
+   "len": 5,
+   "amp": 8
+  },
+  {
+   "at": "B16+30",
+   "kind": "shake",
+   "len": 6,
+   "amp": 10
+  }
+ ],
+ "voice_fx": [
+  {
+   "from": "Sakın",
+   "fx": "phone"
+  }
+ ],
+ "sound": {
+  "clips": {
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "clink": [
+    "a ceramic coffee mug knocked by a hand on a wooden desk, short clink and scrape",
+    0.7
+   ],
+   "step": [
+    "a single sneaker footstep on a wooden stair, close",
+    0.5
+   ],
+   "big_step": [
+    "a cartoon exaggerated careful tiptoe step, light airy whoosh",
+    0.7
+   ],
+   "copy_click": [
+    "a crisp satisfying computer copy click with a tiny soft digital chime, short",
+    0.5
+   ],
+   "glitch": [
+    "a short digital glitch, an electric buzz and crackle flickering like an unstable hologram",
+    1.5
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "power_down": [
+    "a whole city losing power, a deep electrical power-down whine dropping in pitch into silence",
+    2.5
+   ],
+   "rewind": [
+    "a VHS tape rewinding fast, high whirring tape squeal with mechanical hum",
+    1.6
+   ],
+   "select_draw": [
+    "a quick digital selection sound, a soft rising electronic shimmer as a box is drawn on screen, short",
+    0.6
+   ],
+   "drone_bed": [
+    "synth: a dark low drone bed, detuned partials breathing slowly, filtered noise swell",
+    66
+   ],
+   "engine_loop": [
+    "connector sfx, looped: several car engines idling on an empty city street, low steady rumble",
+    9
+   ],
+   "heartbeat": [
+    "connector sfx: a slow tense human heartbeat, deep muffled thumps, close",
+    3
+   ],
+   "phone_ring": [
+    "connector sfx: a smartphone ringing and vibrating in a pocket in a silent room, classic digital ringtone",
+    2
+   ],
+   "knock": [
+    "connector sfx: three slow heavy knocks on a wooden door in a silent room, close, ominous",
+    2
+   ]
+  },
+  "events": [
+   [
+    "B1",
+    "room_tone",
+    0.08,
+    "onset",
+    "A7"
+   ],
+   [
+    "A6+22",
+    "clink",
+    0.25
+   ],
+   [
+    "B3+3",
+    "big_step",
+    0.22,
+    "peak"
+   ],
+   [
+    "A7+8",
+    "big_step",
+    0.3,
+    "peak"
+   ],
+   [
+    "A7+14",
+    "engine_loop",
+    0.14,
+    "onset",
+    "B4"
+   ],
+   [
+    "B4",
+    "engine_loop",
+    0.12,
+    "onset",
+    "B5"
+   ],
+   [
+    "B5+8",
+    "big_step",
+    0.3,
+    "peak"
+   ],
+   [
+    "B5+10",
+    "room_tone",
+    0.1,
+    "onset",
+    "B7"
+   ],
+   [
+    "B6+30",
+    "copy_click",
+    0.4
+   ],
+   [
+    "B7",
+    "glitch",
+    0.1,
+    "onset",
+    "B7+40"
+   ],
+   [
+    "B7+104",
+    "switch_off",
+    0.3
+   ],
+   [
+    "B8+56",
+    "drone_hit",
+    0.2,
+    "onset",
+    "B9"
+   ],
+   [
+    "B9+4",
+    "power_hum",
+    0.08,
+    "onset",
+    "B9+62"
+   ],
+   [
+    "B9+62",
+    "power_down",
+    0.35,
+    "onset",
+    "B10"
+   ],
+   [
+    "B10",
+    "rewind",
+    0.35,
+    "onset",
+    "B11"
+   ],
+   [
+    "B11+40",
+    "select_draw",
+    0.25
+   ],
+   [
+    "B12+6",
+    "heartbeat",
+    0.15,
+    "onset",
+    "B13"
+   ],
+   [
+    "B13+42",
+    "drone_hit",
+    0.4,
+    "onset",
+    "B14"
+   ],
+   [
+    "B14+8",
+    "phone_ring",
+    0.55,
+    "onset",
+    "B14+38"
+   ],
+   [
+    "B14+46",
+    "phone_ring",
+    0.55,
+    "onset",
+    "B14+74"
+   ],
+   [
+    "B15",
+    "copy_click",
+    0.3
+   ],
+   [
+    "B16+3",
+    "knock",
+    0.9
+   ],
+   [
+    "B13+44",
+    "heartbeat",
+    0.3,
+    "onset",
+    "B14+8"
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "A4+3",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.2
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "A8+4",
+    "clip": "step",
+    "n": 6,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "B4+4",
+    "clip": "step",
+    "n": 8,
+    "every": 13,
+    "gain": [
+     0.14,
+     0.22
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   },
+   {
+    "at": "B5+28",
+    "clip": "step",
+    "n": 3,
+    "every": 12,
+    "gain": [
+     0.14,
+     0.2
+    ],
+    "pitch": [
+     0.9,
+     1.1
+    ]
+   }
+  ],
+  "music": {
+   "clip": "drone_bed",
+   "until": "B17+20"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -16.0
+  }
+ }
+}

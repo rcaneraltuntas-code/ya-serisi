@@ -1,30 +1,29 @@
-# DUY · Bölüm 1: Uyanış (taslak, onay bekliyor)
+# SON İNSAN · Bölüm 1: 03:17
 
-Hedef süre: 60 sn · dikey 1080×1920 · anlatıcı: Batuhan Altınova (ElevenLabs)
+Biçim: POV (kamera senin gözün), dikey 1080×1920, yaklaşık 60 sn. Ses: Batuhan Altınova, eleven_v4, oyunculuk etiketleriyle.
 
-| # | Mekân | Anlatım |
-|---|---|---|
-| 1 | Yatak odası, sabah | Sabah. Alarm çalıyor. Ama odada bir ses daha var. |
-| 2 | Yatak odası | *"Yine geç kalacak bu çocuk."* |
-| 3 | Yatak odası → mutfak | Annenin sesi. Ama annen mutfakta. Ve ağzı kapalı. |
-| 4 | Mutfak | Kahvaltıya iniyorsun. Annen gülümsüyor: "Günaydın." |
-| 5 | Mutfak, yakın plan | Sonra ikinci ses geliyor: *"Kırdığı vazoyu biliyorum."* |
-| 6 | Mutfak, Pip yakın plan | Donup kalıyorsun. O vazoyu kimse görmedi. |
-| 7 | Çatı, başlık kartı | Ya herkesin düşüncelerini duyabilseydin? |
-| 8 | Merdiven | Okul yolu. Mo el sallıyor. Ona bakıyorsun. Duy. |
-| 9 | Merdiven, Mo yakın plan | *"Umarım ödevi sormaz."* |
-| 10 | Merdiven | Soruyorsun. Yüzü bembeyaz. |
-| 11 | Sınıf, geniş | Sınıfa giriyorsun. Otuz kafa birden açılıyor. |
-| 12 | Şema | Bir insan günde altı binden fazla şey düşünür. Otuz kişi, günde yüz seksen binden fazla düşünce. Gerçek bu. |
-| 13 | Sınıf, balonlar | Hepsi aynı anda. Hepsi senin kafanda. |
-| 14 | Pip çok yakın plan | Gözlerini kapatıyorsun. Sesler susmuyor. |
-| 15 | Sınıf, arka sıra karanlık | Sonra arka sıradan bir düşünce geliyor. Diğerlerinden farklı. Çünkü sana sesleniyor: |
-| 16 | Siyah ekran, DUY rozeti | *"Demek sen de duyuyorsun."* |
+| Mekân | Anlatım |
+|---|---|
+| Yatak odası | Uyanıyorsun. Sokakta tek bir ses yok. |
+| Mutfak | Annen yok. Kahvesi masada. Hâlâ sıcak. |
+| Sokak | Dışarı çıkıyorsun. Arabalar yolun ortasında. Kapıları açık. Motorları çalışıyor. Sekiz milyar insan. Hiçbiri yok. |
+| Başlık | Ya dünyada kalan son insan sen olsaydın? |
+| Market | Markete giriyorsun. Kasada kimse yok. Güvenlik kamerasının kaydını açıyorsun. |
+| Kayıt | Saat üç on yedi. Kayıttaki herkes aynı anda duruyor. Hepsi başını kaldırıp aynı yöne bakıyor. Sonra görüntü kararıyor. |
+| Ters köşe | Geri sarıyorsun. Bir daha izliyorsun. Herkes yukarı bakıyor. Bir kişi hariç. O, kameraya bakıyor. O sensin. |
+| Kanca | Sonra cebindeki telefon çalıyor. Arayan: Sen. |
 
-İtalik satırlar duyulan düşüncelerdir; anlatıcı bunları fısıltıyla okur.
+Durum: senaryo ve ses onaylı. İlk 28 saniye (uyanış → başlık) örnek olarak kuruldu: `studio/src/episodes/son-insan-01`.
 
-## Bilgi
+Bilgi: "Sekiz milyar insan" — dünya nüfusu 15 Kasım 2022'de 8 milyarı geçti (Birleşmiş Milletler).
 
-- İddia: Bir insan günde altı binden fazla şey düşünür; otuz kişilik sınıf günde yüz seksen binden fazla düşünce eder.
-- Hesap: yaklaşık 6.200 düşünce/gün × 30 = 186.000.
-- Kaynak: Tseng & Poppenk, Nature Communications 11, 3480 (2020); Queen's University Gazette, 13 Temmuz 2020.
+## Kısa film kurgusu (onaylanan yön)
+
+Bilgi kartı, sayaç, soru başlığı yok; yalnızca sahne ve karakterin kendi sesi. Kurgu: `studio/src/episodes/son-insan-b1`.
+
+> O sabah beni uyandıran bir ses değildi. Sessizlikti. — Anne? — Kahvesi masadaydı. Hâlâ sıcaktı. — Anne! —
+> Arabalar yolun ortasında durmuştu. Kapıları açık, motorları çalışıyordu. Sanki herkes aynı anda inip gitmişti. —
+> Saat üç on yedide herkes durdu. Hepsi aynı yöne baktı. Sonra kayıt bitti. — Bir kişi hariç. O, kameraya bakıyordu.
+> O bendim. — (telefon, kendi sesi) Sakın kapıyı açma. — (kapı üç kez çalınır)
+
+Render: `python tools/runpod.py render son-insan-b1` (RunPod, 32 vCPU, parça parça; yarıda kalırsa kaldığı parçadan sürer).
