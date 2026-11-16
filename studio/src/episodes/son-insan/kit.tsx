@@ -180,6 +180,8 @@ const Corridor: React.FC<{ t: number; lit?: number }> = ({ t, lit = 0.5 }) => (
 );
 const coPlace = (xn: number, d: number): [number, number, number] => [cp(xn, 1020, d).x, cp(xn, 1020, d).y, 1.35 / d];
 
+const kPlace = (u: number, w: number): [number, number, number] => { const q = stand(KITCHEN, u, w); return [q.x, q.y + LEG_LEN * q.scale, q.scale]; };
+
 const SETS: Record<string, SetDef> = {
   corridor: {
     c: [960, 540, 1.02],
@@ -201,7 +203,7 @@ const SETS: Record<string, SetDef> = {
         {p.mugs === 2 ? <Mug x={MUG.x + 96} y={MUG.y + 2} rot={0} steam={1} f={t + 9} /> : null}
       </g>
     ),
-    at: { island: [K_STAND.x, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale], left: [K_STAND.x - 150, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale], right: [K_STAND.x + 150, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale] },
+    at: { island: [K_STAND.x, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale], left: [K_STAND.x - 150, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale], right: [K_STAND.x + 150, K_STAND.y + LEG_LEN * K_STAND.scale, K_STAND.scale], counter: kPlace(0.36, 0.1), counterR: kPlace(0.62, 0.1), near: kPlace(0.62, 0.92) },
   },
   street: {
     c: [960, 560, 1.02],
@@ -669,8 +671,19 @@ const card = (p: P, id: string): Shot => ({ t }) => (
   <g>
     <rect x={0} y={0} width={1920} height={1080} fill="#000" />
     <g opacity={clamp((t - 6) / 8)}>
-      <text x={960} y={520} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={76} fill={CREAM} letterSpacing={4}>{p.title ?? 'SON İNSAN'}</text>
-      <text x={960} y={590} textAnchor="middle" fontFamily={FONT.ui} fontSize={30} fill={CREAM} letterSpacing={8} opacity={0.7}>{p.sub ?? ''}</text>
+      {p.phrase ? (
+        <g>
+          <text x={960} y={400} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(64, 1000 / p.phrase.length)} fill="#FFE08A">{p.phrase}</text>
+          <text x={960} y={486} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={58} fill={CREAM} opacity={clamp((t - 24) / 8) * (0.75 + 0.25 * Math.sin(t / 5))}>{p.eq ?? '= ?'}</text>
+          <text x={960} y={640} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={40} fill={CREAM} letterSpacing={3} opacity={0.9}>{p.title ?? ''}</text>
+          <text x={960} y={690} textAnchor="middle" fontFamily={FONT.ui} fontSize={24} fill={CREAM} letterSpacing={6} opacity={0.65}>{p.sub ?? ''}</text>
+        </g>
+      ) : (
+        <g>
+          <text x={960} y={520} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={76} fill={CREAM} letterSpacing={4}>{p.title ?? 'SON İNSAN'}</text>
+          <text x={960} y={590} textAnchor="middle" fontFamily={FONT.ui} fontSize={30} fill={CREAM} letterSpacing={8} opacity={0.7}>{p.sub ?? ''}</text>
+        </g>
+      )}
     </g>
   </g>
 );
@@ -749,7 +762,83 @@ const shard = (p: P, id: string): Shot => ({ t, len }) => {
   );
 };
 
-const USES: Record<string, (p: P, id: string) => Shot> = { scene, mirror, paper, phone, door, floor, tape, clock, blank, card, glass, watch, shard };
+/**
+ * A phone in someone's hand, seen over their arm (not through their eyes): one message on the screen.
+ * from: the sender's name; text: the message (arrives at `at`); bg: the place behind, out of focus.
+ */
+const msg = (p: P, id: string): Shot => ({ t, len }) => {
+  const rise = easeOut(clamp(t / 10));
+  const at = p.at ?? 14;
+  const pop = backOut(clamp((t - at) / 7));
+  const buzz = t >= at - 10 && t < at + 6 ? Math.sin(t * 3.1) * 5 : 0;
+  const lines: string[] = p.lines ?? [p.text ?? ''];
+  return (
+    <g>
+      <Backdrop p={p} t={t} id={id} fill="#0C0F14" />
+      <g transform={`translate(${buzz} ${(1 - rise) * 500}) translate(960 560) rotate(${-4 + Math.sin(t / 14) * 1.2}) scale(${kf(t, [[0, 1.0], [len, 1.1]])}) translate(-960 -560)`}>
+        <PovHand x={1020} y={910} fx={1260} fy={1520} s={1.35} rimId="rimBlue" look={p.who ? WHO[p.who] : SELF} />
+        <rect x={738} y={176} width={444} height={760} rx={54} fill="#0A0C12" stroke="#8A93A0" strokeWidth={6} />
+        <rect x={756} y={194} width={408} height={724} rx={40} fill="#10131B" />
+        <rect x={900} y={208} width={120} height={22} rx={11} fill="#0A0C12" />
+        <text x={960} y={300} textAnchor="middle" fontFamily={FONT.ui} fontSize={24} fill="#8A93A0">{p.clock ?? '07:12'}</text>
+        <g opacity={clamp((t - at) / 3)} transform={`translate(960 470) scale(${0.6 + 0.4 * pop}) translate(-960 -470)`}>
+          <rect x={776} y={372} width={368} height={96 + lines.length * 54} rx={26} fill="#232838" stroke="#3A4258" strokeWidth={3} />
+          <circle cx={812} cy={412} r={18} fill="#3A4258" />
+          <text x={842} y={420} fontFamily={FONT.ui} fontSize={22} fill="#9AA6C0">{p.from ?? 'Bilinmeyen numara'}</text>
+          {lines.map((ln, i) => <text key={i} x={800} y={488 + i * 54} fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(46, 590 / Math.max(8, ln.length))} fill="#FFFFFF">{ln}</text>)}
+        </g>
+        <Glow x={960} y={520} r={420} kind="cool" o={0.22 + 0.2 * clamp((t - at) / 6)} />
+      </g>
+      <Over p={p} t={t} len={len} />
+    </g>
+  );
+};
+
+const USES: Record<string, (p: P, id: string) => Shot> = { scene, mirror, paper, phone, door, floor, tape, clock, blank, card, glass, watch, shard, msg };
+
+const wrap = (s: string, max: number) => {
+  // rows of about equal length, none longer than max
+  const rows = Math.ceil(s.length / max);
+  const n = Math.min(max, Math.ceil(s.length / rows) + 3);
+  const out: string[] = [];
+  let cur = '';
+  for (const w of s.split(' ')) {
+    if (cur && cur.length + 1 + w.length > n) {
+      out.push(cur);
+      cur = w;
+    } else cur = (cur + ' ' + w).trim();
+  }
+  return [...out, cur];
+};
+const STROKE = { paintOrder: 'stroke' as const, stroke: '#0B0912', strokeLinejoin: 'round' as const };
+/**
+ * Captions, in the lower third of the vertical frame. A line in another language (en) is set large and warm, and
+ * its meaning (tr) comes up under it a beat later; his own lines (tr alone) are small and plain.
+ */
+const Captions: React.FC<{ caps: P[]; f: number }> = ({ caps, f }) => {
+  const c = caps.filter((q) => f >= q.a && f < q.b).pop();
+  if (!c) return null;
+  const k = easeOut(clamp((f - c.a) / 4));
+  if (c.en) {
+    const ls = wrap(c.en, 19);
+    const size = 54;
+    const y0 = 770 - (ls.length - 1) * 30;
+    return (
+      <g opacity={clamp((f - c.a) / 3)} transform={`translate(960 ${y0}) scale(${0.92 + 0.08 * k}) translate(-960 ${-y0})`}>
+        {ls.map((ln, i) => <text key={i} x={960} y={y0 + i * 62} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={size} fill="#FFE08A" strokeWidth={7} letterSpacing={1.5} style={STROKE}>{ln}</text>)}
+        {c.tr ? <text x={960} y={y0 + ls.length * 62 - 6} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={36} fill="#FFFFFF" strokeWidth={6} letterSpacing={1} style={STROKE} opacity={clamp((f - (c.trAt ?? c.a)) / 6)}>{c.tr}</text> : null}
+      </g>
+    );
+  }
+  const rows = wrap(c.say ? `— ${c.tr}` : c.tr, 25);
+  return (
+    <g opacity={clamp((f - c.a) / 3) * 0.97}>
+      {rows.map((ln, i) => (
+        <text key={i} x={960} y={790 - (rows.length - 1) * 23 + i * 46} textAnchor="middle" fontFamily={FONT.title} fontWeight={c.say ? 800 : 600} fontStyle={c.say ? 'normal' : 'italic'} fontSize={c.say ? 44 : 37} fill={CREAM} strokeWidth={6} letterSpacing={1} style={STROKE}>{ln}</text>
+      ))}
+    </g>
+  );
+};
 
 /** Build an episode from its episode.json: each shot is { id, use, props }. */
 export const buildEpisode = (ep: any, timeline: any) => {
@@ -757,7 +846,16 @@ export const buildEpisode = (ep: any, timeline: any) => {
   for (const s of ep.shots) {
     const make = USES[s.use];
     if (!make) throw new Error(`${ep.slug}: shot ${s.id} uses unknown scene "${s.use}"`);
-    shots[s.id] = make(s.props ?? {}, `${ep.id}${s.id}`.replace(/[^A-Za-z0-9]/g, ''));
+    const inner = make(s.props ?? {}, `${ep.id}${s.id}`.replace(/[^A-Za-z0-9]/g, ''));
+    const Inner = inner;
+    shots[s.id] = ep.captions && s.use !== 'card'
+      ? (q: ShotProps) => (
+          <g>
+            <Inner {...q} />
+            <Captions caps={ep.captions} f={q.f} />
+          </g>
+        )
+      : inner;
   }
   return defineEpisode(ep.id, { timeline: timeline as Timeline, shots });
 };

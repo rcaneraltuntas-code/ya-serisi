@@ -133,7 +133,7 @@ def sound(slug, fs=None, fe=None):
         fs, fe = [round(w['s'] * 30) for w in words], [round(w['e'] * 30) for w in words]
     at = {e['shot']: int(e['at'][2:]) for e in ep['edit']}
     duck = ep.get('duck', {})
-    used, events, repeats, spans = {'drone_bed'}, [], [], []
+    used, events, repeats, spans = {ep.get('music', 'drone_bed')}, [], [], []
     for s in ep['shots']:
         for e in s.get('sfx', []):
             key = f'{s["id"]}+{e[0]}:{e[1]}'
@@ -158,7 +158,7 @@ def sound(slug, fs=None, fe=None):
             repeats.append({'at': f'{s["id"]}+4', 'clip': 'step', 'n': s['steps'], 'every': 12, 'gain': [round(0.14 * k, 3), round(0.22 * k, 3)], 'pitch': [0.9, 1.1]})
             spans.append((at[s['id']] + 4, at[s['id']] + 4 + s['steps'] * 12 + 15, key))
             used.add('step')
-    ep['sound'] = {'clips': {n: CLIPS[n] for n in sorted(used)}, 'events': events, 'repeats': repeats, 'music': {'clip': 'drone_bed'},
+    ep['sound'] = {'clips': {n: CLIPS[n] for n in sorted(used)}, 'events': events, 'repeats': repeats, 'music': {'clip': ep.get('music', 'drone_bed')},
                    'levels': {'sfx_lu': ep.get('sfx_lu', -3.0), 'music_lu': ep.get('music_lu', -16.0)}}
     save(slug, ep)
     return spans
@@ -227,29 +227,58 @@ def voice(slug, url):
     # fit the episode to its target length by stretching (or tightening) the written pauses together
     speech = sum(b - a for a, b in spans)
     written = sum(l.get('pause', 0.6) for l in ep['lines'][:-1])
-    fit = max(0.75, min(1.7, (ep.get('target', 57) - ep.get('lead', 0.5) - ep.get('tail', 2.0) - speech) / written))
+    fit = max(0.75, min(1.7, (ep.get('target', 57) - ep.get('lead', 0.5) - ep.get('tail', 2.0) - speech) / written)) if ep.get('fit', True) else 1.0
+    # lines spoken by someone else (ep['inserts']: their own takes, public/<slug>/ins<k>.wav) sit in the pause after a line
+    ins = ep.get('inserts', [])
+    for k, n in enumerate(ins):
+        p = pub / f'ins{k}.wav'
+        n['dur'] = round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(p)], capture_output=True, text=True).stdout or 0), 3) if p.exists() else round(max(0.8, len(n['en']) / 13), 3)
+    hold = {n['after']: n.get('lead', 0.3) + n['dur'] + n.get('trail', 0.4) for n in ins}
     (out / 'scribe_words.json').write_text(json.dumps({'words': [{'text': f'L{i}.', 'type': 'word', 'start': round(a, 3), 'end': round(b, 3)} for i, (a, b) in enumerate(spans)]}))
     ep['script'] = [{'beat': str(i), 'text': l['t']} for i, l in enumerate(ep['lines'])]
-    ep['pauses'] = {'lead': ep.get('lead', 0.5), 'sentence': 0.6, 'after': {f'L{i}': round(l.get('pause', 0.6) * fit, 2) for i, l in enumerate(ep['lines'][:-1])}}
+    ep['pauses'] = {'lead': ep.get('lead', 0.5), 'sentence': 0.6, 'after': {f'L{i}': round(hold.get(i, l.get('pause', 0.6) * fit), 2) for i, l in enumerate(ep['lines'][:-1])}}
     ep['voice_fx'] = [{'from': f'L{i}', 'to': f'L{i}', 'fx': 'phone'} for i, l in enumerate(ep['lines']) if l.get('fx') == 'phone']
     save(slug, ep)
     subprocess.run([sys.executable, str(TOOLS / 'voice_connector.py'), slug], check=True, stdout=subprocess.DEVNULL)
     words = json.loads((S / 'src/episodes' / slug / 'words.json').read_text(encoding='utf-8'))
     fs = [round(w['s'] * 30) for w in words]
     fe = [round(w['e'] * 30) for w in words]
+    for k, n in enumerate(ins):
+        n['s'] = round(words[n['after']]['e'] + n.get('lead', 0.3), 3)
+        n['e'] = round(n['s'] + n['dur'], 3)
+    if ins and not draft and all((pub / f'ins{k}.wav').exists() for k in range(len(ins))):
+        v = pub / 'voice.wav'
+        cmd = ['ffmpeg', '-y', '-v', 'error', '-i', str(v)]
+        flt = []
+        for k, n in enumerate(ins):
+            cmd += ['-i', str(pub / f'ins{k}.wav')]
+            flt.append(f'[{k + 1}:a]aresample={SR},volume={n.get("gain", 1.0)},adelay={int(n["s"] * 1000)}:all=1[i{k}]')
+        flt.append('[0:a]' + ''.join(f'[i{k}]' for k in range(len(ins))) + f'amix=inputs={len(ins) + 1}:normalize=0:duration=first[m]')
+        subprocess.run(cmd + ['-filter_complex', ';'.join(flt), '-map', '[m]', '-ar', str(SR), '-ac', '1', str(pub / 'voice_mix.wav')], check=True)
+        (pub / 'voice_mix.wav').replace(v)
+    if ep.get('subs'):
+        # captions: his own lines in short runs of words, the others' lines whole with their meaning under them
+        caps = []
+        for i, l in enumerate(ep['lines']):
+            if l.get('cap') is False:
+                continue
+            caps.append({'a': fs[i], 'b': fe[i] + 8, 'tr': l['t'], 'say': bool(l.get('say'))})
+        for n in ins:
+            caps.append({'a': round(n['s'] * 30) - 2, 'b': round(n['e'] * 30) + n.get('hold', 14), 'en': n['en'], 'tr': n.get('tr', ''), 'trAt': round(n['s'] * 30) + n.get('trDelay', 14)})
+        ep['captions'] = sorted(caps, key=lambda c: c['a'])
     edit, last = [], -1
     for k, s in enumerate(ep['shots']):
-        f = 0 if k == 0 else (fe[s['after']] + s.get('off', 8) if 'after' in s else max(0, fs[s['at']] - 2 + s.get('off', 0)))
+        f = 0 if k == 0 else (round(ins[s['ins']]['s'] * 30) + s.get('off', -4) if 'ins' in s else fe[s['after']] + s.get('off', 8) if 'after' in s else max(0, fs[s['at']] - 2 + s.get('off', 0)))
         if f <= last:
             raise SystemExit(f'shot {s["id"]} would start at {f}, not after the one before it ({last})')
         edit.append({'shot': s['id'], 'at': f'f:{f}'})
         last = f
-    end = fe[-1] + round(ep.get('tail', 2.0) * 30)
+    end = max(fe[-1], round(ins[-1]['e'] * 30) if ins else 0) + round(ep.get('tail', 2.0) * 30)
     ep['edit'], ep['end'] = edit, f'f:{end}'
     save(slug, ep)
     sound(slug, fs, fe)
     ep = load(slug)
-    ep.setdefault('title', ['SON İNSAN', ep['slug']])
+    ep.setdefault('title', [ep.get('series', 'SON İNSAN'), ep['slug']])
     save(slug, ep)
     (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n\nexport const episode = buildEpisode(ep, timeline);\n")
     subprocess.run([sys.executable, str(SKILL / 'plan.py'), slug], check=True, stdout=subprocess.DEVNULL)
@@ -263,7 +292,7 @@ def voice(slug, url):
 
 def registry():
     d = S / 'src/episodes'
-    series = sorted(p.name for p in d.iterdir() if p.is_dir() and (p / 'index.tsx').exists() and (p / 'timeline.json').exists() and p.name.startswith('si-'))
+    series = sorted(p.name for p in d.iterdir() if p.is_dir() and (p / 'index.tsx').exists() and (p / 'timeline.json').exists() and p.name[:3] in ('si-', 'he-'))
     imp = "import { rewind } from './rewind';\nimport { copyPaste } from './copy-paste';\nimport { dusunce } from './dusunce';\nimport { sonInsan01 } from './son-insan-01';\nimport { sonInsanB1 } from './son-insan-b1';\n"
     imp += ''.join(f"import {{ episode as {n.replace('-', '')} }} from './{n}';\n" for n in series)
     lst = ', '.join(['rewind', 'copyPaste', 'dusunce', 'sonInsan01', 'sonInsanB1'] + [n.replace('-', '') for n in series])

@@ -16,7 +16,7 @@ for slug in slugs:
         continue
     subprocess.run([sys.executable, str(TOOLS.parent / 'skill/scripts/master.py'), slug, '--skip-render'], check=True, stdout=subprocess.DEVNULL)
     n = int(re.sub(r'\D', '', slug))
-    dst = to / f'son-insan-bolum-{n:02d}.mp4'
+    dst = to / f"{'herkes-ingilizce' if slug.startswith('he-') else 'son-insan'}-bolum-{n:02d}.mp4"
     gain = 2.4
     for _ in range(3):  # lift toward -14.5 LUFS under a limiter; whispered episodes need a little more than others
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(od / f'{slug}-final.mp4'), '-c:v', 'copy', '-af', f'volume={gain:.1f}dB,alimiter=limit=0.74:attack=3:release=60:level=disabled',

@@ -1,0 +1,172 @@
+{
+ "slug": "he-01",
+ "title": "HERKES İNGİLİZCE BÖLÜM 1",
+ "fps": 30,
+ "total": 769,
+ "segments": [
+  {
+   "shot": "a",
+   "a": 0,
+   "b": 169,
+   "t0": 0,
+   "t1": 169,
+   "line": "L0. L1."
+  },
+  {
+   "shot": "b",
+   "a": 169,
+   "b": 242,
+   "t0": 0,
+   "t1": 73,
+   "line": ""
+  },
+  {
+   "shot": "c",
+   "a": 242,
+   "b": 325,
+   "t0": 0,
+   "t1": 83,
+   "line": "L2."
+  },
+  {
+   "shot": "d",
+   "a": 325,
+   "b": 347,
+   "t0": 0,
+   "t1": 22,
+   "line": "L3."
+  },
+  {
+   "shot": "e",
+   "a": 347,
+   "b": 439,
+   "t0": 0,
+   "t1": 92,
+   "line": ""
+  },
+  {
+   "shot": "f",
+   "a": 439,
+   "b": 496,
+   "t0": 0,
+   "t1": 57,
+   "line": "L4."
+  },
+  {
+   "shot": "g",
+   "a": 496,
+   "b": 572,
+   "t0": 0,
+   "t1": 76,
+   "line": ""
+  },
+  {
+   "shot": "h",
+   "a": 572,
+   "b": 681,
+   "t0": 0,
+   "t1": 109,
+   "line": "L5. L6."
+  },
+  {
+   "shot": "i",
+   "a": 681,
+   "b": 769,
+   "t0": 0,
+   "t1": 88,
+   "line": ""
+  }
+ ],
+ "shots": [
+  {
+   "id": "a",
+   "size": "",
+   "key": 40,
+   "len": 169,
+   "first": 0,
+   "line": "L0. L1.",
+   "note": ""
+  },
+  {
+   "id": "b",
+   "size": "",
+   "key": 30,
+   "len": 73,
+   "first": 169,
+   "line": "",
+   "note": ""
+  },
+  {
+   "id": "c",
+   "size": "",
+   "key": 30,
+   "len": 83,
+   "first": 242,
+   "line": "L2.",
+   "note": ""
+  },
+  {
+   "id": "d",
+   "size": "",
+   "key": 14,
+   "len": 22,
+   "first": 325,
+   "line": "L3.",
+   "note": ""
+  },
+  {
+   "id": "e",
+   "size": "",
+   "key": 40,
+   "len": 92,
+   "first": 347,
+   "line": "",
+   "note": ""
+  },
+  {
+   "id": "f",
+   "size": "",
+   "key": 40,
+   "len": 57,
+   "first": 439,
+   "line": "L4.",
+   "note": ""
+  },
+  {
+   "id": "g",
+   "size": "",
+   "key": 50,
+   "len": 76,
+   "first": 496,
+   "line": "",
+   "note": ""
+  },
+  {
+   "id": "h",
+   "size": "",
+   "key": 80,
+   "len": 109,
+   "first": 572,
+   "line": "L5. L6.",
+   "note": ""
+  },
+  {
+   "id": "i",
+   "size": "",
+   "key": 50,
+   "len": 88,
+   "first": 681,
+   "line": "",
+   "note": ""
+  }
+ ],
+ "fx": [],
+ "audio": {
+  "voiceVol": 0.8,
+  "sfxVol": 0.2153,
+  "musicVol": 0.0239,
+  "voice": "he-01/voice.wav",
+  "sfx": "he-01/sfx.wav",
+  "music": "he-01/music.wav"
+ }
+}
