@@ -1,0 +1,262 @@
+{
+ "slug": "dusunce",
+ "title": "YA HERKESİN DÜŞÜNCELERİNİ DUYABİLSEYDİN?",
+ "fps": 30,
+ "total": 450,
+ "segments": [
+  {
+   "shot": "S1",
+   "a": 0,
+   "b": 49,
+   "t0": 0,
+   "t1": 49,
+   "line": "Sınav. Cevabı bilmiyorsun."
+  },
+  {
+   "shot": "S2",
+   "a": 49,
+   "b": 68,
+   "t0": 0,
+   "t1": 19,
+   "line": "Duy.",
+   "look": "hear"
+  },
+  {
+   "shot": "S3",
+   "a": 68,
+   "b": 99,
+   "t0": 0,
+   "t1": 31,
+   "line": "Akşam yemeği ne?"
+  },
+  {
+   "shot": "S4",
+   "a": 99,
+   "b": 117,
+   "t0": 0,
+   "t1": 18,
+   "line": "Duy.",
+   "look": "hear"
+  },
+  {
+   "shot": "S5",
+   "a": 117,
+   "b": 139,
+   "t0": 0,
+   "t1": 22,
+   "line": "Pizza!"
+  },
+  {
+   "shot": "S6",
+   "a": 139,
+   "b": 178,
+   "t0": 0,
+   "t1": 39,
+   "line": "Arkadaşın ne düşünüyor?"
+  },
+  {
+   "shot": "S7",
+   "a": 178,
+   "b": 198,
+   "t0": 0,
+   "t1": 20,
+   "line": "Duy.",
+   "look": "hear"
+  },
+  {
+   "shot": "S8",
+   "a": 198,
+   "b": 225,
+   "t0": 0,
+   "t1": 27,
+   "line": "Eyvah."
+  },
+  {
+   "shot": "S9",
+   "a": 225,
+   "b": 291,
+   "t0": 0,
+   "t1": 66,
+   "line": "Ya herkesin düşüncelerini duyabilseydin?"
+  },
+  {
+   "shot": "S10",
+   "a": 291,
+   "b": 368,
+   "t0": 0,
+   "t1": 77,
+   "line": "Bir insan günde altı binden fazla şey düşünür."
+  },
+  {
+   "shot": "S11",
+   "a": 368,
+   "b": 393,
+   "t0": 0,
+   "t1": 25,
+   "line": "Gerçek bu."
+  },
+  {
+   "shot": "S12",
+   "a": 393,
+   "b": 450,
+   "t0": 0,
+   "t1": 57,
+   "line": "Ve kapatma düğmesi yok.",
+   "look": "hear"
+  }
+ ],
+ "shots": [
+  {
+   "id": "S1",
+   "size": "medium",
+   "key": 30,
+   "len": 49,
+   "first": 0,
+   "line": "Sınav. Cevabı bilmiyorsun.",
+   "note": "Pip sınav kağıdına bakıyor, kafasında soru işaretleri"
+  },
+  {
+   "id": "S2",
+   "size": "close-up, profil",
+   "key": 15,
+   "len": 19,
+   "first": 49,
+   "line": "Duy.",
+   "note": "yandaki çocuğun düşünce balonu: B ✓"
+  },
+  {
+   "id": "S3",
+   "size": "wide, omuz üstü",
+   "key": 14,
+   "len": 31,
+   "first": 68,
+   "line": "Akşam yemeği ne?",
+   "note": "anne mutfakta, Pip önde karanlık siluet"
+  },
+  {
+   "id": "S4",
+   "size": "close-up",
+   "key": 15,
+   "len": 18,
+   "first": 99,
+   "line": "Duy.",
+   "note": "annenin balonunda pizza"
+  },
+  {
+   "id": "S5",
+   "size": "extreme close-up",
+   "key": 10,
+   "len": 22,
+   "first": 117,
+   "line": "Pizza!",
+   "note": "Pip sevinçli, gözleri camgöbeği"
+  },
+  {
+   "id": "S6",
+   "size": "medium, omuz üstü",
+   "key": 20,
+   "len": 39,
+   "first": 139,
+   "line": "Arkadaşın ne düşünüyor?",
+   "note": "Mo el sallıyor, gülümsüyor"
+  },
+  {
+   "id": "S7",
+   "size": "close-up, alt açı",
+   "key": 16,
+   "len": 20,
+   "first": 178,
+   "line": "Duy.",
+   "note": "Mo'nun balonu: Pip ve kırmızı çarpı"
+  },
+  {
+   "id": "S8",
+   "size": "extreme close-up",
+   "key": 16,
+   "len": 27,
+   "first": 198,
+   "line": "Eyvah.",
+   "note": "Pip: eyvah"
+  },
+  {
+   "id": "S9",
+   "size": "title, wide",
+   "key": 50,
+   "len": 66,
+   "first": 225,
+   "line": "Ya herkesin düşüncelerini duyabilseydin?",
+   "note": "şehirden yükselen düşünce balonları, başlık"
+  },
+  {
+   "id": "S10",
+   "size": "schematic",
+   "key": 60,
+   "len": 77,
+   "first": 291,
+   "line": "Bir insan günde altı binden fazla şey düşünür.",
+   "note": "bir kafa, balonlar, 6.200'e sayan sayaç"
+  },
+  {
+   "id": "S11",
+   "size": "schematic insert",
+   "key": 18,
+   "len": 25,
+   "first": 368,
+   "line": "Gerçek bu.",
+   "note": "onay işareti ve kaynak"
+  },
+  {
+   "id": "S12",
+   "size": "medium, push in",
+   "key": 40,
+   "len": 57,
+   "first": 393,
+   "line": "Ve kapatma düğmesi yok.",
+   "note": "sınıf, balonlar her yeri kaplıyor, sonra karanlık"
+  }
+ ],
+ "fx": [
+  {
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4,
+   "f": 56
+  },
+  {
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4,
+   "f": 106
+  },
+  {
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4,
+   "f": 185
+  },
+  {
+   "kind": "flash",
+   "color": "#FFF3DC",
+   "f": 225
+  },
+  {
+   "kind": "flash",
+   "color": "#FF3344",
+   "f": 393
+  },
+  {
+   "kind": "shake",
+   "len": 10,
+   "amp": 10,
+   "f": 393
+  }
+ ],
+ "audio": {
+  "voiceVol": 0.8,
+  "sfxVol": 0.2104,
+  "musicVol": 0.06,
+  "voice": "dusunce/voice.wav",
+  "sfx": "dusunce/sfx.wav",
+  "music": "dusunce/music.wav"
+ }
+}

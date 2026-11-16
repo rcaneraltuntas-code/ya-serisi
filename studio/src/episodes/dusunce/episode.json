@@ -1,0 +1,475 @@
+{
+ "id": "Dusunce",
+ "slug": "dusunce",
+ "topic": "Ya herkesin düşüncelerini duyabilseydin?",
+ "title": [
+  "YA HERKESİN",
+  "DÜŞÜNCELERİNİ DUYABİLSEYDİN?"
+ ],
+ "voice": {
+  "id": "vwmWyMlmlJtiiXeCVRKn",
+  "model": "eleven_v4"
+ },
+ "script": [
+  {
+   "beat": "1 cold open, demo 1 (small and selfish)",
+   "text": "Sınav. Cevabı bilmiyorsun. Duy."
+  },
+  {
+   "beat": "1 cold open, demo 2 (useful)",
+   "text": "Akşam yemeği ne? Duy. Pizza!"
+  },
+  {
+   "beat": "1 cold open, demo 3 (a little uncanny)",
+   "text": "Arkadaşın ne düşünüyor? Duy. Eyvah."
+  },
+  {
+   "beat": "2 the premise (title card)",
+   "text": "Ya herkesin düşüncelerini duyabilseydin?"
+  },
+  {
+   "beat": "4 the turn: one real fact",
+   "text": "Bir insan günde altı binden fazla şey düşünür. Gerçek bu."
+  },
+  {
+   "beat": "5-7 folded into a threat",
+   "text": "Ve kapatma düğmesi yok."
+  }
+ ],
+ "science": [
+  {
+   "claim": "Bir insan günde altı binden fazla şey düşünür.",
+   "working": "Tseng & Poppenk fMRI ile düşünce geçişlerini saydı: dakikada yaklaşık 6,5 geçiş; 16 saatlik uyanıklıkta 6,5 x 60 x 16 = yaklaşık 6.200 düşünce.",
+   "source": "Tseng & Poppenk, Nature Communications 11, 3480 (2020); Queen's University Gazette, 13 Temmuz 2020"
+  }
+ ],
+ "gaps": {
+  "sentence": 0.24,
+  "question": 0.28,
+  "word": 0.12,
+  "pairs": {
+   "Duy|Akşam": 0.5,
+   "Duy|Pizza": 0.4,
+   "Pizza|Arkadaşın": 0.3,
+   "Duy|Eyvah": 0.5,
+   "Eyvah|Ya": 0.35,
+   "duyabilseydin|Bir": 0.3,
+   "bu|Ve": 0.34
+  }
+ },
+ "shots": [
+  {
+   "id": "S1",
+   "size": "medium",
+   "set": "classroom",
+   "key": 30,
+   "note": "Pip sınav kağıdına bakıyor, kafasında soru işaretleri"
+  },
+  {
+   "id": "S2",
+   "size": "close-up, profil",
+   "set": "classroom",
+   "key": 15,
+   "note": "yandaki çocuğun düşünce balonu: B ✓"
+  },
+  {
+   "id": "S3",
+   "size": "wide, omuz üstü",
+   "set": "kitchen",
+   "key": 14,
+   "note": "anne mutfakta, Pip önde karanlık siluet"
+  },
+  {
+   "id": "S4",
+   "size": "close-up",
+   "set": "kitchen",
+   "key": 15,
+   "note": "annenin balonunda pizza"
+  },
+  {
+   "id": "S5",
+   "size": "extreme close-up",
+   "set": "kitchen",
+   "key": 10,
+   "note": "Pip sevinçli, gözleri camgöbeği"
+  },
+  {
+   "id": "S6",
+   "size": "medium, omuz üstü",
+   "set": "stairwell",
+   "key": 20,
+   "note": "Mo el sallıyor, gülümsüyor"
+  },
+  {
+   "id": "S7",
+   "size": "close-up, alt açı",
+   "set": "stairwell",
+   "key": 16,
+   "note": "Mo'nun balonu: Pip ve kırmızı çarpı"
+  },
+  {
+   "id": "S8",
+   "size": "extreme close-up",
+   "set": "stairwell",
+   "key": 16,
+   "note": "Pip: eyvah"
+  },
+  {
+   "id": "S9",
+   "size": "title, wide",
+   "set": "rooftop",
+   "key": 50,
+   "note": "şehirden yükselen düşünce balonları, başlık"
+  },
+  {
+   "id": "S10",
+   "size": "schematic",
+   "set": "schematic",
+   "key": 60,
+   "note": "bir kafa, balonlar, 6.200'e sayan sayaç"
+  },
+  {
+   "id": "S11",
+   "size": "schematic insert",
+   "set": "schematic",
+   "key": 18,
+   "note": "onay işareti ve kaynak"
+  },
+  {
+   "id": "S12",
+   "size": "medium, push in",
+   "set": "classroom",
+   "key": 40,
+   "note": "sınıf, balonlar her yeri kaplıyor, sonra karanlık"
+  }
+ ],
+ "edit": [
+  {
+   "shot": "S1",
+   "at": "Sınav"
+  },
+  {
+   "shot": "S2",
+   "at": "Duy",
+   "look": "hear"
+  },
+  {
+   "shot": "S3",
+   "at": "Akşam"
+  },
+  {
+   "shot": "S4",
+   "at": "Duy",
+   "look": "hear"
+  },
+  {
+   "shot": "S5",
+   "at": "Pizza"
+  },
+  {
+   "shot": "S6",
+   "at": "Arkadaşın"
+  },
+  {
+   "shot": "S7",
+   "at": "Duy",
+   "look": "hear"
+  },
+  {
+   "shot": "S8",
+   "at": "Eyvah"
+  },
+  {
+   "shot": "S9",
+   "at": "Ya"
+  },
+  {
+   "shot": "S10",
+   "at": "Bir"
+  },
+  {
+   "shot": "S11",
+   "at": "Gerçek"
+  },
+  {
+   "shot": "S12",
+   "at": "Ve",
+   "look": "hear"
+  }
+ ],
+ "accent": "DUYABİLSEYDİN",
+ "power": {
+  "word": "Duy",
+  "look": "hear"
+ },
+ "cast": [
+  "pipHood",
+  "mo",
+  "mom"
+ ],
+ "end": "f:450",
+ "fx": [
+  {
+   "at": "S2+7",
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4
+  },
+  {
+   "at": "S4+7",
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4
+  },
+  {
+   "at": "S7+7",
+   "kind": "flash",
+   "color": "#DDF2FF",
+   "o": 0.4
+  },
+  {
+   "at": "S9",
+   "kind": "flash",
+   "color": "#FFF3DC"
+  },
+  {
+   "at": "S12",
+   "kind": "flash",
+   "color": "#FF3344"
+  },
+  {
+   "at": "S12",
+   "kind": "shake",
+   "len": 10,
+   "amp": 10
+  }
+ ],
+ "sound": {
+  "clips": {
+   "room_tone": [
+    "quiet indoor room tone in the evening, faint distant city hum, no voices",
+    12.5
+   ],
+   "class_murmur": [
+    "a quiet classroom murmur, kids whispering, chairs shuffling",
+    2.0
+   ],
+   "select_draw": [
+    "a quick digital selection sound, a soft rising electronic shimmer as a box is drawn on screen, short",
+    0.6
+   ],
+   "pop": [
+    "a cartoon speech bubble pop, short and bright",
+    0.5
+   ],
+   "ding": [
+    "a correct answer ding, bright bell chime",
+    0.8
+   ],
+   "sparkle": [
+    "a short bright magical sparkle twinkle, cartoon",
+    0.8
+   ],
+   "gulp": [
+    "a nervous cartoon gulp, short",
+    0.5
+   ],
+   "title_boom": [
+    "a cinematic whoosh rising into a deep boom impact",
+    1.6
+   ],
+   "roof_wind": [
+    "a gentle evening breeze on a city rooftop, distant traffic",
+    7.0
+   ],
+   "counter_tick": [
+    "a fast mechanical counter ticking up rapidly, digits rolling over, getting faster",
+    1.6
+   ],
+   "drone_hit": [
+    "a dark ominous low drone hit, deep cinematic horror sting",
+    2.6
+   ],
+   "power_hum": [
+    "a deep electrical power grid hum swelling louder, transformers buzzing, rising",
+    3.0
+   ],
+   "switch_off": [
+    "a heavy electrical breaker switching off with a dull clunk",
+    0.5
+   ],
+   "music": [
+    "playful quirky cartoon background music, pizzicato strings, glockenspiel and soft bass, light and curious, 110 bpm, no vocals",
+    17.0
+   ]
+  },
+  "events": [
+   [
+    "S1",
+    "room_tone",
+    0.1,
+    "onset",
+    "S9"
+   ],
+   [
+    "S1",
+    "class_murmur",
+    0.16,
+    "onset",
+    "S3"
+   ],
+   [
+    "S1+20",
+    "pop",
+    0.15
+   ],
+   [
+    "S2+2",
+    "select_draw",
+    0.35
+   ],
+   [
+    "S2+7",
+    "pop",
+    0.5
+   ],
+   [
+    "S2+12",
+    "ding",
+    0.35,
+    "onset",
+    "S3"
+   ],
+   [
+    "S4+2",
+    "select_draw",
+    0.35
+   ],
+   [
+    "S4+7",
+    "pop",
+    0.5
+   ],
+   [
+    "S5+8",
+    "sparkle",
+    0.35,
+    "onset",
+    "S6"
+   ],
+   [
+    "S7+2",
+    "select_draw",
+    0.35
+   ],
+   [
+    "S7+7",
+    "pop",
+    0.5
+   ],
+   [
+    "S8+19",
+    "gulp",
+    0.35,
+    "onset",
+    "S9"
+   ],
+   [
+    "S9",
+    "title_boom",
+    0.4,
+    "peak"
+   ],
+   [
+    "S9",
+    "roof_wind",
+    0.16,
+    "onset",
+    "S10"
+   ],
+   [
+    "S11+8",
+    "ding",
+    0.25,
+    "onset",
+    "S12"
+   ],
+   [
+    "S10+3",
+    "counter_tick",
+    0.14,
+    "onset",
+    "S11"
+   ],
+   [
+    "S12",
+    "drone_hit",
+    0.14
+   ],
+   [
+    "S12+4",
+    "power_hum",
+    0.06,
+    "onset",
+    "S12+48"
+   ],
+   [
+    "S12+48",
+    "switch_off",
+    0.5
+   ]
+  ],
+  "repeats": [
+   {
+    "at": "S9+12",
+    "clip": "pop",
+    "n": 9,
+    "every": 5,
+    "gain": [
+     0.04,
+     0.08
+    ],
+    "pitch": [
+     0.9,
+     1.3
+    ]
+   },
+   {
+    "at": "S10+6",
+    "clip": "pop",
+    "n": 16,
+    "every": 3,
+    "gain": [
+     0.04,
+     0.08
+    ],
+    "pitch": [
+     0.9,
+     1.3
+    ]
+   },
+   {
+    "at": "S12+4",
+    "clip": "pop",
+    "n": 22,
+    "every": 2,
+    "gain": [
+     0.03,
+     0.06
+    ],
+    "pitch": [
+     0.8,
+     1.3
+    ]
+   }
+  ],
+  "music": {
+   "clip": "music",
+   "until": "S10"
+  },
+  "levels": {
+   "sfx_lu": -3.0,
+   "music_lu": -9.5
+  }
+ }
+}
