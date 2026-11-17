@@ -174,7 +174,7 @@ DATACENTERS = [d or None for d in os.environ.get('RUNPOD_DATACENTERS', 'EU-RO-1,
 
 
 def create_pod(token, dc=None):
-    body = {'name': NAME, 'cpu': {'id': 'cpu5c', 'vcpuCount': 32}, 'image': 'node:22-bookworm', 'entrypoint': ['/bin/bash', '-c'], 'cmd': [BOOT],
+    body = {'name': NAME, 'cpu': {'id': 'cpu5c', 'vcpuCount': int(os.environ.get('RUNPOD_VCPU', 32))}, 'image': 'node:22-bookworm', 'entrypoint': ['/bin/bash', '-c'], 'cmd': [BOOT],
             'env': {'XFER_TOKEN': token, 'AGENT_B64': base64.b64encode(AGENT.encode()).decode()}, 'disk': 30, 'ports': ['8000/http']}
     if dc:
         body['dataCenterIds'] = [dc]
@@ -281,11 +281,11 @@ for rng in sys.argv[3:]:
     a, b = rng.split("-")
     out = f"/workspace/xfer/{slug}-c{int(a):05d}-{int(b):05d}.mp4"
     entry = "/workspace/bundle" if os.path.exists("/workspace/bundle/index.html") else "src/index.ts"
-    subprocess.run(["npx", "remotion", "render", entry, comp, "/tmp/part.mp4", f"--frames={int(a)}-{int(b)}", "--muted", "--concurrency=30", "--log=error"], check=True)
+    subprocess.run(["npx", "remotion", "render", entry, comp, "/tmp/part.mp4", f"--frames={int(a)}-{int(b)}", "--muted", "--concurrency=__CONC__", "--log=error"], check=True)
     os.replace("/tmp/part.mp4", out)
     print("chunk-done", os.path.basename(out), flush=True)
 print("render-done", flush=True)
-'''
+'''.replace('__CONC__', str(max(2, int(os.environ.get('RUNPOD_VCPU', 32)) - 2)))
 
 
 def finish(slug, tl, ranges):

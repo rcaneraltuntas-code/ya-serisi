@@ -103,16 +103,24 @@ const Held: React.FC<{ kind?: string; p: Pose; side: 1 | -1; tt: number }> = ({ 
   return <g><rect x={h.x - 13} y={h.y - 22} width={26} height={28} rx={5} fill="#F6EFE3" stroke={INK} strokeWidth={3.5} /><path d={`M ${h.x - 4} ${h.y - 30} q 5 -8 0 -16`} stroke="#FFFFFF" strokeWidth={2.5} fill="none" opacity={0.6} /></g>;
 };
 
-const Bubble: React.FC<{ x: number; y: number; t: number; text: string }> = ({ x, y, t, text }) => (
-  <g opacity={clamp(t / 3)} transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * backOut(clamp(t / 9))})`}>
-    <circle cx={-92} cy={76} r={7} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
-    <circle cx={-74} cy={56} r={11} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
-    <rect x={-150} y={-42} width={300} height={84} rx={42} fill="#FFFFFF" stroke={INK} strokeWidth={5} />
-    <text x={0} y={11} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(34, 520 / Math.max(8, text.length))} fill={INK}>{text}</text>
-  </g>
-);
+const Bubble: React.FC<{ x: number; y: number; t: number; text: string; to?: { x: number; y: number }; out?: number }> = ({ x, y, t, text, to, out = 1 }) => {
+  // to: where the thinker's head top is on screen; the two small circles walk from the bubble down to it
+  const ax = to ? clamp((to.x - x) / 150, -1, 1) * 96 : -74;
+  const d1 = to ? { x: lerp(ax, to.x - x, 0.3), y: lerp(40, to.y - y, 0.3) } : { x: -74, y: 56 };
+  const d2 = to ? { x: lerp(ax, to.x - x, 0.72), y: lerp(40, to.y - y, 0.72) } : { x: -92, y: 76 };
+  const far = !to || to.y - y > 74;
+  return (
+    <g opacity={clamp(t / 3) * out} transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * backOut(clamp(t / 9))})`}>
+      {far ? <circle cx={d2.x} cy={d2.y} r={7} fill="#FFFFFF" stroke={INK} strokeWidth={4} /> : null}
+      {far ? <circle cx={d1.x} cy={d1.y} r={11} fill="#FFFFFF" stroke={INK} strokeWidth={4} /> : null}
+      <rect x={-150} y={to ? -36 : -42} width={300} height={to ? 72 : 84} rx={to ? 36 : 42} fill="#FFFFFF" stroke={INK} strokeWidth={5} />
+      <text x={0} y={11} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(34, 520 / Math.max(8, text.length))} fill={INK}>{text}</text>
+    </g>
+  );
+};
 
-type SceneIn = { m: M; sid: string; P: any; tt: number; f: number; len: number; cam: { transform: string }; id: string; grey?: number; still?: boolean; aOver?: (p: Pose) => Pose };
+const C_OFF = 150; // how far behind a the third person stands
+type SceneIn = { m: M; sid: string; P: any; tt: number; f: number; len: number; cam: { transform: string; cx: number; cy: number; z: number }; id: string; grey?: number; still?: boolean; aOver?: (p: Pose) => Pose };
 /** A place with its people at scene time tt. grey: the world and b lose their colour; a keeps his. */
 const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, still, aOver }) => {
   const c = m.cut[sid];
@@ -125,12 +133,19 @@ const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, st
   let A = aId ? actor({ side: 1, spot: pl.a, tt, ws: wins(m, aId, c), keys: keysOf(P.ax, 'neutral'), act: P.aAct, seed: 5, voice, enter: P.enter, leaveAt: P.leave !== undefined ? cue(P.leave, len) : undefined }) : null;
   if (A && aOver) A = aOver(A);
   const B = bId ? actor({ side: -1, spot: pl.b, tt, ws: wins(m, bId, c), keys: keysOf(P.bx, 'smile'), act: P.bAct, seed: 2, voice, still }) : null;
+  // a third person, standing just behind a (wide shots only)
+  const cId: string | null = P.c ?? null;
+  const C = cId ? actor({ side: 1, spot: { x: pl.a.x - C_OFF * pl.a.scale, y: pl.a.y, scale: pl.a.scale }, tt: P.enter ? tt - 7 : tt, ws: wins(m, cId, c), keys: keysOf(P.cx, 'smile'), seed: 8, voice, enter: P.enter, still }) : null;
   const gf = grey > 0.01 ? `url(#${id}gr)` : undefined;
   const flipAt = P.flip !== undefined ? cue(P.flip, len) : -999;
   const kitchen = P.set.kind === 'kitchen';
   const th = P.think ? { at: cue(P.think[0], len), text: String(P.think[1]) } : null;
   const head = { x: pl.a.x, y: pl.a.y - 176 * pl.a.scale };
   const close = P.cam === 'a' || P.cam === 'b';
+  // the thought goes when the answer lands (the CORRECT badge takes its place)
+  const thOut = P.ok !== undefined ? clamp((cue(P.ok, len) - tt) / 4) : 1;
+  const okT = P.ok !== undefined ? tt - cue(P.ok, len) : -1;
+  const signO = 1 - Math.max(okT >= 0 ? clamp(okT / 3) * clamp((58 - okT) / 10) : 0, th && !close ? clamp((tt - th.at) / 3) * thOut : 0);
   return (
     <g>
       {grey > 0.01 ? (
@@ -142,11 +157,12 @@ const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, st
       ) : null}
       <g transform={cam.transform}>
         <g filter={gf}>
-          {kitchen ? <Kitchen2 t={tt + 300} id={id} /> : <FlatBack t={tt} p={P.set} flipAt={flipAt} noSign={P.cam === 'a' || P.cam === 'b'} />}
+          {kitchen ? <Kitchen2 t={tt + 300} id={id} /> : <FlatBack t={tt} p={P.set} flipAt={flipAt} noSign={P.cam === 'a' || P.cam === 'b' || P.noSign} signO={signO} />}
           {kitchen && P.set.night ? <rect x={0} y={0} width={1920} height={1080} fill="#1B1430" opacity={0.34} /> : null}
           {B ? <Hero look={CAST[bId as string]} pose={B} rimId="rimL" shadow={kitchen ? 0.4 : 0.7} /> : null}
           {B ? <Held kind={P.bAct} p={B} side={-1} tt={tt} /> : null}
         </g>
+        {C ? <g filter={gf}><Hero look={CAST[cId as string]} pose={C} rimId="rimR" shadow={kitchen ? 0.4 : 0.7} /></g> : null}
         {A ? <Hero look={CAST[aId as string]} pose={A} rimId="rimR" shadow={kitchen ? 0.4 : 0.7} /> : null}
         {A ? <Held kind={P.aAct} p={A} side={1} tt={tt} /> : null}
         <g filter={gf}>
@@ -160,9 +176,16 @@ const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, st
             <FlatFront t={tt} p={P.set} />
           )}
         </g>
-        {th && tt >= th.at && !close ? <Bubble x={head.x + 74} y={head.y - 122} t={tt - th.at} text={th.text} /> : null}
       </g>
-      {th && tt >= th.at && close ? <Bubble x={1010} y={300} t={tt - th.at} text={th.text} /> : null}
+      {th && tt >= th.at && close ? <Bubble x={1010} y={300} t={tt - th.at} text={th.text} out={thOut} /> : null}
+      {th && tt >= th.at && !close ? (() => {
+        // on screen, never in the world: it stays clear of the loop counter and inside the frame wherever the camera leans
+        const hx = 960 + (head.x - cam.cx) * cam.z;
+        const top = 540 + (head.y - 70 * pl.a.scale - cam.cy) * cam.z;
+        const bx = clamp(hx + 70, 818, 1102);
+        const by = Math.max(240, top - 96);
+        return <Bubble x={bx} y={by} t={tt - th.at} text={th.text} to={{ x: clamp(hx, 670, 1250), y: top }} out={thOut} />;
+      })() : null}
     </g>
   );
 };
@@ -177,6 +200,14 @@ const camFor = (m: M, sid: string, P: any, t: number, len: number, seed: number)
     const hy = sp.y - 176 * sp.scale;
     return camAt(t, [[0, sp.x + 24 * s, hy + 18, 2.4, -s], [len, sp.x + 18 * s, hy + 14, 2.8, -2 * s]], 0.6, seed);
   }
+  if (P.c) {
+    // three people: the frame is set by the outer two heads
+    const l = pl.a.x - (C_OFF + 80) * pl.a.scale;
+    const r = pl.b.x + 86 * pl.b.scale;
+    const z = Math.min(vz, 608 / (r - l + 12));
+    const mx = (l + r) / 2;
+    return camAt(t, [[0, mx - 5, vy + 2, z * 0.985, 0.3], [len, mx + 4, vy - 2, z * 1.0, -0.3]], 0.5, seed);
+  }
   const z0 = P.cam === 'wide' ? vz * 0.86 : vz;
   const keys: CamKey[] = [[0, vx - 10, vy + 2, z0 * 0.97, 0.4]];
   if (P.cam !== 'wide') {
@@ -184,7 +215,8 @@ const camFor = (m: M, sid: string, P: any, t: number, len: number, seed: number)
     const aId = P.a === undefined ? 'ege' : P.a;
     const evs = [...wins(m, aId, c).map((w) => [w[0], w[1], -1]), ...wins(m, P.b ?? null, c).map((w) => [w[0], w[1], 1])].filter(([s, e]) => e > 6 && s < len - 8).sort((x, y) => x[0] - y[0]);
     // how far it can lean toward the speaker before the listener's head leaves the frame
-    const sh = clamp(304 / z0 - ((pl.b.x - pl.a.x) / 2 + 62), 0, 40);
+    // (measured at the lean's own zoom, with the listener's whole head and hair inside)
+    const sh = clamp(304 / (z0 * 1.09) - ((pl.b.x - pl.a.x) / 2 + 66 * Math.max(pl.a.scale, pl.b.scale) + 8), 0, 40);
     const zg = 1 + (0.09 * sh) / 40;
     for (const [s, e, d] of evs) {
       const k0 = Math.max(keys[keys.length - 1][0] + 3, s - 8);
@@ -247,6 +279,7 @@ const freeze = (m: M, s: { id: string; props: any }): Shot => ({ t, len, f }) =>
       q.yaw = lerp(p.yaw, 0.1, u);
       q.look = 0;
     }
+    if (P.react === 'none') return { ...p, talk: 0 };
     if (d >= 24 && P.react === 'facepalm') {
       const u = easeInOut(clamp((d - 24) / 9));
       q.expr = 'tired';
@@ -310,7 +343,7 @@ const wake = (m: M, s: { id: string; props: any }): Shot => ({ t, len }) => {
   return (
     <g>
       <Bed t={t} id={`kb${s.id}`} cam={cam} me={rise > 0.02 ? me : null} lump={1 - rise} ring={ring} sq={count ? squash(lt, hit) : squash(t, SLAP)} />
-      {count ? <Hud loop={loop} from={nth > 0 ? loop - 1 : undefined} at={nth * every + 9 - t + t - 4} t={t} doors={P.doors} /> : <Hud loop={P.loop} from={P.from} at={4} t={t} doors={P.doors} />}
+      {count ? <Hud loop={loop} from={nth > 0 ? loop - 1 : undefined} at={nth * every + 5} t={t} doors={P.doors} /> : P.loop !== undefined ? <Hud loop={P.loop} from={P.from} at={4} t={t} doors={P.doors} clock={P.clock ?? '07:00'} /> : null}
       {P.flash === false ? null : <Flash o={1 - t / 6} />}
     </g>
   );
@@ -333,7 +366,7 @@ const go = (m: M, s: { id: string; props: any }): Shot => ({ t, len }) => {
     <g>
       <g transform={cam.transform}>
         {hall ? (
-          <Hall t={t} board={<FlipWord x={HALL.board.x} y={HALL.board.y + 14} from="PAZARTESİ" to="MONDAY" t={t} at={-99} size={34} />}>
+          <Hall t={t} board={<FlipWord x={HALL.board.x} y={HALL.board.y + 14} from={P.board?.[0] ?? 'PAZARTESİ'} to={P.board?.[1] ?? 'MONDAY'} t={t} at={-99} size={34} />}>
             <Hero look={who} pose={me} rimId="rimR" shadow={0.7} />
           </Hall>
         ) : (

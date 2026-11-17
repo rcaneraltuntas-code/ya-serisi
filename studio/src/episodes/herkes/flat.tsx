@@ -75,8 +75,9 @@ const Lamp: React.FC<{ x: number; y?: number }> = ({ x, y = 300 }) => (
 );
 
 /** Behind the people. t: the scene's clock; flipAt: when the sign turns. */
-export const FlatBack: React.FC<{ t: number; p: FlatP; flipAt?: number; noSign?: boolean }> = ({ t, p, flipAt = -999, noSign }) => {
-  const sign = p.sign && !noSign ? <Sign x={965} y={384} w={p.sign} t={t} at={flipAt} /> : null;
+export const FlatBack: React.FC<{ t: number; p: FlatP; flipAt?: number; noSign?: boolean; signO?: number }> = ({ t, p, flipAt = -999, noSign, signO = 1 }) => {
+  // signO: the sign steps back while a badge or a thought sits where it hangs
+  const sign = p.sign && !noSign && signO > 0.01 ? <g opacity={signO}><Sign x={965} y={384} w={p.sign} t={t} at={flipAt} /></g> : null;
   const sky = (
     <g>
       <rect x={-400} y={-200} width={2900} height={1010} fill={p.night ? '#1B2140' : '#BFE3F2'} />
