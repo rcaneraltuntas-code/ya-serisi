@@ -18,12 +18,16 @@ for slug in slugs:
     n = int(re.sub(r'\D', '', slug))
     dst = to / f"{'herkes-ingilizce' if slug.startswith('he-') else 'son-insan'}-bolum-{n:02d}.mp4"
     gain = 2.4
-    for _ in range(3):  # lift toward -14.5 LUFS under a limiter; whispered episodes need a little more than others
-        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(od / f'{slug}-final.mp4'), '-c:v', 'copy', '-af', f'volume={gain:.1f}dB,alimiter=limit=0.74:attack=3:release=60:level=disabled',
+    limit = 0.74
+    for _ in range(5):  # lift toward -14.5 LUFS under a limiter; whispered episodes need a little more than others
+        subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(od / f'{slug}-final.mp4'), '-c:v', 'copy', '-af', f'volume={gain:.1f}dB,alimiter=limit={limit:.3f}:attack=3:release=60:level=disabled',
                         '-ar', '48000', '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', str(dst)], check=True)
         m = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', str(dst), '-af', 'ebur128=peak=true', '-f', 'null', '-'], capture_output=True, text=True).stderr
         lufs = re.findall(r'I:\s+(-?[\d.]+) LUFS', m)[-1]
         peak = re.findall(r'Peak:\s+(-?[\d.]+) dBFS', m)[-1]
+        if float(peak) > -1.0:  # the encoder overshot a sharp transient: bring the ceiling down by that much and go again
+            limit *= 10 ** (-(float(peak) + 1.3) / 20)
+            continue
         if float(lufs) >= -14.9 or gain >= 6:
             break
         gain = min(6.0, gain + (-14.4 - float(lufs)) * 1.15)

@@ -48,6 +48,7 @@ const place = (set: SetP): { a: Spot; b: Spot; view: [number, number, number] } 
 
 type ActorIn = { side: 1 | -1; spot: Spot; tt: number; ws: [number, number][]; keys: [number, Expr][]; act?: string; seed: number; voice: number; enter?: boolean; leaveAt?: number; still?: boolean };
 /** One person in a scene: stands or sits at a spot, leans and gestures while speaking, wears the face its keys say. */
+const LEAVE_F = 57; // frames of walking away: far enough to clear the other person and the talk's frame
 const actor = (o: ActorIn): Pose => {
   const { side, spot, tt } = o;
   const g = Math.max(0, ...o.ws.map(([a, b]) => clamp((tt - a + 5) / 7) * clamp((b + 9 - tt) / 9)));
@@ -58,10 +59,10 @@ const actor = (o: ActorIn): Pose => {
   let p: Pose;
   if (o.enter && tt < 24 && !spot.sit) {
     p = walkPose(spot.x - side * 250 * (1 - tt / 24), tt * 0.62, floor, spot.scale, { yaw: 0.6 * side, look: side }, side);
-  } else if (o.leaveAt !== undefined && tt > o.leaveAt && tt <= o.leaveAt + 40 && !spot.sit) {
+  } else if (o.leaveAt !== undefined && tt > o.leaveAt && tt <= o.leaveAt + LEAVE_F && !spot.sit) {
     p = walkPose(spot.x + side * (tt - o.leaveAt) * 7.4, (tt - o.leaveAt) * 0.62, floor, spot.scale, { yaw: 0.6 * side, look: side }, side);
   } else {
-    const gone = o.leaveAt !== undefined && tt > o.leaveAt + 40 ? side * 296 : 0;
+    const gone = o.leaveAt !== undefined && tt > o.leaveAt + LEAVE_F ? side * 7.4 * LEAVE_F : 0;
     p = { ...basePose, x: spot.x + gone, y: spot.y, scale: spot.scale, facing: side, yaw: 0.58 * side, look: side, tilt: 4 * side * g, headTilt: 3 * side * g, armL: { a: 13, b: -10 }, armR: { a: 13, b: -10 } };
     p[near] = { a: lerp(13, 56, g) + Math.sin(tt * 0.45) * 7 * g, b: lerp(-10, -28, g) };
     if (spot.sit) {
@@ -267,7 +268,8 @@ const freeze = (m: M, s: { id: string; props: any }): Shot => ({ t, len, f }) =>
   const back = clamp((t - RW) / 26);
   const tt = t < RW ? FR : lerp(FR, 0, easeInOut(back));
   const [vx, vy, vz] = place(TP.set).view;
-  const cam = camAt(t, [[0, vx, vy - 4, vz * 1.1, 0], [16, vx - 6, vy - 40, vz * 0.96, 0.5, 'out'], [RW, vx - 8, vy - 44, vz * 1.0, -0.5], [RW + 8, vx, vy, vz * 0.95, 0, 'out'], [Math.max(len, RW + 9), vx, vy, vz * 0.95, 0]], t < RW ? 0.5 : 0.2, 8, [[0, 7], [SHOW, 6]]);
+  const sx = TP.leave !== undefined ? 172 : 0; // he walked on: the frozen frame holds him and the one he passed
+  const cam = camAt(t, [[0, vx + sx, vy - 4, vz * 1.1, 0], [16, vx + sx - 6, vy - 40, vz * 0.96, 0.5, 'out'], [RW, vx + sx - 8, vy - 44, vz * 1.0, -0.5], [RW + 8, vx, vy, vz * 0.95, 0, 'out'], [Math.max(len, RW + 9), vx, vy, vz * 0.95, 0]], t < RW ? 0.5 : 0.2, 8, [[0, 7], [SHOW, 6]]);
   const over = (p: Pose): Pose => {
     if (t >= RW) return p;
     const d = t - SHOW;
