@@ -20,7 +20,7 @@ Resume, three layers:
 import base64, hashlib, io, json, os, pathlib, subprocess, sys, tarfile, time, urllib.request, urllib.error
 
 API = 'https://api.runpod.io/v2'
-NAME = 'ya-serisi-render'
+NAME = os.environ.get('RUNPOD_NAME', 'ya-serisi-render')
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 STUDIO = ROOT / 'studio'
 STATE = pathlib.Path(os.environ.get('RUNPOD_STATE', pathlib.Path.home() / '.secrets' / 'runpod_state.json'))

@@ -826,7 +826,7 @@ const Captions: React.FC<{ caps: P[]; f: number }> = ({ caps, f }) => {
     return (
       <g opacity={clamp((f - c.a) / 3)} transform={`translate(960 ${y0}) scale(${0.92 + 0.08 * k}) translate(-960 ${-y0})`}>
         {ls.map((ln, i) => <text key={i} x={960} y={y0 + i * 62} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={size} fill="#FFE08A" strokeWidth={7} letterSpacing={1.5} style={STROKE}>{ln}</text>)}
-        {c.tr ? <text x={960} y={y0 + ls.length * 62 - 6} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={36} fill="#FFFFFF" strokeWidth={6} letterSpacing={1} style={STROKE} opacity={clamp((f - (c.trAt ?? c.a)) / 6)}>{c.tr}</text> : null}
+        {c.tr ? wrap(c.tr, 30).map((ln, j) => <text key={`t${j}`} x={960} y={y0 + ls.length * 62 - 6 + j * 40} textAnchor="middle" fontFamily={FONT.title} fontWeight={700} fontSize={c.tr.length > 30 ? 33 : 36} fill="#FFFFFF" strokeWidth={6} letterSpacing={1} style={STROKE} opacity={clamp((f - (c.trAt ?? c.a)) / 6)}>{ln}</text>) : null}
       </g>
     );
   }

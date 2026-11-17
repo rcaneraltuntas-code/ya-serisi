@@ -329,6 +329,268 @@ ep7(6, [
     X('card', ('a', 9, 28), sfx=[[2, 'drone_hit', 0.35]], phrase="We don't have much time.", loop=11, next=7),
 ])
 
+
+# ================================================================ episodes 7-13
+CAFEBAR = dict(kind='counter', sign=['KASA', 'ORDER HERE'], wall='#2F5957', shelf='cups')
+CLASS = dict(kind='class', sign=['DERS', 'LESSON'])
+CANTEEN = dict(kind='counter', sign=['KANTİN', 'CANTEEN'], wall='#7A4A3A', shelf='food')
+LUNCH = dict(kind='cafe', sign=['KANTİN', 'CANTEEN'], wall='#7A4A3A')
+CAMPUS = dict(kind='street', sign=['KAMPÜS', 'CAMPUS'])
+STAFF = dict(kind='corridor', sign=['PERSONEL', 'STAFF ONLY'])
+ROOM5 = dict(kind='corridor', sign=['ODA 5', 'ROOM 5'])
+ROOF = dict(kind='corridor', sign=['ÇATI', 'ROOF'], wall='#6F7C8C')
+LIB = dict(kind='counter', sign=['KÜTÜPHANE', 'LIBRARY'], wall='#6B5A4A', shelf='books')
+
+
+def Q(cue, st, b, act, loop, clock, doors, **kw):
+    """A door he now passes without thinking: a quick look, a tick."""
+    return X('talk', cue, sfx=ding(10), set=st, b=b, bAct=act, loop=loop, clock=clock, doors=doors, ok=10, flip=-99, ax=[[0, 'smile']], bx=[[0, 'happy']], **kw)
+
+
+# ---------------------------------------------------------------- 7 · A tea, please
+ep7(7, [
+    L('Defterini açtı. Bir güne on kapı çizmişti.', '[softly]', 2.4),          # 0
+    L('Her kapı bir cümle. Son kapı gece yarısı.', '', 0.6),                   # 1 -> Open all ten
+    L('Sonra tezgâha gittim.', '', 0.5),                                       # 2 -> What can I get you?
+    L('Çay!', '[cheerful]', 0.4, say=True),                                    # 3 -> Turkish
+    L("On ikinci sabah. Defne'nin bakışını hâlâ hatırlıyorum.", '[slowly]', 1.0),  # 4
+    L('Kafeye girdim, özür diledim, tezgâha yürüdüm.', '', 0.6),               # 5 -> What can I get you?
+    L('A tea, please.', '[cautiously]', 0.5, say=True),                        # 6 -> Coming right up.
+    L('Dört kapı açılmıştı. Altı kapı kalmıştı.', '[softly]', 1.0),            # 7 -> door eight
+    L('Sekizinci kapıda ne vardı?', '[whispers]'),                             # 8
+], [
+    I(1, 'defne', 'Open all ten, and the day ends.', 'Onunu da aç, gün biter.', lead=0.6, trail=0.9),
+    I(2, 'barista', 'What can I get you?', 'Ne alırsınız?', lead=1.4, trail=0.6),
+    TRYI(3, lead=0.9, trail=2.8),
+    I(5, 'barista', 'What can I get you?', 'Ne alırsınız?', lead=1.6, trail=0.4),
+    I(6, 'barista', 'Coming right up.', 'Hemen geliyor.', lead=0.5, trail=0.9),
+    I(7, 'defne', "I'm stuck at door eight.", 'Ben sekizinci kapıda takılıyorum.', lead=1.4, trail=1.2),
+], [
+    X('talk', 0, sfx=[[8, 'paper_land', 0.25]], set=CAFE, b='defne', bAct='write', cam='b', loop=11, clock='07:26', ax=[[0, 'worried']], bx=[[0, 'neutral']]),
+    X('phone', ('a', 0, 10), sfx=BUZZ, mode='doors', clock='07:27', doors=3),
+    X('talk', (1, -6), set=CAFE, b='defne', loop=11, clock='07:28', doors=3, flip=-99, ax=[[0, 'worried'], ['N0e', 'shock']], bx=[[0, 'neutral']]),
+    X('talk', (2, -6), sfx=STEPS + [[14, 'flap', 0.35]], set=CAFEBAR, b='barista', bAct='cup', enter=True, flip=14, loop=11, clock='07:30', doors=3,
+      ax=[[0, 'neutral'], ['N1e', 'worried'], ['L3s', 'happy']], bx=[[0, 'smile'], ['L3e', 'shock']]),
+    X('freeze', ('a', 3, 6), sfx=frz(2), of='d', loop=12, react='facepalm'),
+    X('wake', (4, -30), sfx=alarm(30), loop=12, mood='tired'),
+    X('go', (5, -8), sfx=STEPS, set=STREET, loop=12, clock='07:22', doors=3, expr='worried', run=True, x0=500),
+    X('talk', ('i', 3, -34), sfx=STEPS + ding('L6e+4'), set=CAFEBAR, b='barista', bAct='cup', enter=True, flip=-99, loop=12, clock='07:30', doors=3, ok='L6e+4',
+      ax=[[0, 'worried'], ['L6s', 'smile'], ['L6e+4', 'happy']], bx=[[0, 'smile'], ['L6e+4', 'happy']]),
+    X('talk', (7, -6), set=CAFE, b='defne', aAct='cup', loop=12, clock='07:34', doors=4, flip=-99, ax=[[0, 'happy'], ['N5s', 'neutral'], ['N5e', 'worried']], bx=[[0, 'smile'], ['N5s-6', 'worried']]),
+    X('talk', (8, -6), sfx=hb(0, 60, 0.25), set=CAFE, b='defne', cam='b', loop=12, clock='07:35', doors=4, ax=[[0, 'worried']], bx=[[0, 'worried']]),
+    X('card', ('a', 8, 28), sfx=[[2, 'drone_hit', 0.35]], phrase="I'm stuck at door eight.", loop=12, next=8),
+])
+
+# ---------------------------------------------------------------- 8 · Page twelve
+ep7(8, [
+    L('Beşinci kapı: ders. Geç kalmıştım.', '[softly]', 0.6),                  # 0 -> You're late. Take a seat.
+    L("Sorry I'm late.", '', 0.5, say=True),                                   # 1
+    L('Bu cümleyi artık biliyordum.', '[softly]', 0.6),                        # 2 -> page twelve
+    L('Twelve. On iki miydi, yirmi miydi?', '[nervous]', 0.7),                 # 3
+    L('Yirminci sayfayı açtım.', '', 0.5),                                     # 4 -> That's page twenty.
+    L('Eyvah.', '[whispers]', 0.4, say=True),                                  # 5 -> Turkish
+    L('On üçüncü sabah sayıları ezberledim.', '[slowly]', 2.4),                # 6 -> page twelve
+    L('On iki. Doğru sayfa.', '[softly]', 0.5),                                # 7 -> Read the first sentence.
+    L('Bütün sınıf bana bakıyordu.', '[whispers]'),                            # 8
+], [
+    I(0, 'teacher', "You're late. Take a seat.", 'Geç kaldın. Otur.', lead=1.6, trail=0.9),
+    I(2, 'teacher', 'Open your books at page twelve.', 'Kitaplarınızı açın, sayfa on iki.', lead=1.0, trail=1.0),
+    I(4, 'teacher', "That's page twenty.", 'O yirminci sayfa.', lead=1.2, trail=0.8),
+    TRYI(5, lead=0.9, trail=3.4),
+    I(6, 'teacher', 'Open your books at page twelve.', 'Kitaplarınızı açın, sayfa on iki.', lead=4.2, trail=1.0),
+    I(7, 'teacher', 'You. Read the first sentence.', 'Sen. İlk cümleyi oku.', lead=1.6, trail=1.6),
+], [
+    X('talk', 0, sfx=STEPS + [[12, 'flap', 0.35]] + ding('L1e+4'), set=CLASS, b='teacher', bAct='book', enter=True, flip=12, loop=12, clock='09:02', doors=4, ok='L1e+4',
+      ax=[[0, 'worried'], ['L1e+4', 'smile']], bx=[[0, 'neutral'], ['L1e+4', 'smile']]),
+    X('talk', (2, -6), set=CLASS, b='teacher', bAct='book', aAct='book', loop=12, clock='09:03', doors=4, flip=-99, think=['L3s+16', '12 ?  20 ?'],
+      ax=[[0, 'smile'], ['N1e', 'worried']], bx=[[0, 'smile']]),
+    X('talk', (4, -6), set=CLASS, b='teacher', bAct='book', aAct='book', loop=12, clock='09:04', doors=4, flip=-99,
+      ax=[[0, 'smug'], ['N2s+8', 'shock'], ['L5s', 'oops']], bx=[[0, 'smile'], ['N2s-6', 'neutral'], ['L5s+6', 'shock']]),
+    X('freeze', ('a', 5, 6), sfx=frz(3), of='c', loop=13, react='facepalm'),
+    X('wake', (6, -22), sfx=alarm(18), loop=13, mood='ready', expr='worried'),
+    X('phone', ('a', 6, 8), sfx=BUZZ + [[8, 'select_draw', 0.22], [40, 'select_draw', 0.22]], mode='app', clock='07:01', items=[
+        dict(at=8, head='NUMBERS', text='twelve', tr='12'), dict(at=40, head='NUMBERS', text='twenty', tr='20')]),
+    X('talk', ('i', 4, -30), sfx=ding('L7e+4'), set=CLASS, b='teacher', bAct='book', aAct='book', loop=13, clock='09:03', doors=4, flip=-99, ok='L7e+4',
+      ax=[[0, 'worried'], ['L7s', 'smile'], ['L7e+4', 'happy'], ['N5s+8', 'shock']], bx=[[0, 'smile'], ['N5s-4', 'neutral']]),
+    X('talk', (8, -6), sfx=hb(0, 60, 0.25), set=CLASS, b='teacher', bAct='book', aAct='book', cam='a', loop=13, clock='09:05', doors=4, ax=[[0, 'shock']], bx=[[0, 'neutral']]),
+    X('card', ('a', 8, 28), sfx=[[2, 'drone_hit', 0.35]], phrase='Read the first sentence.', loop=13, next=9),
+], tail=5.4)
+# ---------------------------------------------------------------- 9 · Can you repeat that, please?
+ep7(9, [
+    L('Öğretmen bekliyordu.', '[whispers]', 0.5),                              # 0 -> Read the first sentence.
+    L('Kitaba baktım. Hiçbir şey görmedim. Sustum.', '[nervous]', 0.5),        # 1 -> no answer
+    L("On dördüncü sabah Defne'ye sordum.", '[slowly]', 0.9),                  # 2
+    L("I don't understand the teacher.", '[cautiously]', 0.5, say=True),       # 3 -> Then say this
+    L('Tekrar eder misiniz. Bu da geçerli bir cevapmış.', '[softly]', 1.2),    # 4 -> Read the first sentence.
+    L('Can you repeat that, please?', '[cautiously]', 0.5, say=True),          # 5 -> Of course.
+    L('The day is long.', '', 0.6, say=True),                                  # 6
+    L('Beşinci kapı açıldı.', '[softly]', 1.0),                                # 7
+    L('Öğle yemeğinde kasiyer bir şey sordu.', '', 0.6),                       # 8 -> Cash or card?
+    L('İki kelimeyi de bilmiyordum.', '[whispers]'),                           # 9
+], [
+    I(0, 'teacher', 'Read the first sentence.', 'İlk cümleyi oku.', lead=0.6, trail=0.7),
+    TRYI(1, lead=1.0, trail=2.8),
+    I(3, 'defne', 'Then say this: Can you repeat that, please?', 'O zaman şunu söyle: Tekrar eder misiniz?', lead=0.6, trail=0.7),
+    I(4, 'teacher', 'Read the first sentence.', 'İlk cümleyi oku.', lead=1.6, trail=0.4),
+    I(5, 'teacher', 'Of course. Read. The first. Sentence.', 'Tabii. İlk. Cümleyi. Oku.', lead=0.5, trail=0.5),
+    I(8, 'clerk', 'Cash or card?', 'Nakit mi, kart mı?', lead=1.6, trail=0.9),
+], [
+    X('talk', 0, set=CLASS, b='teacher', bAct='book', aAct='book', loop=13, clock='09:05', doors=4, flip=-99, ax=[[0, 'shock'], ['L1s', 'worried']], bx=[[0, 'neutral']]),
+    X('freeze', ('a', 1, 8), sfx=frz(1), of='a', why='NO ANSWER', loop=14),
+    X('wake', (2, -30), sfx=alarm(30), loop=14, mood='tired'),
+    X('talk', (3, -8), set=CAFE, b='defne', bAct='write', aAct='cup', loop=14, clock='07:34', doors=4, flip=-99,
+      ax=[[0, 'worried'], ['N2e', 'smile']], bx=[[0, 'neutral'], ['N2s', 'smile']]),
+    X('phone', (4, -8), sfx=BUZZ + [[8, 'select_draw', 0.22]], mode='app', clock='07:36', items=[
+        dict(at=8, head='ALWAYS A RIGHT ANSWER', text='Can you repeat that, please?', tr='Tekrar eder misiniz?')]),
+    X('talk', ('i', 3, -30), sfx=ding('L5e+4') + ding('L6e+4'), set=CLASS, b='teacher', bAct='book', aAct='book', loop=14, clock='09:05', doors=4, flip=-99, ok='L5e+4',
+      ax=[[0, 'worried'], ['L5e+4', 'smile'], ['L6e+4', 'happy']], bx=[[0, 'neutral'], ['L5e+2', 'smile'], ['L6e+4', 'happy']]),
+    X('talk', (7, -6), sfx=[[6, 'counter_tick', 0.2]], set=CLASS, b='teacher', bAct='book', aAct='book', cam='a', loop=14, clock='09:40', doors=5, ax=[[0, 'happy']], bx=[[0, 'happy']]),
+    X('talk', (8, -8), sfx=STEPS + [[12, 'flap', 0.35]], set=CANTEEN, b='clerk', enter=True, flip=12, loop=14, clock='12:10', doors=5,
+      ax=[[0, 'happy'], ['N5s+8', 'worried']], bx=[[0, 'smile']]),
+    X('talk', (9, -6), sfx=hb(0, 60, 0.25), set=CANTEEN, b='clerk', cam='a', loop=14, clock='12:10', doors=5, ax=[[0, 'worried']], bx=[[0, 'smile']]),
+    X('card', ('a', 9, 28), sfx=[[2, 'drone_hit', 0.35]], phrase='Cash or card?', loop=14, next=10),
+])
+
+# ---------------------------------------------------------------- 10 · I'm stuck at five o'clock
+ep7(10, [
+    L('Cash or card. İkisini de bilmiyordum.', '[nervous]', 0.5),             # 0 -> Cash or card?
+    L('Yes.', '', 0.4, say=True),                                              # 1 -> wrong
+    L('On beşinci sabah cüzdanıma baktım. Kartın üstünde yazıyordu.', '[slowly]', 1.6),  # 2 -> Cash or card?
+    L('Card, please.', '[cautiously]', 0.5, say=True),                         # 3 -> Enjoy your meal!
+    L('Thanks!', '[cheerful]', 0.6, say=True),                                 # 4
+    L('Altıncı kapı. Defne karşıma oturdu.', '[softly]', 0.6),                 # 5 -> never seen the evening
+    L('Evening, akşam. Hiç görmemiş.', '[slowly]', 0.5),                       # 6 -> 220 mornings
+    L('O da sıkışmıştı. Benden çok daha uzun süredir.', '[softly]', 0.6),      # 7 -> five o'clock
+    L('Saat beşte ne vardı?', '[whispers]'),                                   # 8
+], [
+    I(0, 'clerk', 'Cash or card?', 'Nakit mi, kart mı?', lead=1.2, trail=0.9),
+    TRYI(1, lead=1.0, trail=3.4),
+    I(2, 'clerk', 'Cash or card?', 'Nakit mi, kart mı?', lead=3.4, trail=0.4),
+    I(3, 'clerk', 'Enjoy your meal!', 'Afiyet olsun!', lead=0.5, trail=0.9),
+    I(5, 'defne', "I've never seen the evening.", 'Akşamı hiç görmedim.', lead=1.4, trail=1.0),
+    I(6, 'defne', 'Two hundred and twenty mornings. No evening.', 'İki yüz yirmi sabah. Hiç akşam yok.', lead=0.9, trail=1.1),
+    I(7, 'defne', "I'm stuck at five o'clock.", 'Saat beşte takılıyorum.', lead=1.2, trail=1.6),
+], [
+    X('talk', 0, set=CANTEEN, b='clerk', loop=14, clock='12:10', doors=5, flip=-99, ax=[[0, 'worried'], ['L1s', 'smile'], ['L1e+6', 'worried']], bx=[[0, 'smile'], ['L1e+4', 'neutral']]),
+    X('freeze', ('a', 1, 10), sfx=frz(1), of='a', why='WRONG ANSWER', loop=15),
+    X('wake', (2, -22), sfx=alarm(18), loop=15, mood='ready', expr='worried'),
+    X('talk', ('a', 2, -70), set=CANTEEN, b='clerk', cam='a', loop=15, clock='12:09', doors=5, think=[6, 'CARD = KART'], ax=[[0, 'worried'], [14, 'smile']], bx=[[0, 'smile']]),
+    X('talk', ('i', 2, -20), sfx=ding('L3e+4') + ding('L4e+4'), set=CANTEEN, b='clerk', loop=15, clock='12:10', doors=5, flip=-99, ok='L3e+4',
+      ax=[[0, 'smile'], ['L3e+4', 'happy']], bx=[[0, 'smile'], ['L3e+4', 'happy']]),
+    X('talk', (5, -8), sfx=[[10, 'flap', 0.3]], set=LUNCH, b='defne', aAct='cup', flip=10, loop=15, clock='12:20', doors=6,
+      ax=[[0, 'happy'], ['N4s+10', 'neutral'], ['N4e', 'worried']], bx=[[0, 'neutral'], ['N4s-6', 'worried']]),
+    X('talk', (6, -6), set=LUNCH, b='defne', cam='b', loop=15, clock='12:21', doors=6, ax=[[0, 'worried']], bx=[[0, 'worried'], ['N5e', 'tired']]),
+    X('talk', (7, -6), set=LUNCH, b='defne', loop=15, clock='12:22', doors=6, flip=-99, ax=[[0, 'worried'], ['N6e', 'shock']], bx=[[0, 'tired'], ['N6s-4', 'worried']]),
+    X('talk', (8, -6), sfx=hb(0, 60, 0.25), set=LUNCH, b='defne', cam='a', loop=15, clock='12:23', doors=6, ax=[[0, 'worried']], bx=[[0, 'worried']]),
+    X('card', ('a', 8, 28), sfx=[[2, 'drone_hit', 0.35]], phrase="I'm stuck at five o'clock.", tr='Saat beşte takılıyorum.', ask='Saat beşte ne var?', loop=15, next=11),
+], tail=5.4)
+# ---------------------------------------------------------------- 11 · Turn left
+ep7(11, [
+    L('Yedinci kapı kütüphaneydi. Yerini bilmiyordum.', '[softly]', 0.6),      # 0
+    L('Excuse me, where is the library?', '[cautiously]', 0.5, say=True),      # 1 -> Go straight, then turn left.
+    L('Left. Sağ mıydı, sol muydu?', '[nervous]', 0.7),                        # 2
+    L('Sağa döndüm.', '', 0.7),                                                # 3 -> You can't be here.
+    L('Pardon!', '', 0.4, say=True),                                           # 4 -> Turkish
+    L('On altıncı sabah elime yazdım. Left, sol.', '[slowly]', 1.4),           # 5 -> Go straight, then turn left.
+    L('Thank you!', '[cheerful]', 0.5, say=True),                              # 6
+    L('Sola döndüm. Kütüphane oradaydı.', '[softly]', 0.8),                    # 7 -> Be quiet, please.
+    L('Kütüphaneci parmağını dudağına götürdü.', '[whispers]'),                # 8
+], [
+    I(1, 'barista', 'Go straight, then turn left.', 'Düz git, sonra sola dön.', lead=1.0, trail=1.0),
+    I(3, 'guard', "You can't be here.", 'Burada olamazsın.', lead=2.4, trail=1.0),
+    TRYI(4, lead=0.9, trail=3.4),
+    I(5, 'barista', 'Go straight, then turn left.', 'Düz git, sonra sola dön.', lead=3.4, trail=0.8),
+    I(7, 'clerk', 'Shh. Be quiet, please.', 'Şşt. Sessiz olun lütfen.', lead=3.0, trail=1.6),
+], [
+    X('talk', 0, sfx=STEPS + [[14, 'flap', 0.35]] + ding('L1e+4'), set=CAMPUS, b='barista', bAct='cup', enter=True, flip=14, loop=15, clock='13:05', doors=6, ok='L1e+4',
+      ax=[[0, 'worried'], ['L1e+4', 'smile'], ['N0e', 'worried']], bx=[[0, 'smile']]),
+    X('talk', (2, -6), set=CAMPUS, b='barista', bAct='cup', cam='a', loop=15, clock='13:06', doors=6, think=['L2s+10', 'LEFT = ?'], ax=[[0, 'worried']], bx=[[0, 'smile']]),
+    X('go', (3, -8), sfx=STEPS, set=CAMPUS, loop=15, clock='13:07', doors=6, expr='smug', x0=900),
+    X('talk', ('i', 1, -34), sfx=STEPS + [[10, 'flap', 0.35]], set=STAFF, b='guard', enter=True, flip=10, loop=15, clock='13:09', doors=6,
+      ax=[[0, 'smug'], ['N1s+6', 'shock'], ['L4s', 'oops']], bx=[[0, 'neutral'], ['N1s-4', 'smug'], ['L4e', 'shock']]),
+    X('freeze', ('a', 4, 6), sfx=frz(2), of='d', loop=16, react='facepalm'),
+    X('wake', (5, -22), sfx=alarm(18), loop=16, mood='ready', expr='smug'),
+    X('talk', ('i', 3, -40), sfx=ding('L6e+4'), set=CAMPUS, b='barista', bAct='cup', loop=16, clock='13:05', doors=6, flip=-99, ok='L6e+4', think=[4, 'LEFT = SOL'],
+      ax=[[0, 'smile'], ['L6e+4', 'happy']], bx=[[0, 'smile'], ['L6e+4', 'happy']]),
+    X('go', (7, -8), sfx=STEPS, set=CAMPUS, loop=16, clock='13:07', doors=6, expr='happy', x0=900),
+    X('talk', ('i', 4, -40), sfx=STEPS + [[10, 'flap', 0.35]], set=LIB, b='clerk', bAct='book', enter=True, flip=10, loop=16, clock='13:10', doors=6,
+      ax=[[0, 'happy'], ['N4s+6', 'shock']], bx=[[0, 'neutral'], ['N4s-4', 'worried']]),
+    X('talk', (8, -6), sfx=hb(0, 60, 0.25), set=LIB, b='clerk', bAct='book', cam='b', loop=16, clock='13:10', doors=6, ax=[[0, 'shock']], bx=[[0, 'worried']]),
+    X('card', ('a', 8, 28), sfx=[[2, 'drone_hit', 0.35]], phrase='Be quiet, please.', loop=16, next=12),
+])
+
+# ---------------------------------------------------------------- 12 · Where are you?
+ep7(12, [
+    L('Sessiz ol, demekti. Fısıldadım.', '[whispers]', 0.5),                   # 0
+    L('Sorry.', '[whispers]', 0.6, say=True),                                  # 1
+    L('Yedinci kapı. Sonra telefonum çaldı. Annemdi.', '[softly]', 0.9),       # 2
+    L('Efendim?', '', 0.4, say=True),                                          # 3 -> Turkish
+    L('Telefonu bile İngilizce açmam gerekiyordu.', '[slowly]', 1.0),          # 4
+    L('On yedinci sabah yedi kapıyı arka arkaya geçtim.', '', 3.4),            # 5
+    L('Hello?', '[cautiously]', 0.4, say=True),                                # 6 -> Where are you?
+    L("I'm at the library.", '', 0.5, say=True),                               # 7 -> When are you coming home?
+    L('At seven.', '', 0.7, say=True),                                         # 8
+    L("Saat on altı elli beşti. Defne'den mesaj geldi.", '[softly]', 2.0),     # 9
+    L('Beş numaralı oda neredeydi?', '[nervous]'),                             # 10
+], [
+    TRYI(3, lead=0.9, trail=2.8),
+    I(6, 'anne', 'Where are you?', 'Neredesin?', lead=0.5, trail=0.4),
+    I(7, 'anne', 'When are you coming home?', 'Eve ne zaman geliyorsun?', lead=0.5, trail=0.4),
+], [
+    X('talk', 0, sfx=ding('L1e+4'), set=LIB, b='clerk', bAct='book', loop=16, clock='13:10', doors=6, flip=-99, ok='L1e+4',
+      ax=[[0, 'worried'], ['L1e+4', 'smile']], bx=[[0, 'worried'], ['L1e+4', 'smile']]),
+    X('talk', (2, -6), sfx=[['L2e-30', 'phone_ring', 0.3, 'L2e+10']], set=LIB, b='clerk', bAct='book', aAct='phone', cam='a', loop=16, clock='15:30', doors=7,
+      ax=[[0, 'happy'], ['L2e-30', 'shock']], bx=[[0, 'smile']]),
+    X('talk', (3, -8), set=LIB, b='clerk', bAct='book', aAct='phone', loop=16, clock='15:30', doors=7, flip=-99, ax=[[0, 'smile'], ['L3e', 'oops']], bx=[[0, 'smile'], ['L3e', 'shock']]),
+    X('freeze', ('a', 3, 6), sfx=frz(0), of='c', loop=17, react='facepalm'),
+    X('wake', (4, -30), sfx=alarm(30), loop=17, mood='tired'),
+    Q((5, -6), KITCHEN, 'anne', 'pot', 17, '07:05', 1),
+    Q(('a', 5, -40), STREET, 'hasan', 'can', 17, '07:08', 2),
+    Q(('a', 5, 0), STOP, 'driver', 'wheel', 17, '07:12', 3),
+    Q(('a', 5, 40), CLASS, 'teacher', 'book', 17, '09:05', 5),
+    X('talk', (6, -30), sfx=[[0, 'phone_ring', 0.3, 24]] + ding('L7e+4') + ding('L8e+4'), set=LIB, b='clerk', bAct='book', aAct='phone', loop=17, clock='15:30', doors=7, flip=-99, ok='L8e+4',
+      ax=[[0, 'worried'], ['L7e+4', 'smile'], ['L8e+4', 'happy']], bx=[[0, 'smile']]),
+    X('phone', (9, -8), sfx=BUZZ + [[16, 'pop', 0.2]], mode='chat', title='DEFNE', clock='16:55', items=[dict(at=16, text='Go to room 5. Now.')]),
+    X('talk', (10, -6), sfx=hb(0, 60, 0.25), set=LIB, b='clerk', bAct='book', aAct='phone', cam='a', loop=17, clock='16:55', doors=7, ax=[[0, 'worried']], bx=[[0, 'smile']]),
+    X('card', ('a', 10, 28), sfx=[[2, 'drone_hit', 0.35]], phrase='Go to room 5. Now.', clock='16:55', loop=17, next=13),
+])
+
+# ---------------------------------------------------------------- 13 · 16:55
+ep7(13, [
+    L('Beş numaralı odaya gittim.', '[softly]', 0.6),                          # 0 -> You can't be here.
+    L('Cevap veremedim.', '[whispers]', 0.5),                                  # 1 -> no answer
+    L('On sekizinci sabah, aynı saatte, yeni bir mesaj geldi.', '[slowly]', 2.2),  # 2
+    L('Çatıya çıktım. Kapı kilitliydi.', '', 0.6),                             # 3 -> Stop right there!
+    L('Ben bir şey yapmadım!', '[nervous]', 0.4, say=True),                    # 4 -> Turkish
+    L('İki sabah. İki yanlış adres. İkisi de on altı elli beşte.', '[slowly]', 1.0),  # 5
+    L('On dokuzuncu sabah mesaja uymadım.', '', 2.0),                          # 6
+    L('Saat ilk kez on altı elli altıyı gösterdi.', '[softly]', 0.9),          # 7
+    L('Sonra her şey yine dondu.', '[whispers]', 0.4),                         # 8 -> reset
+    L('Ama bu sefer Türkçe konuşan ben değildim.', '[nervous]'),               # 9
+], [
+    I(0, 'guard', "You can't be here.", 'Burada olamazsın.', lead=1.4, trail=0.6),
+    TRYI(1, lead=1.0, trail=2.8),
+    I(3, 'guard', 'Stop right there!', 'Olduğun yerde dur!', lead=1.0, trail=0.5),
+    TRYI(4, lead=0.9, trail=2.8),
+    TRYI(8, lead=1.2, trail=2.8),
+], [
+    X('talk', 0, sfx=STEPS + [[12, 'flap', 0.35]], set=ROOM5, b='guard', enter=True, flip=12, loop=17, clock='16:57', doors=7,
+      ax=[[0, 'worried'], ['N0s+6', 'shock']], bx=[[0, 'neutral'], ['N0s-4', 'smug']]),
+    X('freeze', ('a', 1, 8), sfx=frz(1), of='a', why='NO ANSWER', loop=18),
+    X('wake', (2, -30), sfx=alarm(30), loop=18, mood='tired'),
+    X('phone', ('a', 2, 6), sfx=BUZZ + [[16, 'pop', 0.2]], mode='chat', title='DEFNE', clock='16:55', items=[dict(at=16, text='Go to the roof. Quickly.')]),
+    X('talk', (3, -6), sfx=STEPS + [[12, 'flap', 0.35], ['N2s-10', 'buzzer', 0.2]], set=ROOF, b='guard', enter=True, flip=12, loop=18, clock='16:58', doors=7,
+      ax=[[0, 'worried'], ['N2s+4', 'shock'], ['L4s', 'oops']], bx=[[0, 'smug'], ['L4e', 'shock']]),
+    X('freeze', ('a', 4, 6), sfx=frz(3), of='e', loop=19, react='facepalm'),
+    X('wake', (5, -22), sfx=alarm(18), loop=19, mood='ready', expr='worried'),
+    X('phone', (6, -8), sfx=BUZZ + [[16, 'pop', 0.2]], mode='chat', title='DEFNE', clock='16:55', items=[dict(at=16, text='Go to room 9. Now.')]),
+    X('talk', (7, -8), sfx=[[6, 'counter_tick', 0.2]], set=LIB, b='clerk', bAct='book', aAct='phone', loop=19, clock='16:56', doors=7, flip=-99,
+      ax=[[0, 'worried'], ['L7s+10', 'happy'], ['L8s', 'shock']], bx=[[0, 'smile']]),
+    X('freeze', ('a', 8, 6), sfx=frz(4), of='i', loop=20),
+    X('wake', (9, -30), sfx=alarm(26), loop=20, mood='jump'),
+    X('card', ('a', 9, 28), sfx=[[2, 'drone_hit', 0.35]], phrase='Turkish detected.', tr='Türkçe algılandı.', ask='Kim konuştu?', loop=20, next=14),
+])
+
 if __name__ == '__main__':
     for n in ([int(a) for a in sys.argv[1:]] or sorted(EP)):
         d = OUT / f'he-{n:02d}'

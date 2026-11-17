@@ -103,6 +103,15 @@ const Held: React.FC<{ kind?: string; p: Pose; side: 1 | -1; tt: number }> = ({ 
   return <g><rect x={h.x - 13} y={h.y - 22} width={26} height={28} rx={5} fill="#F6EFE3" stroke={INK} strokeWidth={3.5} /><path d={`M ${h.x - 4} ${h.y - 30} q 5 -8 0 -16`} stroke="#FFFFFF" strokeWidth={2.5} fill="none" opacity={0.6} /></g>;
 };
 
+const Bubble: React.FC<{ x: number; y: number; t: number; text: string }> = ({ x, y, t, text }) => (
+  <g opacity={clamp(t / 3)} transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * backOut(clamp(t / 9))})`}>
+    <circle cx={-92} cy={76} r={7} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
+    <circle cx={-74} cy={56} r={11} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
+    <rect x={-150} y={-42} width={300} height={84} rx={42} fill="#FFFFFF" stroke={INK} strokeWidth={5} />
+    <text x={0} y={11} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(34, 520 / Math.max(8, text.length))} fill={INK}>{text}</text>
+  </g>
+);
+
 type SceneIn = { m: M; sid: string; P: any; tt: number; f: number; len: number; cam: { transform: string }; id: string; grey?: number; still?: boolean; aOver?: (p: Pose) => Pose };
 /** A place with its people at scene time tt. grey: the world and b lose their colour; a keeps his. */
 const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, still, aOver }) => {
@@ -121,6 +130,7 @@ const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, st
   const kitchen = P.set.kind === 'kitchen';
   const th = P.think ? { at: cue(P.think[0], len), text: String(P.think[1]) } : null;
   const head = { x: pl.a.x, y: pl.a.y - 176 * pl.a.scale };
+  const close = P.cam === 'a' || P.cam === 'b';
   return (
     <g>
       {grey > 0.01 ? (
@@ -150,15 +160,9 @@ const Scene: React.FC<SceneIn> = ({ m, sid, P, tt, f, len, cam, id, grey = 0, st
             <FlatFront t={tt} p={P.set} />
           )}
         </g>
-        {th && tt >= th.at ? (
-          <g opacity={clamp((tt - th.at) / 3)} transform={`translate(${head.x + 74} ${head.y - 122}) scale(${0.6 + 0.4 * backOut(clamp((tt - th.at) / 9))})`}>
-            <circle cx={-92} cy={76} r={7} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
-            <circle cx={-74} cy={56} r={11} fill="#FFFFFF" stroke={INK} strokeWidth={4} />
-            <rect x={-150} y={-42} width={300} height={84} rx={42} fill="#FFFFFF" stroke={INK} strokeWidth={5} />
-            <text x={0} y={11} textAnchor="middle" fontFamily={FONT.title} fontWeight={800} fontSize={Math.min(34, 520 / Math.max(8, th.text.length))} fill={INK}>{th.text}</text>
-          </g>
-        ) : null}
+        {th && tt >= th.at && !close ? <Bubble x={head.x + 74} y={head.y - 122} t={tt - th.at} text={th.text} /> : null}
       </g>
+      {th && tt >= th.at && close ? <Bubble x={1010} y={300} t={tt - th.at} text={th.text} /> : null}
     </g>
   );
 };
