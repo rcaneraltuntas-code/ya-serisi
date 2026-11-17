@@ -29,7 +29,7 @@ export type Look = {
   shoe: string;
   face: string;
   hair: string;
-  extra?: 'hood' | 'curls' | 'bunches' | 'bob' | 'suit' | 'mop' | 'bun';
+  extra?: 'hood' | 'curls' | 'bunches' | 'bob' | 'suit' | 'mop' | 'bun' | 'short';
   /** A fuller face: eyes with whites and pupils, brows on every expression, a small nose, a mouth that opens to talk. */
   detail?: boolean;
   brow?: string; // brow colour (the hair's by default)
@@ -37,6 +37,8 @@ export type Look = {
   cheek?: string; // blush colour
   apron?: string; // an apron over the top, in this colour
   earring?: string;
+  moustache?: string;
+  cap?: string; // a peaked cap in this colour
 };
 export type CastName = 'pip' | 'pipHood' | 'pipInk' | 'mo' | 'sis' | 'mom' | 'suit';
 export const LOOKS: Record<CastName, Look> = {
@@ -339,6 +341,7 @@ const FaceFull: React.FC<{ expr: Expr; blink: number; look: number; yaw: number;
       {brow(1)}
       <path d={`M ${yaw * 5 - 1} ${eyeY + 15} q ${4 + yaw * 4} 5 ${-1 + yaw * 2} 9`} stroke={ink} strokeWidth={3.2} fill="none" strokeLinecap="round" opacity={0.55} />
       {said > 0.06 ? speak : mouths[expr]}
+      {L.moustache ? <path d={`M -15 ${mY - 9} Q -8 ${mY - 17} 0 ${mY - 11} Q 8 ${mY - 17} 15 ${mY - 9} Q 8 ${mY - 5} 0 ${mY - 7} Q -8 ${mY - 5} -15 ${mY - 9} Z`} fill={L.moustache} stroke={L.line} strokeWidth={2} strokeLinejoin="round" /> : null}
       {expr === 'shock' || expr === 'oops' ? <path d={`M 54 ${HEAD.y - 30} q 6 10 0 16 q -6 -6 0 -16 Z`} fill="#8FD3FF" /> : null}
     </g>
   );
@@ -508,7 +511,7 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
       ) : null}
       <circle cx={HEAD.x} cy={HEAD.y} r={HEAD.r} fill={L.skin} stroke={L.line} strokeWidth={4} />
       <path d={`M ${HEAD.x + 14} ${HEAD.y + 58} A ${HEAD.r} ${HEAD.r} 0 0 0 ${HEAD.x + 60} ${HEAD.y + 14} A 70 70 0 0 1 ${HEAD.x + 14} ${HEAD.y + 58} Z`} fill={L.skinShade} />
-      {L.extra === 'bunches' || L.extra === 'bob' || L.extra === 'suit' || L.extra === 'mop' || L.extra === 'bun' ? null : (
+      {L.extra === 'bunches' || L.extra === 'bob' || L.extra === 'suit' || L.extra === 'mop' || L.extra === 'bun' || L.extra === 'short' ? null : (
         <path transform={`translate(${-pose.yaw * 16} 0)`} d={`M -6 ${HEAD.y - 60} q 10 -26 30 -18 q -16 2 -14 16 q -8 -10 -16 2 Z`} fill={L.hair} />
       )}
       {L.extra === 'bunches' ? (
@@ -523,7 +526,7 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
           <path transform={`translate(${-pose.yaw * 14} 0)`} d={`M -60 ${HEAD.y - 22} Q -62 ${HEAD.y - 66} 0 ${HEAD.y - 66} Q 62 ${HEAD.y - 66} 60 ${HEAD.y - 22} Q 40 ${HEAD.y - 46} 14 ${HEAD.y - 40} Q 0 ${HEAD.y - 50} -14 ${HEAD.y - 40} Q -40 ${HEAD.y - 46} -60 ${HEAD.y - 22} Z`} fill={L.hair} />
         </g>
       ) : null}
-      {L.extra === 'bob' ? (
+      {L.extra === 'bob' && !L.detail ? (
         // a chin-length bob framing the face, a side parting
         <path
           transform={`translate(${-pose.yaw * 12} 0)`}
@@ -534,15 +537,17 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
           strokeLinejoin="round"
         />
       ) : null}
-      {L.extra === 'mop' || L.extra === 'bun' ? (
+      {L.extra === 'mop' || L.extra === 'bun' || L.extra === 'short' || (L.extra === 'bob' && L.detail) ? (
         // Hair that stays on the skull as the head turns: its outer edge is the head's own outline (a little proud of
         // it), ending lower at the back of the head and higher at the brow on the side he faces; only the hairline
         // (the fringe, the parting) moves across with the face.
         (() => {
           const yw = Math.max(-1, Math.min(1, pose.yaw));
-          const R = HEAD.r + 5;
+          const bob = L.extra === 'bob';
+          const R = HEAD.r + (bob ? 8 : 5);
           const cy = HEAD.y;
-          const drop = (sd: 1 | -1) => -8 + (sd * yw < 0 ? 30 : -16) * Math.abs(yw); // the back comes down, the front goes up
+          const base = bob ? 38 : L.extra === 'short' ? -16 : -8;
+          const drop = (sd: 1 | -1) => base + (sd * yw < 0 ? (bob ? 8 : 30) : (bob ? -20 : -16)) * Math.abs(yw); // the back comes down, the front goes up
           const end = (sd: 1 | -1) => {
             const dy = drop(sd);
             return { x: sd * Math.sqrt(R * R - dy * dy), y: cy + dy };
@@ -564,6 +569,15 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
               </g>
             );
           }
+          if (bob) {
+            // a chin-length bob: the hair hangs past the cheeks on both sides, a side parting
+            const line = `L ${q(b.x - 14)} ${b.y} Q ${q(Math.min(b.x - 12, 50 + sh))} ${cy - 30} ${q(14 + sh)} ${cy - 44} Q ${q(-22 + sh)} ${cy - 34} ${q(Math.max(a.x + 12, -52 + sh))} ${cy - 4} L ${q(a.x + 14)} ${a.y} Z`;
+            return <path d={`${cap} ${line}`} fill={L.hair} stroke={L.line} strokeWidth={4} strokeLinejoin="round" />;
+          }
+          if (L.extra === 'short') {
+            const line = `Q ${q(Math.min(b.x - 6, 44 + sh))} ${cy - 50} ${q(sh)} ${cy - 49} Q ${q(Math.max(a.x + 6, -44 + sh))} ${cy - 50} ${a.x} ${a.y} Z`;
+            return <path d={`${cap} ${line}`} fill={L.hair} stroke={L.line} strokeWidth={4} strokeLinejoin="round" />;
+          }
           const line = `Q ${q(Math.min(b.x - 6, 48 + sh))} ${cy - 44} ${q(sh)} ${cy - 50} Q ${q(Math.max(a.x + 6, -48 + sh))} ${cy - 44} ${a.x} ${a.y} Z`;
           return (
             <g>
@@ -577,6 +591,12 @@ export const Hero: React.FC<{ pose: Pose; shadow?: number; rimId?: string; look?
       {L.extra === 'suit' ? (
         // short combed-back hair with a hard side parting
         <path transform={`translate(${-pose.yaw * 14} 0)`} d={`M -60 ${HEAD.y - 18} Q -64 ${HEAD.y - 70} 4 ${HEAD.y - 68} Q 64 ${HEAD.y - 64} 60 ${HEAD.y - 18} Q 52 ${HEAD.y - 44} 18 ${HEAD.y - 46} L 12 ${HEAD.y - 54} L 6 ${HEAD.y - 46} Q -44 ${HEAD.y - 46} -60 ${HEAD.y - 18} Z`} fill={L.hair} />
+      ) : null}
+      {L.cap ? (
+        <g>
+          <path d={`M ${(pose.yaw >= 0 ? 1 : -1) * 22} ${HEAD.y - 30} q ${(pose.yaw >= 0 ? 1 : -1) * 50} -4 ${(pose.yaw >= 0 ? 1 : -1) * 62} 12 q ${(pose.yaw >= 0 ? -1 : 1) * 34} 5 ${(pose.yaw >= 0 ? -1 : 1) * 64} -2 Z`} fill={L.cap} stroke={L.line} strokeWidth={4} strokeLinejoin="round" />
+          <path d={`M -66 ${HEAD.y - 26} A 67 67 0 0 1 66 ${HEAD.y - 26} L 66 ${HEAD.y - 16} Q 0 ${HEAD.y - 28} -66 ${HEAD.y - 16} Z`} fill={L.cap} stroke={L.line} strokeWidth={4} strokeLinejoin="round" />
+        </g>
       ) : null}
       {L.earring ? [-1, 1].map((sd) => (Math.abs(pose.yaw) > 0.72 && sd === (pose.yaw > 0 ? -1 : 1) ? null : <circle key={sd} cx={sd * (HEAD.r - 3) * (1 - 0.25 * Math.abs(pose.yaw)) + pose.yaw * 12} cy={HEAD.y + 26} r={6} fill={L.earring} stroke={L.line} strokeWidth={3} />)) : null}
       <Face expr={pose.expr} blink={pose.blink} look={pose.look} glasses={pose.glasses} yaw={pose.yaw} ink={L.face} glint={pose.glint} glintColor={pose.glintColor} L={L} talk={pose.talk} />

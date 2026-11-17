@@ -844,7 +844,7 @@ const Captions: React.FC<{ caps: P[]; f: number }> = ({ caps, f }) => {
 export const buildEpisode = (ep: any, timeline: any, custom?: { make: (m: any) => Record<string, Shot> }) => {
   const shots: Record<string, Shot> = {};
   // hand-animated shots (use: "custom") come from the episode's own shots.tsx; they are told where the lines fall
-  const own = custom ? custom.make({ ...(ep.marks ?? { L: [], N: [] }), cut: Object.fromEntries((ep.edit ?? []).map((e: any) => [e.shot, parseInt(String(e.at).slice(2), 10)])) }) : {};
+  const own = custom ? custom.make({ ...(ep.marks ?? { L: [], N: [] }), shots: ep.shots, cut: Object.fromEntries((ep.edit ?? []).map((e: any) => [e.shot, parseInt(String(e.at).slice(2), 10)])) }) : {};
   for (const s of ep.shots) {
     const make = s.use === 'custom' ? () => own[s.id] : USES[s.use];
     if (!make || (s.use === 'custom' && !own[s.id])) throw new Error(`${ep.slug}: shot ${s.id} uses unknown scene "${s.use}"`);

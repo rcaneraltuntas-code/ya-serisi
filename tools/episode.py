@@ -136,6 +136,18 @@ def sound(slug, fs=None, fe=None):
         words = json.loads((S / 'src/episodes' / slug / 'words.json').read_text(encoding='utf-8'))
         fs, fe = [round(w['s'] * 30) for w in words], [round(w['e'] * 30) for w in words]
     at = {e['shot']: int(e['at'][2:]) for e in ep['edit']}
+    NN = ep.get('marks', {}).get('N', [])
+
+    def off(v, sid):  # 'L3e+4' / 'N1s-2': a line's or an insert's start or end, as an offset into the shot
+        q = re.match(r'([LN])(\d+)([se])([+-]\d+)?$', v) if isinstance(v, str) else None
+        if not q:
+            return v
+        arr = (list(zip(fs, fe)) if q[1] == 'L' else NN)[int(q[2])]
+        return arr[0 if q[3] == 's' else 1] + int(q[4] or 0) - at[sid]
+    for s in ep['shots']:
+        s['_sfx'] = s.get('sfx', [])
+        s['sfx'] = [[off(e[0], s['id']), e[1], e[2]] + ([off(e[3], s['id'])] if len(e) > 3 else []) for e in s.get('sfx', [])]
+        s['sfx'] = [e for e in s['sfx'] if e[0] >= 0]
     duck = ep.get('duck', {})
     used, events, repeats, spans = {ep.get('music', 'drone_bed')}, [], [], []
     for s in ep['shots']:
@@ -162,6 +174,9 @@ def sound(slug, fs=None, fe=None):
             repeats.append({'at': f'{s["id"]}+4', 'clip': 'step', 'n': s['steps'], 'every': 12, 'gain': [round(0.14 * k, 3), round(0.22 * k, 3)], 'pitch': [0.9, 1.1]})
             spans.append((at[s['id']] + 4, at[s['id']] + 4 + s['steps'] * 12 + 15, key))
             used.add('step')
+    for s in ep['shots']:
+        if '_sfx' in s:
+            s['sfx'] = s.pop('_sfx')
     ep['sound'] = {'clips': {n: CLIPS[n] for n in sorted(used)}, 'events': events, 'repeats': repeats, 'music': {'clip': ep.get('music', 'drone_bed')},
                    'levels': {'sfx_lu': ep.get('sfx_lu', -3.0), 'music_lu': ep.get('music_lu', -16.0)}}
     save(slug, ep)
@@ -231,13 +246,15 @@ def voice(slug, url):
     # fit the episode to its target length by stretching (or tightening) the written pauses together
     speech = sum(b - a for a, b in spans)
     written = sum(l.get('pause', 0.6) for l in ep['lines'][:-1])
-    fit = max(0.75, min(1.7, (ep.get('target', 57) - ep.get('lead', 0.5) - ep.get('tail', 2.0) - speech) / written)) if ep.get('fit', True) else 1.0
     # lines spoken by someone else (ep['inserts']: their own takes, public/<slug>/ins<k>.wav) sit in the pause after a line
     ins = ep.get('inserts', [])
     for k, n in enumerate(ins):
         p = pub / f'ins{k}.wav'
         n['dur'] = round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(p)], capture_output=True, text=True).stdout or 0), 3) if p.exists() else round(max(0.8, len(n['en']) / 13), 3)
     hold = {n['after']: n.get('lead', 0.3) + n['dur'] + n.get('trail', 0.4) for n in ins}
+    free = sum(l.get('pause', 0.6) for i, l in enumerate(ep['lines'][:-1]) if i not in hold) or 1.0
+    lo, hi = (0.4, 5.0) if ep.get('kit') else (0.75, 1.7)
+    fit = max(lo, min(hi, (ep.get('target', 57) - ep.get('lead', 0.5) - ep.get('tail', 2.0) - speech - sum(hold.values())) / free)) if ep.get('fit', True) else 1.0
     (out / 'scribe_words.json').write_text(json.dumps({'words': [{'text': f'L{i}.', 'type': 'word', 'start': round(a, 3), 'end': round(b, 3)} for i, (a, b) in enumerate(spans)]}))
     ep['script'] = [{'beat': str(i), 'text': l['t']} for i, l in enumerate(ep['lines'])]
     ep['pauses'] = {'lead': ep.get('lead', 0.5), 'sentence': 0.6, 'after': {f'L{i}': round(hold.get(i, l.get('pause', 0.6) * fit), 2) for i, l in enumerate(ep['lines'][:-1])}}
@@ -272,7 +289,7 @@ def voice(slug, url):
                 continue
             caps.append({'a': round(n['s'] * 30) - 2, 'b': round(n['e'] * 30) + n.get('hold', 14), 'en': n['en'], 'tr': n.get('tr', ''), 'trAt': round(n['s'] * 30) + n.get('trDelay', 14)})
         ep['captions'] = sorted(caps, key=lambda c: c['a'])
-    ep['marks'] = {'L': [[a, b] for a, b in zip(fs, fe)], 'N': [[round(n['s'] * 30), round(n['e'] * 30)] for n in ins]}
+    ep['marks'] = {'L': [[a, b] for a, b in zip(fs, fe)], 'N': [[round(n['s'] * 30), round(n['e'] * 30)] for n in ins], 'who': [n.get('who', '') for n in ins], 'say': [bool(l.get('say')) for l in ep['lines']]}
     # how loud the voice is in each frame, 0..1: the speaker's mouth opens with it
     vx = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', str(pub / 'voice.wav'), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True, check=True).stdout, dtype=np.float32).astype(np.float64)
     hop = SR // 30
@@ -296,7 +313,8 @@ def voice(slug, url):
     ep.setdefault('title', [ep.get('series', 'SON İNSAN'), ep['slug']])
     save(slug, ep)
     own = (S / 'src/episodes' / slug / 'shots.tsx').exists()
-    (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n" + ("import * as custom from './shots';\n" if own else '') + f"\nexport const episode = buildEpisode(ep, timeline{', custom' if own else ''});\n")
+    kit = bool(ep.get('kit')) and not own
+    (S / 'src/episodes' / slug / 'index.tsx').write_text("import { buildEpisode } from '../son-insan/kit';\nimport ep from './episode.json';\nimport timeline from './timeline.json';\n" + ("import * as custom from './shots';\n" if own else "import * as custom from '../herkes/kit07';\n" if kit else '') + f"\nexport const episode = buildEpisode(ep, timeline{', custom' if own or kit else ''});\n")
     subprocess.run([sys.executable, str(SKILL / 'plan.py'), slug], check=True, stdout=subprocess.DEVNULL)
     if not draft:
         r = subprocess.run([sys.executable, str(SKILL / 'sfx.py'), slug], capture_output=True, text=True)

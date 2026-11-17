@@ -14,6 +14,23 @@ export const EGE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, j
 /** His mother: dark hair in a bun, a mustard top, never without the smile. */
 export const ANNE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, jacket: '#E0A63A', jacketShade: '#C08A28', accent: '#FFFFFF', limb: '#3B2F4A', line: '#161422', shoe: '#7A4A5A', face: C.ink, hair: '#2B1E22', extra: 'bun', detail: true, brow: '#2B1E22', lashes: true, cheek: '#F0A8A0', apron: '#FBF6EC', earring: '#E9C46A' };
 
+const D = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, line: '#161422', face: C.ink, detail: true as const };
+/** Hasan, the neighbour: grey hair, a moustache, a green cardigan. */
+export const HASAN: Look = { ...D, jacket: '#5E7F5A', jacketShade: '#4A6648', accent: '#F6EFE3', limb: '#6B5A4A', shoe: '#4A3A30', hair: '#B9B4AC', extra: 'short', brow: '#8E8880', moustache: '#B9B4AC', cheek: '#F0B8A0' };
+/** The bus driver: a navy uniform and a cap. */
+export const DRIVER: Look = { ...D, skin: '#E9D2B4', skinShade: '#D4BA98', hand: '#E9D2B4', jacket: '#33466E', jacketShade: '#273657', accent: '#E9C46A', limb: '#33466E', shoe: '#1D2033', hair: '#3A2A22', extra: 'short', brow: '#2A1C16', moustache: '#3A2A22', cap: '#273657' };
+/** Defne, the other player: an auburn bob, a teal jacket. */
+export const DEFNE: Look = { ...D, jacket: '#2F8C86', jacketShade: '#246E69', accent: '#FFE08A', limb: '#3A3446', shoe: '#E9C46A', hair: '#8A3B24', extra: 'bob', brow: '#6A2A18', lashes: true, cheek: '#F0A8A0' };
+/** The barista: curls and an apron. */
+export const BARISTA: Look = { ...D, skin: '#C98E68', skinShade: '#B07A58', hand: '#C98E68', jacket: '#3A3446', jacketShade: '#2C2836', accent: '#F6EFE3', limb: '#3A3446', shoe: '#D9534F', hair: '#2A1C18', extra: 'curls', brow: '#2A1C18', apron: '#8A5E44' };
+/** The teacher: silver bun, plum blazer. */
+export const TEACHER: Look = { ...D, jacket: '#7A4A6A', jacketShade: '#623A56', accent: '#F6EFE3', limb: '#4A4458', shoe: '#2B2233', hair: '#C9C2B8', extra: 'bun', brow: '#9A9288', lashes: true, earring: '#C9D6E8' };
+/** The cashier and the librarian share a face; the guard and the interviewer share another. */
+export const CLERK: Look = { ...D, skin: '#E9D2B4', skinShade: '#D4BA98', hand: '#E9D2B4', jacket: '#C9573F', jacketShade: '#A84832', accent: '#F6EFE3', limb: '#3A3446', shoe: '#2B2233', hair: '#3A2620', extra: 'bob', brow: '#2A1C16', lashes: true };
+export const GUARD: Look = { ...D, jacket: '#2B2F3A', jacketShade: '#20232C', accent: '#C9D6E8', limb: '#2B2F3A', shoe: '#14151A', hair: '#17141A', extra: 'short', brow: '#17141A' };
+export const BOSS: Look = { ...D, skin: '#D9C6AE', skinShade: '#C2AE96', hand: '#D9C6AE', jacket: '#2B3350', jacketShade: '#20263C', accent: '#A8323E', limb: '#2B3350', shoe: '#14151A', hair: '#5A5048', extra: 'suit', brow: '#3A322C' };
+export const CAST: Record<string, Look> = { ege: EGE, anne: ANNE, hasan: HASAN, driver: DRIVER, defne: DEFNE, barista: BARISTA, teacher: TEACHER, clerk: CLERK, guard: GUARD, boss: BOSS };
+
 // ---------- the flipping words ----------
 /**
  * A word on a row of little flap cards (a departure board): from `at` each card turns over in turn and shows the
@@ -265,7 +282,7 @@ export const spoutOf = (x: number, y: number, tip = 0, s = 1) => {
  * The loop counter, pinned to the top of the picture (not to the room). loop: the number; from/at: flip from an
  * earlier number at frame `at` of the shot. Comes in with a small pop at `at` when there is no `from`.
  */
-export const Hud: React.FC<{ loop: number; t: number; at?: number; from?: number; clock?: string }> = ({ loop, t, at = -99, from, clock = '07:00' }) => {
+export const Hud: React.FC<{ loop: number; t: number; at?: number; from?: number; clock?: string; doors?: number }> = ({ loop, t, at = -99, from, clock = '07:00', doors }) => {
   const k = from === undefined ? clamp((t - at) / 6) : 1;
   if (k <= 0) return null;
   const sc = from === undefined ? 0.7 + 0.3 * (1 - Math.pow(1 - k, 3)) + 0.08 * Math.sin(Math.PI * k) : 1;
@@ -275,6 +292,7 @@ export const Hud: React.FC<{ loop: number; t: number; at?: number; from?: number
       <circle cx={960 - 120} cy={138} r={7} fill="#FF5A4A" opacity={0.55 + 0.45 * Math.sin(t / 4)} />
       <text x={960 - 100} y={148} fontFamily={FONT.ui} fontSize={26} fill="#FF8A7A" letterSpacing={1}>{clock}</text>
       <FlipWord x={960 + 62} y={138} from={`LOOP ${from ?? loop}`} to={`LOOP ${loop}`} t={t} at={from === undefined ? -99 : at} size={25} card="#232838" ink="#FFFFFF" every={1.6} />
+      {doors !== undefined ? Array.from({ length: 10 }).map((_, i) => <circle key={i} cx={960 - 99 + i * 22} cy={186} r={7} fill={i < doors ? '#3DDC84' : '#0E1118'} stroke={i < doors ? '#0B2A18' : '#5A6680'} strokeWidth={2.5} />) : null}
     </g>
   );
 };

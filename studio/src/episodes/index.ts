@@ -5,6 +5,11 @@ import { dusunce } from './dusunce';
 import { sonInsan01 } from './son-insan-01';
 import { sonInsanB1 } from './son-insan-b1';
 import { episode as he01 } from './he-01';
+import { episode as he02 } from './he-02';
+import { episode as he03 } from './he-03';
+import { episode as he04 } from './he-04';
+import { episode as he05 } from './he-05';
+import { episode as he06 } from './he-06';
 import { episode as si02 } from './si-02';
 import { episode as si03 } from './si-03';
 import { episode as si04 } from './si-04';
@@ -25,4 +30,4 @@ import { episode as si18 } from './si-18';
 import { episode as si19 } from './si-19';
 import { episode as si20 } from './si-20';
 
-export const EPISODES = [rewind, copyPaste, dusunce, sonInsan01, sonInsanB1, he01, si02, si03, si04, si05, si06, si07, si08, si09, si10, si11, si12, si13, si14, si15, si16, si17, si18, si19, si20];
+export const EPISODES = [rewind, copyPaste, dusunce, sonInsan01, sonInsanB1, he01, he02, he03, he04, he05, he06, si02, si03, si04, si05, si06, si07, si08, si09, si10, si11, si12, si13, si14, si15, si16, si17, si18, si19, si20];

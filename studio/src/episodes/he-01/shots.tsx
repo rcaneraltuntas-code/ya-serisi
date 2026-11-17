@@ -136,7 +136,7 @@ const Kitchen: React.FC<{ st: St; tt: number; id: string; cam: { transform: stri
 };
 
 /** The app's verdict, pinned to the top of the picture: it glitches in, then holds. t: frames since it appeared. */
-const TryAgain: React.FC<{ t: number }> = ({ t }) => {
+export const TryAgain: React.FC<{ t: number; why?: string }> = ({ t, why = 'TURKISH DETECTED' }) => {
   if (t < 0) return null;
   const g = t < 9 ? 1 - t / 9 : 0;
   const jx = g * 14 * Math.sin(t * 5.3);
@@ -145,7 +145,7 @@ const TryAgain: React.FC<{ t: number }> = ({ t }) => {
     <g opacity={clamp(t / 2)}>
       <rect x={600} y={214} width={720} height={236} fill="#07060C" opacity={0.6} />
       <rect x={770} y={236} width={380} height={44} rx={22} fill="#D8342C" />
-      <text x={960} y={267} textAnchor="middle" fontFamily={FONT.ui} fontSize={23} fill="#FFFFFF" letterSpacing={3}>TURKISH DETECTED</text>
+      <text x={960} y={267} textAnchor="middle" fontFamily={FONT.ui} fontSize={23} fill="#FFFFFF" letterSpacing={3}>{why}</text>
       <text x={960 - 7 * g - jx} y={372} {...big} fill="#34E6FF" opacity={0.8 * g}>TRY AGAIN</text>
       <text x={960 + 7 * g + jx} y={372} {...big} fill="#FF3B5C" opacity={0.8 * g}>TRY AGAIN</text>
       <text x={960 + jx * 0.3} y={372} {...big} fill="#FFFFFF" stroke="#0B0912" strokeWidth={8} style={{ paintOrder: 'stroke' }}>TRY AGAIN</text>
@@ -155,7 +155,7 @@ const TryAgain: React.FC<{ t: number }> = ({ t }) => {
 };
 
 /** Tape running backwards: bars of noise across the picture and the rewind mark. k: 0..1 through the rewind. */
-const Rewind: React.FC<{ t: number }> = ({ t }) => (
+export const Rewind: React.FC<{ t: number }> = ({ t }) => (
   <g>
     {[0, 1, 2, 3].map((i) => {
       const y = ((t * (37 + i * 11) + i * 290) % 1180) - 50;
@@ -169,11 +169,11 @@ const Rewind: React.FC<{ t: number }> = ({ t }) => (
 );
 
 /** A white flash: `up` 0..1 covers the picture. */
-const Flash: React.FC<{ o: number }> = ({ o }) => (o > 0.01 ? <rect x={0} y={0} width={1920} height={1080} fill="#FFFFFF" opacity={clamp(o)} /> : null);
+export const Flash: React.FC<{ o: number }> = ({ o }) => (o > 0.01 ? <rect x={0} y={0} width={1920} height={1080} fill="#FFFFFF" opacity={clamp(o)} /> : null);
 
 // ---------- the bedroom ----------
 const LUMP = { x: BED_SIT.x - 6, y: BED_SIT.y - 30 };
-const Bed: React.FC<{ t: number; id: string; cam: { transform: string }; me: Pose | null; lump?: number; ring?: boolean; sq?: number; clock?: string; arm?: number; armDown?: boolean; buzz?: number; children?: React.ReactNode }> = ({ t, id, cam, me, lump = 0, ring = false, sq = 0, clock = '07:00', arm = 0, armDown = false, buzz = 0, children }) => {
+export const Bed: React.FC<{ t: number; id: string; cam: { transform: string }; me: Pose | null; lump?: number; ring?: boolean; sq?: number; clock?: string; arm?: number; armDown?: boolean; buzz?: number; children?: React.ReactNode }> = ({ t, id, cam, me, lump = 0, ring = false, sq = 0, clock = '07:00', arm = 0, armDown = false, buzz = 0, children }) => {
   const hand = { x: lerp(LUMP.x + 96, CLOCK_AT.x - 20, easeOut(arm)), y: lerp(LUMP.y, CLOCK_AT.y - 42 + (armDown ? 10 : 0), easeOut(arm)) };
   return (
     <g transform={cam.transform}>
@@ -200,12 +200,12 @@ const Bed: React.FC<{ t: number; id: string; cam: { transform: string }; me: Pos
     </g>
   );
 };
-const squash = (t: number, slap: number) => (t >= slap && t < slap + 8 ? 0.35 * Math.exp(-(t - slap) / 3) : 0);
+export const squash = (t: number, slap: number) => (t >= slap && t < slap + 8 ? 0.35 * Math.exp(-(t - slap) / 3) : 0);
 /** Leaning over to flatten the alarm: the arm's angle that puts the hand on the clock. */
-const slapArm = (pose: Pose) => ({ a: reachAngle(pose, { x: CLOCK_AT.x - 22, y: CLOCK_AT.y - 40 }), b: 0 });
+export const slapArm = (pose: Pose) => ({ a: reachAngle(pose, { x: CLOCK_AT.x - 22, y: CLOCK_AT.y - 40 }), b: 0 });
 
 // ---------- a phone held up, seen over his arm ----------
-const PhoneFrame: React.FC<{ t: number; rise: number; buzz?: number; children: React.ReactNode; glow?: number }> = ({ t, rise, buzz = 0, children, glow = 0.3 }) => (
+export const PhoneFrame: React.FC<{ t: number; rise: number; buzz?: number; children: React.ReactNode; glow?: number }> = ({ t, rise, buzz = 0, children, glow = 0.3 }) => (
   <g transform={`translate(${buzz} ${(1 - rise) * 520})`}>
     <PovHand x={1020} y={920} fx={1270} fy={1530} s={1.35} rimId="rimBlue" look={EGE} />
     <rect x={738} y={176} width={444} height={760} rx={54} fill="#0A0C12" stroke="#8A93A0" strokeWidth={6} />
@@ -215,7 +215,7 @@ const PhoneFrame: React.FC<{ t: number; rise: number; buzz?: number; children: R
     <Glow x={960} y={520} r={440} kind="cool" o={glow} />
   </g>
 );
-const AppIcon: React.FC<{ x: number; y: number; s?: number; t: number }> = ({ x, y, s = 1, t }) => (
+export const AppIcon: React.FC<{ x: number; y: number; s?: number; t: number }> = ({ x, y, s = 1, t }) => (
   <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-34} y={-34} width={68} height={68} rx={18} fill="#FFE08A" />
     <circle cx={0} cy={0} r={20} fill="none" stroke="#10131B" strokeWidth={5} />
