@@ -10,9 +10,9 @@ import {
 
 // ---------- cast ----------
 /** Ege: a mop of chestnut hair, a coral sweatshirt. */
-export const EGE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, jacket: '#E2613F', jacketShade: '#C24E30', accent: '#F6EFE3', limb: '#2B3350', line: '#161422', shoe: '#F1ECE2', face: C.ink, hair: '#5A3A2A', extra: 'mop' };
+export const EGE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, jacket: '#E2613F', jacketShade: '#C24E30', accent: '#F6EFE3', limb: '#2B3350', line: '#161422', shoe: '#F1ECE2', face: C.ink, hair: '#5A3A2A', extra: 'mop', detail: true, brow: '#3A2218', cheek: '#F2B8A0' };
 /** His mother: dark hair in a bun, a mustard top, never without the smile. */
-export const ANNE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, jacket: '#E0A63A', jacketShade: '#C08A28', accent: '#FFFFFF', limb: '#3B2F4A', line: '#161422', shoe: '#7A4A5A', face: C.ink, hair: '#2B1E22', extra: 'bun' };
+export const ANNE: Look = { skin: C.skin, skinShade: C.skinShade, hand: C.skin, jacket: '#E0A63A', jacketShade: '#C08A28', accent: '#FFFFFF', limb: '#3B2F4A', line: '#161422', shoe: '#7A4A5A', face: C.ink, hair: '#2B1E22', extra: 'bun', detail: true, brow: '#2B1E22', lashes: true, cheek: '#F0A8A0', apron: '#FBF6EC', earring: '#E9C46A' };
 
 // ---------- the flipping words ----------
 /**
@@ -52,16 +52,20 @@ export const FlipWord: React.FC<{ x: number; y: number; from: string; to: string
 // ---------- the bedroom ----------
 export const BED = makeRoom({ x: 960, y: 500 }, { x0: 500, x1: 1420, y0: 330, y1: 745 }, 3.4);
 /** Where he sits up in bed (hip point and scale). */
+export const BED_U = 0.4; // his side of the bed, next to the nightstand
 export const BED_SIT = (() => {
-  const p = BED.P(0.3, 0.8, 0.3);
+  const p = BED.P(BED_U, 0.8, 0.3);
   return { x: p.x, y: p.y, scale: (0.62 * 415 * BED.s(0.3)) / 378 };
 })();
-export const CLOCK_AT = BED.P(0.615, 0.8, 0.07);
+export const CLOCK_AT = BED.P(0.578, 0.8, 0.09);
+/** Where his phone lies on the nightstand. */
+export const PHONE_AT = BED.P(0.645, 0.8, 0.1);
 
 /** The room behind him: draw this, then him, then <BedFront/> over his legs. */
 export const Bedroom: React.FC<{ t: number; id?: string }> = ({ t, id = 'hbr' }) => {
   const R = BED;
-  const pil = R.P(0.18, 0.8, 0.1);
+  const pil = R.P(0.385, 0.8, 0.1);
+  const pil2 = R.P(0.165, 0.8, 0.1);
   return (
     <g>
       <RoomShell r={R} id={id} floor="boards" wall="#4F8F8C" side="#3F7775" floorC="#B5875C" ceiling="#2F5957" lines="#8A6242" />
@@ -74,7 +78,9 @@ export const Bedroom: React.FC<{ t: number; id?: string }> = ({ t, id = 'hbr' })
       <FloorShadow r={R} u={[0.05, 0.52]} w={[0.02, 0.58]} />
       <Box r={R} u={[0.05, 0.5]} v={[0.56, 0.8]} w={[0, 0.03]} front="#8A5E44" top="#A8765A" side="#6E4A36" />
       <Box r={R} u={[0.05, 0.5]} v={[0.8, 1]} w={[0, 0.55]} front="#DCE4F0" top="#EEF2F8" side="#B9C6DA" />
-      <ellipse cx={pil.x} cy={pil.y - 12} rx={92} ry={30} fill="#FFFFFF" stroke="#B9C6DA" strokeWidth={4} />
+      {/* two pillows propped against the headboard */}
+      <rect x={pil2.x - 80} y={pil2.y - 78} width={160} height={74} rx={26} fill="#F3F6FB" stroke="#B9C6DA" strokeWidth={4} transform={`rotate(-3 ${pil2.x} ${pil2.y - 40})`} />
+      <rect x={pil.x - 80} y={pil.y - 80} width={160} height={76} rx={26} fill="#FFFFFF" stroke="#B9C6DA" strokeWidth={4} transform={`rotate(2 ${pil.x} ${pil.y - 40})`} />
       <Box r={R} u={[0.55, 0.68]} v={[0.8, 1]} w={[0, 0.14]} front="#8A5E44" top="#A8765A" side="#6E4A36" rim />
       {/* a rug */}
       <polygon points={R.Q([[0.56, 1, 0.3], [0.94, 1, 0.3], [0.98, 1, 0.72], [0.52, 1, 0.72]])} fill="#E0A63A" opacity={0.85} />
@@ -88,10 +94,10 @@ export const Bedroom: React.FC<{ t: number; id?: string }> = ({ t, id = 'hbr' })
 /** The duvet and the bed's near side, over his legs. lump: 0..1 someone still under it. */
 export const BedFront: React.FC<{ lump?: number }> = ({ lump = 0 }) => {
   const R = BED;
-  const a = R.P(0.3, 0.775, 0.3);
+  const a = R.P(BED_U, 0.775, 0.3);
   return (
     <g>
-      {lump > 0 ? <ellipse cx={a.x} cy={a.y - 6} rx={120} ry={22 + 40 * lump} fill="#E2725B" stroke="#161422" strokeWidth={4} /> : null}
+      {lump > 0 ? <ellipse cx={a.x} cy={a.y - 6} rx={104} ry={22 + 40 * lump} fill="#E2725B" stroke="#161422" strokeWidth={4} /> : null}
       <Box r={R} u={[0.05, 0.5]} v={[0.772, 1]} w={[0.3, 0.55]} front="#C9573F" top="#E2725B" side="#A84832" />
       <polygon points={R.Q([[0.05, 0.772, 0.3], [0.5, 0.772, 0.3], [0.5, 0.772, 0.36], [0.05, 0.772, 0.36]])} fill="#F6EFE3" />
     </g>
@@ -208,3 +214,67 @@ export const CARTON = (() => {
   const c = tableTop(0.5, 0.62);
   return { x: c.x, y: c.y - 76 };
 })();
+
+// ---------- small things on the table ----------
+/** Where the tea glass stands (in front of her), and where the tea always spills. */
+export const GLASS = tableTop(0.5855, 0.2);
+export const SPILL = { x: GLASS.x - 36, y: GLASS.y + 7 };
+
+/** A tulip tea glass on its saucer. x, y: the saucer's centre. level 0..1; steam: 0..1; tw: time for the steam. */
+export const TeaGlass: React.FC<{ x: number; y: number; level?: number; steam?: number; tw?: number; s?: number }> = ({ x, y, level = 1, steam = 0, tw = 0, s = 1.25 }) => {
+  const h = 30 * clamp(level);
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <ellipse cx={2} cy={2} rx={25} ry={6} fill="#000" opacity={0.22} />
+      <ellipse cx={0} cy={0} rx={23} ry={5.5} fill="#FBF6EC" stroke="#161422" strokeWidth={2.5} />
+      <ellipse cx={0} cy={0} rx={15} ry={3.4} fill="none" stroke="#C9573F" strokeWidth={2} />
+      <clipPath id={`tg${Math.round(x)}${Math.round(y)}`}><rect x={-14} y={-2 - h} width={28} height={h + 2} /></clipPath>
+      <path d="M -10 -35 Q -12 -23 -6 -17 Q -11 -9 -9 -2 L 9 -2 Q 11 -9 6 -17 Q 12 -23 10 -35 Z" fill="#FFFFFF" opacity={0.55} />
+      <path d="M -10 -35 Q -12 -23 -6 -17 Q -11 -9 -9 -2 L 9 -2 Q 11 -9 6 -17 Q 12 -23 10 -35 Z" fill="#B5461E" clipPath={`url(#tg${Math.round(x)}${Math.round(y)})`} />
+      <path d="M -10 -35 Q -12 -23 -6 -17 Q -11 -9 -9 -2 L 9 -2 Q 11 -9 6 -17 Q 12 -23 10 -35 Z" fill="none" stroke="#161422" strokeWidth={2.5} strokeLinejoin="round" />
+      <path d="M -6 -30 Q -7 -24 -3 -19" stroke="#FFFFFF" strokeWidth={2} fill="none" strokeLinecap="round" opacity={0.8} />
+      {steam > 0.02 ? [-1, 1].map((k) => (
+        <path key={k} d={`M ${k * 4} -40 q ${6 * Math.sin(tw / 9 + k)} -9 0 -18 q ${-6 * Math.sin(tw / 9 + k)} -9 0 -18`} stroke="#FFFFFF" strokeWidth={2.5} fill="none" strokeLinecap="round" opacity={0.5 * steam} />
+      )) : null}
+    </g>
+  );
+};
+
+/** A teapot held by its handle. x, y: the hand; tip: degrees it is tipped forward (to the left, toward the glass). */
+export const Teapot: React.FC<{ x: number; y: number; tip?: number; s?: number }> = ({ x, y, tip = 0, s = 1 }) => (
+  <g transform={`translate(${x} ${y}) scale(${s}) rotate(${-tip})`}>
+    <path d="M 4 -20 q 22 -2 20 16 q -2 14 -20 10" stroke="#161422" strokeWidth={10} fill="none" strokeLinecap="round" />
+    <path d="M 4 -20 q 22 -2 20 16 q -2 14 -20 10" stroke="#2F5957" strokeWidth={5} fill="none" strokeLinecap="round" />
+    <path d="M -34 -8 l -24 -14 l 6 14 Z" fill="#3F7775" stroke="#161422" strokeWidth={3.5} strokeLinejoin="round" />
+    <rect x={-38} y={-26} width={46} height={38} rx={11} fill="#3F7775" stroke="#161422" strokeWidth={3.5} />
+    <rect x={-26} y={-34} width={22} height={9} rx={4} fill="#E0A63A" stroke="#161422" strokeWidth={3} />
+    <circle cx={-15} cy={-38} r={4} fill="#E0A63A" stroke="#161422" strokeWidth={3} />
+    <path d="M -32 -14 q 6 -6 14 -6" stroke="#FFFFFF" strokeWidth={3} fill="none" strokeLinecap="round" opacity={0.45} />
+  </g>
+);
+/** The spout's tip for a pot at the hand (x, y), tipped by `tip` degrees. */
+export const spoutOf = (x: number, y: number, tip = 0, s = 1) => {
+  const r = (-tip * Math.PI) / 180;
+  const px = -57 * s;
+  const py = -22 * s;
+  return { x: x + px * Math.cos(r) - py * Math.sin(r), y: y + px * Math.sin(r) + py * Math.cos(r) };
+};
+
+// ---------- the app's counter ----------
+/**
+ * The loop counter, pinned to the top of the picture (not to the room). loop: the number; from/at: flip from an
+ * earlier number at frame `at` of the shot. Comes in with a small pop at `at` when there is no `from`.
+ */
+export const Hud: React.FC<{ loop: number; t: number; at?: number; from?: number; clock?: string }> = ({ loop, t, at = -99, from, clock = '07:00' }) => {
+  const k = from === undefined ? clamp((t - at) / 6) : 1;
+  if (k <= 0) return null;
+  const sc = from === undefined ? 0.7 + 0.3 * (1 - Math.pow(1 - k, 3)) + 0.08 * Math.sin(Math.PI * k) : 1;
+  return (
+    <g transform={`translate(960 138) scale(${sc}) translate(-960 -138)`} opacity={clamp(k * 2)}>
+      <rect x={960 - 150} y={138 - 31} width={300} height={62} rx={31} fill="#0E1118" opacity={0.9} stroke="#3A4258" strokeWidth={3} />
+      <circle cx={960 - 120} cy={138} r={7} fill="#FF5A4A" opacity={0.55 + 0.45 * Math.sin(t / 4)} />
+      <text x={960 - 100} y={148} fontFamily={FONT.ui} fontSize={26} fill="#FF8A7A" letterSpacing={1}>{clock}</text>
+      <FlipWord x={960 + 62} y={138} from={`LOOP ${from ?? loop}`} to={`LOOP ${loop}`} t={t} at={from === undefined ? -99 : at} size={25} card="#232838" ink="#FFFFFF" every={1.6} />
+    </g>
+  );
+};

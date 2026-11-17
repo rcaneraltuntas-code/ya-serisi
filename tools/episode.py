@@ -268,9 +268,19 @@ def voice(slug, url):
                 continue
             caps.append({'a': fs[i], 'b': fe[i] + 8, 'tr': l['t'], 'say': bool(l.get('say'))})
         for n in ins:
+            if n.get('cap') is False:
+                continue
             caps.append({'a': round(n['s'] * 30) - 2, 'b': round(n['e'] * 30) + n.get('hold', 14), 'en': n['en'], 'tr': n.get('tr', ''), 'trAt': round(n['s'] * 30) + n.get('trDelay', 14)})
         ep['captions'] = sorted(caps, key=lambda c: c['a'])
     ep['marks'] = {'L': [[a, b] for a, b in zip(fs, fe)], 'N': [[round(n['s'] * 30), round(n['e'] * 30)] for n in ins]}
+    # how loud the voice is in each frame, 0..1: the speaker's mouth opens with it
+    vx = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', str(pub / 'voice.wav'), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True, check=True).stdout, dtype=np.float32).astype(np.float64)
+    hop = SR // 30
+    rms = np.array([np.sqrt(np.mean(vx[i:i + hop] ** 2)) if i + hop <= len(vx) else 0.0 for i in range(0, len(vx), hop)])
+    top = np.percentile(rms[rms > 1e-4], 85) if (rms > 1e-4).any() else 1.0
+    env = np.clip(rms / top, 0, 1) ** 0.8
+    env[env < 0.12] = 0
+    ep['marks']['env'] = [round(float(q), 2) for q in env]
     edit, last = [], -1
     for k, s in enumerate(ep['shots']):
         f = 0 if k == 0 else (round(ins[s['ins']]['s'] * 30) + s.get('off', -4) if 'ins' in s else fe[s['after']] + s.get('off', 8) if 'after' in s else max(0, fs[s['at']] - 2 + s.get('off', 0)))
