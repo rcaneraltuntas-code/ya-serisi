@@ -497,6 +497,15 @@ const card = (_m: M, s: { id: string; props: any }): Shot => ({ t }) => {
 };
 
 const KINDS: Record<string, (m: M, s: { id: string; props: any }) => Shot> = { wake, go, talk, freeze, phone, card };
+/** A talk scene at rest, for the covers: no marks. `speak` gives that person the speaking pose and an open mouth. */
+export const CoverScene: React.FC<{ P: any; speak?: string | null; cam: { transform: string; cx: number; cy: number; z: number }; id: string }> = ({ P, speak, cam, id }) => {
+  const ege = speak === 'ege' && (P.a === undefined || P.a === 'ege');
+  const m: M = { L: ege ? [[20, 200]] : [], N: speak && !ege ? [[20, 200]] : [], who: speak && !ege ? [speak] : [], say: ege ? [true] : [], env: [0.75], cut: { cover: 0 }, shots: [] };
+  return <Scene m={m} sid="cover" P={P} tt={60} f={0} len={9999} cam={cam} id={id} />;
+};
+export const coverPlace = (set: any) => place(set);
+export const COVER_C_OFF = C_OFF;
+
 export const make = (m: M): Record<string, Shot> => {
   const out: Record<string, Shot> = {};
   for (const s of m.shots) out[s.id] = KINDS[s.props.k](m, s);

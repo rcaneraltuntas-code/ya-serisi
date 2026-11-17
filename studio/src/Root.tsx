@@ -5,6 +5,7 @@ import { STUDIO } from './studio.config';
 import { EPISODES } from './episodes';
 import { CastSheet } from './CastSheet';
 import { HESheet } from './episodes/herkes/Sheet';
+import { HECover } from './episodes/herkes/Cover';
 
 // Every episode gets two compositions: <Id> (the film) and <Id>Board (one frame per shot, at its key frame, for the
 // storyboard). Cast renders the cast sheet.
@@ -22,6 +23,7 @@ export const Root: React.FC = () => {
       ))}
       <Composition id="Cast" component={CastSheet} durationInFrames={1} {...common} />
       <Composition id="HESheet" component={HESheet} durationInFrames={2} width={1920} height={1080} fps={30} />
+      <Composition id="HECover" component={HECover} durationInFrames={20} width={1080} height={1920} fps={30} />
     </>
   );
 };
